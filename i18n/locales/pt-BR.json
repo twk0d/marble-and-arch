@@ -1,7 +1,7 @@
 {
   "welcome": "Seja Bem-vindo!",
   "header": {
-    "title": "Nacional IEmpreendimentos",
+    "title": "Minha Empresa",
     "navigation": {
       "rent": {
         "label": "Alugar",
@@ -115,12 +115,12 @@
   "colorSwatch": {
     "main": {
       "primary": {
-        "name": "Primária",
-        "description": "Para CTAs principais"
+        "name": "Cor Primária",
+        "description": "Utilizada em botões de ação principal, ícones de destaque e estados ativos."
       },
       "secondary": {
-        "name": "Secundária",
-        "description": "Para acentos e detalhes"
+        "name": "Cor Secundária",
+        "description": "Utilizada para elementos de suporte, badges e decorações secundárias."
       }
     },
     "system": {
@@ -135,15 +135,90 @@
       "text": {
         "name": "Texto",
         "description": "Cor principal do texto"
+      },
+      "border": {
+        "name": "Bordas",
+        "description": "Para divisores e bordas"
+      },
+      "highlight": {
+        "name": "Destaque",
+        "description": "Para campos e áreas de suporte"
       }
     }
   },
+  "notifications": {
+    "description": "Esta é uma mensagem de exemplo para validar o comportamento visual das notificações do sistema."
+  },
   "styleguide": {
-    "title": "Guia de Estilos",
+    "sections": {
+      "typography": "Tipografia Padronizada",
+      "colors": "Paleta de Cores",
+      "notifications": "Notificações",
+      "filters": "Filtros de Busca",
+      "forms": "Formulários",
+      "upload": "Gestão de Mídia",
+      "catalog": "Catálogo",
+      "borders": "Bordas e Divisores",
+      "shadows": "Sombras e Elevação"
+    },
+    "borders": {
+      "title": "Bordas e Divisores",
+      "description": "Padrões de linhas e divisores para organização estrutural de elementos.",
+      "solid": {
+        "title": "Borda Sólida",
+        "description": "Padrão para Cards e Menus"
+      },
+      "dashed": {
+        "title": "Borda Tracejada",
+        "description": "Padrão para Áreas de Upload"
+      },
+      "divider": {
+        "title": "Divisor Horizontal",
+        "description": "Separação de blocos de texto"
+      }
+    },
+    "shadows": {
+      "title": "Sombras e Elevação",
+      "description": "Escala de sombras utilizada para dar profundidade e destacar componentes sobrepostos.",
+      "sm": {
+        "title": "Pequena (.shadow-sm)",
+        "description": "Elevação sutil para elementos de interface simples."
+      },
+      "md": {
+        "title": "Média (.shadow-md)",
+        "description": "Destaque para cards de imóveis e botões."
+      },
+      "xl": {
+        "title": "Grande (.shadow-xl)",
+        "description": "Máximo destaque para Modais e Menus suspensos."
+      }
+    },
+    "notifications": {
+
+      "description": "Exemplos de avisos flutuantes (toasts) que informam o sucesso ou erro de uma ação.",
+      "trigger": {
+        "success": "Notificação de Sucesso",
+        "error": "Notificação de Erro",
+        "warning": "Notificação de Aviso",
+        "info": "Notificação de Info"
+      }
+    },
+    "filters": {
+      "description": "Conjunto de seletores utilizados para filtrar imóveis por localização, preço e características."
+    },
+    "forms": {
+      "description": "Campos de entrada organizados para facilitar o cadastro e edição de informações dos imóveis."
+    },
+    "upload": {
+      "description": "Área para envio de fotos e gerenciamento da galeria de imagens do imóvel."
+    },
+    "catalog": {
+      "description": "Grid de exibição que organiza os resultados da busca em cartões visuais."
+    },
     "hero": {
-      "title": "Guia de Estilos",
-      "subtitle": "Plataforma Imobiliária",
-      "description": "Um sistema de design moderno, minimalista, amigável e sério para conectar proprietários, clientes e agências imobiliárias com confiança e simplicidade."
+      "title": "Design System Keystone",
+      "subtitle": "Documentação Visual",
+      "description": "Guia centralizado de componentes, tipografia e cores. Utilize este catálogo para garantir que novas funcionalidades sigam a identidade visual premium e os padrões de UX da plataforma."
     },
     "typography": {
       "title": "Tipografia",
@@ -177,5 +252,67 @@
     "propertyCatalog": {
       "title": "Catálogo de Propriedades"
     }
+  },
+  "auth": {
+    "login": {
+      "title": "Acesse sua conta",
+      "subtitle": "Bem-vindo de volta! Por favor, insira seus dados.",
+      "email": "E-mail",
+      "password": "Senha",
+      "submit": "Entrar",
+      "forgotPassword": "Esqueceu a senha?",
+      "noAccount": "Não tem uma conta?",
+      "signUp": "Cadastre-se",
+      "error": "Credenciais inválidas. Por favor, tente novamente."
+    },
+    "signup": {
+      "title": "Crie sua conta",
+      "subtitle": "Comece agora a gerenciar seus imóveis.",
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "E-mail",
+      "password": "Senha",
+      "submit": "Criar Conta",
+      "alreadyHaveAccount": "Já tem uma conta?",
+      "login": "Faça Login",
+      "success": "Conta criada com sucesso! Faça login para continuar.",
+      "error": "Erro ao criar conta. Por favor, verifique os dados."
+    }
+  },
+  "propertyType": {
+    "CONDOMINIUM_HOUSE": "Casa em Condomínio",
+    "CONDOMINIUM_PLOT": "Lote em Condomínio",
+    "COUNTRY_HOUSE": "Casa de Campo",
+    "HOUSE": "Casa",
+    "OFFICE": "Escritório",
+    "OTHERS": "Outros",
+    "PENTHOUSE": "Cobertura",
+    "PLOT": "Lote",
+    "STUDIO": "Studio",
+    "WAREHOUSE": "Galpão"
+  },
+  "amenity": {
+    "POOL": "Piscina",
+    "GYM": "Academia",
+    "PARTY_ROOM": "Salão de Festas",
+    "GOURMET_AREA": "Espaço Gourmet",
+    "SAUNA": "Sauna",
+    "SPORTS_COURT": "Quadra Esportiva",
+    "PLAYGROUND": "Playground",
+    "GARDEN": "Jardim",
+    "CONCIERGE_24H": "Portaria 24h"
+  },
+  "search": {
+    "title": "Busca de Imóveis",
+    "filters": "Filtros",
+    "apply": "Aplicar Filtros",
+    "reset": "Limpar",
+    "noResults": "Nenhum imóvel encontrado com esses critérios.",
+    "placeholder": "Cidade ou Estado",
+    "minPrice": "Preço Mín.",
+    "maxPrice": "Preço Máx.",
+    "bedrooms": "Quartos",
+    "suites": "Suítes",
+    "parking": "Vagas"
   }
 }

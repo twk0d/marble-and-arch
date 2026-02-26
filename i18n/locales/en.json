@@ -137,17 +137,91 @@
         "description": "For cards and elements"
       },
       "text": {
-        "name": "Text",
-        "description": "Main text color"
+        "name": "Reading Color",
+        "description": "Ideal tone for titles and paragraphs, ensuring readability and visual comfort."
+      },
+      "border": {
+        "name": "Divider Lines",
+        "description": "Used in subtle borders and dividers to organize content."
+      },
+      "highlight": {
+        "name": "Soft Highlight",
+        "description": "Used for form field backgrounds and support areas."
       }
     }
   },
+  "notifications": {
+    "description": "This is an example message to validate the visual behavior of system notifications."
+  },
   "styleguide": {
-    "title": "Styleguide",
+    "sections": {
+      "typography": "Standardized Typography",
+      "colors": "Color Palette",
+      "notifications": "Notifications",
+      "filters": "Search Filters",
+      "forms": "Forms",
+      "upload": "Media Management",
+      "catalog": "Catalog",
+      "borders": "Borders and Dividers",
+      "shadows": "Shadows and Elevation"
+    },
+    "borders": {
+      "title": "Borders and Dividers",
+      "description": "Standard line patterns and dividers for structural organization of elements.",
+      "solid": {
+        "title": "Solid Border",
+        "description": "Standard for Cards and Menus"
+      },
+      "dashed": {
+        "title": "Dashed Border",
+        "description": "Standard for Upload Areas"
+      },
+      "divider": {
+        "title": "Horizontal Divider",
+        "description": "Separation of text blocks"
+      }
+    },
+    "shadows": {
+      "title": "Shadows and Elevation",
+      "description": "Shadow scale used to provide depth and highlight overlapping components.",
+      "sm": {
+        "title": "Small (.shadow-sm)",
+        "description": "Subtle elevation for simple interface elements."
+      },
+      "md": {
+        "title": "Medium (.shadow-md)",
+        "description": "Highlight for property cards and buttons."
+      },
+      "xl": {
+        "title": "Large (.shadow-xl)",
+        "description": "Maximum highlight for Modals and Dropdown menus."
+      }
+    },
+    "notifications": {
+      "description": "Examples of floating alerts (toasts) that inform the success or failure of an action.",
+      "trigger": {
+        "success": "Success Notification",
+        "error": "Error Notification",
+        "warning": "Warning Notification",
+        "info": "Info Notification"
+      }
+    },
+    "filters": {
+      "description": "Set of selectors used to filter properties by location, price, and features."
+    },
+    "forms": {
+      "description": "Organized input fields designed to simplify property registration and editing."
+    },
+    "upload": {
+      "description": "Area for photo uploading and property image gallery management."
+    },
+    "catalog": {
+      "description": "Display grid that organizes search results into visual cards."
+    },
     "hero": {
-      "title": "Style Guide",
-      "subtitle": "Real Estate Platform",
-      "description": "A modern, minimalist, friendly, and serious design system to connect owners, clients, and real estate agencies with confidence and simplicity."
+      "title": "Keystone Design System",
+      "subtitle": "Visual Documentation",
+      "description": "Centralized guide for components, typography, and colors. Use this catalog to ensure new features follow the platform's premium visual identity and UX standards."
     },
     "typography": {
       "title": "Typography",
@@ -181,5 +255,67 @@
     "propertyCatalog": {
       "title": "Property Catalog"
     }
+  },
+  "auth": {
+    "login": {
+      "title": "Login to your account",
+      "subtitle": "Welcome back! Please enter your details.",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Login",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up",
+      "error": "Invalid credentials. Please try again."
+    },
+    "signup": {
+      "title": "Create your account",
+      "subtitle": "Start managing your properties today.",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create Account",
+      "alreadyHaveAccount": "Already have an account?",
+      "login": "Login",
+      "success": "Account created successfully! Please login to continue.",
+      "error": "Error creating account. Please check the details."
+    }
+  },
+  "propertyType": {
+    "CONDOMINIUM_HOUSE": "Condominium House",
+    "CONDOMINIUM_PLOT": "Condominium Plot",
+    "COUNTRY_HOUSE": "Country House",
+    "HOUSE": "House",
+    "OFFICE": "Office",
+    "OTHERS": "Others",
+    "PENTHOUSE": "Penthouse",
+    "PLOT": "Plot",
+    "STUDIO": "Studio",
+    "WAREHOUSE": "Warehouse"
+  },
+  "amenity": {
+    "POOL": "Pool",
+    "GYM": "Gym",
+    "PARTY_ROOM": "Party Room",
+    "GOURMET_AREA": "Gourmet Area",
+    "SAUNA": "Sauna",
+    "SPORTS_COURT": "Sports Court",
+    "PLAYGROUND": "Playground",
+    "GARDEN": "Garden",
+    "CONCIERGE_24H": "24h Concierge"
+  },
+  "search": {
+    "title": "Property Search",
+    "filters": "Filters",
+    "apply": "Apply Filters",
+    "reset": "Reset",
+    "noResults": "No properties found with these criteria.",
+    "placeholder": "City or State",
+    "minPrice": "Min Price",
+    "maxPrice": "Max Price",
+    "bedrooms": "Bedrooms",
+    "suites": "Suites",
+    "parking": "Parking Spaces"
   }
 }
