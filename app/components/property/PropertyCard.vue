@@ -1,47 +1,63 @@
 <script setup lang="ts">
-import TypographyText from '~/components/typography/Text.vue';
-import type {Property} from '~/types/property';
+import type { PropertySummaryDTO } from '~/types';
+import PriceDisplay from '~/components/property/PriceDisplay.vue';
 
-const {t} = useI18n();
+const { t } = useI18n();
 
-defineProps<{
-  property: Property;
+const props = defineProps<{
+  property: PropertySummaryDTO;
+  disableNavigation?: boolean;
 }>();
+
+const emit = defineEmits(['select']);
+
+function handleClick(e: MouseEvent) {
+  if (props.disableNavigation) {
+    e.preventDefault();
+  }
+  emit('select', props.property);
+}
 </script>
 
 <template>
-  <NuxtLink :to="`/property/${property.id}`" target="_blank">
-    <UPageCard class="h-165 mb-2 items-start bg-muted">
-      <!-- Image -->
-      <div
-          class="aspect-video overflow-hidden rounded-md bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-        <div class="w-full h-full flex items-center justify-center text-8xl opacity-30">🏠</div>
+  <UPageCard
+    :to="disableNavigation ? undefined : `/properties/${property.id}`"
+    class="mb-2 items-start overflow-hidden group border-border cursor-pointer"
+    :ui="{ body: 'p-4' }"
+    @click="handleClick"
+  >
+    <template #header>
+      <div class="aspect-video relative overflow-hidden bg-muted">
+        <NuxtImg
+          v-if="property.mainImageUrl"
+          :src="property.mainImageUrl"
+          :alt="property.id"
+          width="400"
+          height="225"
+          format="webp"
+          loading="lazy"
+          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div v-else class="w-full h-full flex items-center justify-center text-6xl opacity-30">🏠</div>
+        <UBadge class="absolute top-2 right-2" variant="solid" color="primary">
+          {{ t(`propertyType.${property.type}`) }}
+        </UBadge>
       </div>
+    </template>
 
-      <!-- Content -->
-      <div class="space-y-6">
-        <div>
-          <TypographyText variant="h3" class="mb-2">{{ property.title }}</TypographyText>
-          <TypographyText variant="body-lg" class="opacity-80">{{ property.location }}</TypographyText>
-        </div>
+    <template #title>
+      <PriceDisplay
+        :amount="property.priceAmount"
+        :currency="property.priceCurrency"
+        size="lg"
+      />
+    </template>
 
-        <TypographyText variant="h2" class="text-primary">
-          R$ {{ property.price.toLocaleString('pt-BR') }}
-        </TypographyText>
-
-        <TypographyText variant="body-sm">
-          <span>🛏️ {{ property.bedrooms }} {{ t('propertyCard.bedrooms') }}</span>
-          <span class="ml-4">🚿 {{ property.bathrooms }} {{ t('propertyCard.bathrooms') }}</span>
-          <span class="ml-4">📐 {{ property.area }}{{ t('propertyCard.areaUnit') }}</span>
-        </TypographyText>
-
-        <TypographyText variant="body-base">
-          {{ property.description }}
-        </TypographyText>
+    <template #description>
+      <div class="flex items-center gap-1 text-body-sm text-neutral-600 dark:text-neutral-400 mb-2">
+        <UIcon name="i-heroicons-map-pin" class="w-4 h-4" />
+        {{ property.city }}, {{ property.state }}
       </div>
-    </UPageCard>
-  </NuxtLink>
+    </template>
+  </UPageCard>
 </template>
-
-<style scoped>
-</style>
