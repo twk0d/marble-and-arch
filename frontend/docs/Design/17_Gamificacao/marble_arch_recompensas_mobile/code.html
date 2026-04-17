@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rewards &amp; Gamification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e5e2e1",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "tertiary": "#705a49",
+                        "on-primary-container": "#4e3700",
+                        "primary-fixed-dim": "#e9c176",
+                        "surface-dim": "#dcd9d9",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "surface": "#fcf9f8",
+                        "inverse-primary": "#e9c176",
+                        "surface-tint": "#775a19",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-fixed": "#fbddc7",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "on-surface": "#1c1b1b",
+                        "on-surface-variant": "#4e4639",
+                        "on-background": "#1c1b1b",
+                        "surface-bright": "#fcf9f8",
+                        "outline": "#7f7667",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-primary": "#ffffff",
+                        "primary": "#775a19",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "tertiary-container": "#bba08c",
+                        "secondary-fixed": "#ebe1d4",
+                        "on-secondary-fixed": "#1f1b13",
+                        "primary-fixed": "#ffdea5",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "primary-container": "#c5a059",
+                        "on-primary-fixed": "#261900",
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary-container": "#4a3728",
+                        "surface-container": "#f0eded",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#686257",
+                        "on-tertiary-fixed": "#28180b",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "secondary-container": "#e8ded1",
+                        "on-error": "#ffffff",
+                        "secondary": "#645d53",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#d1c5b4",
+                        "on-tertiary-fixed-variant": "#574333"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-tablet": "32px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "safe": "env(safe-area-inset-bottom)"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hide for cleaner mobile view */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Subtle glow animation for progress */
+        @keyframes subtlePulse {
+            0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.2); }
+            70% { box-shadow: 0 0 0 10px rgba(197, 160, 89, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+        }
+        .progress-glow {
+            animation: subtlePulse 3s infinite;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen relative flex flex-col md:max-w-[428px] md:mx-auto md:border-x md:border-outline-variant/20 md:shadow-2xl md:my-8 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmNmOWY4Ij48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNlNWUyZTEiPjwvcmVjdD4KPC9zdmc+')]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full md:max-w-[426px] z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-margin-mobile h-16">
+<button class="text-on-surface-variant hover:opacity-70 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm tracking-tight text-primary">Rewards</h1>
+<button class="text-on-surface-variant hover:opacity-70 transition-opacity active:scale-95 duration-200">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/50">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a confident, well-dressed luxury real estate broker in a modern, light-filled office. The lighting is soft and flattering, highlighting a crisp suit against a blurred background of a high-end property interior." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWq1xejxO_NWJjPA6mD3N-seIT7ENWctMWEnyHzE0UbWmW1lhiYGls9iv5x3aDuJul7zskXuU78u9aksl5Qa3byCyY1AdBbpxkaqMI-sE8-MXoxGEXpbS7fCXjedHDwQ2ETXq_5i3c77IRvCH9kohh8K4X8wp60obMeAvg12camPHJmlOXMO6eEKFpx2q5f6LREPAf6Du6PaojuXwyo8ZxMtQ_yd4ewn0ZyrKj4lGN6UuRsZFoIUxiSECda19ttZlS0LTHq8ZofXU2"/>
+</div>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto pt-24 pb-32 px-margin-mobile space-y-8">
+<!-- Status Card (Bento Style) -->
+<section class="bg-surface-container-lowest/90 backdrop-blur-2xl border border-outline-variant/40 rounded-[1.5rem] p-6 shadow-[0_8px_32px_rgba(119,90,25,0.04)] relative overflow-hidden group">
+<!-- Decorative Background Glow -->
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary-container/10 rounded-full blur-3xl group-hover:bg-primary-container/20 transition-colors duration-700"></div>
+<div class="flex justify-between items-start mb-6 relative z-10">
+<div>
+<p class="font-label-sm text-label-sm text-secondary tracking-widest uppercase mb-1">Current Tier</p>
+<h2 class="font-headline-sm text-headline-sm text-primary">Platinum Executive</h2>
+</div>
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary-container to-surface-tint flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined icon-fill" data-icon="workspace_premium" data-weight="fill">workspace_premium</span>
+</div>
+</div>
+<div class="relative z-10">
+<div class="flex justify-between items-end mb-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Progress to Diamond Circle</p>
+<p class="font-label-sm text-label-sm text-primary font-semibold">82%</p>
+</div>
+<!-- Progress Bar -->
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full progress-glow" style="width: 82%;"></div>
+</div>
+<p class="font-label-sm text-[10px] text-secondary mt-3 text-right">3 sales remaining to tier up</p>
+</div>
+</section>
+<!-- Annual Bonus Tracker -->
+<section class="flex flex-col items-center justify-center py-4 relative">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6 self-start w-full">Annual Bonus Tracker</h3>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<!-- SVG Circular Gauge -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background Track -->
+<circle class="stroke-surface-container-high" cx="50" cy="50" fill="none" r="45" stroke-width="4"></circle>
+<!-- Progress Track (75% = 150k / 200k) -->
+<!-- Circumference = 2 * pi * 45 = ~282.7 -->
+<!-- 75% of 282.7 = 212 -->
+<circle class="stroke-primary" cx="50" cy="50" fill="none" r="45" stroke-dasharray="282.7" stroke-dashoffset="70.7" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<!-- Center Data -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-display-lg text-4xl text-on-surface tracking-tight">$150k</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">Earned</span>
+</div>
+</div>
+<div class="mt-6 flex items-center justify-between w-full max-w-[280px] bg-surface-container-lowest/50 px-4 py-2 rounded-full border border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-secondary">Target</span>
+<span class="font-label-lg text-label-lg text-primary">$200,000</span>
+</div>
+</section>
+<!-- Milestone Badges Grid -->
+<section>
+<div class="flex justify-between items-baseline mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Milestone Badges</h3>
+<button class="font-label-sm text-label-sm text-primary hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<!-- Badge 1 -->
+<div class="flex flex-col items-center text-center p-4 bg-surface-container-lowest border border-outline-variant/20 rounded-[1rem] shadow-[0_2px_10px_rgba(119,90,25,0.02)] hover:border-primary/30 transition-colors">
+<div class="w-10 h-10 mb-3 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined icon-fill" data-icon="diamond" data-weight="fill">diamond</span>
+</div>
+<span class="font-label-sm text-[11px] leading-tight text-on-surface-variant font-medium">$1M+ Club</span>
+</div>
+<!-- Badge 2 -->
+<div class="flex flex-col items-center text-center p-4 bg-surface-container-lowest border border-outline-variant/20 rounded-[1rem] shadow-[0_2px_10px_rgba(119,90,25,0.02)] hover:border-primary/30 transition-colors opacity-60 grayscale-[50%]">
+<div class="w-10 h-10 mb-3 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="real_estate_agent">real_estate_agent</span>
+</div>
+<span class="font-label-sm text-[11px] leading-tight text-on-surface-variant font-medium">Listing Spec.</span>
+</div>
+<!-- Badge 3 -->
+<div class="flex flex-col items-center text-center p-4 bg-surface-container-lowest border border-outline-variant/20 rounded-[1rem] shadow-[0_2px_10px_rgba(119,90,25,0.02)] hover:border-primary/30 transition-colors">
+<div class="w-10 h-10 mb-3 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined icon-fill" data-icon="concierge" data-weight="fill">concierge</span>
+</div>
+<span class="font-label-sm text-[11px] leading-tight text-on-surface-variant font-medium">Luxury Concierge</span>
+</div>
+</div>
+</section>
+<!-- Top Performers (Elegant List) -->
+<section class="pb-8">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Region Leaders</h3>
+<div class="bg-surface-container-lowest rounded-[1.25rem] border border-outline-variant/20 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+<!-- Performer 1 -->
+<div class="flex items-center gap-4 p-4 border-b border-outline-variant/10 hover:bg-surface-container/30 transition-colors">
+<span class="font-headline-md text-headline-md text-surface-tint w-6 text-center">1</span>
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant/30 flex-shrink-0">
+<img alt="Leader 1" class="w-full h-full object-cover" data-alt="A portrait of a highly successful female luxury real estate agent. She is smiling confidently, wearing a tailored cream blazer. The background is a beautifully lit, modern minimalist high-end home interior. The overall aesthetic is professional, polished, and affluent." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx0XJmes2tRj4eLpcY25za3BU4AlLRdNpenKd4Sz2Gha1euIQd2Uz-wIrMpq-DzTVl1Ff0e3goQKuQosNkFPrWAR7ZBJt2-p0WpkR2BynuNiwWP0E5JpmoJiVJRCRKUOovn0lBFHisLc9z6Dva99GTOZCQ2KOVe3NivHQgdV_dwo5Xgtuy5dVTiE3YV2tFRbgB1eU79Vh-__IMvm6vzPKIIJoYEt8MAzAxFj94q6DMF5YDdrsnQm62Z5VQu6F_41kpO7cldrNm10h-"/>
+</div>
+<div class="flex-1">
+<p class="font-label-lg text-label-lg text-on-surface">Eleanor Vance</p>
+<p class="font-label-sm text-label-sm text-secondary">Beverly Hills</p>
+</div>
+<div class="text-right">
+<p class="font-label-lg text-label-lg text-primary">$42.5M</p>
+</div>
+</div>
+<!-- Performer 2 -->
+<div class="flex items-center gap-4 p-4 hover:bg-surface-container/30 transition-colors">
+<span class="font-headline-md text-headline-md text-surface-tint opacity-70 w-6 text-center">2</span>
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant/30 flex-shrink-0">
+<img alt="Leader 2" class="w-full h-full object-cover" data-alt="A professional headshot of a male luxury property broker in his 40s. He wears a sharp navy suit and tie. The lighting is cinematic and moody, suggesting exclusivity. The background hints at a panoramic city view from a penthouse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV4WlTwEcC9GqHOG8FdN0E1Df8vVt-pp3oEYfUMsxAbEquvozBlL2yYDcJ-jTWvtUbalaCLw2_3oAwZxrLyLfFDwq-UkwI_MDNeTSAeLNVHkXqDG9CYP0BQN32GgsIXSQEQmpNEz4Skj3Fs6Ubi1PubZp3tz7dcGk3qEinBdvnuOxAjeABESQIMexW_GXLaUvhblcejVfBnshLBlC3yp7DdiEpv6lcfd7gTMqa9Ldi7wK9e8K6aqj8Ry0OgS3vY0d9wxhEPF38EQMi"/>
+</div>
+<div class="flex-1">
+<p class="font-label-lg text-label-lg text-on-surface">James Sterling</p>
+<p class="font-label-sm text-label-sm text-secondary">Malibu</p>
+</div>
+<div class="text-right">
+<p class="font-label-lg text-label-lg text-primary">$38.1M</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full md:max-w-[426px] md:relative z-50 bg-surface/90 backdrop-blur-2xl border-t border-outline-variant/20 shadow-[0_-4px_24px_rgba(119,90,25,0.05)] rounded-t-[1.5rem] flex justify-around items-center px-4 pt-3 pb-safe h-[88px] md:h-auto md:pb-3">
+<button class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors active:scale-90 duration-200 group">
+<span class="material-symbols-outlined group-hover:font-[FILL=1]" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm mt-1">Discover</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors active:scale-90 duration-200 group">
+<span class="material-symbols-outlined group-hover:font-[FILL=1]" data-icon="favorite">favorite</span>
+<span class="font-label-sm text-label-sm mt-1">Saved</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors active:scale-90 duration-200 group">
+<span class="material-symbols-outlined group-hover:font-[FILL=1]" data-icon="contact_support">contact_support</span>
+<span class="font-label-sm text-label-sm mt-1">Support</span>
+</button>
+<!-- Active Tab: Profile (closest semantic match for personal rewards) -->
+<button class="flex flex-col items-center justify-center text-primary font-bold active:scale-90 duration-200 group">
+<span class="material-symbols-outlined icon-fill" data-icon="person" data-weight="fill">person</span>
+<span class="font-label-sm text-label-sm mt-1 font-bold">Profile</span>
+</button>
+</nav>
+</body></html>

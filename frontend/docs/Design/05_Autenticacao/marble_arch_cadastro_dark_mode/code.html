@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cadastro - Marble &amp; Arch</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e0e0e; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4e4639; 
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#d4c5a7",
+                    "inverse-primary": "#775a19",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "surface": "#131313",
+                    "on-secondary-fixed": "#221b08",
+                    "on-primary-fixed": "#261900",
+                    "on-surface": "#e5e2e1",
+                    "primary": "#e9c176",
+                    "on-surface-variant": "#d1c5b4",
+                    "primary-fixed-dim": "#e9c176",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "surface-container-high": "#2a2a2a",
+                    "on-secondary-fixed-variant": "#50462f",
+                    "on-error": "#690005",
+                    "primary-fixed": "#ffdea5",
+                    "background": "#131313",
+                    "inverse-surface": "#e5e2e1",
+                    "primary-container": "#c5a059",
+                    "surface-container-highest": "#353534",
+                    "surface-variant": "#353534",
+                    "on-primary": "#412d00",
+                    "on-secondary-container": "#c2b397",
+                    "error": "#ffb4ab",
+                    "surface-dim": "#131313",
+                    "surface-tint": "#e9c176",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "secondary-fixed": "#f1e1c2",
+                    "on-error-container": "#ffdad6",
+                    "outline-variant": "#4e4639",
+                    "on-tertiary-container": "#3b3b3b",
+                    "tertiary-container": "#a7a5a5",
+                    "secondary": "#d4c5a7",
+                    "on-primary-container": "#4e3700",
+                    "secondary-container": "#50462f",
+                    "outline": "#9a8f80",
+                    "inverse-on-surface": "#313030",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-secondary": "#382f1b",
+                    "on-background": "#e5e2e1",
+                    "surface-container": "#201f1f",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-bright": "#393939",
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#0e0e0e",
+                    "tertiary": "#c8c6c5",
+                    "on-tertiary": "#313030",
+                    "on-tertiary-fixed-variant": "#474746"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "container-max": "1200px",
+                    "unit": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": [
+                            "DM Sans"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "label-sm": [
+                            "DM Sans"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "display-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "DM Sans"
+                    ]
+            },
+            "fontSize": {
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "40px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-surface-container-lowest text-on-surface h-screen w-screen overflow-hidden flex selection:bg-primary/30 selection:text-primary">
+<!-- Split Layout Container -->
+<main class="flex w-full h-full">
+<!-- Left Column: Form Area -->
+<section class="w-full lg:w-5/12 xl:w-1/3 flex flex-col h-full bg-surface-container-lowest z-10 relative shadow-[20px_0_50px_rgba(0,0,0,0.5)]">
+<!-- Subtle atmospheric glow behind the form -->
+<div class="absolute top-0 left-0 w-full h-[500px] bg-primary/5 blur-[120px] pointer-events-none rounded-full transform -translate-y-1/2"></div>
+<div class="flex-1 flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-12 xl:px-16 overflow-y-auto pt-12 pb-12 relative z-10">
+<!-- Brand Header -->
+<header class="mb-16">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight mb-2">Marble &amp; Arch</h1>
+<div class="h-px w-12 bg-primary/50 mb-6"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Junte-se à Exclusividade</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-sm">
+                        Crie sua conta para acessar um portfólio restrito das propriedades mais extraordinárias do mundo.
+                    </p>
+</header>
+<!-- Signup Form -->
+<form action="#" class="flex flex-col gap-8 w-full max-w-md" method="POST">
+<!-- Input: Nome Completo -->
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-0 bottom-3 text-on-surface-variant group-focus-within:text-primary transition-colors">person</span>
+<input class="peer w-full bg-transparent border-0 border-b border-outline-variant py-3 pl-10 pr-0 text-on-surface font-body-md placeholder-transparent focus:ring-0 focus:border-primary transition-all focus:shadow-[0_4px_15px_-3px_rgba(233,193,118,0.15)]" id="fullname" name="fullname" placeholder="Nome Completo" required="" type="text"/>
+<label class="absolute left-10 -top-3.5 text-on-surface-variant font-label-sm text-label-sm transition-all peer-placeholder-shown:text-body-md peer-placeholder-shown:font-body-md peer-placeholder-shown:top-3.5 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:font-label-sm peer-focus:text-label-sm" for="fullname">
+                            Nome Completo
+                        </label>
+</div>
+<!-- Input: E-mail -->
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-0 bottom-3 text-on-surface-variant group-focus-within:text-primary transition-colors">mail</span>
+<input class="peer w-full bg-transparent border-0 border-b border-outline-variant py-3 pl-10 pr-0 text-on-surface font-body-md placeholder-transparent focus:ring-0 focus:border-primary transition-all focus:shadow-[0_4px_15px_-3px_rgba(233,193,118,0.15)]" id="email" name="email" placeholder="E-mail" required="" type="email"/>
+<label class="absolute left-10 -top-3.5 text-on-surface-variant font-label-sm text-label-sm transition-all peer-placeholder-shown:text-body-md peer-placeholder-shown:font-body-md peer-placeholder-shown:top-3.5 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:font-label-sm peer-focus:text-label-sm" for="email">
+                            E-mail Profissional ou Pessoal
+                        </label>
+</div>
+<!-- Input: Telefone -->
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-0 bottom-3 text-on-surface-variant group-focus-within:text-primary transition-colors">call</span>
+<input class="peer w-full bg-transparent border-0 border-b border-outline-variant py-3 pl-10 pr-0 text-on-surface font-body-md placeholder-transparent focus:ring-0 focus:border-primary transition-all focus:shadow-[0_4px_15px_-3px_rgba(233,193,118,0.15)]" id="phone" name="phone" placeholder="Telefone" required="" type="tel"/>
+<label class="absolute left-10 -top-3.5 text-on-surface-variant font-label-sm text-label-sm transition-all peer-placeholder-shown:text-body-md peer-placeholder-shown:font-body-md peer-placeholder-shown:top-3.5 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:font-label-sm peer-focus:text-label-sm" for="phone">
+                            Telefone / Celular
+                        </label>
+</div>
+<!-- Input: Senha -->
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-0 bottom-3 text-on-surface-variant group-focus-within:text-primary transition-colors">lock</span>
+<input class="peer w-full bg-transparent border-0 border-b border-outline-variant py-3 pl-10 pr-10 text-on-surface font-body-md placeholder-transparent focus:ring-0 focus:border-primary transition-all focus:shadow-[0_4px_15px_-3px_rgba(233,193,118,0.15)]" id="password" name="password" placeholder="Senha" required="" type="password"/>
+<label class="absolute left-10 -top-3.5 text-on-surface-variant font-label-sm text-label-sm transition-all peer-placeholder-shown:text-body-md peer-placeholder-shown:font-body-md peer-placeholder-shown:top-3.5 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:font-label-sm peer-focus:text-label-sm" for="password">
+                            Senha de Acesso
+                        </label>
+<button class="absolute right-0 bottom-3 text-on-surface-variant hover:text-primary transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+<!-- Checkbox: Terms -->
+<div class="flex items-start mt-2">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 rounded-sm border-outline-variant bg-transparent text-primary focus:ring-primary focus:ring-offset-surface-container-lowest focus:ring-1 cursor-pointer transition-colors" id="terms" name="terms" required="" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm">
+<label class="font-body-md text-body-md text-on-surface-variant cursor-pointer text-[14px]" for="terms">
+                                Declaro que li e concordo com os <a class="text-primary hover:text-primary-fixed transition-colors underline decoration-primary/30 underline-offset-4" href="#">Termos de Serviço</a> e <a class="text-primary hover:text-primary-fixed transition-colors underline decoration-primary/30 underline-offset-4" href="#">Política de Privacidade</a>.
+                            </label>
+</div>
+</div>
+<!-- Action Button -->
+<button class="mt-4 w-full bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-[0.15em] py-4 px-6 rounded-none hover:bg-primary-fixed-dim transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-[0_10px_20px_-10px_rgba(233,193,118,0.4)] flex justify-center items-center group" type="submit">
+                        Criar Conta
+                        <span class="material-symbols-outlined ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">arrow_forward</span>
+</button>
+</form>
+<!-- Footer Link -->
+<div class="mt-12 text-center max-w-md">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Já faz parte do nosso círculo? 
+                        <a class="text-primary font-bold ml-1 hover:text-primary-fixed transition-colors border-b border-transparent hover:border-primary pb-0.5" href="#">Entrar</a>
+</p>
+</div>
+</div>
+</section>
+<!-- Right Column: Atmospheric Visual (Hidden on mobile) -->
+<section class="hidden lg:block lg:w-7/12 xl:w-2/3 relative h-full bg-surface-container-low overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 w-full h-full">
+<img alt="Luxury Architecture" class="w-full h-full object-cover object-center opacity-80 mix-blend-luminosity grayscale-[50%]" data-alt="A sweeping, high-contrast architectural photograph of a modern luxury estate at dusk. The scene is enveloped in deep, sophisticated charcoal shadows, characteristic of a nocturnal elegance aesthetic. Strategic, warm golden lighting emanates from the expansive floor-to-ceiling windows, casting long, dramatic reflections on a sleek, dark infinity pool. The structure features minimalist lines and premium materials like black marble and dark wood. The overall mood is incredibly exclusive, serene, and exquisitely high-end, perfectly fitting a dark-mode luxury brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjdwwcpV3YHynKgMRRAtlNRctZh08lFLxRfZUWOUeTmXAAvwOpDc_IKtOumOu5JwUR5a53geBNCQ9UDfkEcwap9vS7J07_ArhppredldsZ253crmdZOsjW80JySDuO2HRVS6x0sgmlmdchihIaI32girl0cnYlLY_ZgRd-Pl2dWM7R8mOqcGUuIQ4ntytKY_C0PD-dJvPdc9uSMp5k6eaR8bwPIUcDFoBeDpDB6FKan2qji8KY9f6W9L99rh3Zsi3TuzuyZLymzS4o"/>
+</div>
+<!-- Overlays for Depth and Brand Colors -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/50 to-transparent z-10 pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent z-10 pointer-events-none"></div>
+<div class="absolute inset-0 bg-background/20 backdrop-blur-[2px] z-10 pointer-events-none"></div>
+<!-- Optional: Floating geometric/glass element to reinforce glassmorphism -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-primary/10 rounded-full z-20 pointer-events-none mix-blend-overlay opacity-30"></div>
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-primary/20 rounded-full z-20 pointer-events-none mix-blend-overlay opacity-20"></div>
+</section>
+</main>
+<script>
+        // Simple script to toggle password visibility
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButtons = document.querySelectorAll('button:has(.material-symbols-outlined:contains("visibility"))');
+            // Assuming the structure is consistent, finding the button within the password group
+            const passGroups = document.querySelectorAll('input[type="password"]');
+            
+            passGroups.forEach(input => {
+                const btn = input.parentElement.querySelector('button');
+                if(btn) {
+                    btn.addEventListener('click', () => {
+                        const icon = btn.querySelector('.material-symbols-outlined');
+                        if (input.type === 'password') {
+                            input.type = 'text';
+                            icon.textContent = 'visibility';
+                        } else {
+                            input.type = 'password';
+                            icon.textContent = 'visibility_off';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body></html>

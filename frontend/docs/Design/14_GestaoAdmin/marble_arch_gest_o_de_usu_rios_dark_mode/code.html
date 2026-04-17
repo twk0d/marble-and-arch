@@ -1,0 +1,475 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Marble &amp; Arch - User Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-fixed": "#f1e1c2",
+                "surface": "#131313",
+                "surface-container-lowest": "#0e0e0e",
+                "on-surface": "#e5e2e1",
+                "tertiary-fixed-dim": "#c8c6c5",
+                "inverse-on-surface": "#313030",
+                "inverse-surface": "#e5e2e1",
+                "on-secondary-container": "#c2b397",
+                "primary": "#e9c176",
+                "tertiary-container": "#a7a5a5",
+                "primary-fixed-dim": "#e9c176",
+                "on-tertiary-fixed-variant": "#474746",
+                "surface-tint": "#e9c176",
+                "on-secondary": "#382f1b",
+                "secondary-container": "#50462f",
+                "surface-container-low": "#1c1b1b",
+                "outline": "#9a8f80",
+                "background": "#131313",
+                "on-secondary-fixed-variant": "#50462f",
+                "secondary-fixed-dim": "#d4c5a7",
+                "on-background": "#e5e2e1",
+                "surface-container-high": "#2a2a2a",
+                "on-primary": "#412d00",
+                "surface-container": "#201f1f",
+                "outline-variant": "#4e4639",
+                "surface-variant": "#353534",
+                "on-error": "#690005",
+                "surface-bright": "#393939",
+                "tertiary": "#c8c6c5",
+                "inverse-primary": "#775a19",
+                "surface-container-highest": "#353534",
+                "error-container": "#93000a",
+                "primary-fixed": "#ffdea5",
+                "on-tertiary-fixed": "#1b1b1b",
+                "tertiary-fixed": "#e5e2e1",
+                "secondary": "#d4c5a7",
+                "on-surface-variant": "#d1c5b4",
+                "error": "#ffb4ab",
+                "primary-container": "#c5a059",
+                "on-tertiary-container": "#3b3b3b",
+                "on-tertiary": "#313030",
+                "surface-dim": "#131313",
+                "on-error-container": "#ffdad6",
+                "on-primary-container": "#4e3700",
+                "on-primary-fixed": "#261900",
+                "on-primary-fixed-variant": "#5d4201",
+                "on-secondary-fixed": "#221b08"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "20px",
+                "container-max": "1200px",
+                "unit": "8px",
+                "gutter": "24px",
+                "margin-desktop": "64px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "label-sm": [
+                        "DM Sans"
+                ],
+                "body-lg": [
+                        "DM Sans"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "DM Sans"
+                ]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface-container-low');
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant');
+            border-radius: theme('borderRadius.full');
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline');
+        }
+        
+        .glass-panel {
+            background: rgba(19, 19, 19, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid theme('colors.outline-variant' / 30%);
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px theme('colors.primary' / 5%);
+        }
+        
+        /* Toggle Switch Styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: theme('colors.primary-container');
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: theme('colors.primary-container');
+        }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden bg-background font-body-md text-body-md antialiased">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen w-72 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-lowest border-r border-outline-variant/20 shadow-lg shadow-primary/5 p-6 space-y-4 z-50">
+<!-- Header -->
+<div class="mb-8 flex items-center space-x-4">
+<img alt="Agency Logo" class="w-12 h-12 rounded-lg object-cover" data-alt="A luxurious, minimalist real estate agency logo, rendered in metallic champagne gold on a pure white textured background. The logo features sharp architectural lines suggesting a modern penthouse. Lighting is soft and highly directed, creating subtle highlights on the metallic elements. The overall aesthetic is 'Quiet Luxury', pristine, and exclusive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTmKFyvNawDL5o7W9JcAAYLvsrjEICjtJubPiKGNJhCmMe8nr5Jhp_4L464SbU1op5ZAGPcdbEj8YkA_WYXnP4M-tvN-SIClpGcny38yLnz1e7wMN57DoQSdaB5YE2l7H5Y7rbw2mHHQJ1LCAc_xDr2QsXmLuULBP-vX22xSOEPLre5NRw-iG0DwsZrKni61AUdGxot1Mn3Ln441wqKdTVBJOb0x4FFprCyTi30C1z9upPd2AwxwCLd51zH09_89RrFw8g1G9FkHRK">
+<div>
+<h1 class="font-headline-md text-headline-md text-primary-container m-0 text-xl">Admin Portal</h1>
+<p class="font-label-sm text-label-sm text-secondary m-0">Luxury Management</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 space-y-2">
+<a class="flex items-center space-x-3 px-4 py-3 text-secondary hover:bg-secondary-container/30 rounded-lg group hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-secondary hover:bg-secondary-container/30 rounded-lg group hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="domain">domain</span>
+<span class="font-body-md text-body-md">Properties</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-secondary hover:bg-secondary-container/30 rounded-lg group hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="mail">mail</span>
+<span class="font-body-md text-body-md">Inquiries</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center space-x-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg font-medium shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="group" data-weight="fill" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-body-md text-body-md">Users</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-secondary hover:bg-secondary-container/30 rounded-lg group hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="campaign">campaign</span>
+<span class="font-body-md text-body-md">Marketing</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-secondary hover:bg-secondary-container/30 rounded-lg group hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</div>
+<!-- Footer Actions -->
+<div class="mt-auto space-y-2 pt-6 border-t border-outline-variant/20">
+<a class="flex items-center space-x-3 px-4 py-2 text-secondary hover:bg-secondary-container/30 rounded-lg group hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 text-secondary hover:bg-secondary-container/30 rounded-lg group hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body-md text-body-md">Sign Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-72 h-full overflow-y-auto bg-surface flex flex-col">
+<!-- Top App Bar (Mobile & Contextual) -->
+<header class="sticky top-0 z-40 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 flex items-center justify-between px-margin-mobile md:px-margin-desktop py-4 w-full">
+<div class="flex items-center">
+<button class="md:hidden mr-4 text-secondary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-md text-headline-md font-medium tracking-tight text-primary hidden md:block">User Management</div>
+<div class="font-headline-md text-xl font-medium tracking-tight text-primary md:hidden">Users</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low text-on-surface border border-outline-variant/50 rounded-full font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors w-64 placeholder:text-outline" placeholder="Search users..." type="text">
+</div>
+<button class="p-2 text-secondary hover:bg-secondary-container/50 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full border border-outline-variant/30 object-cover" data-alt="A professional headshot of an administrator in a high-end real estate office setting. The person is dressed in modern, understated luxury attire (e.g., a fine knit turtleneck or tailored jacket). Lighting is soft, natural, and flattering, suggesting a bright, airy penthouse office. The color palette leans towards warm neutrals and soft charcoals, embodying quiet luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzZSsMMZZddag6iUv1q0qZ3JZF7eYc39xUXgFgE_3URSJhuvs1evsT5GR13A6xklvvkCXFtx2H8_ouqCsaNqU68Oio9jikwgAY_oxPVnqDzdWVbl9_BlrsUeUYM6gS6EujuuyGkWHFksPThV-D8-ubsddI0oHE2bpo9VOvftLldKSQIsGWaXtDkZG1cpIZbRx_TFdqtWWmw05JNsZLq8e7apfn-_WUjAn_SuC-cXWF8Pb75lskgiEvpkZuLwPFShhl1MqkMP_55NMn">
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full flex-1">
+<!-- Page Header & Actions -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-gutter gap-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Team Roster</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage access, roles, and status for all platform personnel.</p>
+</div>
+<button class="flex items-center justify-center space-x-2 bg-primary-container text-on-primary-container px-6 py-3 rounded-lg font-body-md text-body-md border border-primary-container/20 shadow-sm hover:shadow-md transition-shadow active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span>Create New User</span>
+</button>
+</div>
+<!-- Filters & Controls Bar -->
+<div class="glass-panel rounded-xl p-4 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+<!-- Role Filter -->
+<div class="relative">
+<select class="appearance-none bg-transparent border-b-2 border-secondary-container focus:border-primary-container py-2 pl-2 pr-8 font-body-md text-body-md text-on-surface focus:outline-none transition-colors cursor-pointer">
+<option class="bg-surface-container" value="all">All Roles</option>
+<option class="bg-surface-container" value="admin">Administrator</option>
+<option class="bg-surface-container" value="manager">Manager</option>
+<option class="bg-surface-container" value="broker">Broker</option>
+</select>
+<span class="material-symbols-outlined absolute right-1 top-1/2 transform -translate-y-1/2 text-secondary pointer-events-none" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+<!-- Group Filter -->
+<div class="relative">
+<select class="appearance-none bg-transparent border-b-2 border-secondary-container focus:border-primary-container py-2 pl-2 pr-8 font-body-md text-body-md text-on-surface focus:outline-none transition-colors cursor-pointer">
+<option class="bg-surface-container" value="all">All Groups</option>
+<option class="bg-surface-container" value="sales">Sales Team</option>
+<option class="bg-surface-container" value="marketing">Marketing</option>
+<option class="bg-surface-container" value="executive">Executive</option>
+</select>
+<span class="material-symbols-outlined absolute right-1 top-1/2 transform -translate-y-1/2 text-secondary pointer-events-none" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<button class="p-2 text-secondary hover:text-primary transition-colors flex items-center gap-1 border border-outline-variant/30 rounded-lg px-3 py-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                        Export
+                    </button>
+</div>
+</div>
+<!-- Data Table Container (Bento Grid Style) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 ambient-shadow overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 border-b border-outline-variant/30">
+<th class="py-4 px-6 font-body-md text-body-md font-semibold text-secondary whitespace-nowrap">User</th>
+<th class="py-4 px-6 font-body-md text-body-md font-semibold text-secondary whitespace-nowrap">Role</th>
+<th class="py-4 px-6 font-body-md text-body-md font-semibold text-secondary whitespace-nowrap">Group</th>
+<th class="py-4 px-6 font-body-md text-body-md font-semibold text-secondary whitespace-nowrap text-center">Status</th>
+<th class="py-4 px-6 font-body-md text-body-md font-semibold text-secondary whitespace-nowrap text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center space-x-4">
+<img alt="Eleanor Vance" class="w-10 h-10 rounded-full object-cover border border-outline-variant/30" data-alt="A professional headshot of a female executive in a high-end architectural firm. She wears a crisp white silk blouse against a soft, warm sand-colored background. Lighting is studio quality, creating a bright, confident, and approachable look. The aesthetic is clean, modern, and quietly luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0TWGr57ypth2-ZoVThn6c-k6ofBipe49DUyglxJMzUN4HDH7r0RX7XdVVAbiWtE1HNpIfqMB99fHbAU6BHxHEZMPc-2Spi6vD-lgfH13WBKrwuq3mst9UdrvWgfTD2xJSJFK6sawwI6lhxqNC9l57Qht_I6NBfTvqmgwEPGkNSX43ojaQSVTY5rUWH3q_J28lwZywBIshzW8UQzpS0l1YBojWLIwVFCN4bmLoI8qvvz-kjLnSI2yKYtvcDRXl37kwy-IH702sPEf2">
+<div>
+<div class="font-body-md text-body-md font-medium text-on-surface">Eleanor Vance</div>
+<div class="font-body-md text-label-sm text-on-surface-variant">e.vance@marblearch.com</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-label-sm text-on-primary-container bg-primary-container/20 border border-primary-container/30">
+                                        Admin
+                                    </span>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">Executive</td>
+<td class="py-4 px-6 text-center">
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-surface-container-lowest border-4 appearance-none cursor-pointer border-surface-dim checked:right-0 checked:border-primary-container transition-all duration-300 z-10" id="toggle1" name="toggle1" type="checkbox">
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-surface-dim cursor-pointer transition-colors duration-300" for="toggle1"></label>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-secondary-container/30">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center space-x-4">
+<img alt="Julian Mercer" class="w-10 h-10 rounded-full object-cover border border-outline-variant/30" data-alt="A professional headshot of a male real estate broker. He is wearing a tailored charcoal suit with a subtle pattern. The background is a soft, out-of-focus view of a modern glass office interior, emphasizing transparency and luxury. The lighting is natural and bright, conveying trust and professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUs1MG-S7xIVEMvuaeoPPo1BBR1wq6tMTmkJANfC1sGr_qj0_SK9Qn3h3KeZ8_NAqcKF7gv_RsSvmhiu7Eqiu0hyQMODGr13IJBaCEpUoyA67mVWUqKcxCn9XP5nrgJXDIU_bFm8OafTW_tWu7pr85DJKkpmDWXMZmhu9VBpIx0TqLzLk1-1mMJFCv1biC3Pe9nFqZUb739EJYWoJLraZY4j-RYaFi5q4F2gc5vmfx8J8g-_ZGjX_fUM8H6AmFtOpu-cpKBI3UhuX3">
+<div>
+<div class="font-body-md text-body-md font-medium text-on-surface">Julian Mercer</div>
+<div class="font-body-md text-label-sm text-on-surface-variant">j.mercer@marblearch.com</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-label-sm text-on-surface bg-surface-variant border border-outline-variant/30">
+                                        Manager
+                                    </span>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">Sales Team</td>
+<td class="py-4 px-6 text-center">
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-surface-container-lowest border-4 appearance-none cursor-pointer border-surface-dim checked:right-0 checked:border-primary-container transition-all duration-300 z-10" id="toggle2" name="toggle2" type="checkbox">
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-surface-dim cursor-pointer transition-colors duration-300" for="toggle2"></label>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-secondary-container/30">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-md text-xl border border-outline-variant/30">
+                                            CS
+                                        </div>
+<div>
+<div class="font-body-md text-body-md font-medium text-on-surface">Chloe Sterling</div>
+<div class="font-body-md text-label-sm text-on-surface-variant">c.sterling@marblearch.com</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-label-sm text-secondary bg-surface border border-outline-variant/30">
+                                        Broker
+                                    </span>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">Sales Team</td>
+<td class="py-4 px-6 text-center">
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-surface-container-lowest border-4 appearance-none cursor-pointer border-surface-dim checked:right-0 checked:border-primary-container transition-all duration-300 z-10" id="toggle3" name="toggle3" type="checkbox">
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-surface-dim cursor-pointer transition-colors duration-300" for="toggle3"></label>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-secondary-container/30">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center space-x-4">
+<img alt="Aria Kensington" class="w-10 h-10 rounded-full object-cover border border-outline-variant/30" data-alt="A professional headshot of a female marketing director. She wears a minimalist, elegant beige top. The background is a crisp, pure white, enhancing a clean, modern aesthetic. Lighting is bright, soft, and shadowless, reflecting a high-end, editorial portrait style suitable for a luxury brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuAZc0ovGo72qMs1ZZckVsoEDnckEGF5_D7oZNgF9ROItivgWWeovEZKL5DXIm_-QQTmbQoWY0cGpwmXV2X2SQ2PiZe4Xr24HaNszqyzspERXwQ3cH9PEXRq9Znspz3KQDityvBgh1ritGE4r6DCoLe3sTqS65vKbU5Yw1zEg0RgPkaeGbA_xTP4DzvTbq4NK40Z7o1ALPDZ1Ih1Ki2gtbBxedRsDhTzO3THgB-l7eHQEjqaLKRiFrz8Iry8p5bv-jvdmcfXF02ULq">
+<div>
+<div class="font-body-md text-body-md font-medium text-on-surface">Aria Kensington</div>
+<div class="font-body-md text-label-sm text-on-surface-variant">a.kensington@marblearch.com</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-label-sm text-on-surface bg-surface-variant border border-outline-variant/30">
+                                        Manager
+                                    </span>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">Marketing</td>
+<td class="py-4 px-6 text-center">
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-surface-container-lowest border-4 appearance-none cursor-pointer border-surface-dim checked:right-0 checked:border-primary-container transition-all duration-300 z-10" id="toggle4" name="toggle4" type="checkbox">
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-surface-dim cursor-pointer transition-colors duration-300" for="toggle4"></label>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-secondary-container/30">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="border-t border-outline-variant/20 px-6 py-4 flex items-center justify-between bg-surface-container-low/30">
+<div class="font-body-md text-label-sm text-secondary">
+                        Showing 1 to 4 of 24 entries
+                    </div>
+<div class="flex items-center space-x-2">
+<button class="p-1 rounded-md text-secondary hover:bg-secondary-container/50 disabled:opacity-50 transition-colors" disabled="">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-md bg-primary-container text-on-primary-container font-label-sm flex items-center justify-center">1</button>
+<button class="w-8 h-8 rounded-md text-secondary hover:bg-secondary-container/50 font-label-sm flex items-center justify-center transition-colors">2</button>
+<button class="w-8 h-8 rounded-md text-secondary hover:bg-secondary-container/50 font-label-sm flex items-center justify-center transition-colors">3</button>
+<span class="text-secondary">...</span>
+<button class="p-1 rounded-md text-secondary hover:bg-secondary-container/50 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Spacer for breathing room -->
+<div class="h-gutter"></div>
+</div>
+</main>
+<script>
+        // Simple script to handle toggle visual state for accessibility/focus if needed beyond pure CSS
+        const toggles = document.querySelectorAll('.toggle-checkbox');
+        toggles.forEach(toggle => {
+            toggle.addEventListener('keydown', function(e) {
+                if(e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.checked = !this.checked;
+                }
+            });
+        });
+    </script>
+</body></html>

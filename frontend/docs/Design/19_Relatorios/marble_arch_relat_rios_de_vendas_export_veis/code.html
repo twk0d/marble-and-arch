@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Export Reports - Marble &amp; Arch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#705a49",
+                      "surface-container-low": "#f6f3f2",
+                      "primary": "#775a19",
+                      "on-primary-fixed": "#261900",
+                      "on-primary-container": "#4e3700",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-tertiary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed": "#fbddc7",
+                      "on-primary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#bba08c",
+                      "secondary": "#645d53",
+                      "outline-variant": "#d1c5b4",
+                      "surface-container-high": "#eae7e7",
+                      "secondary-fixed-dim": "#cfc5b9",
+                      "on-secondary-container": "#686257",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed-dim": "#dec1ac",
+                      "surface": "#fcf9f8",
+                      "inverse-on-surface": "#f3f0ef",
+                      "secondary-fixed": "#ebe1d4",
+                      "inverse-primary": "#e9c176",
+                      "on-background": "#1c1b1b",
+                      "surface-container": "#f0eded",
+                      "primary-container": "#c5a059",
+                      "outline": "#7f7667",
+                      "surface-variant": "#e5e2e1",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed": "#28180b",
+                      "on-secondary-fixed": "#1f1b13",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#574333",
+                      "on-tertiary-container": "#4a3728",
+                      "secondary-container": "#e8ded1",
+                      "primary-fixed-dim": "#e9c176",
+                      "primary-fixed": "#ffdea5",
+                      "error": "#ba1a1a",
+                      "surface-bright": "#fcf9f8",
+                      "inverse-surface": "#313030",
+                      "surface-dim": "#dcd9d9",
+                      "background": "#fcf9f8",
+                      "on-secondary-fixed-variant": "#4c463c",
+                      "surface-tint": "#775a19",
+                      "on-surface-variant": "#4e4639",
+                      "on-primary-fixed-variant": "#5d4201",
+                      "on-surface": "#1c1b1b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "container-max": "1440px",
+                      "margin-tablet": "32px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "headline-sm": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"],
+                      "body-lg": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-lg-mobile": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(209, 197, 180, 0.3);
+        }
+        .glow-shadow {
+            box-shadow: 0 8px 32px rgba(119, 90, 25, 0.04);
+        }
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1c5b4;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #bba08c;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col md:flex-row">
+<!-- Mobile Top App Bar (Visible on Mobile) -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/30 shadow-sm">
+<button class="p-2 text-primary hover:opacity-70 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm tracking-tight text-primary">Marble &amp; Arch</h1>
+<button class="p-2 text-primary hover:opacity-70 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- SideNavBar (Visible on Desktop) - Inferred structure -->
+<aside class="hidden md:flex flex-col w-64 bg-surface-container-low border-r border-outline-variant/30 h-screen sticky top-0 z-40">
+<div class="p-8">
+<h1 class="font-headline-sm text-headline-sm tracking-tight text-primary">Marble &amp; Arch</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-lg text-label-lg">Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="real_estate_agent">real_estate_agent</span>
+<span class="font-label-lg text-label-lg">Properties</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="analytics" data-weight="fill" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-lg text-label-lg">Reports</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-lg text-label-lg">Brokers</span>
+</a>
+</nav>
+<div class="p-4 border-t border-outline-variant/30">
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-lg text-label-lg">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 md:pt-12 pb-32 md:pb-12 space-y-12 overflow-x-hidden">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<p class="font-label-lg text-label-lg text-secondary uppercase tracking-widest mb-2">Management Console</p>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Export Reports</h2>
+</div>
+<div class="flex flex-wrap gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none flex items-center justify-center space-x-2 px-6 py-3 bg-surface-container-lowest border border-outline-variant rounded-full text-on-surface hover:bg-surface-variant transition-colors glow-shadow">
+<span class="material-symbols-outlined text-[20px]" data-icon="description">description</span>
+<span class="font-label-lg text-label-lg">Export CSV</span>
+</button>
+<button class="flex-1 md:flex-none flex items-center justify-center space-x-2 px-6 py-3 bg-primary-container text-on-primary-container rounded-full hover:opacity-90 transition-opacity glow-shadow border border-primary-fixed/50">
+<span class="material-symbols-outlined text-[20px]" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span class="font-label-lg text-label-lg">Export PDF</span>
+</button>
+</div>
+</section>
+<!-- Filters (Glassmorphism Panel) -->
+<section class="glass-panel rounded-2xl p-6 md:p-8 glow-shadow">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Date Range -->
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary mb-2">Date Range</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-0 text-secondary border-b-2 border-transparent pb-2" data-icon="calendar_month">calendar_month</span>
+<select class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 pl-8 pb-2 font-body-md text-body-md text-on-surface appearance-none cursor-pointer">
+<option>Last Quarter (Q3 2023)</option>
+<option>Year to Date</option>
+<option>Last Month</option>
+<option>Custom Range...</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 text-secondary pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Region -->
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary mb-2">Regional Group</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-0 text-secondary border-b-2 border-transparent pb-2" data-icon="map">map</span>
+<select class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 pl-8 pb-2 font-body-md text-body-md text-on-surface appearance-none cursor-pointer">
+<option>All Regions</option>
+<option>Mediterranean Coast</option>
+<option>Alpine Estates</option>
+<option>Metropolitan Core</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 text-secondary pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Broker -->
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary mb-2">Specific Broker</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-0 text-secondary border-b-2 border-transparent pb-2" data-icon="person_search">person_search</span>
+<select class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 pl-8 pb-2 font-body-md text-body-md text-on-surface appearance-none cursor-pointer">
+<option>All Brokers</option>
+<option>E. Sterling</option>
+<option>M. Laurent</option>
+<option>J. Kensington</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 text-secondary pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Summary Metrics -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/30 glow-shadow hover:bg-surface-container-low transition-colors duration-300">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-lg text-label-lg text-secondary">Total Sales Volume</h3>
+<span class="material-symbols-outlined text-primary-container" data-icon="account_balance">account_balance</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface">$142.5M</p>
+<div class="flex items-center mt-2 text-primary">
+<span class="material-symbols-outlined text-[16px] mr-1" data-icon="trending_up">trending_up</span>
+<span class="font-label-sm text-label-sm">+12.4% vs last quarter</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/30 glow-shadow hover:bg-surface-container-low transition-colors duration-300">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-lg text-label-lg text-secondary">Total Commission</h3>
+<span class="material-symbols-outlined text-primary-container" data-icon="payments">payments</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface">$4.27M</p>
+<div class="flex items-center mt-2 text-primary">
+<span class="material-symbols-outlined text-[16px] mr-1" data-icon="trending_up">trending_up</span>
+<span class="font-label-sm text-label-sm">+8.2% vs last quarter</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/30 glow-shadow hover:bg-surface-container-low transition-colors duration-300">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-lg text-label-lg text-secondary">Closed Units</h3>
+<span class="material-symbols-outlined text-primary-container" data-icon="key">key</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface">24</p>
+<div class="flex items-center mt-2 text-secondary">
+<span class="material-symbols-outlined text-[16px] mr-1" data-icon="trending_flat">trending_flat</span>
+<span class="font-label-sm text-label-sm">No change vs last quarter</span>
+</div>
+</div>
+</section>
+<!-- Detailed Data Table -->
+<section class="bg-surface-container-lowest rounded-2xl border border-outline-variant/30 glow-shadow overflow-hidden">
+<div class="p-6 border-b border-outline-variant/30 flex justify-between items-center bg-surface-container-low/50">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Transactions</h3>
+<button class="text-primary hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="py-4 px-6 font-label-lg text-label-lg text-secondary border-b border-outline-variant/30">Property Name</th>
+<th class="py-4 px-6 font-label-lg text-label-lg text-secondary border-b border-outline-variant/30">Date Closed</th>
+<th class="py-4 px-6 font-label-lg text-label-lg text-secondary border-b border-outline-variant/30 text-right">Sale Price</th>
+<th class="py-4 px-6 font-label-lg text-label-lg text-secondary border-b border-outline-variant/30 text-right">Commission</th>
+<th class="py-4 px-6 font-label-lg text-label-lg text-secondary border-b border-outline-variant/30">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr class="hover:bg-surface-variant/20 transition-colors group">
+<td class="py-4 px-6">
+<p class="font-headline-sm text-body-md text-on-surface group-hover:text-primary transition-colors">Villa d'Este Penthouse</p>
+<p class="font-label-sm text-label-sm text-secondary">Monaco</p>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">Oct 12, 2023</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface text-right">$12,500,000</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface text-right">$375,000</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container border border-outline-variant/50">
+                                    Closed
+                                </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/20 transition-colors group">
+<td class="py-4 px-6">
+<p class="font-headline-sm text-body-md text-on-surface group-hover:text-primary transition-colors">The Belvedere Estate</p>
+<p class="font-label-sm text-label-sm text-secondary">Lake Como</p>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">Sep 28, 2023</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface text-right">$28,000,000</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface text-right">$840,000</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container border border-outline-variant/50">
+                                    Closed
+                                </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/20 transition-colors group">
+<td class="py-4 px-6">
+<p class="font-headline-sm text-body-md text-on-surface group-hover:text-primary transition-colors">Aura Sky Villa</p>
+<p class="font-label-sm text-label-sm text-secondary">Dubai</p>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">Sep 15, 2023</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface text-right">$8,200,000</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface text-right">$246,000</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface border border-outline-variant/50">
+                                    Pending
+                                </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/20 transition-colors group">
+<td class="py-4 px-6">
+<p class="font-headline-sm text-body-md text-on-surface group-hover:text-primary transition-colors">Chateau de la Mer</p>
+<p class="font-label-sm text-label-sm text-secondary">Cap d'Antibes</p>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">Aug 02, 2023</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface text-right">$45,000,000</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface text-right">$1,350,000</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container border border-outline-variant/50">
+                                    Closed
+                                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-outline-variant/30 flex justify-center bg-surface-container-low/30">
+<button class="font-label-lg text-label-lg text-primary hover:text-primary-container transition-colors">View All Transactions</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Visible on Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-safe bg-surface/90 backdrop-blur-2xl rounded-t-full shadow-[0_-4px_24px_rgba(119,90,25,0.05)] border-t border-outline-variant/20 z-50">
+<a class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="favorite">favorite</span>
+<span class="font-label-sm text-label-sm">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="contact_support">contact_support</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person" data-weight="fill" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

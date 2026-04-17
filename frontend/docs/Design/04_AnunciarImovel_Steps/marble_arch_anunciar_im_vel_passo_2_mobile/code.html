@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxe Assets - Property Submission</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#dec1ac",
+                      "on-secondary-fixed-variant": "#4c463c",
+                      "on-tertiary-fixed": "#28180b",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#dcd9d9",
+                      "on-surface": "#1c1b1b",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-primary": "#ffffff",
+                      "background": "#fcf9f8",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#1f1b13",
+                      "inverse-primary": "#e9c176",
+                      "secondary": "#645d53",
+                      "surface-bright": "#fcf9f8",
+                      "outline-variant": "#d1c5b4",
+                      "surface-tint": "#775a19",
+                      "primary": "#775a19",
+                      "surface-container": "#f0eded",
+                      "tertiary": "#705a49",
+                      "secondary-container": "#e8ded1",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e5e2e1",
+                      "surface-container-low": "#f6f3f2",
+                      "secondary-fixed": "#ebe1d4",
+                      "primary-container": "#c5a059",
+                      "tertiary-container": "#bba08c",
+                      "tertiary-fixed": "#fbddc7",
+                      "inverse-surface": "#313030",
+                      "on-primary-container": "#4e3700",
+                      "on-surface-variant": "#4e4639",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#f3f0ef",
+                      "outline": "#7f7667",
+                      "surface": "#fcf9f8",
+                      "on-secondary-container": "#686257",
+                      "primary-fixed": "#ffdea5",
+                      "on-tertiary-container": "#4a3728",
+                      "on-background": "#1c1b1b",
+                      "on-primary-fixed": "#261900",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#cfc5b9",
+                      "on-tertiary-fixed-variant": "#574333",
+                      "primary-fixed-dim": "#e9c176",
+                      "on-primary-fixed-variant": "#5d4201",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#eae7e7",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "container-max": "1440px",
+                      "margin-tablet": "32px",
+                      "margin-desktop": "64px",
+                      "unit": "8px",
+                      "gutter": "32px"
+              },
+              "fontFamily": {
+                      "headline-sm": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "body-lg": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Playfair Display"],
+                      "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                      "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                      "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                      "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                      "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                      "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom Input Styles to match guidelines */
+        .glass-input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid theme('colors.outline-variant');
+            border-radius: 0;
+            padding: 12px 0;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .glass-input:focus {
+            outline: none;
+            box-shadow: none;
+            border-color: theme('colors.primary');
+        }
+        .input-group {
+            position: relative;
+            margin-top: 1.5rem;
+        }
+        .floating-label {
+            position: absolute;
+            pointer-events: none;
+            left: 0;
+            top: 12px;
+            transition: 0.2s ease all;
+            color: theme('colors.on-surface-variant');
+        }
+        .glass-input:focus ~ .floating-label,
+        .glass-input:not(:placeholder-shown) ~ .floating-label {
+            top: -16px;
+            font-size: theme('fontSize.label-sm[0]');
+            color: theme('colors.primary');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-primary/20 selection:text-primary">
+<!-- TopAppBar (Transactional - Shell Border Ban respected via shadow) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-sm">
+<div class="flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 w-full">
+<button aria-label="Go back" class="text-on-surface-variant hover:opacity-70 transition-opacity active:scale-95 flex items-center justify-center p-2 -ml-2 rounded-full">
+<span aria-hidden="true" class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="font-headline-sm text-headline-sm tracking-widest text-primary">LUXE ASSETS</span>
+<button aria-label="Close" class="text-on-surface-variant hover:opacity-70 transition-opacity active:scale-95 flex items-center justify-center p-2 -mr-2 rounded-full">
+<span aria-hidden="true" class="material-symbols-outlined">close</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop w-full max-w-3xl mx-auto flex flex-col">
+<!-- Progress Indicator -->
+<div class="w-full mb-12">
+<div class="flex justify-between items-end mb-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Step 2 of 6</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">33%</span>
+</div>
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/6 rounded-full transition-all duration-500 ease-out"></div>
+</div>
+</div>
+<!-- Section Header -->
+<div class="mb-12 text-center md:text-left">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Property Location</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Please provide the exact location of the asset. This information remains confidential until a showing is requested.</p>
+</div>
+<!-- Address Form -->
+<form class="flex flex-col gap-y-10" onsubmit="event.preventDefault();">
+<!-- Row 1: CEP (Zip Code) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="input-group">
+<input class="glass-input font-body-md text-body-md text-on-surface placeholder-transparent" id="cep" placeholder="00000-000" required="" type="text"/>
+<label class="floating-label font-label-sm text-label-sm" for="cep">Zip Code (CEP)</label>
+<div class="absolute right-0 top-3 text-secondary">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+</div>
+</div>
+<!-- Row 2: Street -->
+<div class="input-group">
+<input class="glass-input font-body-md text-body-md text-on-surface placeholder-transparent" id="street" placeholder="Avenida Atlântica" required="" type="text"/>
+<label class="floating-label font-label-sm text-label-sm" for="street">Street Address</label>
+</div>
+<!-- Row 3: Number & Complement -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter gap-y-10">
+<div class="input-group">
+<input class="glass-input font-body-md text-body-md text-on-surface placeholder-transparent" id="number" placeholder="1000" required="" type="text"/>
+<label class="floating-label font-label-sm text-label-sm" for="number">Number</label>
+</div>
+<div class="input-group">
+<input class="glass-input font-body-md text-body-md text-on-surface placeholder-transparent" id="complement" placeholder="Penthouse 01" type="text"/>
+<label class="floating-label font-label-sm text-label-sm" for="complement">Complement (Optional)</label>
+</div>
+</div>
+<!-- Row 4: Neighborhood -->
+<div class="input-group">
+<input class="glass-input font-body-md text-body-md text-on-surface placeholder-transparent" id="neighborhood" placeholder="Copacabana" required="" type="text"/>
+<label class="floating-label font-label-sm text-label-sm" for="neighborhood">Neighborhood / District</label>
+</div>
+<!-- Row 5: City & State -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter gap-y-10">
+<div class="input-group md:col-span-2">
+<input class="glass-input font-body-md text-body-md text-on-surface placeholder-transparent" id="city" placeholder="Rio de Janeiro" required="" type="text"/>
+<label class="floating-label font-label-sm text-label-sm" for="city">City</label>
+</div>
+<div class="input-group relative">
+<select class="glass-input font-body-md text-body-md text-on-surface appearance-none cursor-pointer bg-transparent" id="state" required="">
+<option disabled="" hidden="" selected="" value=""></option>
+<option value="SP">São Paulo (SP)</option>
+<option value="RJ">Rio de Janeiro (RJ)</option>
+<option value="MG">Minas Gerais (MG)</option>
+<option value="BA">Bahia (BA)</option>
+<option value="SC">Santa Catarina (SC)</option>
+</select>
+<label class="floating-label font-label-sm text-label-sm -top-4 text-primary" for="state">State</label>
+<div class="absolute right-0 top-3 pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+</form>
+</main>
+<!-- BottomNavBar as Action Footer for Transactional Flow -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-white/90 backdrop-blur-lg shadow-[0_-8px_32px_rgba(119,90,25,0.05)] border-t border-outline-variant/20">
+<div class="fixed bottom-0 left-0 w-full flex justify-between items-center px-margin-mobile py-4 bg-surface dark:bg-surface-container">
+<!-- Inactive/Secondary Action (Save Draft) -->
+<button class="flex items-center justify-center text-secondary px-6 py-3 hover:opacity-70 transition-opacity active:scale-95 group font-label-lg text-label-lg">
+<span aria-hidden="true" class="material-symbols-outlined mr-2 text-[20px] group-hover:-translate-y-[1px] transition-transform">save</span>
+                Save Draft
+            </button>
+<!-- Active/Primary Action (Continue) -->
+<button class="flex items-center justify-center bg-primary text-on-primary rounded-full px-6 py-3 w-full max-w-[180px] hover:translate-y-[-2px] transition-transform duration-300 active:scale-95 shadow-[0_4px_14px_rgba(119,90,25,0.2)] font-label-lg text-label-lg group">
+                Continue
+                <span aria-hidden="true" class="material-symbols-outlined ml-2 text-[20px] group-hover:translate-x-[2px] transition-transform">arrow_forward</span>
+</button>
+</div>
+</nav>
+<!-- Lightweight micro-interaction for input formatting -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cepInput = document.getElementById('cep');
+            if (cepInput) {
+                cepInput.addEventListener('input', (e) => {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length > 5) {
+                        value = value.substring(0, 5) + '-' + value.substring(5, 8);
+                    }
+                    e.target.value = value;
+                });
+            }
+        });
+    </script>
+</body></html>

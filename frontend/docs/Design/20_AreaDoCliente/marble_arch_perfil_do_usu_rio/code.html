@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marble &amp; Arch - User Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline-variant": "#d1c5b4",
+                      "secondary-fixed": "#ebe1d4",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#775a19",
+                      "secondary-fixed-dim": "#cfc5b9",
+                      "on-surface": "#1c1b1b",
+                      "tertiary-container": "#bba08c",
+                      "on-tertiary-fixed-variant": "#574333",
+                      "surface-variant": "#e5e2e1",
+                      "outline": "#7f7667",
+                      "on-surface-variant": "#4e4639",
+                      "secondary": "#645d53",
+                      "on-secondary-fixed-variant": "#4c463c",
+                      "surface-container": "#f0eded",
+                      "error-container": "#ffdad6",
+                      "surface-dim": "#dcd9d9",
+                      "surface-container-high": "#eae7e7",
+                      "on-primary-fixed-variant": "#5d4201",
+                      "on-primary-fixed": "#261900",
+                      "on-tertiary-container": "#4a3728",
+                      "primary": "#775a19",
+                      "inverse-surface": "#313030",
+                      "on-background": "#1c1b1b",
+                      "tertiary-fixed-dim": "#dec1ac",
+                      "primary-fixed": "#ffdea5",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "tertiary": "#705a49",
+                      "background": "#fcf9f8",
+                      "surface-container-low": "#f6f3f2",
+                      "primary-container": "#c5a059",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed": "#1f1b13",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#28180b",
+                      "primary-fixed-dim": "#e9c176",
+                      "on-secondary-container": "#686257",
+                      "surface-bright": "#fcf9f8",
+                      "tertiary-fixed": "#fbddc7",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-primary-container": "#4e3700",
+                      "surface": "#fcf9f8",
+                      "secondary-container": "#e8ded1",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-secondary": "#ffffff",
+                      "inverse-primary": "#e9c176"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "margin-tablet": "32px",
+                      "gutter": "32px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        /* Refined scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant');
+            border-radius: theme('borderRadius.full');
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline');
+        }
+    </style>
+</head>
+<body class="antialiased font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container flex min-h-screen">
+<!-- TopNavBar -->
+<nav aria-label="Main Navigation" class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm">
+<div class="flex justify-between items-center h-20 px-8 md:px-16 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<a aria-label="Marble &amp; Arch Home" class="font-headline-md text-headline-md text-primary tracking-tight" href="#">Marble &amp; Arch</a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary transition-colors duration-300" href="#">Portfolio</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary transition-colors duration-300" href="#">Exclusives</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary transition-colors duration-300" href="#">Concierge</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary transition-colors duration-300" href="#">Journal</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="hidden md:block bg-primary-container text-on-primary-container px-6 py-2 rounded font-label-lg text-label-lg hover:bg-primary hover:text-on-primary transition-colors duration-300 border border-transparent shadow-[0_4px_14px_0_rgba(197,160,89,0.39)]">
+                    List Property
+                </button>
+<button aria-label="Profile" class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full focus:outline-none focus:ring-2 focus:ring-primary">
+<img alt="Client Profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A sophisticated close-up portrait of an elegant woman with natural makeup and soft lighting. The image embodies a light-mode aesthetic, utilizing warm, neutral tones like beige and soft white to convey quiet luxury and high-end professionalism. The mood is confident yet approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXrjkMGpqxdO7YSRT6eebiy5xUUr-lbNL1t7aZwYWTRJNTprxHVfSxyDDsSrNbUlkIdEVStC7vttiONwzmGA9hByziuE1Z2oE3X8YlTXxP0ARV-Qf3Jq3xkJypgJj_TxXQTJgXLUTgOn3lybMq66xBEyMCKKuXeuy7yfIXRBkVrKrbYe5Zt0sNJvXrMUuYx1nULW61FH7CTHaLBVL7RhMZ3ETaiZzVYeesF091TwGPhfh7WScYi6f8eh6Jstm24frsue96m1KVfQVX"/>
+</button>
+</div>
+</div>
+</nav>
+<!-- Sidebar Layout Container -->
+<div class="flex-1 flex pt-20 max-w-7xl mx-auto w-full relative">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col w-64 fixed h-[calc(100vh-80px)] border-r border-outline-variant/30 py-12 px-8 overflow-y-auto bg-surface">
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-label-lg text-label-lg">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary-container text-on-primary-container shadow-sm transition-transform duration-200 hover:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-lg text-label-lg">Profile</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+<span class="font-label-lg text-label-lg">Saved Properties</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">calendar_today</span>
+<span class="font-label-lg text-label-lg">Viewings</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chat_bubble_outline</span>
+<span class="font-label-lg text-label-lg">Messages</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-outline-variant/30">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-error transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">logout</span>
+<span class="font-label-lg text-label-lg">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 px-6 md:px-12 py-12 md:py-20 w-full min-h-[calc(100vh-80px)] overflow-y-auto bg-surface-bright">
+<!-- Page Header -->
+<div class="mb-16">
+<h1 class="font-headline-lg md:font-display-lg text-headline-lg md:text-display-lg text-on-surface mb-4">Account Profile</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Manage your personal details, security preferences, and communication settings to tailor your Marble &amp; Arch experience.</p>
+</div>
+<!-- Bento Grid Layout for Sections -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-12">
+<!-- Left Column: Personal Details & Avatar -->
+<div class="xl:col-span-2 flex flex-col gap-12">
+<!-- Personal Details Card -->
+<section class="bg-surface rounded-2xl p-8 md:p-12 border border-outline-variant/30 shadow-[0_32px_64px_-16px_rgba(119,90,25,0.04)] relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-surface to-secondary-fixed/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+<div class="flex flex-col md:flex-row items-start md:items-center gap-8 mb-12 relative z-10">
+<div class="relative">
+<img alt="Client Profile Large" class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-2 border-primary-container p-1 shadow-sm" data-alt="A high-resolution, sophisticated headshot of an elegant woman against a clean, light-mode background. The aesthetic reflects quiet luxury, using warm beige and soft white tones. Lighting is soft and professional, emphasizing an aspirational and refined real estate persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcrWRs35ruwltxHghFNx04v0KRO8_JcH88D3Skxs4IxeXdJKWloN1KqtL_udeeDVb8rw5fwATYC6Hi5q9Uvk6jnjHwvav1vzeZWG2ejMss23RgdOINYowx8L6uqjL3SBCiF7n-VIFLWvMhr6n_xOdej1wKu5VflRUn7i_BuM7HodF40gHddDglbwl0TElUyuoaHkw3sDujNSS83ykQ3OhpmaS04cUIb8s0K4QQrInVnYjpUxK9j58bw4vzafrDFOULgEpNrFUcssYY"/>
+<button aria-label="Edit Profile Picture" class="absolute bottom-0 right-0 bg-surface rounded-full p-2 border border-outline-variant text-on-surface hover:text-primary transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-primary">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Elena Rostova</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Private Client since 2021</p>
+</div>
+</div>
+<form class="space-y-8 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative group/input">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="firstName">First Name</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant/50 px-0 py-2 focus:ring-0 focus:border-primary font-body-lg text-body-lg text-on-surface transition-colors" id="firstName" type="text" value="Elena"/>
+</div>
+<div class="relative group/input">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="lastName">Last Name</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant/50 px-0 py-2 focus:ring-0 focus:border-primary font-body-lg text-body-lg text-on-surface transition-colors" id="lastName" type="text" value="Rostova"/>
+</div>
+<div class="relative group/input">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="email">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant/50 px-0 py-2 focus:ring-0 focus:border-primary font-body-lg text-body-lg text-on-surface transition-colors" id="email" type="email" value="elena.r@example.com"/>
+</div>
+<div class="relative group/input">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="phone">Phone Number</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant/50 px-0 py-2 focus:ring-0 focus:border-primary font-body-lg text-body-lg text-on-surface transition-colors" id="phone" type="tel" value="+44 7700 900077"/>
+</div>
+</div>
+<div class="pt-6 flex justify-end">
+<button class="bg-primary-container text-on-primary-container px-8 py-3 rounded border border-transparent font-label-lg text-label-lg hover:bg-primary hover:text-on-primary transition-all duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:shadow-[0_8px_24px_-8px_rgba(197,160,89,0.5)]" type="button">
+                                    Save Changes
+                                </button>
+</div>
+</form>
+</section>
+<!-- Security Card -->
+<section class="bg-surface rounded-2xl p-8 md:p-12 border border-outline-variant/30 shadow-[0_32px_64px_-16px_rgba(119,90,25,0.04)] relative overflow-hidden">
+<div class="mb-8">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">lock</span>
+                                Security Settings
+                            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Ensure your account remains secure by updating your password regularly.</p>
+</div>
+<form class="space-y-6">
+<div class="relative group/input max-w-md">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="currentPassword">Current Password</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant/50 px-0 py-2 focus:ring-0 focus:border-primary font-body-lg text-body-lg text-on-surface transition-colors" id="currentPassword" placeholder="••••••••" type="password"/>
+</div>
+<div class="relative group/input max-w-md">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="newPassword">New Password</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant/50 px-0 py-2 focus:ring-0 focus:border-primary font-body-lg text-body-lg text-on-surface transition-colors" id="newPassword" placeholder="••••••••" type="password"/>
+</div>
+<div class="relative group/input max-w-md">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="confirmPassword">Confirm New Password</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant/50 px-0 py-2 focus:ring-0 focus:border-primary font-body-lg text-body-lg text-on-surface transition-colors" id="confirmPassword" placeholder="••••••••" type="password"/>
+</div>
+<div class="pt-6">
+<button class="border border-outline text-on-surface px-8 py-3 rounded font-label-lg text-label-lg hover:bg-surface-container hover:border-primary hover:text-primary transition-all duration-300" type="button">
+                                    Update Password
+                                </button>
+</div>
+</form>
+</section>
+</div>
+<!-- Right Column: Notifications & Preferences -->
+<div class="xl:col-span-1 flex flex-col gap-12">
+<!-- Notifications Card -->
+<section class="bg-surface rounded-2xl p-8 border border-outline-variant/30 shadow-[0_32px_64px_-16px_rgba(119,90,25,0.04)]">
+<div class="mb-8">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">notifications</span>
+                                Notifications
+                            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage how we communicate with you regarding new exclusives and updates.</p>
+</div>
+<div class="space-y-6">
+<!-- Toggle Item 1 -->
+<div class="flex items-center justify-between py-2 border-b border-outline-variant/20">
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface mb-1">Exclusive Listings</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Be the first to know about off-market properties.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-focus:ring-2 peer-focus:ring-primary/50 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle Item 2 -->
+<div class="flex items-center justify-between py-2 border-b border-outline-variant/20">
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface mb-1">Viewing Reminders</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Receive SMS reminders for scheduled viewings.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-focus:ring-2 peer-focus:ring-primary/50 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle Item 3 -->
+<div class="flex items-center justify-between py-2">
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface mb-1">Journal Newsletter</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Weekly insights into the luxury real estate market.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-focus:ring-2 peer-focus:ring-primary/50 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Concierge Info Card -->
+<section class="bg-secondary-fixed/30 rounded-2xl p-8 border border-secondary-fixed shadow-sm">
+<div class="flex items-start gap-4 mb-4">
+<span class="material-symbols-outlined text-tertiary-container text-3xl" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">Dedicated Concierge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your personal advisor is available 24/7.</p>
+</div>
+</div>
+<div class="mt-6 space-y-3">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 0;">call</span>
+<span class="font-body-md text-body-md">+44 20 7946 0958</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 0;">mail</span>
+<span class="font-body-md text-body-md">concierge@marblearch.com</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-secondary-container border-t border-outline-variant">
+<div class="flex flex-col gap-8 md:flex-row justify-between items-center py-12 px-8 md:px-16 max-w-7xl mx-auto">
+<div class="font-headline-sm text-headline-sm text-primary">
+                Marble &amp; Arch
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-all cursor-pointer ease-in-out font-label-sm text-label-sm" href="#">Institutional</a>
+<a class="text-on-surface-variant hover:text-primary transition-all cursor-pointer ease-in-out font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-all cursor-pointer ease-in-out font-label-sm text-label-sm" href="#">Accessibility</a>
+<a class="text-on-surface-variant hover:text-primary transition-all cursor-pointer ease-in-out font-label-sm text-label-sm" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-all cursor-pointer ease-in-out font-label-sm text-label-sm" href="#">Careers</a>
+</div>
+<div class="font-body-md text-body-md text-on-secondary-container">
+                © 2024 Marble &amp; Arch Real Estate. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

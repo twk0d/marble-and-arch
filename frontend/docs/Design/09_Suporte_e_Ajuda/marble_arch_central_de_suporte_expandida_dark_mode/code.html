@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marble &amp; Arch - Help &amp; Support</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#412d00",
+                        "inverse-on-surface": "#313030",
+                        "surface-tint": "#e9c176",
+                        "secondary-container": "#50462f",
+                        "on-secondary-fixed": "#221b08",
+                        "surface-bright": "#393939",
+                        "on-tertiary": "#313030",
+                        "inverse-primary": "#775a19",
+                        "tertiary-container": "#a7a5a5",
+                        "surface-container-low": "#1c1b1b",
+                        "primary": "#e9c176",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container": "#201f1f",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "secondary": "#d4c5a7",
+                        "on-surface": "#e5e2e1",
+                        "tertiary": "#c8c6c5",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "primary-container": "#c5a059",
+                        "surface": "#131313",
+                        "primary-fixed": "#ffdea5",
+                        "on-primary-fixed": "#261900",
+                        "on-surface-variant": "#d1c5b4",
+                        "on-secondary": "#382f1b",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-container": "#4e3700",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline-variant": "#4e4639",
+                        "surface-container-highest": "#353534",
+                        "surface-dim": "#131313",
+                        "on-secondary-container": "#c2b397",
+                        "surface-variant": "#353534",
+                        "on-secondary-fixed-variant": "#50462f",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#d4c5a7",
+                        "primary-fixed-dim": "#e9c176",
+                        "secondary-fixed": "#f1e1c2",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-tertiary-container": "#3b3b3b",
+                        "inverse-surface": "#e5e2e1",
+                        "outline": "#9a8f80",
+                        "on-background": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["DM Sans"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["DM Sans"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "body-lg": ["DM Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-shadow {
+            box-shadow: 0 4px 30px rgba(233, 193, 118, 0.05);
+        }
+        .luxury-border {
+            border: 1px solid rgba(197, 160, 89, 0.1);
+        }
+        .luxury-border:hover {
+            border-color: rgba(197, 160, 89, 0.4);
+        }
+        .glass-panel {
+            background: rgba(28, 28, 28, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md">
+<!-- Top Navigation (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 dark:border-outline/20 shadow-sm bg-white/10">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-20">
+<div class="font-headline-md text-headline-md font-semibold text-primary dark:text-primary-fixed-dim">
+                Marble &amp; Arch
+            </div>
+<nav class="hidden md:flex space-x-8 font-headline-sm text-headline-sm tracking-tight">
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors hover:bg-surface-container-low/50 transition-all duration-300 px-3 py-2 rounded-DEFAULT" href="#">Properties</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors hover:bg-surface-container-low/50 transition-all duration-300 px-3 py-2 rounded-DEFAULT" href="#">Services</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 hover:bg-surface-container-low/50 transition-all duration-300 px-3 py-2 rounded-DEFAULT" href="#">About</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors hover:bg-surface-container-low/50 transition-all duration-300 px-3 py-2 rounded-DEFAULT" href="#">Journal</a>
+</nav>
+<div class="flex items-center space-x-6">
+<button class="hidden md:flex items-center justify-center font-label-sm text-label-sm text-primary dark:text-primary-fixed-dim border border-primary/30 rounded-DEFAULT px-6 py-2 hover:bg-primary/10 transition-colors uppercase tracking-[0.2em]">
+                    Inquire
+                </button>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-container-low/50">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-[140px] pb-[160px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Header & Search Section -->
+<section class="text-center mb-24 max-w-3xl mx-auto">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary-fixed-dim mb-6">How can we assist you?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">Search our knowledge base or connect directly with our dedicated concierge team.</p>
+<div class="relative group max-w-2xl mx-auto">
+<span class="material-symbols-outlined absolute left-6 top-1/2 -translate-y-1/2 text-primary/50 group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container-low border-b border-primary/20 text-on-surface font-body-lg text-body-lg px-14 py-5 focus:outline-none focus:border-primary focus:ring-0 transition-all placeholder:text-on-surface-variant/50 rounded-t-DEFAULT" placeholder="Search for properties, policies, or guidance..." type="text"/>
+</div>
+</section>
+<!-- Direct Support Channels -->
+<section class="mb-32">
+<h2 class="font-headline-md text-headline-md text-primary-fixed-dim mb-12 text-center md:text-left">Connect with Marble &amp; Arch</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Channel Card 1 -->
+<div class="glass-panel luxury-border p-8 rounded-lg glow-shadow flex flex-col h-full group transition-all duration-300">
+<div class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]">support_agent</span>
+</div>
+<h3 class="font-headline-md text-[24px] mb-2">Live Concierge</h3>
+<p class="font-label-sm text-label-sm text-primary/70 mb-4 uppercase">24/7 Availability</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">Immediate assistance for urgent inquiries and current transactions.</p>
+<button class="text-left font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] flex items-center group-hover:translate-x-2 transition-transform">
+                        Start Chat <span class="material-symbols-outlined ml-2 text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Channel Card 2 -->
+<div class="glass-panel luxury-border p-8 rounded-lg glow-shadow flex flex-col h-full group transition-all duration-300">
+<div class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]">mail</span>
+</div>
+<h3 class="font-headline-md text-[24px] mb-2">Email Support</h3>
+<p class="font-label-sm text-label-sm text-primary/70 mb-4 uppercase">24h Response Time</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">Detailed inquiries, document submission, and general questions.</p>
+<button class="text-left font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] flex items-center group-hover:translate-x-2 transition-transform">
+                        Send Email <span class="material-symbols-outlined ml-2 text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Channel Card 3 -->
+<div class="glass-panel luxury-border p-8 rounded-lg glow-shadow flex flex-col h-full group transition-all duration-300">
+<div class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]">calendar_month</span>
+</div>
+<h3 class="font-headline-md text-[24px] mb-2">Private Call</h3>
+<p class="font-label-sm text-label-sm text-primary/70 mb-4 uppercase">Broker Booking</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">Schedule a dedicated consultation with our senior brokers.</p>
+<button class="text-left font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] flex items-center group-hover:translate-x-2 transition-transform">
+                        Schedule <span class="material-symbols-outlined ml-2 text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Channel Card 4 -->
+<div class="glass-panel luxury-border p-8 rounded-lg glow-shadow flex flex-col h-full group transition-all duration-300">
+<div class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]">forum</span>
+</div>
+<h3 class="font-headline-md text-[24px] mb-2">WhatsApp</h3>
+<p class="font-label-sm text-label-sm text-primary/70 mb-4 uppercase">Premium Access</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">Direct, secure messaging for our registered exclusive clientele.</p>
+<button class="text-left font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] flex items-center group-hover:translate-x-2 transition-transform">
+                        Message Us <span class="material-symbols-outlined ml-2 text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-4xl mx-auto">
+<h2 class="font-headline-md text-headline-md text-primary-fixed-dim mb-12 text-center md:text-left">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<!-- FAQ Category 1 -->
+<div class="border-b border-primary/10 pb-4">
+<button class="w-full text-left py-4 flex justify-between items-center group">
+<span class="font-headline-md text-[24px] text-on-surface group-hover:text-primary transition-colors">Buying Process</span>
+<span class="material-symbols-outlined text-primary transform transition-transform duration-300 group-focus:rotate-180">expand_more</span>
+</button>
+<!-- Simulated content for visual purposes, normally controlled by JS -->
+<div class="hidden pl-4 pr-12 pb-6 text-on-surface-variant font-body-md text-body-md space-y-4">
+<p>Detailed guidance on navigating international property acquisition, securing financing, and closing procedures through our private network.</p>
+</div>
+</div>
+<!-- FAQ Category 2 -->
+<div class="border-b border-primary/10 pb-4">
+<button class="w-full text-left py-4 flex justify-between items-center group">
+<span class="font-headline-md text-[24px] text-on-surface group-hover:text-primary transition-colors">Selling Standards</span>
+<span class="material-symbols-outlined text-primary transform transition-transform duration-300 group-focus:rotate-180">expand_more</span>
+</button>
+<div class="pl-4 pr-12 pb-6 text-on-surface-variant font-body-md text-body-md space-y-4">
+<p>Learn about our rigorous appraisal process, discreet marketing strategies, and the criteria required to feature a property in our portfolio.</p>
+</div>
+</div>
+<!-- FAQ Category 3 -->
+<div class="border-b border-primary/10 pb-4">
+<button class="w-full text-left py-4 flex justify-between items-center group">
+<span class="font-headline-md text-[24px] text-on-surface group-hover:text-primary transition-colors">Legal &amp; Fees</span>
+<span class="material-symbols-outlined text-primary transform transition-transform duration-300 group-focus:rotate-180">expand_more</span>
+</button>
+</div>
+<!-- FAQ Category 4 -->
+<div class="border-b border-primary/10 pb-4">
+<button class="w-full text-left py-4 flex justify-between items-center group">
+<span class="font-headline-md text-[24px] text-on-surface group-hover:text-primary transition-colors">Platform Access</span>
+<span class="material-symbols-outlined text-primary transform transition-transform duration-300 group-focus:rotate-180">expand_more</span>
+</button>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button class="font-label-sm text-label-sm text-on-surface-variant border border-on-surface-variant/30 rounded-full px-8 py-3 hover:text-primary hover:border-primary transition-all tracking-[0.1em] uppercase">
+                    View All Articles
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full mt-auto bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant/50">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-gutter max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm text-primary mb-6 md:mb-0">
+                Marble &amp; Arch
+            </div>
+<nav class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200" href="#">Licensing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200" href="#">Cookies</a>
+</nav>
+<div class="font-body-md text-body-md text-on-surface-variant">
+                © 2024 Marble &amp; Arch. All rights reserved.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple accordion logic for FAQ
+        document.querySelectorAll('button.group').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.material-symbols-outlined');
+                
+                if (content && content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                } else if (content) {
+                    content.classList.add('hidden');
+                    icon.classList.remove('rotate-180');
+                }
+            });
+        });
+    </script>
+</body></html>

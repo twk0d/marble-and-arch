@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxe Assets - Review &amp; Submit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#dec1ac",
+                      "on-secondary-fixed-variant": "#4c463c",
+                      "on-tertiary-fixed": "#28180b",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#dcd9d9",
+                      "on-surface": "#1c1b1b",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-primary": "#ffffff",
+                      "background": "#fcf9f8",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#1f1b13",
+                      "inverse-primary": "#e9c176",
+                      "secondary": "#645d53",
+                      "surface-bright": "#fcf9f8",
+                      "outline-variant": "#d1c5b4",
+                      "surface-tint": "#775a19",
+                      "primary": "#775a19",
+                      "surface-container": "#f0eded",
+                      "tertiary": "#705a49",
+                      "secondary-container": "#e8ded1",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e5e2e1",
+                      "surface-container-low": "#f6f3f2",
+                      "secondary-fixed": "#ebe1d4",
+                      "primary-container": "#c5a059",
+                      "tertiary-container": "#bba08c",
+                      "tertiary-fixed": "#fbddc7",
+                      "inverse-surface": "#313030",
+                      "on-primary-container": "#4e3700",
+                      "on-surface-variant": "#4e4639",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#f3f0ef",
+                      "outline": "#7f7667",
+                      "surface": "#fcf9f8",
+                      "on-secondary-container": "#686257",
+                      "primary-fixed": "#ffdea5",
+                      "on-tertiary-container": "#4a3728",
+                      "on-background": "#1c1b1b",
+                      "on-primary-fixed": "#261900",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#cfc5b9",
+                      "on-tertiary-fixed-variant": "#574333",
+                      "primary-fixed-dim": "#e9c176",
+                      "on-primary-fixed-variant": "#5d4201",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#eae7e7",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "container-max": "1440px",
+                      "margin-tablet": "32px",
+                      "margin-desktop": "64px",
+                      "unit": "8px",
+                      "gutter": "32px"
+              },
+              "fontFamily": {
+                      "headline-sm": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "body-lg": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Playfair Display"],
+                      "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md antialiased pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16">
+<div class="flex items-center gap-4">
+<button aria-label="Go back" class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:opacity-70 transition-opacity active:scale-95 transition-transform">
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+</div>
+<div class="font-headline-sm text-headline-sm tracking-widest text-primary dark:text-primary-fixed-dim">
+            LUXE ASSETS
+        </div>
+<div class="flex items-center gap-4">
+<button aria-label="Close" class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:opacity-70 transition-opacity active:scale-95 transition-transform">
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-[800px] mx-auto">
+<div class="mb-12 text-center">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Step 6 of 6</p>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Review Your Listing</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Please review the details of your property before final submission. Ensure all information reflects the true prestige of the asset.</p>
+</div>
+<div class="space-y-12">
+<!-- Section: Purpose -->
+<section class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/30 shadow-[0_8px_32px_rgba(119,90,25,0.02)]">
+<div class="flex justify-between items-center mb-6 pb-4 border-b border-outline-variant/20">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Purpose &amp; Type</h2>
+<button aria-label="Edit Purpose" class="text-primary hover:opacity-70 transition-opacity flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span> Edit
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">Listing Type</p>
+<p class="font-body-md text-body-md text-on-surface">For Sale</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">Property Type</p>
+<p class="font-body-md text-body-md text-on-surface">Penthouse</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">Proposed Price</p>
+<p class="font-body-md text-body-md text-on-surface">$12,500,000 USD</p>
+</div>
+</div>
+</section>
+<!-- Section: Address -->
+<section class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/30 shadow-[0_8px_32px_rgba(119,90,25,0.02)]">
+<div class="flex justify-between items-center mb-6 pb-4 border-b border-outline-variant/20">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Location</h2>
+<button aria-label="Edit Location" class="text-primary hover:opacity-70 transition-opacity flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span> Edit
+                    </button>
+</div>
+<div class="space-y-4">
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">Street Address</p>
+<p class="font-body-md text-body-md text-on-surface">111 West 57th Street, PH 72</p>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">City</p>
+<p class="font-body-md text-body-md text-on-surface">New York</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">State / Region</p>
+<p class="font-body-md text-body-md text-on-surface">NY</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">Postal Code</p>
+<p class="font-body-md text-body-md text-on-surface">10019</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">Country</p>
+<p class="font-body-md text-body-md text-on-surface">United States</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Characteristics -->
+<section class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/30 shadow-[0_8px_32px_rgba(119,90,25,0.02)]">
+<div class="flex justify-between items-center mb-6 pb-4 border-b border-outline-variant/20">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Characteristics</h2>
+<button aria-label="Edit Characteristics" class="text-primary hover:opacity-70 transition-opacity flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span> Edit
+                    </button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">Bedrooms</p>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[18px]" data-icon="bed">bed</span> 4</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">Bathrooms</p>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[18px]" data-icon="bathtub">bathtub</span> 5.5</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">Interior Sq Ft</p>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[18px]" data-icon="square_foot">square_foot</span> 4,500</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">Year Built</p>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[18px]" data-icon="calendar_today">calendar_today</span> 2021</p>
+</div>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-2">Amenities</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant bg-surface/50 backdrop-blur-sm">24-Hour Concierge</span>
+<span class="px-3 py-1 rounded-full border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant bg-surface/50 backdrop-blur-sm">Private Elevator</span>
+<span class="px-3 py-1 rounded-full border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant bg-surface/50 backdrop-blur-sm">Central Park Views</span>
+<span class="px-3 py-1 rounded-full border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant bg-surface/50 backdrop-blur-sm">Wine Cellar</span>
+</div>
+</div>
+</section>
+<!-- Section: Photos -->
+<section class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/30 shadow-[0_8px_32px_rgba(119,90,25,0.02)]">
+<div class="flex justify-between items-center mb-6 pb-4 border-b border-outline-variant/20">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Media Gallery</h2>
+<button aria-label="Edit Photos" class="text-primary hover:opacity-70 transition-opacity flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span> Edit
+                    </button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden relative group">
+<img alt="Living room with floor to ceiling windows showing city views" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A luxurious penthouse living room with expansive floor-to-ceiling glass windows offering a panoramic view of a modern metropolitan skyline at dusk. The interior features elegant, minimalist furniture in neutral tones of white and warm sand, complemented by subtle gold accents. The lighting is soft and inviting, reflecting a premium, quiet luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDoeUQYvxoaN8H_5oFNcDUOQ0Cfv_89nyIydyql2cPrDo39Ffi-gyfNMOhYd3j6BMOZoHv4LU326n2rXHXc9gR59-uKSDzrOukdFgh06H-OwYjNZcBcPh4KKLNCMGdiXjkI0B9e-lEK29qG63M00RrydcnXyZCDrXYAllH6lycBjy_WF9qPDA1cPZzsbzODG4InnxeULu2XLkmE0wXHSZeBRsUwVYupPpWxWa9lwnS7kCU_nhg9lEu-eV_9j4pO18jxPOum5FrkKGg"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden relative group">
+<img alt="Modern white kitchen with marble island" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A high-end modern kitchen featuring a pristine white marble island and seamless, handle-less cabinetry. The design embodies sophisticated minimalism with warm sand undertones and understated elegance. Natural light floods the space, highlighting the flawless masonry and sleek architectural lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_h1fsRwdze5sUId89m_z_wZ_vaM0e9FxxBHHBhCA14ajG6ZecVr19SibAkyEM5qhUcf35CQ1HQxMsghfd-tHfuchzNPMrNQuZmfpIITvs5iOoNxRLQylgRFNopQy0KQAjPJVpPIEHzgtQloIS2_ETjR5wSrzuKeIoeCQ3_MpeVlu7PDWv7z3oFeVz1Ux3EcQuQNV0Mb-CBuSTcYTLCgZrCZORRFFhI4pj_YrN01iqx3NLO3mGptwat4QJHp-xeIri0L4d3xY09CmD"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden relative group">
+<img alt="Master bedroom with elegant decor" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A serene master bedroom suite designed with a quiet luxury aesthetic. It features a plush, low-profile bed adorned with high-quality linens in shades of white and warm grey. Large windows allow ample daylight, creating a peaceful and restorative atmosphere with a focus on expansive white space and refined comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaPFL9ebhAa1XVvgIoSkHohhW0WucxGZcZWYm1quDSoUpGi_cRZRiKiMvLLzhy8LXNpeANhKT8vW7_prKpHEf9rccnsIKsbdWq5UtuCXNoS2WbXo2hvngSIElceKerp_ZyJGgzP0vsRrmrQpizIwOs84QrSCQWMn1kAaJxnCdBIjJjX0sp8bmDWqBpSgI6--uIMPjFh9k7MhWMQ4zkmCeCNvR7fm0XE9iBYZ_i3dWvcysj8xVmV2Q0vehpEsPN3Nu_Qn7IO0-Amz43"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden relative flex items-center justify-center border-2 border-dashed border-outline-variant/50">
+<span class="font-label-sm text-label-sm text-secondary">+12 More</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Transaction/Flow Final) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-white/90 dark:bg-surface-container-lowest/90 backdrop-blur-lg border-t border-outline-variant/20 shadow-[0_-8px_32px_rgba(119,90,25,0.05)] z-50 rounded-t-xl">
+<button class="flex items-center justify-center text-secondary dark:text-secondary-fixed-dim px-6 py-3 font-label-lg text-label-lg hover:translate-y-[-2px] transition-transform duration-300 active:scale-98">
+<span aria-hidden="true" class="material-symbols-outlined mr-2" data-icon="save">save</span>
+            Save Draft
+        </button>
+<button class="flex items-center justify-center bg-primary dark:bg-primary-fixed-dim text-on-primary dark:text-on-primary-fixed rounded-full px-6 py-3 w-full max-w-[220px] font-label-lg text-label-lg hover:translate-y-[-2px] transition-transform duration-300 active:scale-98 shadow-[0_4px_16px_rgba(119,90,25,0.2)]">
+            Confirm &amp; Submit
+            <span aria-hidden="true" class="material-symbols-outlined ml-2" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</nav>
+</body></html>

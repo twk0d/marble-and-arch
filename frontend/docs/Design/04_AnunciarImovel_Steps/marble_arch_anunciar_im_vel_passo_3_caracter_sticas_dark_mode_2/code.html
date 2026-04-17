@@ -1,0 +1,483 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Zen Gallery - Criar Anúncio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#93000a",
+                      "tertiary-fixed-dim": "#dec1ac",
+                      "inverse-primary": "#775a19",
+                      "background": "#1c1b1b",
+                      "on-error-container": "#ffdad6",
+                      "primary": "#e9c176",
+                      "secondary-container": "#4c463c",
+                      "on-tertiary-fixed-variant": "#574333",
+                      "on-primary-fixed-variant": "#5d4201",
+                      "on-background": "#fcf9f8",
+                      "tertiary": "#fbddc7",
+                      "surface-container-low": "#1c1b1b",
+                      "on-primary-fixed": "#261900",
+                      "secondary-fixed-dim": "#cfc5b9",
+                      "on-tertiary-fixed": "#28180b",
+                      "on-secondary": "#353026",
+                      "error": "#ffb4ab",
+                      "tertiary-fixed": "#fbddc7",
+                      "surface-tint": "#e9c176",
+                      "primary-fixed": "#ffdea5",
+                      "outline-variant": "#4e4639",
+                      "primary-container": "#5d4201",
+                      "surface-dim": "#1c1b1b",
+                      "primary-fixed-dim": "#e9c176",
+                      "outline": "#998f80",
+                      "surface-container": "#211f1f",
+                      "on-tertiary-container": "#fbddc7",
+                      "on-error": "#690005",
+                      "on-secondary-fixed": "#1f1b13",
+                      "on-primary": "#412d00",
+                      "on-secondary-fixed-variant": "#4c463c",
+                      "tertiary-container": "#574333",
+                      "surface-variant": "#4e4639",
+                      "surface": "#131313",
+                      "surface-container-high": "#2b2a29",
+                      "secondary": "#cfc5b9",
+                      "on-primary-container": "#ffdea5",
+                      "secondary-fixed": "#ebe1d4",
+                      "surface-bright": "#393939",
+                      "on-secondary-container": "#ebe1d4",
+                      "on-tertiary": "#3e2c1e",
+                      "surface-container-highest": "#363434",
+                      "surface-container-lowest": "#0e0e0e",
+                      "inverse-surface": "#fcf9f8",
+                      "on-surface-variant": "#d1c5b4",
+                      "inverse-on-surface": "#313030",
+                      "on-surface": "#fcf9f8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "margin-tablet": "32px",
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "gutter": "32px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "label-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- Header Navigation -->
+<header class="bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop h-20 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<!-- Logo -->
+<a class="font-display-lg text-headline-sm md:text-headline-md font-bold tracking-tight text-primary" href="#">
+                    Zen Gallery
+                </a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface hover:text-primary transition-colors font-medium" href="#">Home</a>
+<a class="text-on-surface hover:text-primary transition-colors font-medium" href="#">Marketplace</a>
+<a class="text-on-surface hover:text-primary transition-colors font-medium" href="#">Artists</a>
+</nav>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4 md:gap-6">
+<button class="text-on-surface hover:text-primary transition-colors hidden sm:block">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<!-- User Profile -->
+<div class="flex items-center gap-3">
+<div class="hidden md:block text-right">
+<p class="font-label-sm font-semibold text-on-surface">Alex Mercer</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Collector</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-variant border border-outline flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-8 md:py-12">
+<!-- Page Header -->
+<div class="mb-8 md:mb-12">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-on-surface mb-2">Criar Novo Anúncio</h1>
+<p class="text-on-surface-variant font-body-lg">Detalhe as características e especificações da sua obra de arte.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Sidebar Stepper -->
+<aside class="lg:w-1/4 shrink-0">
+<div class="bg-surface-container rounded-xl p-6 sticky top-28 border border-outline-variant">
+<nav aria-label="Progress">
+<ol class="overflow-hidden" role="list">
+<li class="relative pb-8">
+<div aria-hidden="true" class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-primary"></div>
+<a class="relative flex items-center group" href="#">
+<span class="h-9 flex items-center">
+<span class="relative z-10 w-8 h-8 flex items-center justify-center bg-primary rounded-full group-hover:bg-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-on-primary text-sm">check</span>
+</span>
+</span>
+<span class="ml-4 min-w-0 flex flex-col">
+<span class="text-label-sm font-semibold tracking-wide uppercase text-primary">Passo 1</span>
+<span class="text-body-md font-medium text-on-surface">Informações Básicas</span>
+</span>
+</a>
+</li>
+<li class="relative pb-8">
+<div aria-hidden="true" class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-primary"></div>
+<a class="relative flex items-center group" href="#">
+<span class="h-9 flex items-center">
+<span class="relative z-10 w-8 h-8 flex items-center justify-center bg-primary rounded-full group-hover:bg-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-on-primary text-sm">check</span>
+</span>
+</span>
+<span class="ml-4 min-w-0 flex flex-col">
+<span class="text-label-sm font-semibold tracking-wide uppercase text-primary">Passo 2</span>
+<span class="text-body-md font-medium text-on-surface">Mídia (Fotos/Vídeos)</span>
+</span>
+</a>
+</li>
+<li class="relative pb-8">
+<div aria-hidden="true" class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-surface-variant"></div>
+<a aria-current="step" class="relative flex items-center group" href="#">
+<span class="h-9 flex items-center">
+<span class="relative z-10 w-8 h-8 flex items-center justify-center bg-surface border-2 border-primary rounded-full">
+<span class="text-primary font-bold text-sm">3</span>
+</span>
+</span>
+<span class="ml-4 min-w-0 flex flex-col">
+<span class="text-label-sm font-semibold tracking-wide uppercase text-primary">Passo 3</span>
+<span class="text-body-md font-medium text-on-surface">Features &amp; Specs</span>
+</span>
+</a>
+</li>
+<li class="relative pb-8">
+<div aria-hidden="true" class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-surface-variant"></div>
+<a class="relative flex items-center group" href="#">
+<span class="h-9 flex items-center">
+<span class="relative z-10 w-8 h-8 flex items-center justify-center bg-surface border-2 border-outline rounded-full group-hover:border-outline-variant transition-colors">
+<span class="text-outline font-medium text-sm">4</span>
+</span>
+</span>
+<span class="ml-4 min-w-0 flex flex-col">
+<span class="text-label-sm font-semibold tracking-wide uppercase text-on-surface-variant">Passo 4</span>
+<span class="text-body-md font-medium text-on-surface-variant">Preço &amp; Condições</span>
+</span>
+</a>
+</li>
+<li class="relative">
+<a class="relative flex items-center group" href="#">
+<span class="h-9 flex items-center">
+<span class="relative z-10 w-8 h-8 flex items-center justify-center bg-surface border-2 border-outline rounded-full group-hover:border-outline-variant transition-colors">
+<span class="text-outline font-medium text-sm">5</span>
+</span>
+</span>
+<span class="ml-4 min-w-0 flex flex-col">
+<span class="text-label-sm font-semibold tracking-wide uppercase text-on-surface-variant">Passo 5</span>
+<span class="text-body-md font-medium text-on-surface-variant">Revisão &amp; Publicação</span>
+</span>
+</a>
+</li>
+</ol>
+</nav>
+</div>
+</aside>
+<!-- Form Content -->
+<div class="lg:w-3/4">
+<div class="bg-surface-container rounded-xl p-6 md:p-8 border border-outline-variant shadow-sm">
+<h2 class="font-headline-sm text-on-surface border-b border-outline-variant pb-4 mb-6">Especificações da Obra</h2>
+<form action="#" class="space-y-8" method="POST">
+<!-- Dimensions Section -->
+<section>
+<h3 class="text-lg font-medium text-on-surface mb-4">Dimensões</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Altura -->
+<div>
+<label class="block text-sm font-medium text-on-surface mb-1" for="height">Altura</label>
+<div class="relative rounded-md shadow-sm">
+<input aria-describedby="height-currency" class="block w-full rounded-md border-0 py-3 pl-4 pr-12 text-on-surface bg-surface ring-1 ring-inset ring-outline focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 placeholder:text-on-surface-variant" id="height" name="height" placeholder="0.00" type="number">
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+<span class="text-on-surface-variant sm:text-sm" id="height-currency">cm</span>
+</div>
+</div>
+</div>
+<!-- Largura -->
+<div>
+<label class="block text-sm font-medium text-on-surface mb-1" for="width">Largura</label>
+<div class="relative rounded-md shadow-sm">
+<input aria-describedby="width-currency" class="block w-full rounded-md border-0 py-3 pl-4 pr-12 text-on-surface bg-surface ring-1 ring-inset ring-outline focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 placeholder:text-on-surface-variant" id="width" name="width" placeholder="0.00" type="number">
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+<span class="text-on-surface-variant sm:text-sm" id="width-currency">cm</span>
+</div>
+</div>
+</div>
+<!-- Profundidade -->
+<div>
+<label class="block text-sm font-medium text-on-surface mb-1" for="depth">Profundidade <span class="text-on-surface-variant font-normal">(Opcional)</span></label>
+<div class="relative rounded-md shadow-sm">
+<input aria-describedby="depth-currency" class="block w-full rounded-md border-0 py-3 pl-4 pr-12 text-on-surface bg-surface ring-1 ring-inset ring-outline focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 placeholder:text-on-surface-variant" id="depth" name="depth" placeholder="0.00" type="number">
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+<span class="text-on-surface-variant sm:text-sm" id="depth-currency">cm</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Materials & Techniques Section -->
+<section>
+<h3 class="text-lg font-medium text-on-surface mb-4">Materiais e Técnicas</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Material Principal -->
+<div>
+<label class="block text-sm font-medium text-on-surface mb-1" for="primary-material">Material Principal</label>
+<select class="block w-full rounded-md border-0 py-3 pl-4 pr-10 text-on-surface bg-surface ring-1 ring-inset ring-outline focus:ring-2 focus:ring-primary sm:text-sm sm:leading-6" id="primary-material" name="primary-material">
+<option disabled="" selected="" value="">Selecione um material</option>
+<option>Óleo sobre Tela</option>
+<option>Acrílica</option>
+<option>Aquarela</option>
+<option>Bronze</option>
+<option>Madeira</option>
+<option>Mídia Mista</option>
+<option>Outro</option>
+</select>
+</div>
+<!-- Ano de Criação -->
+<div>
+<label class="block text-sm font-medium text-on-surface mb-1" for="creation-year">Ano de Criação</label>
+<input class="block w-full rounded-md border-0 py-3 px-4 text-on-surface bg-surface ring-1 ring-inset ring-outline focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 placeholder:text-on-surface-variant" id="creation-year" name="creation-year" placeholder="Ex: 2023" type="number">
+</div>
+</div>
+<!-- Tags de Estilo -->
+<div class="mt-6">
+<label class="block text-sm font-medium text-on-surface mb-2">Estilos e Temas (Selecione até 3)</label>
+<div class="flex flex-wrap gap-2">
+<!-- Checkbox as Pill -->
+<label class="cursor-pointer">
+<input class="peer sr-only" name="style_tags" type="checkbox" value="abstract">
+<span class="inline-flex items-center px-4 py-2 rounded-full border border-outline bg-surface text-on-surface text-sm font-medium transition-colors peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary peer-focus:ring-2 peer-focus:ring-primary peer-focus:ring-offset-2">
+                                                Abstrato
+                                            </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="style_tags" type="checkbox" value="figurative">
+<span class="inline-flex items-center px-4 py-2 rounded-full border border-outline bg-surface text-on-surface text-sm font-medium transition-colors peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary peer-focus:ring-2 peer-focus:ring-primary peer-focus:ring-offset-2">
+                                                Figurativo
+                                            </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="style_tags" type="checkbox" value="landscape">
+<span class="inline-flex items-center px-4 py-2 rounded-full border border-outline bg-surface text-on-surface text-sm font-medium transition-colors peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary peer-focus:ring-2 peer-focus:ring-primary peer-focus:ring-offset-2">
+                                                Paisagem
+                                            </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="style_tags" type="checkbox" value="portrait">
+<span class="inline-flex items-center px-4 py-2 rounded-full border border-outline bg-surface text-on-surface text-sm font-medium transition-colors peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary peer-focus:ring-2 peer-focus:ring-primary peer-focus:ring-offset-2">
+                                                Retrato
+                                            </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="style_tags" type="checkbox" value="surrealism">
+<span class="inline-flex items-center px-4 py-2 rounded-full border border-outline bg-surface text-on-surface text-sm font-medium transition-colors peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary peer-focus:ring-2 peer-focus:ring-primary peer-focus:ring-offset-2">
+                                                Surrealismo
+                                            </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="style_tags" type="checkbox" value="minimalist">
+<span class="inline-flex items-center px-4 py-2 rounded-full border border-outline bg-surface text-on-surface text-sm font-medium transition-colors peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary peer-focus:ring-2 peer-focus:ring-primary peer-focus:ring-offset-2">
+                                                Minimalista
+                                            </span>
+</label>
+</div>
+</div>
+</section>
+<!-- Authenticity & Framing -->
+<section>
+<h3 class="text-lg font-medium text-on-surface mb-4">Autenticidade e Apresentação</h3>
+<div class="space-y-4">
+<div class="relative flex items-start">
+<div class="flex h-6 items-center">
+<input class="h-5 w-5 rounded border-outline text-primary focus:ring-primary bg-surface" id="certificate" name="certificate" type="checkbox">
+</div>
+<div class="ml-3 text-sm leading-6">
+<label class="font-medium text-on-surface" for="certificate">Acompanha Certificado de Autenticidade (COA)</label>
+<p class="text-on-surface-variant">Documento assinado pelo artista ou galeria comprovando a origem.</p>
+</div>
+</div>
+<div class="relative flex items-start">
+<div class="flex h-6 items-center">
+<input class="h-5 w-5 rounded border-outline text-primary focus:ring-primary bg-surface" id="signed" name="signed" type="checkbox">
+</div>
+<div class="ml-3 text-sm leading-6">
+<label class="font-medium text-on-surface" for="signed">Obra Assinada</label>
+<p class="text-on-surface-variant">Assinatura manual do artista na própria obra.</p>
+</div>
+</div>
+<div class="relative flex items-start">
+<div class="flex h-6 items-center">
+<input class="h-5 w-5 rounded border-outline text-primary focus:ring-primary bg-surface" id="framed" name="framed" type="checkbox">
+</div>
+<div class="ml-3 text-sm leading-6">
+<label class="font-medium text-on-surface" for="framed">Emoldurada</label>
+<p class="text-on-surface-variant">A obra será enviada com moldura.</p>
+</div>
+</div>
+</div>
+</section>
+<hr class="border-outline-variant my-8">
+<!-- Form Actions -->
+<div class="flex items-center justify-between pt-4">
+<button class="text-on-surface hover:text-primary font-medium text-sm px-4 py-2 transition-colors" type="button">
+                                    Voltar
+                                </button>
+<div class="flex gap-4">
+<button class="rounded-lg px-6 py-2.5 text-sm font-semibold text-on-surface border border-outline hover:bg-surface-variant transition-colors" type="button">
+                                        Salvar Rascunho
+                                    </button>
+<button class="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-on-primary shadow-sm hover:bg-primary-fixed transition-colors flex items-center gap-2" type="submit">
+                                        Próximo Passo
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant mt-auto">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant text-sm">© 2024 Zen Gallery. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Help</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

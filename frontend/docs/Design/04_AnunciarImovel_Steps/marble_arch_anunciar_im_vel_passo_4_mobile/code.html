@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxe Assets - Property Submission Step 4</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#dec1ac",
+                    "on-secondary-fixed-variant": "#4c463c",
+                    "on-tertiary-fixed": "#28180b",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dcd9d9",
+                    "on-surface": "#1c1b1b",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-primary": "#ffffff",
+                    "background": "#fcf9f8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#1f1b13",
+                    "inverse-primary": "#e9c176",
+                    "secondary": "#645d53",
+                    "surface-bright": "#fcf9f8",
+                    "outline-variant": "#d1c5b4",
+                    "surface-tint": "#775a19",
+                    "primary": "#775a19",
+                    "surface-container": "#f0eded",
+                    "tertiary": "#705a49",
+                    "secondary-container": "#e8ded1",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container-low": "#f6f3f2",
+                    "secondary-fixed": "#ebe1d4",
+                    "primary-container": "#c5a059",
+                    "tertiary-container": "#bba08c",
+                    "tertiary-fixed": "#fbddc7",
+                    "inverse-surface": "#313030",
+                    "on-primary-container": "#4e3700",
+                    "on-surface-variant": "#4e4639",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#f3f0ef",
+                    "outline": "#7f7667",
+                    "surface": "#fcf9f8",
+                    "on-secondary-container": "#686257",
+                    "primary-fixed": "#ffdea5",
+                    "on-tertiary-container": "#4a3728",
+                    "on-background": "#1c1b1b",
+                    "on-primary-fixed": "#261900",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#cfc5b9",
+                    "on-tertiary-fixed-variant": "#574333",
+                    "primary-fixed-dim": "#e9c176",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#eae7e7",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "container-max": "1440px",
+                    "margin-tablet": "32px",
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(232, 222, 209, 0.5); /* secondary-container tint */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16">
+<button aria-label="Go back" class="hover:opacity-70 transition-opacity active:scale-95 transition-transform text-on-surface-variant dark:text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm tracking-widest text-primary dark:text-primary-fixed-dim">LUXE ASSETS</h1>
+<button aria-label="Close" class="hover:opacity-70 transition-opacity active:scale-95 transition-transform text-on-surface-variant dark:text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[104px] pb-[120px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header Section -->
+<div class="mb-12 max-w-2xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Step 04 / 06</span>
+<div class="h-[1px] w-12 bg-outline-variant"></div>
+</div>
+<h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-on-surface mb-4">Curate Your Visuals</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Upload high-resolution photography that captures the essence of the property. The first image will serve as the primary cover across the Luxe network.
+            </p>
+</div>
+<!-- Upload Area (Dropzone) -->
+<div class="glass-panel rounded-xl border border-dashed border-primary/40 min-h-[280px] flex flex-col items-center justify-center p-8 mb-12 cursor-pointer hover:bg-surface-container/50 transition-colors duration-300 group">
+<div class="h-16 w-16 rounded-full bg-secondary-container text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-[0_8px_32px_rgba(119,90,25,0.08)]">
+<span class="material-symbols-outlined text-[32px]" data-icon="add_photo_alternate" style="font-variation-settings: 'FILL' 0;">add_photo_alternate</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 text-center">Drag &amp; drop high-res photos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-center max-w-sm">
+                or click to browse your files. Supported formats: JPG, PNG, TIFF. Minimum resolution 1920x1080px.
+            </p>
+</div>
+<!-- Photo Grid Section -->
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface uppercase tracking-widest mb-6">Gallery Preview (4 uploaded)</h4>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Card 1: Cover Image -->
+<div class="relative group aspect-[4/3] rounded-lg overflow-hidden md:col-span-2 md:row-span-2 shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
+<img alt="Cover Property Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sweeping, high-end architectural photograph of a modern Mediterranean villa at dusk. The property features expansive glass walls, warm stone masonry, and a meticulously lit infinity pool reflecting the twilight sky. The lighting is dramatic yet inviting, showcasing the luxury real estate in a quiet, sophisticated manner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYVmMfXe1Hy4baK_RhQOJpp94CryzO9xJEWNxyqv5y4k_-ByArlG4ILXZOmKIOdWYmXGLz05wnSn2az2r4j7RGCfmbKZ_GssMGPH2WpwehJ4v6GDKbuewly04Eu1zm5g9b7kNbrfcgoSZfIg6k-xQUsf6nkZgnPFw-SLZmHhgqBpnj3z5xVfRlMoCKUDemsE25dZBZCM76La3Js8HquwUgpHY8oeDxzcX6aBRcLX3mwFdxzfLmjbsyq5c61Z_0jYYZ9edjdYHYGRjk"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute top-4 left-4 glass-panel px-3 py-1.5 rounded bg-surface/80 text-on-surface">
+<span class="font-label-sm text-label-sm font-semibold uppercase">Cover Image</span>
+</div>
+<button aria-label="Delete photo" class="absolute top-4 right-4 h-10 w-10 rounded-full bg-surface/90 text-error flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-error-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+<div aria-label="Reorder" class="absolute bottom-4 left-4 h-10 w-10 rounded-full bg-surface/90 text-on-surface-variant flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm cursor-grab">
+<span class="material-symbols-outlined text-[20px]" data-icon="drag_indicator">drag_indicator</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="relative group aspect-[4/3] rounded-lg overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)]">
+<img alt="Living Room Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An interior shot of a luxurious, minimalist living room. Generous white space is paired with warm beige and charcoal accents. A large marble coffee table sits on a textured sand-colored rug. Natural light floods in from floor-to-ceiling windows, establishing a serene, quiet luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWX7l-3sJh3MqIQBnSdfspZfaz8YeO4vgp13yeZgw_QQAy-koF2svTzkrgiYOb28MvKnMJ2JJ4B93WT89TpM-zTcs8bhnoldz4YoPRbIR1UMPu1W8lQWfTDyCCXVULtb1O6_q4erxJWjPT_dJvpgZOrbjzqsCsu49-AwLa5iq77cOZYc1d7yPQx2Ot8yY83eEnq83C50KQjXXNM734pJPEPtfCV5sMnmg0eLN5RuY52YHO2FhR4-bJUVLVPyDdSwWhobycz4-M9RzG"/>
+<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button aria-label="Delete photo" class="absolute top-3 right-3 h-8 w-8 rounded-full bg-surface/90 text-error flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-error-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+<div aria-label="Reorder" class="absolute top-3 left-3 h-8 w-8 rounded-full bg-surface/90 text-on-surface-variant flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-grab">
+<span class="material-symbols-outlined text-[18px]" data-icon="drag_indicator">drag_indicator</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative group aspect-[4/3] rounded-lg overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)]">
+<img alt="Kitchen Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A pristine, high-end modern kitchen featuring sleek, handleless cabinetry in a warm sand tone. A large waterfall island made of Calacatta marble dominates the center. The lighting is bright and airy, reflecting a refined glassmorphism and modern minimalism style typical of luxury penthouses." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPhRIGRAI_pdJbTDAmva85hBoROhSYfxqUA_CsN2zNnfs0J_EG_v9HJF9Wt2x5DnHkF_AAfQWZ-EVcMdYI05x2_HNdwP63cu_BJ4fwMUJl_0IHokCMy87YTg4GodsbFmgw7dBSA-Bh78MhbVau0ggvQyt8yaYSrurs9m6TtjxWAyxqvUkWSSd1bgOzaMCq7JGZOgv_4ZpsR4B-T9NXredvqQcGunUYElbh-Wv21onLojCnLkuPARUNfHPFWDVPEUUeDRaTS69mrNew"/>
+<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button aria-label="Delete photo" class="absolute top-3 right-3 h-8 w-8 rounded-full bg-surface/90 text-error flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-error-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+<div aria-label="Reorder" class="absolute top-3 left-3 h-8 w-8 rounded-full bg-surface/90 text-on-surface-variant flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-grab">
+<span class="material-symbols-outlined text-[18px]" data-icon="drag_indicator">drag_indicator</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="relative group aspect-[4/3] rounded-lg overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)]">
+<img alt="Bathroom Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene master bathroom showcasing a freestanding soaking tub positioned next to a large frosted glass window. The walls are clad in subtle, layered stone textures in warm grey and beige. The atmosphere is calming and spa-like, perfectly embodying the quiet luxury real estate theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2SGgkS6mECjj0zqTjDHPEuLcZ7nOXYRh08GhKmtfHOVU9KJHGRgY5pfGOgPtPiEbaUqcal0jVas3N5dzJnZCx9AgUWOP-_fi6SSvcnaYDLfCNN9TVsiS2awrp_iUWM4C-MXdiUjJrnn6a5CMJUoi6BnsTxYsj-8VPG3u1qefKebPXWZQNSt2BH-3AE02jcCZWim6Hrz3Kg7hUdUB4v6f4oCB30jL7-g_muPBpWn7DY5RpwyAcKOTFYZrUI0WjjM4KdqpVu3UCnLnO"/>
+<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button aria-label="Delete photo" class="absolute top-3 right-3 h-8 w-8 rounded-full bg-surface/90 text-error flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-error-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+<div aria-label="Reorder" class="absolute top-3 left-3 h-8 w-8 rounded-full bg-surface/90 text-on-surface-variant flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-grab">
+<span class="material-symbols-outlined text-[18px]" data-icon="drag_indicator">drag_indicator</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (from JSON - functioning as step progression here) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-between items-center px-margin-mobile py-4 bg-surface dark:bg-surface-container bg-white/90 dark:bg-surface-container-lowest/90 backdrop-blur-lg fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-[0_-8px_32px_rgba(119,90,25,0.05)]">
+<!-- Save Draft (Inactive styling pattern) -->
+<button class="flex items-center justify-center text-secondary dark:text-secondary-fixed-dim px-6 py-3 font-label-lg text-label-lg hover:translate-y-[-2px] transition-transform duration-300 active:scale-98 transition-all gap-2">
+<span class="material-symbols-outlined" data-icon="save">save</span>
+            Save Draft
+        </button>
+<!-- Continue (Active styling pattern for primary action) -->
+<button class="flex items-center justify-center bg-primary dark:bg-primary-fixed-dim text-on-primary dark:text-on-primary-fixed rounded-full px-6 py-3 w-full max-w-[180px] font-label-lg text-label-lg hover:translate-y-[-2px] transition-transform duration-300 active:scale-98 transition-all gap-2 shadow-[0_4px_16px_rgba(119,90,25,0.2)]">
+            Continue
+            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</nav>
+</body></html>

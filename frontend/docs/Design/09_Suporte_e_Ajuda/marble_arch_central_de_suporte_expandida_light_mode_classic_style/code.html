@@ -1,0 +1,318 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Help &amp; Support | Marble &amp; Arch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "tertiary": "#705a49",
+                        "on-tertiary-fixed": "#28180b",
+                        "error": "#ba1a1a",
+                        "secondary": "#645d53",
+                        "on-surface": "#1c1b1b",
+                        "surface": "#fcf9f8",
+                        "primary-container": "#c5a059",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-tint": "#775a19",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#e8ded1",
+                        "on-secondary-fixed": "#1f1b13",
+                        "surface-bright": "#fcf9f8",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#e9c176",
+                        "tertiary-fixed": "#fbddc7",
+                        "tertiary-container": "#bba08c",
+                        "surface-container-low": "#f6f3f2",
+                        "primary": "#775a19",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#4a3728",
+                        "inverse-surface": "#313030",
+                        "primary-fixed-dim": "#e9c176",
+                        "secondary-fixed": "#ebe1d4",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "outline": "#7f7667",
+                        "on-background": "#1c1b1b",
+                        "on-surface-variant": "#4e4639",
+                        "primary-fixed": "#ffdea5",
+                        "on-primary-fixed": "#261900",
+                        "background": "#fcf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary-container": "#4e3700",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary-container": "#686257",
+                        "outline-variant": "#d1c5b4",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#4c463c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "margin-tablet": "32px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-lg": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(209, 197, 180, 0.3);
+        }
+        
+        .glow-shadow {
+            box-shadow: 0 32px 64px -16px rgba(119, 90, 25, 0.05);
+        }
+
+        .faq-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item.open .faq-content {
+            max-height: 500px;
+            opacity: 1;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<a class="font-headline-md text-headline-md font-semibold text-primary tracking-tight" href="#">Marble &amp; Arch</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Properties</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Journal</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="hidden md:flex font-label-lg text-label-lg text-primary hover:text-primary-container transition-colors items-center space-x-2">
+<span>Inquire</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-low/50 p-2 rounded-full duration-300">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24 md:pt-40 md:pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex flex-col space-y-[120px]">
+<!-- Hero & Search -->
+<section class="flex flex-col items-center text-center max-w-3xl mx-auto w-full space-y-8 relative">
+<div class="space-y-4 z-10">
+<h1 class="font-display-lg text-display-lg text-on-surface">How can we assist you?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Explore our curated guides or connect directly with our global concierge team for personalized support.</p>
+</div>
+<div class="w-full relative z-20 mt-8 group">
+<div class="absolute inset-0 bg-primary/5 blur-2xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative glass-panel rounded-full flex items-center px-6 py-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+<span class="material-symbols-outlined text-outline mr-4 text-[24px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface placeholder-outline-variant font-body-lg w-full outline-none" placeholder="Search for articles, policies, or topics..." type="text">
+</div>
+</div>
+</section>
+<!-- Contact Channels Bento -->
+<section class="space-y-12 w-full">
+<div class="flex flex-col space-y-2 border-b border-outline-variant/30 pb-6">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Direct Channels</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Connect with our dedicated support teams.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-8 flex flex-col items-start space-y-6 glow-shadow hover:-translate-y-1 transition-all duration-300 cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px] -mt-8 -mr-8">support_agent</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary z-10">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div class="space-y-2 z-10 flex-grow">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Live Concierge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Immediate assistance for urgent inquiries.</p>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 w-full flex justify-between items-center z-10">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">24/7 Available</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-8 flex flex-col items-start space-y-6 glow-shadow hover:-translate-y-1 transition-all duration-300 cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px] -mt-8 -mr-8">mail</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary z-10">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="space-y-2 z-10 flex-grow">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Email Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Detailed inquiries regarding platform usage.</p>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 w-full flex justify-between items-center z-10">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">24h Response</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-8 flex flex-col items-start space-y-6 glow-shadow hover:-translate-y-1 transition-all duration-300 cursor-pointer relative overflow-hidden lg:col-span-2">
+<div class="absolute inset-0 z-0">
+<img alt="Luxurious modern living room bathed in warm natural light, featuring high-end minimalist furniture, large floor-to-ceiling windows, and subtle architectural details in off-white and soft sand tones, embodying a quiet luxury aesthetic." class="w-full h-full object-cover opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 grayscale" data-alt="Luxurious modern living room bathed in warm natural light, featuring high-end minimalist furniture, large floor-to-ceiling windows, and subtle architectural details in off-white and soft sand tones, embodying a quiet luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNRjLVCN2zHpjq8VWfoBce0lORlnYuBisZq1yzfNhbhXCdnJo2aigLTZNZZMk4sDSsh47fXybqjWC3T7xsyphdB6R6tmq9c5DyNKyTUnA9_07cTq3eUbWOp8TjNfdsmvlL9zZoWGbZwvYSMMrXywCU7ZCApRxaioVSKZnW5jx9M4Ply2ofjZ0vPFfXKLq4iOcSimxJ2fIc6I2Qkkx8v8iUOP7U54ByTgGk81sT70RUAYQWonUXuVymYRcSkgAZWgoQ3ngIqPWJ1Y9">
+</div>
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary z-10 shadow-sm">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div class="space-y-2 z-10 flex-grow max-w-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Schedule a Private Call</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Book a dedicated session with one of our senior brokers to discuss your specific real estate portfolio.</p>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 w-full flex justify-between items-center z-10">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Broker Booking</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Card 4 (Full width mobile/tablet, single col desktop) -->
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-8 flex flex-col items-start space-y-6 glow-shadow hover:-translate-y-1 transition-all duration-300 cursor-pointer relative overflow-hidden lg:col-span-4 md:flex-row md:items-center md:space-y-0 md:space-x-8">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[32px]">forum</span>
+</div>
+<div class="space-y-2 flex-grow">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">WhatsApp Premium</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Direct, secure messaging for our verified clientele.</p>
+</div>
+<button class="px-6 py-3 bg-primary text-on-primary font-label-lg rounded-lg shadow-sm hover:bg-primary-container transition-colors whitespace-nowrap">
+                        Connect Now
+                    </button>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="space-y-12 w-full max-w-4xl mx-auto">
+<div class="flex flex-col items-center text-center space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Frequently Asked Questions</h2>
+<div class="h-px w-24 bg-primary/30 mx-auto"></div>
+</div>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="faq-item bg-surface-container-lowest border border-outline-variant/50 rounded-lg overflow-hidden transition-all duration-300 hover:border-primary/50">
+<button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="this.parentElement.classList.toggle('open')">
+<span class="font-headline-sm text-headline-sm text-on-surface">Buying Process &amp; Verification</span>
+<span class="material-symbols-outlined text-primary faq-icon">expand_more</span>
+</button>
+<div class="faq-content px-6 border-t border-outline-variant/20 bg-surface-container-lowest">
+<p class="font-body-md text-body-md text-on-surface-variant pb-4">
+                            Marble &amp; Arch employs a rigorous verification process for all prospective buyers to maintain the exclusivity and privacy of our listings. Upon initial inquiry, our concierge will guide you through the submission of necessary financial documentation.
+                        </p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="faq-item bg-surface-container-lowest border border-outline-variant/50 rounded-lg overflow-hidden transition-all duration-300 hover:border-primary/50">
+<button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="this.parentElement.classList.toggle('open')">
+<span class="font-headline-sm text-headline-sm text-on-surface">Selling Standards &amp; Valuation</span>
+<span class="material-symbols-outlined text-primary faq-icon">expand_more</span>
+</button>
+<div class="faq-content px-6 border-t border-outline-variant/20 bg-surface-container-lowest">
+<p class="font-body-md text-body-md text-on-surface-variant pb-4">
+                            Properties listed on our platform must meet specific architectural and locational criteria. Our valuation process is conducted by senior appraisers who factor in global market trends, historical significance, and unique design elements.
+                        </p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="faq-item bg-surface-container-lowest border border-outline-variant/50 rounded-lg overflow-hidden transition-all duration-300 hover:border-primary/50">
+<button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="this.parentElement.classList.toggle('open')">
+<span class="font-headline-sm text-headline-sm text-on-surface">Legal Structures &amp; Platform Fees</span>
+<span class="material-symbols-outlined text-primary faq-icon">expand_more</span>
+</button>
+<div class="faq-content px-6 border-t border-outline-variant/20 bg-surface-container-lowest">
+<p class="font-body-md text-body-md text-on-surface-variant pb-4">
+                            We operate on a transparent fee structure. Platform access for browsing public listings is complimentary. Specialized legal consulting for international transactions and trust formations is billed separately through our partner network.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant/50">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-gutter max-w-container-max mx-auto space-y-6 md:space-y-0">
+<div class="font-headline-sm text-headline-sm text-primary">Marble &amp; Arch</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200" href="#">Licensing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200" href="#">Cookies</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant">
+                © 2024 Marble &amp; Arch. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

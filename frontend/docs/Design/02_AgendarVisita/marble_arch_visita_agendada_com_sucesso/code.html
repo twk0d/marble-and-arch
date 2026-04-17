@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visit Scheduled - Marble &amp; Arch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#ebe1d4",
+                    "surface-container": "#f0eded",
+                    "surface-tint": "#775a19",
+                    "error": "#ba1a1a",
+                    "tertiary": "#705a49",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-primary-fixed": "#261900",
+                    "tertiary-container": "#bba08c",
+                    "on-secondary-fixed": "#1f1b13",
+                    "secondary-fixed-dim": "#cfc5b9",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#4e3700",
+                    "surface-bright": "#fcf9f8",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#574333",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#e8ded1",
+                    "outline": "#7f7667",
+                    "surface-dim": "#dcd9d9",
+                    "surface": "#fcf9f8",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container-high": "#eae7e7",
+                    "on-secondary-container": "#686257",
+                    "inverse-surface": "#313030",
+                    "background": "#fcf9f8",
+                    "primary-fixed": "#ffdea5",
+                    "on-surface-variant": "#4e4639",
+                    "inverse-primary": "#e9c176",
+                    "secondary": "#645d53",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-secondary-fixed-variant": "#4c463c",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#775a19",
+                    "tertiary-fixed": "#fbddc7",
+                    "on-tertiary-fixed": "#28180b",
+                    "surface-container-low": "#f6f3f2",
+                    "outline-variant": "#d1c5b4",
+                    "on-background": "#1c1b1b",
+                    "primary-fixed-dim": "#e9c176",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "on-surface": "#1c1b1b",
+                    "primary-container": "#c5a059",
+                    "on-tertiary-container": "#4a3728",
+                    "tertiary-fixed-dim": "#dec1ac",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "gutter": "32px",
+                    "container-max": "1440px",
+                    "margin-tablet": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-sm": [
+                            "Playfair Display"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "label-lg": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Custom Ambient Shadows & Glassmorphism Utility */
+        .ambient-shadow-primary {
+            box-shadow: 0 32px 64px -12px rgba(119, 90, 25, 0.08);
+        }
+        .inner-glow-btn {
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 0 8px 16px -4px rgba(119, 90, 25, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col relative overflow-hidden font-body-md">
+<!-- Architectural Background with Glassmorphic Overlay -->
+<div class="absolute inset-0 z-0 bg-cover bg-center" data-alt="A serene, modern minimalist luxury living room featuring a warm color palette of beige and light gray. Floor-to-ceiling windows let in soft, diffused natural daylight illuminating the refined textures. The architecture emphasizes clean architectural lines, smooth masonry, and a sense of quiet luxury, aligning perfectly with a high-end real estate aesthetic in light mode." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBjPpPeieoFZZ0feBPxw9LNgePjkxAU-3yD-dlqqOcW92ieoW-zC8GlcixoISdrP9S4AyLmRYVO7bCRo3Zb3vheL-fAo9S6EhlX2m8iJp15vxwBjP0iZ1WJxLu-a7uyw6dkCRjlrd0d-m6KVXGwEWwCY0ZAf9eOM6c05gNenD55wmU02j0UboAbcj0X-vH1Xkv9DMeUbFZ9ow5TUk66v_3NGOSkRnAFDw3wq3m9unVzitVH3yIM_cjeZ0ItZKLF9jd9aBxet6AQwCm');"></div>
+<div class="absolute inset-0 z-0 bg-surface/75 backdrop-blur-xl"></div>
+<!-- Minimal Header (Transactional Intent) -->
+<header class="relative z-20 w-full px-8 py-6 flex justify-center border-b border-outline-variant/30">
+<div class="font-headline-md text-headline-md text-primary tracking-tight">Marble &amp; Arch</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative z-10 flex-grow flex items-center justify-center p-6 md:p-12">
+<div class="w-full max-w-[720px] bg-surface/90 backdrop-blur-2xl rounded-[24px] border border-outline-variant/50 p-10 md:p-16 ambient-shadow-primary flex flex-col items-center text-center">
+<!-- Celebratory Element -->
+<div class="w-20 h-20 rounded-full bg-secondary-container flex items-center justify-center mb-8 border border-primary/10 shadow-[0_0_40px_rgba(197,160,89,0.15)] relative">
+<div class="absolute inset-0 rounded-full border border-primary/30 animate-ping" style="animation-duration: 3s; animation-iteration-count: 1;"></div>
+<span class="material-symbols-outlined text-primary" style="font-size: 40px; font-variation-settings: 'wght' 200;">done</span>
+</div>
+<!-- Confirmation Messaging -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-4">Your visit has been scheduled</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-12 max-w-md">We look forward to welcoming you. A confirmation email and calendar invitation have been sent to your registered address.</p>
+<!-- Curated Details Grid -->
+<div class="w-full bg-surface-container-low rounded-xl border border-outline-variant/40 p-8 mb-12 text-left relative overflow-hidden group">
+<!-- Subtle decorative accent -->
+<div class="absolute top-0 left-0 w-1 h-full bg-primary/40 group-hover:bg-primary transition-colors duration-500"></div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-8 border-b border-outline-variant/30 pb-4">The Penthouse at Lumiere</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-0.5" style="font-variation-settings: 'wght' 200;">calendar_today</span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-[0.15em] mb-1.5">Date</div>
+<div class="font-body-lg text-body-lg text-on-surface">Thursday, Oct 26</div>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-0.5" style="font-variation-settings: 'wght' 200;">schedule</span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-[0.15em] mb-1.5">Time</div>
+<div class="font-body-lg text-body-lg text-on-surface">2:00 PM - 3:00 PM</div>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-0.5" style="font-variation-settings: 'wght' 200;">person</span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-[0.15em] mb-1.5">Assigned Broker</div>
+<div class="font-body-lg text-body-lg text-on-surface">Eleanor Vance</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Actions -->
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+<button class="px-8 py-4 rounded-full border border-outline-variant text-on-surface font-label-lg text-label-lg hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300; font-size: 20px;">event_note</span>
+                    Add to Calendar
+                </button>
+<button class="px-8 py-4 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary hover:text-on-primary transition-all duration-300 inner-glow-btn flex items-center justify-center gap-3">
+                    Go to My Viewings
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300; font-size: 20px;">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Minimal Footer -->
+<footer class="relative z-20 w-full py-8 text-center bg-surface/50 backdrop-blur-md">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Marble &amp; Arch Brokerage. All rights reserved.</p>
+</footer>
+</body></html>

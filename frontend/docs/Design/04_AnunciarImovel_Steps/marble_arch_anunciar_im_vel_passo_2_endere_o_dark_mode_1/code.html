@@ -1,0 +1,327 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Marble &amp; Arch - Property Submission</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "error-container": "#93000a",
+                "tertiary-fixed-dim": "#dec1ac",
+                "inverse-primary": "#775a19",
+                "background": "#131313",
+                "on-error-container": "#ffdad6",
+                "primary": "#e9c176",
+                "secondary-container": "#4c463c",
+                "on-tertiary-fixed-variant": "#574333",
+                "on-primary-fixed-variant": "#5d4201",
+                "on-background": "#e6e1e0",
+                "tertiary": "#dec1ac",
+                "surface-container-low": "#1c1b1b",
+                "on-primary-fixed": "#261900",
+                "secondary-fixed-dim": "#cfc5b9",
+                "on-tertiary-fixed": "#28180b",
+                "on-secondary": "#353027",
+                "error": "#ffb4ab",
+                "tertiary-fixed": "#fbddc7",
+                "surface-tint": "#e9c176",
+                "primary-fixed": "#ffdea5",
+                "outline-variant": "#4e4639",
+                "primary-container": "#5b4300",
+                "surface-dim": "#131313",
+                "primary-fixed-dim": "#e9c176",
+                "outline": "#998f82",
+                "surface-container": "#201f1f",
+                "on-tertiary-container": "#fbddc7",
+                "on-error": "#690005",
+                "on-secondary-fixed": "#1f1b13",
+                "on-primary": "#3f2d00",
+                "on-secondary-fixed-variant": "#4c463c",
+                "tertiary-container": "#574333",
+                "surface-variant": "#4e4639",
+                "surface": "#131313",
+                "surface-container-high": "#2b2a2a",
+                "secondary": "#cfc5b9",
+                "on-primary-container": "#ffdea5",
+                "secondary-fixed": "#ebe1d4",
+                "surface-bright": "#393939",
+                "on-secondary-container": "#ebe1d4",
+                "on-tertiary": "#3e2d1d",
+                "surface-container-highest": "#363434",
+                "surface-container-lowest": "#0e0e0e",
+                "inverse-surface": "#e6e1e0",
+                "on-surface-variant": "#cfc5b9",
+                "inverse-on-surface": "#1c1b1b",
+                "on-surface": "#e6e1e0"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-desktop": "64px",
+                "margin-tablet": "32px",
+                "unit": "8px",
+                "margin-mobile": "20px",
+                "gutter": "32px",
+                "container-max": "1440px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Inter"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "headline-sm": [
+                        "Playfair Display"
+                ],
+                "label-sm": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "label-lg": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Playfair Display"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-lg": [
+                        "14px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .glass-panel {
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(153, 143, 130, 0.2);
+        }
+        
+        .input-elegant {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid theme('colors.secondary-container');
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+            transition: border-color 0.3s ease;
+        }
+        .input-elegant:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom-color: theme('colors.primary');
+        }
+        .input-elegant::placeholder {
+            color: theme('colors.outline');
+        }
+        
+        .floating-label-group {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .floating-label-group input {
+            padding-top: 1.5rem;
+            padding-bottom: 0.5rem;
+            width: 100%;
+        }
+        .floating-label-group label {
+            position: absolute;
+            top: 1rem;
+            left: 0;
+            transition: all 0.2s ease-out;
+            pointer-events: none;
+            color: theme('colors.outline');
+        }
+        .floating-label-group input:focus + label,
+        .floating-label-group input:not(:placeholder-shown) + label {
+            top: -0.5rem;
+            font-size: 0.75rem;
+            color: theme('colors.primary');
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 32px 64px -16px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Suppressed intent: Transactional Flow - Close/Back implies departure) -->
+<!-- We will provide a simplified header for the flow -->
+<header class="w-full py-6 px-margin-mobile md:px-margin-desktop flex justify-between items-center max-w-container-max mx-auto z-50">
+<div class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">
+            Marble &amp; Arch
+        </div>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="font-label-lg text-label-lg">Save &amp; Exit</span>
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop py-12 md:py-24">
+<div class="w-full max-w-3xl">
+<!-- Stepper -->
+<div class="mb-16 flex items-center justify-center space-x-4 md:space-x-8">
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full border border-primary flex items-center justify-center text-primary bg-surface-bright">
+<span class="material-symbols-outlined" data-icon="check">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Details</span>
+</div>
+<div class="h-px w-12 md:w-24 bg-primary"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary ambient-shadow">
+<span class="font-label-lg text-label-lg">2</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Address</span>
+</div>
+<div class="h-px w-12 md:w-24 bg-secondary-container"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full border border-secondary-container flex items-center justify-center text-outline bg-surface">
+<span class="font-label-lg text-label-lg">3</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Media</span>
+</div>
+</div>
+<!-- Content Area -->
+<div class="glass-panel rounded-xl p-8 md:p-16 ambient-shadow relative overflow-hidden">
+<!-- Subtle background decorative element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed opacity-10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+<div class="mb-12">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-on-surface">Property Location</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Please provide the exact address of the estate.</p>
+</div>
+<form class="space-y-8 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+<div class="floating-label-group md:col-span-1">
+<input class="input-elegant font-body-lg text-body-lg text-on-surface" id="zipcode" placeholder=" " type="text">
+<label class="font-label-lg text-label-lg" for="zipcode">ZIP Code / CEP</label>
+</div>
+<div class="hidden md:block md:col-span-1 flex items-end pb-8">
+<!-- Spacer or optional auto-fill indicator -->
+</div>
+<div class="floating-label-group md:col-span-2">
+<input class="input-elegant font-body-lg text-body-lg text-on-surface" id="street" placeholder=" " type="text">
+<label class="font-label-lg text-label-lg" for="street">Street Address</label>
+</div>
+<div class="floating-label-group">
+<input class="input-elegant font-body-lg text-body-lg text-on-surface" id="number" placeholder=" " type="text">
+<label class="font-label-lg text-label-lg" for="number">Number</label>
+</div>
+<div class="floating-label-group">
+<input class="input-elegant font-body-lg text-body-lg text-on-surface" id="complement" placeholder=" " type="text">
+<label class="font-label-lg text-label-lg" for="complement">Complement (Apt, Suite)</label>
+</div>
+<div class="floating-label-group md:col-span-2">
+<input class="input-elegant font-body-lg text-body-lg text-on-surface" id="neighborhood" placeholder=" " type="text">
+<label class="font-label-lg text-label-lg" for="neighborhood">Neighborhood</label>
+</div>
+<div class="floating-label-group">
+<input class="input-elegant font-body-lg text-body-lg text-on-surface" id="city" placeholder=" " type="text">
+<label class="font-label-lg text-label-lg" for="city">City</label>
+</div>
+<div class="floating-label-group">
+<input class="input-elegant font-body-lg text-body-lg text-on-surface" id="state" placeholder=" " type="text">
+<label class="font-label-lg text-label-lg" for="state">State / Province</label>
+</div>
+</div>
+</form>
+</div>
+<!-- Navigation Buttons -->
+<div class="mt-12 flex justify-between items-center">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-4 px-6 rounded-lg hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-lg text-label-lg">Back</span>
+</button>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg py-4 px-10 rounded-lg flex items-center gap-2 border border-white/10 ambient-shadow hover:bg-primary-fixed transition-all duration-300">
+<span>Continue</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer Suppressed for Transactional Flow -->
+</body></html>

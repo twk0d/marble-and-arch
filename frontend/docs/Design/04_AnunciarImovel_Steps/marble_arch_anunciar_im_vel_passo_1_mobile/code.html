@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxe Assets - Submit Property</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "on-tertiary-fixed": "#28180b",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "on-surface": "#1c1b1b",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-primary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#1f1b13",
+                        "inverse-primary": "#e9c176",
+                        "secondary": "#645d53",
+                        "surface-bright": "#fcf9f8",
+                        "outline-variant": "#d1c5b4",
+                        "surface-tint": "#775a19",
+                        "primary": "#775a19",
+                        "surface-container": "#f0eded",
+                        "tertiary": "#705a49",
+                        "secondary-container": "#e8ded1",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-fixed": "#ebe1d4",
+                        "primary-container": "#c5a059",
+                        "tertiary-container": "#bba08c",
+                        "tertiary-fixed": "#fbddc7",
+                        "inverse-surface": "#313030",
+                        "on-primary-container": "#4e3700",
+                        "on-surface-variant": "#4e4639",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f3f0ef",
+                        "outline": "#7f7667",
+                        "surface": "#fcf9f8",
+                        "on-secondary-container": "#686257",
+                        "primary-fixed": "#ffdea5",
+                        "on-tertiary-container": "#4a3728",
+                        "on-background": "#1c1b1b",
+                        "on-primary-fixed": "#261900",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#eae7e7",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "margin-tablet": "32px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(232, 222, 209, 0.5);
+        }
+        
+        /* Custom Input Styles */
+        .luxe-input {
+            border: none;
+            border-bottom: 2px solid theme('colors.secondary-container');
+            background: transparent;
+            border-radius: 0;
+            padding: theme('spacing.unit') 0;
+            transition: all 0.3s ease;
+        }
+        .luxe-input:focus {
+            box-shadow: none;
+            border-bottom-color: theme('colors.primary');
+        }
+        
+        .luxe-label {
+            transform-origin: left top;
+            transition: all 0.3s ease;
+        }
+        
+        /* Floating label logic for standard inputs */
+        .luxe-input:focus ~ .luxe-label,
+        .luxe-input:not(:placeholder-shown) ~ .luxe-label {
+            transform: translateY(-20px) scale(0.85);
+            color: theme('colors.primary');
+        }
+
+        /* Custom Radio Button for Selection Cards */
+        .selection-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .selection-card input:checked + div {
+            border-color: theme('colors.primary');
+            background-color: theme('colors.surface-container');
+            box-shadow: 0 4px 20px rgba(119, 90, 25, 0.05);
+        }
+        .selection-card input:checked + div .icon-container {
+            color: theme('colors.primary');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased pt-16 pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 w-full">
+<button class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:opacity-70 transition-opacity active:scale-95 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm tracking-widest text-primary dark:text-primary-fixed-dim">LUXE ASSETS</h1>
+<button class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:opacity-70 transition-opacity active:scale-95 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-12 pb-32">
+<!-- Stepper (Editorial Style) -->
+<div class="mb-16 md:mb-24 flex items-center justify-center max-w-3xl mx-auto">
+<div class="flex items-center w-full">
+<!-- Step 1 (Active) -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm border border-primary mb-2 shadow-[0_4px_20px_rgba(119,90,25,0.15)]">1</div>
+<span class="font-label-sm text-label-sm text-primary absolute -bottom-6 whitespace-nowrap">Basic Info</span>
+</div>
+<!-- Line -->
+<div class="flex-grow h-[1px] bg-outline-variant/50 mx-4"></div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-10 h-10 rounded-full bg-surface text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm border border-outline-variant mb-2">2</div>
+</div>
+<!-- Line -->
+<div class="flex-grow h-[1px] bg-outline-variant/50 mx-4"></div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-10 h-10 rounded-full bg-surface text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm border border-outline-variant mb-2">3</div>
+</div>
+<!-- Line -->
+<div class="flex-grow h-[1px] bg-outline-variant/50 mx-4 hidden md:block"></div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center relative z-10 hidden md:flex">
+<div class="w-10 h-10 rounded-full bg-surface text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm border border-outline-variant mb-2">4</div>
+</div>
+</div>
+</div>
+<!-- Form Section -->
+<div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Contextual Image Column (Desktop Only) -->
+<div class="hidden md:block col-span-5 relative rounded-xl overflow-hidden h-[600px]">
+<img alt="Elegant architecture detail" class="w-full h-full object-cover absolute inset-0" data-alt="A close-up, high-end editorial photograph of a modern Mediterranean villa's exterior wall. The masonry features warm sand tones, highlighted by sharp, bright sunlight creating stark, minimalist shadows. A single, sleek glass balcony railing is visible, reflecting the clear sky. The overall aesthetic is quiet luxury, emphasizing permanence and architectural precision in a light, serene environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDroeAc-7ZKTisKptu6nG5kQjO_nlv4dPYrIbsKacb9ZJSOSJyDNo9hjqCaK4TQob_EpjMIikQdA_pLdiQ9KUsXfnhf6A7Me4YBRqZkaWlcRkEGO0JN7r3w9rZcItGOqo04vfZpO6qgoqsE8-4xyt0RQU0uyeCpkiYiXiuFAiaSY2oN5ben3FEFpBSMz8kqKL0ploWrn9OS7fbb07CWbI_cwZGVgtqn_IdBuK3lBdNk_3-fcWaic6WXxsoof5GaYSXNm8xcBESlj8ZL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-tint/80 to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 text-on-primary">
+<h2 class="font-headline-sm text-headline-sm mb-2">Curate Your Portfolio</h2>
+<p class="font-body-md text-body-md opacity-90">Begin by defining the fundamental attributes of your exclusive listing.</p>
+</div>
+</div>
+<!-- Form Canvas -->
+<div class="col-span-1 md:col-span-7 flex flex-col gap-12 pt-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Basic Information</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Detail the core purpose and classification of the property.</p>
+</div>
+<!-- Purpose Selection -->
+<div class="space-y-4">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block">Listing Purpose</label>
+<div class="grid grid-cols-2 gap-4">
+<label class="selection-card block relative">
+<input checked="" class="sr-only" name="purpose" type="radio" value="sale"/>
+<div class="glass-panel rounded-xl p-6 flex flex-col items-center justify-center gap-3 border border-outline-variant/30 h-full">
+<span class="icon-container material-symbols-outlined text-3xl text-on-surface-variant transition-colors" data-icon="sell">sell</span>
+<span class="font-label-lg text-label-lg text-on-surface">For Sale</span>
+</div>
+</label>
+<label class="selection-card block relative">
+<input class="sr-only" name="purpose" type="radio" value="rent"/>
+<div class="glass-panel rounded-xl p-6 flex flex-col items-center justify-center gap-3 border border-outline-variant/30 h-full">
+<span class="icon-container material-symbols-outlined text-3xl text-on-surface-variant transition-colors" data-icon="key">key</span>
+<span class="font-label-lg text-label-lg text-on-surface">For Rent</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Property Type (Bento-style selection) -->
+<div class="space-y-4">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block">Property Category</label>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<label class="selection-card block relative">
+<input checked="" class="sr-only" name="property_type" type="radio" value="house"/>
+<div class="glass-panel rounded-xl p-4 flex flex-col gap-2 border border-outline-variant/30 text-center">
+<span class="icon-container material-symbols-outlined text-2xl text-on-surface-variant mx-auto" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm text-on-surface">Estate / House</span>
+</div>
+</label>
+<label class="selection-card block relative">
+<input class="sr-only" name="property_type" type="radio" value="apartment"/>
+<div class="glass-panel rounded-xl p-4 flex flex-col gap-2 border border-outline-variant/30 text-center">
+<span class="icon-container material-symbols-outlined text-2xl text-on-surface-variant mx-auto" data-icon="apartment">apartment</span>
+<span class="font-label-sm text-label-sm text-on-surface">Penthouse / Apt</span>
+</div>
+</label>
+<label class="selection-card block relative">
+<input class="sr-only" name="property_type" type="radio" value="villa"/>
+<div class="glass-panel rounded-xl p-4 flex flex-col gap-2 border border-outline-variant/30 text-center">
+<span class="icon-container material-symbols-outlined text-2xl text-on-surface-variant mx-auto" data-icon="villa">villa</span>
+<span class="font-label-sm text-label-sm text-on-surface">Villa / Resort</span>
+</div>
+</label>
+<label class="selection-card block relative">
+<input class="sr-only" name="property_type" type="radio" value="land"/>
+<div class="glass-panel rounded-xl p-4 flex flex-col gap-2 border border-outline-variant/30 text-center">
+<span class="icon-container material-symbols-outlined text-2xl text-on-surface-variant mx-auto" data-icon="landscape">landscape</span>
+<span class="font-label-sm text-label-sm text-on-surface">Land / Plot</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Text Inputs -->
+<div class="space-y-10 mt-4">
+<div class="relative pt-6">
+<input class="luxe-input w-full font-headline-sm text-headline-sm text-on-surface placeholder-transparent" id="title" placeholder="Listing Title" type="text"/>
+<label class="luxe-label absolute left-0 top-8 font-label-sm text-label-sm text-on-surface-variant pointer-events-none uppercase tracking-widest" for="title">Listing Title</label>
+</div>
+<div class="relative pt-6">
+<textarea class="luxe-input w-full font-body-md text-body-md text-on-surface placeholder-transparent resize-none" id="description" placeholder="Editorial Description" rows="4"></textarea>
+<label class="luxe-label absolute left-0 top-8 font-label-sm text-label-sm text-on-surface-variant pointer-events-none uppercase tracking-widest" for="description">Editorial Description</label>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-between items-center px-margin-mobile py-4 bg-surface dark:bg-surface-container bg-white/90 dark:bg-surface-container-lowest/90 backdrop-blur-lg rounded-t-xl border-t border-outline-variant/20 shadow-[0_-8px_32px_rgba(119,90,25,0.05)] z-50 md:hidden">
+<button class="flex items-center justify-center text-secondary dark:text-secondary-fixed-dim px-6 py-3 hover:translate-y-[-2px] transition-transform duration-300 active:scale-98 transition-all flex-col">
+<span class="material-symbols-outlined mb-1" data-icon="save">save</span>
+<span class="font-label-sm text-label-sm">Save Draft</span>
+</button>
+<button class="flex items-center justify-center bg-primary dark:bg-primary-fixed-dim text-on-primary dark:text-on-primary-fixed rounded-full px-6 py-3 w-full max-w-[180px] hover:translate-y-[-2px] transition-transform duration-300 active:scale-98 transition-all">
+<span class="font-label-lg text-label-lg mr-2">Continue</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</nav>
+<!-- Desktop Actions (Floating outside nav) -->
+<div class="hidden md:flex fixed bottom-12 right-12 gap-4 z-40">
+<button class="glass-panel px-6 py-3 rounded-full font-label-lg text-label-lg text-primary border border-outline-variant flex items-center gap-2 hover:-translate-y-1 transition-transform shadow-lg">
+<span class="material-symbols-outlined" data-icon="save">save</span>
+            Save Draft
+        </button>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-lg text-label-lg flex items-center gap-2 hover:-translate-y-1 transition-transform shadow-[0_8px_24px_rgba(119,90,25,0.25)] border border-[#ebd8b7]/30 inset-shadow">
+            Continue to Location
+            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</body></html>

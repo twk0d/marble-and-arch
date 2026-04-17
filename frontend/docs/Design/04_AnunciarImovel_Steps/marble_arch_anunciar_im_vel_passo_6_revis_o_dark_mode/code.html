@@ -1,0 +1,373 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Marble &amp; Arch - Review &amp; Submit Property</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "error": "#ba1a1a",
+                "on-secondary-fixed": "#1f1b13",
+                "tertiary-fixed-dim": "#dec1ac",
+                "on-secondary-fixed-variant": "#4c463c",
+                "on-primary": "#ffffff",
+                "surface-tint": "#775a19",
+                "secondary": "#645d53",
+                "surface-dim": "#dcd9d9",
+                "tertiary": "#705a49",
+                "tertiary-container": "#bba08c",
+                "inverse-primary": "#e9c176",
+                "on-primary-container": "#4e3700",
+                "on-surface-variant": "#4e4639",
+                "error-container": "#ffdad6",
+                "on-tertiary-container": "#4a3728",
+                "surface-bright": "#fcf9f8",
+                "primary": "#775a19",
+                "inverse-on-surface": "#f3f0ef",
+                "tertiary-fixed": "#fbddc7",
+                "surface-container-highest": "#e5e2e1",
+                "primary-container": "#c5a059",
+                "on-tertiary-fixed": "#28180b",
+                "inverse-surface": "#313030",
+                "outline": "#7f7667",
+                "secondary-fixed-dim": "#cfc5b9",
+                "secondary-fixed": "#ebe1d4",
+                "on-tertiary-fixed-variant": "#574333",
+                "primary-fixed-dim": "#e9c176",
+                "on-secondary": "#ffffff",
+                "on-error": "#ffffff",
+                "surface-variant": "#e5e2e1",
+                "on-primary-fixed": "#261900",
+                "on-secondary-container": "#686257",
+                "secondary-container": "#e8ded1",
+                "on-background": "#1c1b1b",
+                "surface-container": "#f0eded",
+                "surface": "#fcf9f8",
+                "on-tertiary": "#ffffff",
+                "outline-variant": "#d1c5b4",
+                "surface-container-high": "#eae7e7",
+                "on-surface": "#1c1b1b",
+                "primary-fixed": "#ffdea5",
+                "on-primary-fixed-variant": "#5d4201",
+                "on-error-container": "#93000a",
+                "background": "#fcf9f8",
+                "surface-container-low": "#f6f3f2",
+                "surface-container-lowest": "#ffffff"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "container-max": "1440px",
+                "unit": "8px",
+                "margin-mobile": "20px",
+                "margin-tablet": "32px",
+                "gutter": "32px",
+                "margin-desktop": "64px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "headline-sm": [
+                        "Playfair Display"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "label-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "500"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-lg": [
+                        "14px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        .glass-panel {
+            background: rgba(28, 27, 27, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(127, 118, 103, 0.3);
+        }
+        .glow-shadow {
+            box-shadow: 0 32px 64px -16px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar: Suppressed per intent rules (Linear/Transactional Flow) -->
+<header class="w-full py-6 px-margin-mobile md:px-margin-desktop flex justify-between items-center border-b border-outline-variant bg-surface-container-lowest sticky top-0 z-50">
+<div class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">Marble &amp; Arch</div>
+<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">close</span>
+            Save &amp; Exit
+        </button>
+</header>
+<main class="flex-grow flex flex-col items-center py-12 md:py-24 px-margin-mobile md:px-margin-desktop">
+<div class="w-full max-w-4xl">
+<!-- Progress Indicator -->
+<div class="mb-16">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-4">Step 6 of 6</p>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-8">Review &amp; Submit</h1>
+<div class="flex items-center w-full gap-2">
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 max-w-2xl">Please review the details of your property submission carefully before finalizing. You can edit any section if necessary.</p>
+</div>
+<!-- Review Content -->
+<div class="space-y-gutter">
+<!-- Section: Basic Info -->
+<section class="glass-panel glow-shadow p-8 rounded-xl relative group transition-all duration-300 hover:bg-surface-container-low">
+<div class="flex justify-between items-start border-b border-outline-variant pb-4 mb-6">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Basic Information</h2>
+<button class="text-primary hover:text-primary-container font-label-lg text-label-lg flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 18px;">edit</span> Edit
+                        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Purpose</p>
+<p class="font-body-lg text-body-lg text-on-surface">For Sale</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Property Type</p>
+<p class="font-body-lg text-body-lg text-on-surface">Penthouse</p>
+</div>
+<div class="col-span-1 md:col-span-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Title</p>
+<p class="font-body-lg text-body-lg text-on-surface">Exquisite Mediterranean Villa with Panoramic Sea Views</p>
+</div>
+<div class="col-span-1 md:col-span-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Price</p>
+<p class="font-headline-sm text-headline-sm text-primary">€4,500,000</p>
+</div>
+</div>
+</section>
+<!-- Section: Location -->
+<section class="glass-panel glow-shadow p-8 rounded-xl relative group transition-all duration-300 hover:bg-surface-container-low">
+<div class="flex justify-between items-start border-b border-outline-variant pb-4 mb-6">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Location</h2>
+<button class="text-primary hover:text-primary-container font-label-lg text-label-lg flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 18px;">edit</span> Edit
+                        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+<div class="col-span-1 md:col-span-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Full Address</p>
+<p class="font-body-lg text-body-lg text-on-surface">123 Azure Coastal Road, Saint-Jean-Cap-Ferrat, 06230, France</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Region/State</p>
+<p class="font-body-lg text-body-lg text-on-surface">Provence-Alpes-Côte d'Azur</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Country</p>
+<p class="font-body-lg text-body-lg text-on-surface">France</p>
+</div>
+</div>
+</section>
+<!-- Section: Characteristics -->
+<section class="glass-panel glow-shadow p-8 rounded-xl relative group transition-all duration-300 hover:bg-surface-container-low">
+<div class="flex justify-between items-start border-b border-outline-variant pb-4 mb-6">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Characteristics</h2>
+<button class="text-primary hover:text-primary-container font-label-lg text-label-lg flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 18px;">edit</span> Edit
+                        </button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Total Area</p>
+<p class="font-body-lg text-body-lg text-on-surface">450 sq m</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Bedrooms</p>
+<p class="font-body-lg text-body-lg text-on-surface">5</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Bathrooms</p>
+<p class="font-body-lg text-body-lg text-on-surface">6.5</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Year Built</p>
+<p class="font-body-lg text-body-lg text-on-surface">2018</p>
+</div>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-3">Key Amenities</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface bg-surface-container/50">Infinity Pool</span>
+<span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface bg-surface-container/50">Wine Cellar</span>
+<span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface bg-surface-container/50">Smart Home System</span>
+<span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface bg-surface-container/50">Private Beach Access</span>
+</div>
+</div>
+</section>
+<!-- Section: Media -->
+<section class="glass-panel glow-shadow p-8 rounded-xl relative group transition-all duration-300 hover:bg-surface-container-low">
+<div class="flex justify-between items-start border-b border-outline-variant pb-4 mb-6">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Media Gallery</h2>
+<button class="text-primary hover:text-primary-container font-label-lg text-label-lg flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 18px;">edit</span> Edit
+                        </button>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-4">12 Photos Uploaded</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Thumbnail 1 (Hero) -->
+<div class="aspect-square rounded-lg overflow-hidden border border-outline-variant relative">
+<img alt="Luxury property exterior view" class="w-full h-full object-cover" data-alt="A sun-drenched, hyper-realistic architectural photograph of a modern Mediterranean luxury penthouse exterior. The composition features clean, sharp lines contrasting with warm sand-toned stonework and expansive floor-to-ceiling glass windows. A pristine infinity pool reflects the clear azure sky, emphasizing a serene, high-end 'Quiet Luxury' aesthetic. The lighting is bright and natural, casting soft, elegant shadows that highlight the premium materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhX4M6vPCUX3N8KxygTBBIrtR0dYNaeKqvNakjE_71j3_2a58AbAO3JY6coeAn5DADbT_AUpNmIEBj6ZdONYNsYLn-PXjL6JOJdwkRULZrCh-j2oSNzpq12TalHwoxXKksSrFSoxnBd0ykIJz05EbK9lQ-Coz-WyzwSn5abvhpR4T5XfPnx1AZqv9xMN5Shu3qq72UalLh_f9bXfzQyvd-kIv2W28u7-zY2LbQ5wrvSbBmqdW_4sQE3kfyUkpiJPbo7qj1NaXl4cfy">
+<div class="absolute top-2 left-2 bg-surface/80 backdrop-blur-md px-2 py-1 rounded text-xs font-label-sm text-on-surface">Cover</div>
+</div>
+<!-- Thumbnail 2 -->
+<div class="aspect-square rounded-lg overflow-hidden border border-outline-variant">
+<img alt="Luxury living room" class="w-full h-full object-cover" data-alt="An immaculate, high-resolution interior shot of a luxury penthouse living room. The space is vast and minimalist, decorated with curated, bespoke furniture in neutral tones of cream, charcoal, and warm sand. Large panoramic windows offer a breathtaking view of the coastline, bathing the room in soft, diffused natural light. The aesthetic communicates exclusivity, architectural precision, and refined glassmorphism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrvgcmRX_evWg_0DUz1CllU-MxO457TRptOzaDw1FRpgUWk6kbz2woBxZdeYlyBcNyPuluKYpZUkesYHoKPavNqGMUnOet4xGjzdHFlUvKqTwgYs9pjfDFmw9JKFEqA6EQcbSaviXdF7IC8M6T1W2XWQ5kyqi9waK_bKDh3llw9uxqvOEn8LoczwbCTqd2u2dUtwQoYbUBMzB1CReQfQSnu2QfRmsT-Nucclm-CJge6HINSgvs_hDPggx9QGxNKL2mMwEWPNwm_2fx">
+</div>
+<!-- Thumbnail 3 -->
+<div class="aspect-square rounded-lg overflow-hidden border border-outline-variant">
+<img alt="Luxury kitchen" class="w-full h-full object-cover" data-alt="A pristine, editorial-quality photograph of a bespoke modern kitchen in a luxury estate. The design features seamless, handleless cabinetry in a matte champagne finish, paired with a massive, dramatically veined marble island. High-end integrated appliances are subtly visible. The lighting is bright and sophisticated, reflecting off the polished surfaces to create a light, airy, and deeply elegant atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY3a20QdK8vwoT04wen-p_eTf3aaPfPH_uGC1A66jPlgZJ3gcLR4bsnLNXh32Rrn6_yyyOSleTLFFdilFb36VvAGkeJ6WytAW2iNRf7I2B7LbBjaYraZlMtxFdY2xwlS7Co-w3H0FuSKVcGVA1CCFSL55eK1peAmkKV0mc2I4wwRTo0Uh-Q6tppPymJYhTU8MadACp-dS31fz7Rcv-X_Y1uXDtOVJ2TK62Ql0wZA1jMRFZyqBKEp4d6agvvgnWxmDaizaiWcksPmNM">
+</div>
+<!-- Thumbnail 4 (More) -->
+<div class="aspect-square rounded-lg border border-outline-variant bg-surface-container flex flex-col items-center justify-center text-on-surface-variant cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined mb-1">collections</span>
+<span class="font-label-sm text-label-sm">+9 More</span>
+</div>
+</div>
+</section>
+<!-- Section: Contact Info -->
+<section class="glass-panel glow-shadow p-8 rounded-xl relative group transition-all duration-300 hover:bg-surface-container-low">
+<div class="flex justify-between items-start border-b border-outline-variant pb-4 mb-6">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Agent Details</h2>
+<button class="text-primary hover:text-primary-container font-label-lg text-label-lg flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 18px;">edit</span> Edit
+                        </button>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden flex-shrink-0">
+<img alt="Agent portrait" class="w-full h-full object-cover" data-alt="A highly professional, editorial-style portrait of a sophisticated real estate agent. The subject is dressed in impeccably tailored, subtle luxury attire, exuding confidence and approachability. The background is an out-of-focus, light, and airy modern office interior with soft, warm sand tones. The lighting is studio-quality, emphasizing a polished, trustworthy, and high-end brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB14TNhiBsGx0hWerHfBozBSU03MbIJhaUccAZWeUciglWNzFoeDgHkkBGvEolXW95EjCXLZ_l6FB7mNmlzadiMNAXktMUMdIstkMPFg8Bai0xNHtYHsp-YQ8mOugGXW5Zp9VjW9pkQVaeFxPUL_ZsE3hyyEqVGcj5ZSxoVTrGcgZmeVsNhkDfKJFn9qqiYKCdIsTtO4KWzaO24Bb8jPciSqIl6n2gKfts19dlPCKIMKzlMaoPwhMsEFWt55pgun11EqNIZvBvLZAe">
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Primary Agent</p>
+<p class="font-body-lg text-body-lg text-on-surface font-medium">Alexander Pierce</p>
+<p class="font-body-md text-body-md text-on-surface-variant">a.pierce@marbleandarch.com | +33 6 12 34 56 78</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Action Area -->
+<div class="mt-16 pt-8 border-t border-outline-variant flex flex-col md:flex-row items-center justify-between gap-6">
+<button class="w-full md:w-auto px-8 py-4 font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors flex items-center justify-center gap-2 order-2 md:order-1">
+<span class="material-symbols-outlined">arrow_back</span>
+                    Back to Media
+                </button>
+<button class="w-full md:w-auto px-10 py-4 bg-primary text-on-primary font-label-lg text-label-lg rounded-sm border border-white/10 shadow-sm hover:shadow-md hover:bg-primary-container transition-all duration-300 flex items-center justify-center gap-2 order-1 md:order-2">
+                    Confirm &amp; Submit Property
+                    <span class="material-symbols-outlined icon-fill">check_circle</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer: Suppressed per intent rules (Linear/Transactional Flow) -->
+</body></html>

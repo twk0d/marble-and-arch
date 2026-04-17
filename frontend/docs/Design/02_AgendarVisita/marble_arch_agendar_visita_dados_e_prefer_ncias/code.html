@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visit Scheduling - Marble &amp; Arch</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ebe1d4",
+                        "surface-container": "#f0eded",
+                        "surface-tint": "#775a19",
+                        "error": "#ba1a1a",
+                        "tertiary": "#705a49",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-primary-fixed": "#261900",
+                        "tertiary-container": "#bba08c",
+                        "on-secondary-fixed": "#1f1b13",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#4e3700",
+                        "surface-bright": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e8ded1",
+                        "outline": "#7f7667",
+                        "surface-dim": "#dcd9d9",
+                        "surface": "#fcf9f8",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-high": "#eae7e7",
+                        "on-secondary-container": "#686257",
+                        "inverse-surface": "#313030",
+                        "background": "#fcf9f8",
+                        "primary-fixed": "#ffdea5",
+                        "on-surface-variant": "#4e4639",
+                        "inverse-primary": "#e9c176",
+                        "secondary": "#645d53",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#775a19",
+                        "tertiary-fixed": "#fbddc7",
+                        "on-tertiary-fixed": "#28180b",
+                        "surface-container-low": "#f6f3f2",
+                        "outline-variant": "#d1c5b4",
+                        "on-background": "#1c1b1b",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-surface": "#1c1b1b",
+                        "primary-container": "#c5a059",
+                        "on-tertiary-container": "#4a3728",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "container-max": "1440px",
+                        "margin-tablet": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+<!-- Transactional Header (Suppressed Navigation for Linear Flow) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant h-20 flex items-center px-margin-mobile md:px-margin-desktop transition-all duration-300">
+<div class="max-w-container-max mx-auto w-full flex justify-between items-center">
+<a class="font-headline-md text-headline-md text-primary tracking-tight" href="#">Marble &amp; Arch</a>
+<button aria-label="Cancel Scheduling" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-highest transition-colors group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">close</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-[1024px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Form Area (Left Column) -->
+<div class="lg:col-span-8 flex flex-col">
+<!-- Progress Indicator -->
+<div class="flex items-center gap-3 mb-6">
+<span class="w-8 h-[2px] bg-primary"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Step 2 of 3</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-2">Personal Details</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-12 max-w-lg">
+                        Please provide your contact information and any specific preferences or requirements you have for your visit to The Penthouse at 15 Central Park West.
+                    </p>
+<form class="flex flex-col gap-8 w-full max-w-xl">
+<!-- Name Input -->
+<div class="relative pt-5">
+<input class="peer w-full border-0 border-b-[1px] border-outline-variant bg-transparent py-2 px-0 text-body-lg font-body-lg text-on-surface focus:border-primary focus:ring-0 placeholder-transparent transition-colors" id="fullName" name="fullName" placeholder="Full Name" required="" type="text"/>
+<label class="absolute left-0 top-1 -translate-y-full text-label-sm font-label-sm text-secondary transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-body-md peer-placeholder-shown:font-body-md peer-focus:top-1 peer-focus:-translate-y-full peer-focus:text-label-sm peer-focus:font-label-sm peer-focus:text-primary" for="fullName">Full Name</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Email Input -->
+<div class="relative pt-5">
+<input class="peer w-full border-0 border-b-[1px] border-outline-variant bg-transparent py-2 px-0 text-body-lg font-body-lg text-on-surface focus:border-primary focus:ring-0 placeholder-transparent transition-colors" id="emailAddress" name="emailAddress" placeholder="Email Address" required="" type="email"/>
+<label class="absolute left-0 top-1 -translate-y-full text-label-sm font-label-sm text-secondary transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-body-md peer-placeholder-shown:font-body-md peer-focus:top-1 peer-focus:-translate-y-full peer-focus:text-label-sm peer-focus:font-label-sm peer-focus:text-primary" for="emailAddress">Email Address</label>
+</div>
+<!-- Phone Input -->
+<div class="relative pt-5">
+<input class="peer w-full border-0 border-b-[1px] border-outline-variant bg-transparent py-2 px-0 text-body-lg font-body-lg text-on-surface focus:border-primary focus:ring-0 placeholder-transparent transition-colors" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" type="tel"/>
+<label class="absolute left-0 top-1 -translate-y-full text-label-sm font-label-sm text-secondary transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-body-md peer-placeholder-shown:font-body-md peer-focus:top-1 peer-focus:-translate-y-full peer-focus:text-label-sm peer-focus:font-label-sm peer-focus:text-primary" for="phoneNumber">Phone Number</label>
+</div>
+</div>
+<!-- Message/Requirements -->
+<div class="relative pt-5 mt-4">
+<textarea class="peer w-full border-0 border-b-[1px] border-outline-variant bg-transparent py-2 px-0 text-body-md font-body-md text-on-surface focus:border-primary focus:ring-0 placeholder-transparent resize-none transition-colors" id="specialRequirements" name="specialRequirements" placeholder="Message or Special Requirements" rows="4"></textarea>
+<label class="absolute left-0 top-1 -translate-y-full text-label-sm font-label-sm text-secondary transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-body-md peer-placeholder-shown:font-body-md peer-focus:top-1 peer-focus:-translate-y-full peer-focus:text-label-sm peer-focus:font-label-sm peer-focus:text-primary" for="specialRequirements">Message or Special Requirements (Optional)</label>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-6 mt-12 pt-8 border-t border-outline-variant/30">
+<button class="flex items-center gap-2 px-6 py-3 font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-full transition-all group" type="button">
+<span class="material-symbols-outlined text-[20px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                                Back
+                            </button>
+<button class="flex-grow md:flex-grow-0 ml-auto px-10 py-4 bg-primary text-on-primary font-label-lg text-label-lg rounded-full shadow-[0_8px_32px_rgba(119,90,25,0.15)] hover:shadow-[0_12px_40px_rgba(119,90,25,0.25)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2" type="button">
+                                Confirm Schedule
+                                <span class="material-symbols-outlined text-[20px]">check</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Sidebar / Concierge Area (Right Column) -->
+<aside class="lg:col-span-4 mt-16 lg:mt-0">
+<div class="sticky top-32">
+<div class="bg-surface-container-low border border-outline-variant/50 rounded-xl p-8 relative overflow-hidden group hover:shadow-[0_24px_64px_rgba(119,90,25,0.03)] transition-shadow duration-500">
+<!-- Subtle Ambient Decor -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-center gap-2 mb-8">
+<span class="material-symbols-outlined text-primary text-[18px]">vpn_key</span>
+<h3 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Private Concierge</h3>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-32 h-32 rounded-full overflow-hidden border-[3px] border-surface shadow-sm mb-6 relative">
+<img alt="Alexander Sterling, Senior Associate Broker" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" data-alt="A professional portrait of a male luxury real estate broker named Alexander Sterling. He is dressed in a sharp, perfectly tailored charcoal suit with a crisp white shirt, exuding confidence and high-end expertise. The lighting is soft and flattering, reminiscent of a high-end editorial photoshoot in a bright, modern penthouse. The background is slightly blurred, showing a hint of a sophisticated, light-filled office space with Mediterranean masonry accents. The mood is trustworthy, exclusive, and welcoming." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAReHCpd8llIENElajSBMAvogLS6ihGOwXXL7ICmx5An204Uaofvm3slSMDGB4WjtdJbq3FyS4uY3AiOVgWlSQIislLdNYDV53ueys3SBXlU_T4uRw-bZvq4FmYfJ1LugULn4s-plUM-QTFSL92GcyixYiDeOy4aAYJIsb6dF_xhq1Maby5ChUYJkswh_nQ9ZhXbAVsSTbDjCjT0UxuIjw2i0eBFYu-30igJ8CSptYX8ogH3flV4x2KE2a_n4eTC_9zTUpEuhaRlff5"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Alexander Sterling</h4>
+<p class="font-body-md text-body-md text-secondary mb-6">Senior Associate Broker</p>
+<p class="font-body-md text-body-md text-on-surface-variant/80 italic mb-8 max-w-[240px]">
+                                    "I am here to ensure your visit is entirely tailored to your preferences. Please let me know how I can best accommodate you."
+                                </p>
+<div class="w-full h-[1px] bg-outline-variant/40 mb-6"></div>
+<div class="flex items-center gap-4 text-on-surface-variant w-full justify-center">
+<button aria-label="Call Broker" class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</button>
+<button aria-label="Email Broker" class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Simplified Footer -->
+<footer class="border-t border-outline-variant/30 py-8 mt-auto bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 text-secondary font-label-sm text-label-sm">
+<p>© 2024 Marble &amp; Arch. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

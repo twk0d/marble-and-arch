@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Regional Market Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#9a8f80",
+                    "tertiary": "#c8c6c5",
+                    "on-tertiary-container": "#3b3b3b",
+                    "secondary-fixed": "#f1e1c2",
+                    "surface": "#131313",
+                    "primary": "#e9c176",
+                    "on-tertiary": "#313030",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-highest": "#353534",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "error-container": "#93000a",
+                    "primary-fixed-dim": "#e9c176",
+                    "on-error": "#690005",
+                    "on-background": "#e5e2e1",
+                    "surface-tint": "#e9c176",
+                    "on-surface": "#e5e2e1",
+                    "inverse-on-surface": "#313030",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#e5e2e1",
+                    "inverse-surface": "#e5e2e1",
+                    "inverse-primary": "#775a19",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-secondary-fixed-variant": "#50462f",
+                    "on-primary": "#412d00",
+                    "background": "#131313",
+                    "tertiary-container": "#a7a5a5",
+                    "surface-container-low": "#1c1b1b",
+                    "on-surface-variant": "#d1c5b4",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#131313",
+                    "secondary-container": "#50462f",
+                    "surface-bright": "#393939",
+                    "secondary-fixed-dim": "#d4c5a7",
+                    "on-secondary-fixed": "#221b08",
+                    "primary-container": "#c5a059",
+                    "on-primary-fixed": "#261900",
+                    "primary-fixed": "#ffdea5",
+                    "outline-variant": "#4e4639",
+                    "surface-variant": "#353534",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "on-primary-container": "#4e3700",
+                    "surface-container": "#201f1f",
+                    "on-secondary-container": "#c2b397",
+                    "secondary": "#d4c5a7",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-secondary": "#382f1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "container-max": "1200px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "label-sm": ["DM Sans"],
+                    "body-md": ["DM Sans"],
+                    "body-lg": ["DM Sans"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121212;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(28, 28, 28, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+        }
+        .glow-gold {
+            box-shadow: 0 0 20px rgba(233, 193, 118, 0.05);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-open .accordion-content {
+            max-height: 500px;
+        }
+        .accordion-open .accordion-icon {
+            transform: rotate(180deg);
+        }
+        .chart-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw 3s forwards ease-in-out;
+        }
+        @keyframes draw {
+            to { stroke-dashoffset: 0; }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary/30">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center justify-between px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">Market Insights</h1>
+</div>
+<button class="active:scale-95 duration-200 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile max-w-container-max mx-auto space-y-10">
+<!-- High Level Market Cards (Horizontal Scroll) -->
+<section class="flex gap-4 overflow-x-auto pb-4 -mx-margin-mobile px-margin-mobile no-scrollbar">
+<div class="min-w-[280px] p-6 glass-card rounded-xl glow-gold flex-shrink-0">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-2">Global Index</p>
+<div class="flex items-baseline gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">1,284.50</h2>
+<span class="text-primary font-label-sm">+2.4%</span>
+</div>
+<div class="mt-4 h-12 w-full flex items-end gap-1">
+<div class="flex-1 bg-primary/20 h-4 rounded-sm"></div>
+<div class="flex-1 bg-primary/40 h-8 rounded-sm"></div>
+<div class="flex-1 bg-primary/60 h-6 rounded-sm"></div>
+<div class="flex-1 bg-primary/80 h-10 rounded-sm"></div>
+<div class="flex-1 bg-primary h-12 rounded-sm"></div>
+</div>
+</div>
+<div class="min-w-[280px] p-6 glass-card rounded-xl glow-gold flex-shrink-0">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-2">Luxury Assets</p>
+<div class="flex items-baseline gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">$4.2M</h2>
+<span class="text-primary font-label-sm">+5.1%</span>
+</div>
+<div class="mt-4 h-12 w-full flex items-end gap-1">
+<div class="flex-1 bg-primary/10 h-6 rounded-sm"></div>
+<div class="flex-1 bg-primary/30 h-4 rounded-sm"></div>
+<div class="flex-1 bg-primary/50 h-10 rounded-sm"></div>
+<div class="flex-1 bg-primary/70 h-8 rounded-sm"></div>
+<div class="flex-1 bg-primary h-11 rounded-sm"></div>
+</div>
+</div>
+</section>
+<!-- Trend Line Chart -->
+<section class="glass-card rounded-xl p-6 glow-gold overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-2xl">Price Trends</h3>
+<p class="font-label-sm text-label-sm text-outline">Q1 2023 - Q4 2024</p>
+</div>
+<button class="px-4 py-2 bg-primary text-on-primary font-label-sm text-label-sm rounded-full tracking-widest">
+                    EXPORT
+                </button>
+</div>
+<div class="relative h-48 w-full mt-4">
+<svg class="w-full h-full" viewbox="0 0 400 150">
+<path class="chart-path" d="M0,130 C50,120 80,140 120,100 C160,60 200,80 250,50 C300,20 350,40 400,10" fill="none" stroke="#e9c176" stroke-width="3"></path>
+<defs>
+<lineargradient id="gradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#e9c176;stop-opacity:0.2"></stop>
+<stop offset="100%" style="stop-color:#e9c176;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,130 C50,120 80,140 120,100 C160,60 200,80 250,50 C300,20 350,40 400,10 V150 H0 Z" fill="url(#gradient)"></path>
+</svg>
+</div>
+</section>
+<!-- Top Regions Accordion -->
+<section class="space-y-4">
+<h3 class="font-headline-md text-headline-md text-on-surface px-2">Top Regions</h3>
+<div class="space-y-3">
+<!-- Manhattan -->
+<div class="accordion-item glass-card rounded-xl transition-all duration-300">
+<button class="w-full flex items-center justify-between p-6" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-60" data-alt="An atmospheric, high-contrast night photograph of the Manhattan skyline reflecting in the Hudson River. The scene is dominated by deep charcoal shadows and the warm golden glow of skyscraper windows. The architectural style is modernist and prestigious, evoking a sense of high-end real estate and nocturnal elegance consistent with a premium luxury brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBgb_GJ44JdU43idHiKs3iXkctQhT9xS54bgqhTPn2DrjP_ElKUGQvB6QXOI1WjNALRscjnHpazNvTAaPeBFUDTWsN9AHb6AQj-RksexZ8fx0tlHbemXiQ_wqO326YDnNqoxyzIAYgVw_0baeCoA4tQzFpNZynZrnK8XDG8JOWSbPFvthvyOLmngiI8-rVR7YARwAp1QFP3qaFbJbhPWFcPFWk8hosrkN63EhGWO9Rk39kxSHOOjxBVpWY1DqYCcBscsEzqAVuWFLN"/>
+</div>
+<div class="text-left">
+<p class="font-body-lg text-body-lg font-bold">Manhattan</p>
+<p class="font-label-sm text-label-sm text-primary">Bullish +4.2%</p>
+</div>
+</div>
+<span class="material-symbols-outlined accordion-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content px-6 pb-6">
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-outline">Avg Sq Ft Price</span>
+<span>$2,140</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-outline">Total Volume</span>
+<span>$14.2B</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-outline">Inventory Level</span>
+<span class="text-primary">Low</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Miami -->
+<div class="accordion-item glass-card rounded-xl">
+<button class="w-full flex items-center justify-between p-6" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-60" data-alt="A luxurious, low-light shot of a contemporary waterfront villa in Miami at dusk. The architecture features clean lines and large glass facades, reflecting a pool glowing with subtle golden light. The mood is intimate and exclusive, utilizing a palette of deep navy and champagne gold, capturing the essence of 'Nocturnal Elegance' and ultra-prime coastal living." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_eUn9wwL6-AN4-gZZxXAcXty1kl2-mXUcegA3GIV8WWEXyl3xj0fNtC_7LEzXSSPl1TtG2u_OitiFUAsrAfcFBp6N4v6qyZxx5s8GI2ZQSkgYR7RDURZt4VXUaSSZO6rvSm3Svte8BL8iiJHZ5aOXBqbBHxKRK7vYNK5EazTgi1Z0pFtWxZi67g-umKM6_c7qyp6ZwRAoSkZylfg0iWwLv8MyrK2smztrfO0oE7sC2ZkUPD9JR6qGEbXyxyzViKwQniEQ8A3DD1vy"/>
+</div>
+<div class="text-left">
+<p class="font-body-lg text-body-lg font-bold">Miami</p>
+<p class="font-label-sm text-label-sm text-primary">Active +6.8%</p>
+</div>
+</div>
+<span class="material-symbols-outlined accordion-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content px-6 pb-6">
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-outline">Avg Sq Ft Price</span>
+<span>$1,450</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-outline">Total Volume</span>
+<span>$8.7B</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-outline">Inventory Level</span>
+<span class="text-primary">Medium</span>
+</div>
+</div>
+</div>
+</div>
+<!-- London -->
+<div class="accordion-item glass-card rounded-xl">
+<button class="w-full flex items-center justify-between p-6" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-60" data-alt="A cinematic night view of the London cityscape centered on iconic heritage buildings illuminated by soft warm spotlights. The sky is a deep, velvety charcoal. The image highlights the intersection of historic prestige and modern luxury, featuring golden highlights on architectural details, creating a sophisticated and timeless atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzghOZojc6S58CyKr4bK20bbVcrVyem1ILfCmjbmflPdkEXB6V6q3yfIyrsMRJSyjgXnvZIZomi5lS2kdVGgd8rKR0qs9bvKI441LcU7mauus5-KzyxzB-AZvbCi5RW7OaIZC1JPrWeP-cXORQtm-eM0K17set_hLDmqTWWGQkLmHbgBq-HXHAYwFyXKTequ6BbZbiFNwT6kzfJL58oEvzztqxfzMgnh4xZ5gCjUNDhYik3xAj-TNfBdWCvpgVZgXS0tmvo4YSpiRp"/>
+</div>
+<div class="text-left">
+<p class="font-body-lg text-body-lg font-bold">London</p>
+<p class="font-label-sm text-label-sm text-primary">Stable +1.2%</p>
+</div>
+</div>
+<span class="material-symbols-outlined accordion-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content px-6 pb-6">
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-outline">Avg Sq Ft Price</span>
+<span>£1,890</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-outline">Total Volume</span>
+<span>£11.1B</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-outline">Inventory Level</span>
+<span class="text-primary">Stable</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Insights Card -->
+<section class="relative p-8 rounded-xl overflow-hidden glass-card glow-gold">
+
+<div class="relative z-10 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h4 class="font-headline-md text-headline-md text-on-surface text-xl">Quick Insights</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Market volatility in London is decreasing. Consider shifting focus to emerging sub-markets in South Kensington for higher yields.
+                </p>
+<div class="flex gap-2">
+<button class="flex-1 py-3 border border-primary/40 text-primary font-label-sm text-label-sm rounded-lg hover:bg-primary/10 transition-colors">
+                        DISMISS
+                    </button>
+<button class="flex-1 py-3 bg-primary text-on-primary font-label-sm text-label-sm rounded-lg shadow-lg">
+                        LEARN MORE
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-full bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-2xl border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(119,90,25,0.05)]">
+<div class="flex justify-around items-center h-20 px-2 pb-safe w-full">
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 dark:text-on-surface-variant/70 px-4 py-1.5 hover:text-primary active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Overview</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-secondary-container/50 dark:bg-secondary-container/20 rounded-full px-4 py-1.5 transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-label-sm text-label-sm mt-1">Regions</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 dark:text-on-surface-variant/70 px-4 py-1.5 hover:text-primary active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined">show_chart</span>
+<span class="font-label-sm text-label-sm mt-1">Trends</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 dark:text-on-surface-variant/70 px-4 py-1.5 hover:text-primary active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm mt-1">Settings</span>
+</button>
+</div>
+</nav>
+<script>
+        function toggleAccordion(element) {
+            const item = element.parentElement;
+            const isOpen = item.classList.contains('accordion-open');
+            
+            // Close all others
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                el.classList.remove('accordion-open');
+            });
+
+            if (!isOpen) {
+                item.classList.add('accordion-open');
+            }
+        }
+        
+        // Initialize first accordion open
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstItem = document.querySelector('.accordion-item');
+            if (firstItem) {
+                firstItem.classList.add('accordion-open');
+            }
+        });
+    </script>
+</body></html>

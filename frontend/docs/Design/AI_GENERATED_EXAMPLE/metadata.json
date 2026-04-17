@@ -1,0 +1,6 @@
+{
+  "name": "Marble & Arch",
+  "description": "A quiet luxury real estate search, curation, and bespoke architectural planning system powered by Gemini.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marble &amp; Arch - Notifications</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#cfc5b9",
+                    "on-primary-container": "#4e3700",
+                    "primary-fixed-dim": "#e9c176",
+                    "surface-container-high": "#eae7e7",
+                    "on-tertiary-container": "#4a3728",
+                    "on-surface-variant": "#4e4639",
+                    "tertiary-fixed-dim": "#dec1ac",
+                    "secondary-container": "#e8ded1",
+                    "outline-variant": "#d1c5b4",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#e9c176",
+                    "surface-bright": "#fcf9f8",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1c1b1b",
+                    "on-background": "#1c1b1b",
+                    "surface-variant": "#e5e2e1",
+                    "tertiary-fixed": "#fbddc7",
+                    "inverse-surface": "#313030",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container": "#f0eded",
+                    "surface": "#fcf9f8",
+                    "on-tertiary-fixed-variant": "#574333",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f3f0ef",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#775a19",
+                    "surface-container-low": "#f6f3f2",
+                    "primary-container": "#c5a059",
+                    "on-secondary-fixed-variant": "#4c463c",
+                    "on-secondary-fixed": "#1f1b13",
+                    "primary": "#775a19",
+                    "tertiary": "#705a49",
+                    "secondary": "#645d53",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#28180b",
+                    "on-primary-fixed": "#261900",
+                    "outline": "#7f7667",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "background": "#fcf9f8",
+                    "primary-fixed": "#ffdea5",
+                    "on-secondary-container": "#686257",
+                    "secondary-fixed": "#ebe1d4",
+                    "surface-dim": "#dcd9d9",
+                    "tertiary-container": "#bba08c",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-tablet": "32px",
+                    "container-max": "1440px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "gutter": "32px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-sm": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "label-lg": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(209, 197, 180, 0.3);
+            box-shadow: 0 32px 64px rgba(119, 90, 25, 0.05);
+        }
+        
+        /* Ambient shadow for cards */
+        .ambient-shadow {
+            box-shadow: 0 24px 48px -12px rgba(119, 90, 25, 0.08);
+        }
+
+        /* Subtle scrollbar for notifications */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #d1c5b4;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm bg-white/10 h-20 flex justify-between items-center max-w-container-max mx-auto px-margin-desktop">
+<div class="font-headline-md text-headline-md font-semibold text-primary">Marble &amp; Arch</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Properties</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Journal</a>
+</nav>
+<div class="flex items-center gap-6 relative">
+<!-- Search -->
+<button class="text-primary hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<!-- Notifications Toggle (Active State) -->
+<button class="text-primary hover:bg-surface-container-low/50 transition-all duration-300 relative p-2 rounded-full Active: opacity-80 scale-95" id="notification-toggle">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<!-- Unread Badge -->
+<span class="absolute top-1 right-1 w-2.5 h-2.5 bg-primary-container rounded-full border-2 border-white"></span>
+</button>
+<button class="text-primary hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="hidden md:block bg-primary-container text-on-primary-container px-6 py-2 border border-primary-container/20 hover:shadow-[0_8px_24px_rgba(197,160,89,0.2)] transition-all font-label-lg text-label-lg">
+                Inquire
+            </button>
+</div>
+</header>
+<!-- Main Content Area (Background) -->
+<main class="flex-grow pt-32 px-margin-desktop max-w-container-max mx-auto w-full relative z-0">
+<!-- Placeholder content to show context -->
+<div class="max-w-3xl">
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Curated Discoveries</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl">
+                Explore our exclusive collection of high-end properties. Your personalized dashboard awaits.
+            </p>
+</div>
+<!-- Subtle background elements -->
+<div class="absolute inset-0 z-[-1] opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 80% 20%, rgba(197, 160, 89, 0.1) 0%, transparent 40%);"></div>
+</main>
+<!-- Notification Panel Overlay -->
+<div class="fixed top-24 right-margin-desktop w-[420px] max-w-[calc(100vw-40px)] z-50 transform origin-top-right transition-all duration-300 ease-out opacity-100 scale-100" id="notification-panel">
+<div class="glass-panel rounded-xl overflow-hidden flex flex-col max-h-[819px]">
+<!-- Panel Header -->
+<div class="px-6 py-5 border-b border-outline-variant/30 flex justify-between items-center bg-white/50">
+<h2 class="font-headline-sm text-headline-sm text-primary">Notifications</h2>
+<button class="text-primary-container font-label-sm text-label-sm hover:text-primary transition-colors">
+                    Mark all as read
+                </button>
+</div>
+<!-- Notifications List -->
+<div class="overflow-y-auto custom-scrollbar flex-grow bg-white/20">
+<!-- Section: New -->
+<div class="px-6 py-3 bg-surface-container-low/50 border-y border-outline-variant/20 flex items-center justify-between sticky top-0 backdrop-blur-md z-10">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">New</span>
+<span class="bg-primary-container/10 text-primary-container px-2 py-0.5 rounded text-xs font-medium">1 Unread</span>
+</div>
+<!-- Unread Notification Item -->
+<div class="px-6 py-5 hover:bg-surface-container-highest/20 transition-colors cursor-pointer group relative bg-white/40">
+<!-- Unread indicator -->
+<div class="absolute left-3 top-7 w-1.5 h-1.5 bg-primary-container rounded-full"></div>
+<div class="flex gap-4 items-start pl-2">
+<div class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container flex-shrink-0 border border-primary-container/20">
+<span class="material-symbols-outlined text-[20px]" data-icon="person">person</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-body-md text-body-md font-semibold text-primary">New Lead</h3>
+<span class="font-label-sm text-label-sm text-outline">Just now</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed mb-2">
+                                You have a new inquiry for the <span class="font-medium text-on-surface">Alphaville Mansion</span>.
+                            </p>
+<div class="flex gap-3 mt-3">
+<button class="font-label-sm text-label-sm text-primary bg-primary/5 px-3 py-1.5 rounded border border-primary/10 hover:bg-primary/10 transition-colors">
+                                    View Details
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Earlier -->
+<div class="px-6 py-3 bg-surface-container-low/50 border-y border-outline-variant/20 flex items-center sticky top-0 backdrop-blur-md z-10 mt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Earlier</span>
+</div>
+<!-- Read Notification Item 1 -->
+<div class="px-6 py-5 hover:bg-surface-container-highest/20 transition-colors cursor-pointer group border-b border-outline-variant/10 pl-8">
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant flex-shrink-0 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-body-md text-body-md font-medium text-on-surface">Property Approved</h3>
+<span class="font-label-sm text-label-sm text-outline">2h ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">
+                                Your listing "<span class="font-medium">Jardins Penthouse</span>" is now live.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Read Notification Item 2 -->
+<div class="px-6 py-5 hover:bg-surface-container-highest/20 transition-colors cursor-pointer group border-b border-outline-variant/10 pl-8">
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant flex-shrink-0 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]" data-icon="event">event</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-body-md text-body-md font-medium text-on-surface">Meeting Reminder</h3>
+<span class="font-label-sm text-label-sm text-outline">Yesterday</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">
+                                Private Call scheduled with Client in 15 minutes.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Read Notification Item 3 -->
+<div class="px-6 py-5 hover:bg-surface-container-highest/20 transition-colors cursor-pointer group pl-8">
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant flex-shrink-0 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-body-md text-body-md font-medium text-on-surface">System Update</h3>
+<span class="font-label-sm text-label-sm text-outline">2d ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">
+                                Global settings updated by Administrator.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel Footer -->
+<div class="px-6 py-4 border-t border-outline-variant/30 bg-surface-container-lowest/80 backdrop-blur-md text-center">
+<a class="font-label-lg text-label-lg text-primary hover:text-primary-container transition-colors inline-flex items-center gap-2 group" href="#">
+                    View all notifications
+                    <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Toast Notification (Bottom Right) -->
+<div class="fixed bottom-margin-desktop right-margin-desktop z-50 transform translate-y-0 opacity-100 transition-all duration-500 ease-out" id="toast-notification">
+<div class="glass-panel ambient-shadow rounded-lg p-4 flex items-center gap-4 max-w-sm border-l-4 border-l-primary-container">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="mail">mail</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-body-md text-body-md font-semibold text-primary text-sm">New Inquiry Received</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs mt-0.5">Alphaville Mansion</p>
+</div>
+<button class="text-outline hover:text-primary transition-colors p-1" onclick="document.getElementById('toast-notification').style.opacity='0'; setTimeout(()=&gt;document.getElementById('toast-notification').style.display='none', 300)">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full mt-auto border-t border-outline-variant/50 bg-surface-container-lowest dark:bg-surface-dim flat no shadows flex flex-col md:flex-row justify-between items-center px-margin-desktop py-gutter max-w-container-max mx-auto transition-opacity duration-300">
+<div class="font-headline-sm text-headline-sm text-primary mb-4 md:mb-0">
+            Marble &amp; Arch
+        </div>
+<div class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200" href="#">Licensing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200" href="#">Cookies</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant">
+            © 2024 Marble &amp; Arch. All rights reserved.
+        </div>
+</footer>
+<script>
+        // Simple toggle logic for demonstration
+        const toggleBtn = document.getElementById('notification-toggle');
+        const panel = document.getElementById('notification-panel');
+        let isPanelOpen = true;
+
+        toggleBtn.addEventListener('click', () => {
+            if (isPanelOpen) {
+                panel.style.opacity = '0';
+                panel.style.transform = 'scale(0.95)';
+                panel.style.pointerEvents = 'none';
+            } else {
+                panel.style.opacity = '1';
+                panel.style.transform = 'scale(1)';
+                panel.style.pointerEvents = 'auto';
+            }
+            isPanelOpen = !isPanelOpen;
+        });
+        
+        // Auto-hide toast after 5 seconds for realism
+        setTimeout(() => {
+            const toast = document.getElementById('toast-notification');
+            if(toast) {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(20px)';
+                setTimeout(() => toast.style.display = 'none', 500);
+            }
+        }, 5000);
+    </script>
+</body></html>

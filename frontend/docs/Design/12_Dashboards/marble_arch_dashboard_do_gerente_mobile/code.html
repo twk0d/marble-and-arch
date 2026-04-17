@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marble &amp; Arch - Manager Dashboard</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Playfair Display & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration (Design System) -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "secondary": "#645d53",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "inverse-primary": "#e9c176",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#fbddc7",
+                        "tertiary": "#705a49",
+                        "on-surface": "#1c1b1b",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-container": "#e8ded1",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "outline-variant": "#d1c5b4",
+                        "on-surface-variant": "#4e4639",
+                        "on-primary-fixed": "#261900",
+                        "primary-fixed-dim": "#e9c176",
+                        "outline": "#7f7667",
+                        "on-background": "#1c1b1b",
+                        "surface-variant": "#e5e2e1",
+                        "surface-tint": "#775a19",
+                        "on-tertiary-container": "#4a3728",
+                        "background": "#fcf9f8",
+                        "on-tertiary-fixed": "#28180b",
+                        "error-container": "#ffdad6",
+                        "primary": "#775a19",
+                        "on-secondary-fixed": "#1f1b13",
+                        "primary-fixed": "#ffdea5",
+                        "primary-container": "#c5a059",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fcf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "surface": "#fcf9f8",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#313030",
+                        "tertiary-container": "#bba08c",
+                        "surface-container": "#f0eded",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#4e3700",
+                        "secondary-fixed": "#ebe1d4",
+                        "on-secondary-container": "#686257"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "margin-tablet": "32px",
+                        "container-max": "1440px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1c5b4;
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md pb-[100px] pt-[80px] antialiased">
+<!-- TopAppBar Shared Component -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-margin-mobile h-16 transition-colors duration-300">
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200 focus:outline-none">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<h1 class="font-display-lg text-headline-lg-mobile tracking-widest text-primary">MARBLE &amp; ARCH</h1>
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200 focus:outline-none">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+</header>
+<main class="px-margin-mobile flex flex-col space-y-10 max-w-md mx-auto">
+<!-- Welcome Section -->
+<section class="pt-4">
+<h2 class="font-headline-md text-headline-lg-mobile text-on-surface tracking-tight">Executive Overview</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">Good morning. Here is the current status of your metropolitan portfolio and team activities.</p>
+</section>
+<!-- KPI Bento Grid -->
+<section class="grid grid-cols-2 gap-4">
+<!-- Primary KPI Card (Full Width) -->
+<div class="col-span-2 bg-surface-container-lowest rounded-xl p-6 shadow-[0_32px_64px_rgba(119,90,25,0.03)] border border-outline-variant/20 relative overflow-hidden group hover:bg-surface transition-colors duration-300">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-50 pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Active Pipeline Value</span>
+<span class="material-symbols-outlined text-primary/70">account_balance</span>
+</div>
+<span class="font-display-lg text-headline-lg-mobile text-primary block mt-1">$412.5M</span>
+<div class="flex items-center mt-3 gap-2 bg-primary/10 w-max px-3 py-1 rounded-full border border-primary/20">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<span class="font-label-sm text-label-sm text-primary">+8.4% vs last quarter</span>
+</div>
+</div>
+</div>
+<!-- Secondary KPI Card -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_24px_48px_rgba(119,90,25,0.02)] border border-outline-variant/20 flex flex-col justify-between h-32 hover:border-primary/30 transition-colors">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest leading-tight">Listed<br/>Properties</span>
+<div class="flex items-end justify-between mt-auto">
+<span class="font-headline-md text-headline-md text-on-surface">42</span>
+<span class="material-symbols-outlined text-outline text-lg mb-1">domain</span>
+</div>
+</div>
+<!-- Tertiary KPI Card -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_24px_48px_rgba(119,90,25,0.02)] border border-outline-variant/20 flex flex-col justify-between h-32 hover:border-primary/30 transition-colors">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest leading-tight">Hot<br/>Leads</span>
+<div class="flex items-end justify-between mt-auto">
+<span class="font-headline-md text-headline-md text-on-surface">18</span>
+<span class="material-symbols-outlined text-primary text-lg mb-1" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</div>
+</section>
+<!-- SLA Alerts Section -->
+<section class="space-y-4">
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Action Required</h3>
+<span class="bg-error-container text-on-error-container font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">error</span>
+                    2 Alerts
+                </span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Alert 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-4 border-l-2 border-error shadow-[0_8px_24px_rgba(0,0,0,0.02)] flex items-start gap-4 hover:shadow-[0_12px_32px_rgba(0,0,0,0.04)] transition-shadow">
+<div class="mt-0.5 bg-error/10 p-2 rounded-full">
+<span class="material-symbols-outlined text-error text-[20px]">contract</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-lg text-label-lg text-on-surface">Contract Review Overdue</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 mb-3">Penthouse 4B, The Mercer. Pending signature from Legal for 48+ hours.</p>
+<button class="font-label-sm text-label-sm text-primary uppercase tracking-widest border-b border-primary/30 hover:border-primary pb-0.5 transition-colors">Escalate to Legal</button>
+</div>
+</div>
+<!-- Alert 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-4 border-l-2 border-primary shadow-[0_8px_24px_rgba(0,0,0,0.02)] flex items-start gap-4 hover:shadow-[0_12px_32px_rgba(0,0,0,0.04)] transition-shadow">
+<div class="mt-0.5 bg-primary/10 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary text-[20px]">vpn_key</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-lg text-label-lg text-on-surface">Viewing Confirmation</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 mb-3">VIP Client requesting access to Estate 12, Hamptons. Needs agent assignment.</p>
+<button class="font-label-sm text-label-sm text-primary uppercase tracking-widest border-b border-primary/30 hover:border-primary pb-0.5 transition-colors">Assign Agent</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Broker Performance (Vertical List) -->
+<section class="space-y-4 mb-8">
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Top Performers</h3>
+<button class="text-primary hover:text-primary-container transition-colors focus:outline-none">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Team Member 1 -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-3.5 rounded-xl shadow-[0_4px_16px_rgba(0,0,0,0.02)] border border-outline-variant/10 hover:bg-surface transition-colors">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="A professional portrait of an elegant woman in her late thirties, dressed in a sharp, tailored beige blazer. She has a warm, confident smile and is photographed against a soft, bright white background reminiscent of a high-end corporate office. The lighting is bright, high-key, and modern, perfectly matching a clean, luxurious light-mode aesthetic. The overall mood is approachable yet highly authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnJHRhV5qpu4PetSyjIiHoA1rbtRV6M2C_aOZ14XJqH9dZBbuYTyQEXWHcj46YR2tyr5PdwStoIdylF7ED62ahmrt7u0zJMAKyi7ooVx6soCBY_-9p--yP5lI9sx6gSiWiWdyoWf0GmS0qXER3VIt2UKjKcgFphTKDKTaNlR9-43DklsYWz-1RAhs6NCXeEkxO2snnXTrQNhwy4_SnK6j6lfQ6S46pVa-UmwIzuOPh1v7XY8scFK87-riOjpZQz0UWWZLiLYfkY9Tp"/>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-lowest rounded-full p-0.5">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Eleanor Vance</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Senior Broker • $42M YTD</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-secondary-container/50 hover:bg-secondary-container flex items-center justify-center text-primary transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+</button>
+</div>
+</div>
+<!-- Team Member 2 -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-3.5 rounded-xl shadow-[0_4px_16px_rgba(0,0,0,0.02)] border border-outline-variant/10 hover:bg-surface transition-colors">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="A sophisticated headshot of a mature man in his late forties wearing a pristine charcoal grey suit and crisp white shirt without a tie. He exudes a calm, experienced demeanor suitable for a luxury real estate portfolio manager. The background is a very subtle, soft gradient of warm sand and white, enhancing the premium, minimalist visual style. The lighting is soft and flattering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXmIu8CcmxdsW7paeGuoFPCTO80jQ7Lr8P1TVip9_Pkp6_4wHhz2d4LxQwSM__LZ8CFjDpK0K3ZT5OXl6W0zMGTyiilHZuQlj1XQ_tzu94g3RDSrELJyEj1r4xKKJt1-hVYBxWh9k9RTvTeMnprzIFxpwj5gUKxUdrEL0ZwNSU8K40F0lUbma7LdBdyFRbK4hi2yrfjrTfmjLYPdY_9Ycu7j67prtMkFT4WdOiuTk-1TO5NWmgUTMVOWZLVSw1Hb4QY4Fkmg4etvRL"/>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Marcus Thorne</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Estates Director • $38M YTD</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-secondary-container/50 hover:bg-secondary-container flex items-center justify-center text-primary transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+</button>
+</div>
+</div>
+<!-- Team Member 3 -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-3.5 rounded-xl shadow-[0_4px_16px_rgba(0,0,0,0.02)] border border-outline-variant/10 hover:bg-surface transition-colors">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="A modern, minimalist portrait of a young professional woman with natural hair, wearing a sleek cream-colored blouse. She is looking slightly off-camera with an expression of focused ambition. The aesthetic is clean and bright, utilizing a high-key lighting setup that casts soft, ambient shadows. The overall composition feels highly curated, elegant, and perfectly aligned with a luxury service brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC7zC8KX8kj-e2QGpqGEd41Z0aaSHnuBtxtraruBU5ztwo3NG8tsZV9mMcqwzisvMUdg0SnwKAg2gU1XEJuiIataZl3vpfb4wuD1hYRjdBMxNF6Zz1MBAMwYHfihr68p6Yq8vpouLtxEy801xpTFRpGyFvmF20bLqIDRRYZRE12IR6jhvnj7QW8Z4YC1ViO3n_AOsznPZUNeYpqJbrasyiWHAyuXQnBMnHPc47_cXEZxihBWdh6_uiPpF2PJQ0d6k02O37mtWWxmrg"/>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Chloe Sterling</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Associate • $15M YTD</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-secondary-container/50 hover:bg-secondary-container flex items-center justify-center text-primary transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+</button>
+</div>
+</div>
+</div>
+<button class="w-full py-4 text-center font-label-sm text-label-sm text-primary uppercase tracking-widest hover:bg-surface-container-low transition-colors rounded-lg mt-2">
+                View Full Roster
+            </button>
+</section>
+</main>
+<!-- BottomNavBar Shared Component -->
+<!-- Active State Logic: Semantic mapping suggests a Dashboard is best represented by "Discover" as the primary exploration/overview point in this array. -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-full bg-white/90 dark:bg-surface-container-lowest/90 backdrop-blur-2xl border-t border-outline-variant/20 shadow-[0_-4px_24px_rgba(119,90,25,0.05)] flex justify-around items-center pt-3 pb-6 px-4 md:hidden">
+<!-- Discover (Active State) -->
+<button class="flex flex-col items-center justify-center text-primary font-semibold hover:text-primary-container active:translate-y-[-2px] transition-transform focus:outline-none">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm mt-1">Discover</span>
+</button>
+<!-- Saved (Inactive State) -->
+<button class="flex flex-col items-center justify-center text-secondary opacity-60 hover:text-primary-container active:translate-y-[-2px] transition-transform focus:outline-none">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-sm text-label-sm mt-1">Saved</span>
+</button>
+<!-- Support (Inactive State) -->
+<button class="flex flex-col items-center justify-center text-secondary opacity-60 hover:text-primary-container active:translate-y-[-2px] transition-transform focus:outline-none">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-label-sm text-label-sm mt-1">Support</span>
+</button>
+<!-- Profile (Inactive State) -->
+<button class="flex flex-col items-center justify-center text-secondary opacity-60 hover:text-primary-container active:translate-y-[-2px] transition-transform focus:outline-none">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

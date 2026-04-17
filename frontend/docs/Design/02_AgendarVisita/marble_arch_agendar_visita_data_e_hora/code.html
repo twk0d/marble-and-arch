@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Schedule Visit - The Belvedere Estate</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Subtle ambient glow for premium feel */
+        .ambient-glow {
+            box-shadow: 0 16px 40px -8px rgba(119, 90, 25, 0.05);
+        }
+        
+        /* Custom scrollbar for refined look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d1c5b4; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #bba08c; }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ebe1d4",
+                        "surface-container": "#f0eded",
+                        "surface-tint": "#775a19",
+                        "error": "#ba1a1a",
+                        "tertiary": "#705a49",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-primary-fixed": "#261900",
+                        "tertiary-container": "#bba08c",
+                        "on-secondary-fixed": "#1f1b13",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#4e3700",
+                        "surface-bright": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e8ded1",
+                        "outline": "#7f7667",
+                        "surface-dim": "#dcd9d9",
+                        "surface": "#fcf9f8",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-high": "#eae7e7",
+                        "on-secondary-container": "#686257",
+                        "inverse-surface": "#313030",
+                        "background": "#fcf9f8",
+                        "primary-fixed": "#ffdea5",
+                        "on-surface-variant": "#4e4639",
+                        "inverse-primary": "#e9c176",
+                        "secondary": "#645d53",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#775a19",
+                        "tertiary-fixed": "#fbddc7",
+                        "on-tertiary-fixed": "#28180b",
+                        "surface-container-low": "#f6f3f2",
+                        "outline-variant": "#d1c5b4",
+                        "on-background": "#1c1b1b",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-surface": "#1c1b1b",
+                        "primary-container": "#c5a059",
+                        "on-tertiary-container": "#4a3728",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "container-max": "1440px",
+                        "margin-tablet": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component) -->
+<nav class="bg-surface dark:bg-inverse-surface h-screen w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline flex flex-col p-4 z-50 hidden md:flex">
+<!-- Header -->
+<div class="mb-10 mt-2 px-4">
+<h1 class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim tracking-tight">Marble &amp; Arch</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 uppercase tracking-widest">Premium Brokerage</p>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-lg text-label-lg">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">location_city</span>
+<span class="font-label-lg text-label-lg">Listings</span>
+</a>
+<!-- Active State: Leads (Scheduling fits under managing lead actions) -->
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-lg font-bold transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined icon-fill text-primary">group</span>
+<span class="font-label-lg text-label-lg">Leads</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">rate_review</span>
+<span class="font-label-lg text-label-lg">Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-lg text-label-lg">Reports</span>
+</a>
+</div>
+<!-- Footer Links -->
+<div class="mt-auto space-y-2 border-t border-outline-variant pt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-lg text-label-lg">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-lg text-label-lg">Support</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar (Shared Component) -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-16rem)] z-40 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant dark:border-outline flex justify-between items-center px-8 py-4 transition-all">
+<div class="flex items-center gap-4">
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-on-surface p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim">Broker Dashboard</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full focus-within:ring-2 focus-within:ring-primary/20">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full focus-within:ring-2 focus-within:ring-primary/20">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full md:ml-64 pt-24 px-6 md:px-gutter pb-margin-desktop max-w-container-max mx-auto flex flex-col gap-12">
+<!-- Page Header -->
+<div class="flex flex-col gap-2 max-w-3xl">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.15em]">Step 1 of 3</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Select Date &amp; Time</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Curate an exclusive viewing experience for your discerning client.</p>
+</div>
+<!-- Bento Layout for Scheduling -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-gutter items-start">
+<!-- Left Column: Calendar & Time Slots -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<!-- Refined Calendar Widget -->
+<section class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant ambient-glow relative overflow-hidden group">
+<!-- Glassmorphic highlight corner -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary-fixed rounded-full blur-[40px] opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity duration-700"></div>
+<!-- Calendar Header -->
+<div class="flex justify-between items-center mb-8 relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">October 2023</h3>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Calendar Grid -->
+<div class="relative z-10">
+<!-- Days Header -->
+<div class="grid grid-cols-7 gap-2 mb-4 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Su</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Mo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Tu</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">We</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Th</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Fr</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Sa</span>
+</div>
+<!-- Days Matrix (Mocked for visual structure) -->
+<div class="grid grid-cols-7 gap-y-4 gap-x-2 text-center font-body-md">
+<!-- Empty offset -->
+<div class="p-2 text-surface-dim"></div>
+<div class="p-2 text-surface-dim"></div>
+<!-- Inactive/Past Days -->
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-outline pointer-events-none" disabled="">1</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-outline pointer-events-none" disabled="">2</button>
+<!-- Available Days -->
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">3</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">4</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">5</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">6</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">7</button>
+<!-- Selected Day -->
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full bg-primary text-on-primary font-medium shadow-[0_4px_12px_rgba(119,90,25,0.3)] transition-transform hover:scale-105">8</button>
+<!-- More Available Days -->
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">9</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">10</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">11</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors relative">
+                                12
+                                <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-tertiary-container rounded-full"></span>
+</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">13</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">14</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">15</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">16</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">17</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">18</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">19</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">20</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">21</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">22</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">23</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">24</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">25</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">26</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">27</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">28</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">29</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">30</button>
+<button class="w-10 h-10 mx-auto flex items-center justify-center rounded-full text-on-surface hover:bg-secondary-container transition-colors">31</button>
+</div>
+</div>
+</section>
+<!-- Time Slots Section -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Available Times</h4>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+<!-- Time Chip Normal -->
+<button class="py-3 px-4 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface text-center font-body-md hover:border-primary hover:text-primary transition-all">
+                            10:00 AM
+                        </button>
+<!-- Time Chip Selected -->
+<button class="py-3 px-4 rounded-lg border border-primary-container bg-primary-container text-on-primary-container text-center font-body-md font-medium shadow-[0_2px_10px_rgba(197,160,89,0.2)] transition-all transform scale-[1.02]">
+                            14:00 PM
+                        </button>
+<!-- Time Chip Normal -->
+<button class="py-3 px-4 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface text-center font-body-md hover:border-primary hover:text-primary transition-all">
+                            16:00 PM
+                        </button>
+<!-- Time Chip Disabled -->
+<button class="py-3 px-4 rounded-lg border border-outline-variant/50 bg-surface text-outline text-center font-body-md opacity-50 cursor-not-allowed">
+                            18:00 PM
+                        </button>
+</div>
+</section>
+</div>
+<!-- Right Column: Property Preview & Action (Sticky) -->
+<div class="lg:col-span-5 sticky top-32">
+<!-- Property Preview Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-2 ambient-glow flex flex-col">
+<!-- Image Container -->
+<div class="relative w-full h-64 rounded-lg overflow-hidden group">
+<div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+<img alt="The Belvedere Estate" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out" data-alt="A striking architectural photography shot of a modern luxury estate exterior at twilight. The multi-level structure features expansive floor-to-ceiling glass walls, warm illuminated interiors, and precise masonry set against a deep blue evening sky. A sleek infinity pool in the foreground reflects the warm amber interior lighting, creating a high-contrast, premium aesthetic. The composition emphasizes architectural precision, negative space, and quiet exclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDadA2SCZD9Yanadp3tttWRU8s1FfoNEleftIz7xJFp51S9wcV8hGfcEjVlyTo85y00TzR8cZczhjItOf75jpaZiAEIdm1LSwMgZ5mz5h_84WImvLl_P3ZMm1HCCT-OHrph7zKoWzVlZp8JkYgTja8Yv2TnCNmqV_bhIWx2MTJq7Me0TnpF7uSig2iNdqdU_DXwQPHMXxLVMup632JnJHC4idHrcZIYtWJFbvhwOW4hf8gAuJ4aQ7MIAKN8Cm-yF0fUDs7QQIegabVo"/>
+<!-- Floating Badge -->
+<div class="absolute top-4 left-4 z-20 backdrop-blur-md bg-surface/80 border border-surface-variant px-3 py-1.5 rounded-full flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Exclusive</span>
+</div>
+</div>
+<!-- Property Details -->
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">The Belvedere Estate</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    1204 Pacific Coast Hwy
+                                </p>
+</div>
+</div>
+<!-- Specs List -->
+<div class="flex gap-6 border-t border-b border-surface-variant py-4 my-2">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Beds</span>
+<span class="font-body-lg text-body-lg font-medium text-on-surface">6</span>
+</div>
+<div class="w-px bg-surface-variant"></div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Baths</span>
+<span class="font-body-lg text-body-lg font-medium text-on-surface">8.5</span>
+</div>
+<div class="w-px bg-surface-variant"></div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Area</span>
+<span class="font-body-lg text-body-lg font-medium text-on-surface">12,400 sqft</span>
+</div>
+</div>
+<!-- Summary of Selection -->
+<div class="bg-surface rounded-lg p-4 flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Selected Date:</span>
+<span class="font-body-md font-medium text-on-surface">Oct 8, 2023</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Time Slot:</span>
+<span class="font-body-md font-medium text-on-surface">14:00 PM</span>
+</div>
+</div>
+<!-- Primary CTA -->
+<button class="mt-4 w-full bg-primary text-on-primary py-4 px-6 rounded-lg font-label-lg text-label-lg uppercase tracking-widest text-center shadow-[0_8px_20px_-4px_rgba(119,90,25,0.3)] hover:shadow-[0_12px_24px_-4px_rgba(119,90,25,0.4)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group">
+                            Next Step
+                            <span class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-outline mt-2">Step 2: Client Details</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aurelian Analytics - Performance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .glass-card {
+            @apply bg-surface/80 backdrop-blur-xl border border-outline-variant/30 shadow-[0_8px_32px_rgba(119,90,25,0.05)];
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "surface-bright": "#fcf9f8",
+                        "primary-container": "#c5a059",
+                        "tertiary-fixed": "#fbddc7",
+                        "surface": "#fcf9f8",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-fixed": "#ebe1d4",
+                        "on-surface": "#1c1b1b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "outline-variant": "#d1c5b4",
+                        "tertiary-container": "#bba08c",
+                        "on-tertiary-container": "#4a3728",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-fixed": "#28180b",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-background": "#1c1b1b",
+                        "surface-container": "#f0eded",
+                        "on-primary-fixed": "#261900",
+                        "error-container": "#ffdad6",
+                        "outline": "#7f7667",
+                        "on-secondary-fixed": "#1f1b13",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#e9c176",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "on-error-container": "#93000a",
+                        "background": "#fcf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "secondary": "#645d53",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "on-primary-container": "#4e3700",
+                        "primary-fixed": "#ffdea5",
+                        "primary": "#775a19",
+                        "surface-variant": "#e5e2e1",
+                        "surface-tint": "#775a19",
+                        "tertiary": "#705a49",
+                        "inverse-surface": "#313030",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#e9c176",
+                        "on-secondary-container": "#686257",
+                        "secondary-container": "#e8ded1",
+                        "on-surface-variant": "#4e4639"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-tablet": "32px",
+                        "gutter": "32px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-sm": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top App Bar (Mobile Adaptation) -->
+<header class="w-full top-0 sticky z-40 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-margin-mobile h-20 transition-all duration-300">
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Performance</h1>
+<div class="flex items-center gap-4 text-primary">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-150 p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/50 overflow-hidden shadow-sm">
+<img alt="Executive Broker Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of an executive real estate broker, shot in high resolution against a clean, warm-toned background. The lighting is soft and flattering, emphasizing a trustworthy and successful demeanor. The color palette aligns with the overall UI, featuring subtle gold and warm neutral tones to integrate seamlessly with the premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyPNvTRvTOQAaacyAK_lxqkEC-lSF4015aiUQVu0_clQux8IMQLNdLBP6MG9qyqO_24cHaZoyra30cguL57y1ZhrTpw7JwY_ESw6qnlxzyku78FWCos9Bojg0GfMkDwCZSzkjjg7nQll7PAavdhDiY08JeQUc2WepU3zJRFFN9jL4nHsAuXhbW4CgRflRfEV2QeBYRooZRWWNi4XA-4NBh-b9fOtv9Uco5ukRgTShWr_OQVxDwWnn1xp-H9WdY5mBYv4R0F478E5jc"/>
+</div>
+</div>
+</header>
+<main class="flex flex-col gap-8 px-margin-mobile pt-6">
+<!-- Welcome Section -->
+<section class="flex flex-col gap-2">
+<h2 class="font-body-lg text-body-lg text-on-surface-variant">Good morning, Julian.</h2>
+<p class="font-headline-sm text-headline-sm text-on-background">Q3 is tracking <span class="text-primary font-semibold">14% ahead</span> of schedule.</p>
+</section>
+<!-- KPI Carousel -->
+<section class="w-full -mx-margin-mobile px-margin-mobile overflow-x-auto hide-scrollbar flex gap-4 snap-x snap-mandatory py-2">
+<!-- Card 1 -->
+<div class="snap-center shrink-0 w-72 glass-card rounded-xl p-6 flex flex-col justify-between gap-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-label-sm text-label-sm bg-primary-container/20 text-primary px-2 py-1 rounded-full border border-primary/20">+12% vs LY</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest mb-1">YTD Commission</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">$1.24M</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="snap-center shrink-0 w-72 glass-card rounded-xl p-6 flex flex-col justify-between gap-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">real_estate_agent</span>
+<span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-2 py-1 rounded-full border border-outline-variant/30">Stable</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest mb-1">Active Listings</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">18</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="snap-center shrink-0 w-72 glass-card rounded-xl p-6 flex flex-col justify-between gap-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-label-sm text-label-sm bg-primary-container/20 text-primary px-2 py-1 rounded-full border border-primary/20">+5 New</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest mb-1">Active Clients</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">34</p>
+</div>
+</div>
+</section>
+<!-- Pipeline & Goal Tracker Grid -->
+<section class="grid grid-cols-2 gap-4">
+<!-- Simplified Pipeline -->
+<div class="glass-card rounded-xl p-5 flex flex-col gap-4">
+<h3 class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest">Pipeline</h3>
+<div class="flex flex-col gap-3 h-full justify-center">
+<div class="flex items-center gap-2">
+<div class="w-1 h-8 rounded-full bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-background">12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Leads</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-1 h-8 rounded-full bg-secondary"></div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-background">8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showings</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-1 h-8 rounded-full bg-primary"></div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-background">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Offers</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Monthly Goal Tracker -->
+<div class="glass-card rounded-xl p-5 flex flex-col items-center justify-center gap-4 text-center">
+<h3 class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest w-full text-left">Goal</h3>
+<div class="relative w-24 h-24 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="75, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-on-background">75%</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sept Target</span>
+</div>
+</section>
+<!-- Top Listings -->
+<section class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-on-background">Top Inventory</h3>
+<button class="font-label-sm text-label-sm text-primary uppercase tracking-widest hover:opacity-80 transition-opacity">View All</button>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Listing Item -->
+<div class="bg-surface rounded-xl p-3 flex items-center gap-4 border border-outline-variant/20 shadow-sm active:bg-surface-container-low transition-colors">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Mansion exterior" class="w-full h-full object-cover" data-alt="A luxurious modern mansion exterior at twilight, featuring expansive glass windows glowing warmly against the evening sky. The property is surrounded by manicured landscaping and a sleek pool reflecting the lights. The composition emphasizes architectural clean lines and a premium, exclusive lifestyle. Color palette leans towards rich warm whites, deep twilight blues, and subtle gold interior lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2ChETppdfzYqgcpDxc2DjK5b6zkryrQgIvdoGWTYfzRZVU4R9jQLK9lLBGAu9iYaj51NK2hBXHTxs7y6aQQN8UBeeF3ZZrw7f3UtyKJENYi1u5oxwlphp_dmB3b4hOYdud2tAc9oRHDXjuzuO5k0Ey-3sCHX8mOlz6LM0kDQcGJBVfG6Orp7J_GSeNbbVliYOZzsh8lV9Rzem8EqanoYA0kCnKGRVeLifydY6Vji2UZJipEoNujoZKtnwQsjCShutftdqfOeLUycX"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="font-body-md text-body-md font-medium text-on-background line-clamp-1">The Azure Penthouse</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">21 Days on Market</span>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-body-md text-body-md text-primary font-medium">$8.5M</span>
+<div class="flex items-center gap-1 text-secondary mt-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span class="font-label-sm text-label-sm">1.2k</span>
+</div>
+</div>
+</div>
+<!-- Listing Item -->
+<div class="bg-surface rounded-xl p-3 flex items-center gap-4 border border-outline-variant/20 shadow-sm active:bg-surface-container-low transition-colors">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Villa interior" class="w-full h-full object-cover" data-alt="An elegant, sun-drenched interior of a Mediterranean-style villa. The room features high ceilings, light hardwood floors, and large arched windows draped in sheer white fabric. Furniture is minimalist yet plush, utilizing warm sand tones and subtle textures. The lighting is natural and soft, creating a serene, high-end residential atmosphere aligned with a quiet luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2s0qLYq3xJlyreADaZkW-V8mzq0LrdlX3Q_3QWR060td2krcEkRb8ITdvp4UKmFTlk3H3JME2Tu6HfUvan0OLzO4mn2jTDM7Yy2bULT6Gs5ndpJ_ZB5wgONOGejbvXusoQC01lebd2PCltcc4i-SEZiavLgWJTdHg2Uv56NrU6J7lNA5UprBHBbZ1jxO4NFh597UvrsQO27tXOt0hk2qkaYfw0xQia_e9uFK_7hpAsiCYILXthnrfmCH-884DhgIYr2KEFOrqc86p"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="font-body-md text-body-md font-medium text-on-background line-clamp-1">Villa Serena</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">45 Days on Market</span>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-body-md text-body-md text-primary font-medium">$4.2M</span>
+<div class="flex items-center gap-1 text-secondary mt-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span class="font-label-sm text-label-sm">850</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Nav Bar Shell -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile pb-4 pt-2 bg-surface/90 backdrop-blur-2xl dark:bg-surface-container-highest/90 rounded-t-full border-t border-outline-variant/30 shadow-[0_-4px_20px_rgba(119,90,25,0.05)]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:bg-surface-container-high transition-transform duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-label-sm text-label-sm-mobile">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-full p-2 scale-90 transition-transform duration-200 shadow-sm">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="font-label-sm text-label-sm-mobile">Pipeline</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:bg-surface-container-high transition-transform duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">show_chart</span>
+<span class="font-label-sm text-label-sm-mobile">Charts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:bg-surface-container-high transition-transform duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">workspace_premium</span>
+<span class="font-label-sm text-label-sm-mobile">Goals</span>
+</button>
+</nav>
+</body></html>

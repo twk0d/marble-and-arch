@@ -1,45 +1,58 @@
-# Nuxt 3 Frontend - Keystone Project
+# Marble & Arch — Global Project Context
 
-Este diretório contém o front-end da aplicação Keystone, desenvolvido com Nuxt 3.
+Bem-vindo ao monorepo do projeto **Marble & Arch**. Este arquivo contém as regras e diretrizes globais para as duas frentes do projeto: Frontend (Nuxt 3) e Backend (Spring Boot 3). Siga estas diretrizes rigorosamente.
 
-## 🛠 Tecnologias & Convenções
+---
 
+## 🖥️ FRONTEND (Diretório `/frontend`)
+
+Este diretório contém o front-end da aplicação Marble & Arch.
+
+### Tecnologias & Convenções
 - **Framework:** Nuxt 3 (Vue 3)
 - **Componentes:** [Nuxt UI Pro](https://ui3.nuxt.com/) (Prioridade Absoluta)
 - **Estado:** Pinia
 - **Internacionalização:** @nuxtjs/i18n
 - **Estilização:** Vanilla CSS / Tailwind (através do Nuxt UI)
 
-## 🎨 Biblioteca de Componentes (Nuxt UI Pro)
-
-### Mandatos de Desenvolvimento
+### Mandatos de Desenvolvimento (UI)
 1.  **Prioridade Absoluta:** Sempre utilize os componentes do Nuxt UI Pro. Não crie componentes customizados ou use tags HTML puras se existir um componente correspondente na biblioteca.
-2.  **Styleguide como Fonte de Verdade:** O arquivo `app/pages/styleguide.vue` (visualizável em `/styleguide`) é a referência definitiva para Tipografia, Cores, Bordas, Sombras e padrões de UI. Toda criação ou refatoração deve ser validada contra os padrões documentados ali.
-3.  **Consulta às Docs:** Sempre consulte a documentação local em `../Nuxt UI Pro v4.8.2 docs/` antes de implementar qualquer interface.
-4.  **Refatoração:** Ao editar arquivos existentes, refatore elementos HTML ou componentes customizados para usar os equivalentes do Nuxt UI Pro e seguir os padrões do Styleguide.
-5.  **Consistência Reativa:** Utilize os utilitários de CSS centralizados (`main.css`) e chaves de tradução (`i18n`) conforme demonstrado no Styleguide para garantir que o sistema seja visualmente coeso e multi-idioma.
-6.  **Confirmação:** Se for estritamente necessário NÃO usar um componente da biblioteca ou desviar do Styleguide, você **DEVE** perguntar ao usuário e justificar a decisão antes de prosseguir.
+2.  **Styleguide como Fonte de Verdade:** O arquivo `app/pages/styleguide.vue` (visualizável em `/styleguide`) é a referência definitiva para Tipografia, Cores, Bordas, Sombras e padrões de UI.
+3.  **Consulta às Docs:** Sempre consulte a documentação local (exportada do Nuxt UI Pro v4.8.2) antes de implementar qualquer interface.
+4.  **Refatoração:** Ao editar arquivos existentes, refatore elementos para usar os equivalentes do Nuxt UI Pro.
+5.  **Consistência Reativa:** Utilize os utilitários de CSS centralizados (`main.css`) e chaves de tradução (`i18n`).
+6.  **Integração:** As chamadas para a API usam o `$fetch` do Nuxt apontando para `/api/...` (Nitro Proxy).
 
-### Documentação Local
-A documentação completa do Nuxt UI Pro v4.8.2 está disponível em:
-`C:\Users\twkod\Documents\Mable and Arch\Nuxt UI Pro v4.8.2 docs`
+---
 
-### Lista de Componentes Disponíveis (v4.8.2):
-Abaixo estão os componentes disponíveis na biblioteca. Use o prefixo `U` (ex: `UButton`, `UModal`).
+## ⚙️ BACKEND (Diretório `/backend`)
 
-- **Layout & Structure:** `App`, `Container`, `Main`, `Header`, `Footer`, `FooterColumns`, `Sidebar`
-- **Navigation:** `Breadcrumb`, `ContentNavigation`, `ContentToc`, `ContextMenu`, `DropdownMenu`, `Link`, `NavigationMenu`, `Pagination`, `Tabs`, `Stepper`, `Tree`
-- **Dashboard:** `DashboardGroup`, `DashboardNavbar`, `DashboardPanel`, `DashboardResizeHandle`, `DashboardSearch`, `DashboardSearchButton`, `DashboardSidebar`, `DashboardSidebarCollapse`, `DashboardSidebarToggle`, `DashboardToolbar`
-- **Page Building:** `Page`, `PageAnchors`, `PageAside`, `PageBody`, `PageCard`, `PageColumns`, `PageCta`, `PageFeature`, `PageGrid`, `PageHeader`, `PageHero`, `PageLinks`, `PageList`, `PageLogos`, `PageSection`
-- **Forms & Input:** `AuthForm`, `Button`, `Checkbox`, `CheckboxGroup`, `ColorPicker`, `FileUpload`, `Form`, `FormField`, `FieldGroup`, `Input`, `InputDate`, `InputMenu`, `InputNumber`, `InputTags`, `InputTime`, `Listbox`, `PinInput`, `RadioGroup`, `Select`, `SelectMenu`, `Slider`, `Switch`, `Textarea`
-- **Data & Display:** `Accordion`, `Alert`, `Avatar`, `AvatarGroup`, `Badge`, `Banner`, `BlogPost`, `BlogPosts`, `Calendar`, `Card`, `Carousel`, `Chip`, `Collapsible`, `Empty`, `Icon`, `Kbd`, `Marquee`, `Progress`, `Separator`, `Skeleton`, `Table`, `Timeline`, `User`
-- **Overlays:** `Drawer`, `Modal`, `Popover`, `Slideover`, `Tooltip`, `Toast`
-- **Editor & Chat:** `Editor`, `EditorDragHandle`, `EditorEmojiMenu`, `EditorMentionMenu`, `EditorSuggestionMenu`, `EditorToolbar`, `Chat`, `ChatMessage`, `ChatMessages`, `ChatPalette`, `ChatPrompt`, `ChatPromptSubmit`, `ChatReasoning`, `ChatShimmer`, `ChatTool`
-- **Utility & Misc:** `ChangelogVersion`, `ChangelogVersions`, `ColorModeAvatar`, `ColorModeButton`, `ColorModeImage`, `ColorModeSelect`, `ColorModeSwitch`, `ContentSearch`, `ContentSearchButton`, `ContentSurround`, `Error`, `LocaleSelect`, `PricingPlan`, `PricingPlans`, `PricingTable`, `ScrollArea`, `Theme`
+Este diretório contém a API Monolítica Modular em Java.
+Você é um arquiteto sênior em ecossistemas Java, Spring, DDD e arquiteturas reativas.
 
-## 🔗 Integração com API
+### Stack de Tecnologias
+- **Core:** Spring Boot 3.4.7, Java 24, Gradle.
+- **Produtividade:** Lombok, Spring Boot DevTools, Spring Validation.
+- **Web e Segurança:** Spring Web (MVC), Spring Security (JWT).
+- **Persistência:** Spring Data JPA, Hibernate ORM 6.6.18, PostgreSQL, ULID para chaves primárias.
+- **Nativo:** Compilação nativa com GraalVM (Spring Boot GraalVM Native Support 0.10.6).
+- **Infra (GCP):** Google Cloud Support, Cloud Storage, Cloud SQL.
+- **Modularidade:** Spring Modulith 1.3.7.
 
-As chamadas para a API devem respeitar o proxy configurado no `nuxt.config.ts`.
-Base URL local: `http://localhost:3000/api/v1` (redireciona para `:8081`)
+### Padrões Arquiteturais e DDD
+1.  **Monólito Modular:** Módulos separados representando Bounded Contexts.
+2.  **Clean Architecture:** Separação clara entre `domain`, `application`, `adapter` e `infrastructure`.
+3.  **Rich Domain Model:** Lógica de negócio e estado residem nos próprios objetos de domínio.
+4.  **Injeção de Dependência:** Favorecer injeção via construtor. Único `ApplicationContext` global (ADR-0025).
+5.  **CQRS:** Separação entre leitura (Queries) e escrita (Commands) no mesmo banco físico.
+6.  **Orientado a Eventos:** Comunicação entre módulos via Domain Events, usando `CompletableFuture` e `EventBus` em memória (ADR-0024 - bloqueio para resultado).
+7.  **Padrão Details:** Usar Composição sobre Herança para variações de agregados (ex: tipos de Property) (ADR-0023).
 
-Consulte o `FRONTEND_INTEGRATION_GUIDE.md` na raiz para detalhes de contratos e endpoints.
+### Princípios de Codificação
+- **Imutabilidade:** Preferência para objetos imutáveis (DTOs, Value Objects).
+- **Tratamento de Erros:** Estratégia "fail-fast" com exceções tratadas globalmente (`BussinessRuleValidationException`).
+- **Testes:** Unitários para domínio, integração para persistência, e ArchUnit/Spring Modulith para arquitetura.
+- **Linguagem Ubíqua:** Nomes de classes e métodos devem seguir os termos de negócio (Property, Lead, Visit, etc).
+
+---
+> Consulte o diretório `/specification` na raiz para ler os diagramas, arquitetura completa, endpoints de API e fluxo de telas (UX Flows).

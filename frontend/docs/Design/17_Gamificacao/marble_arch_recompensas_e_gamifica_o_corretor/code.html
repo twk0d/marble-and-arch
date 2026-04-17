@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marble &amp; Arch - Broker Rewards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdea5",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "inverse-surface": "#313030",
+                        "surface-dim": "#dcd9d9",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "surface-container-highest": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#d1c5b4",
+                        "on-tertiary-fixed": "#28180b",
+                        "on-secondary-fixed": "#1f1b13",
+                        "surface": "#fcf9f8",
+                        "on-error": "#ffffff",
+                        "background": "#fcf9f8",
+                        "surface-bright": "#fcf9f8",
+                        "on-background": "#1c1b1b",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "primary": "#775a19",
+                        "on-primary-container": "#4e3700",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#4e4639",
+                        "secondary-fixed": "#ebe1d4",
+                        "inverse-primary": "#e9c176",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container": "#f0eded",
+                        "on-surface": "#1c1b1b",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#705a49",
+                        "inverse-on-surface": "#f3f0ef",
+                        "tertiary-container": "#bba08c",
+                        "on-primary-fixed": "#261900",
+                        "on-tertiary-container": "#4a3728",
+                        "on-secondary-container": "#686257",
+                        "secondary-container": "#e8ded1",
+                        "primary-fixed-dim": "#e9c176",
+                        "primary-container": "#c5a059",
+                        "outline": "#7f7667",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-fixed": "#fbddc7",
+                        "surface-tint": "#775a19",
+                        "surface-container-high": "#eae7e7",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "secondary": "#645d53",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "margin-tablet": "32px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-lg": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(209, 197, 180, 0.3);
+        }
+        .ambient-glow {
+            box-shadow: 0 10px 40px -10px rgba(119, 90, 25, 0.08);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #775a19 0%, #c5a059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low dark:bg-inverse-surface text-primary dark:text-primary-fixed-dim font-inter text-label-lg font-label-lg font-playfair text-headline-sm text-primary docked left-0 h-screen w-72 border-r border-outline-variant/20 shadow-lg dark:shadow-none fixed left-0 top-0 bottom-0 flex flex-col py-8 z-40 hidden md:flex">
+<div class="px-6 mb-12">
+<h1 class="font-playfair font-headline-sm text-headline-sm font-semibold tracking-tight text-primary">Broker Portal</h1>
+<p class="font-inter font-label-sm text-label-sm text-on-surface-variant mt-1">Platinum Tier</p>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-2">
+<li>
+<a class="flex items-center text-on-surface-variant pl-5 hover:text-primary hover:bg-primary-container/20 hover:text-primary transition-all duration-200 active:opacity-80 transition-opacity py-3" href="#">
+<span class="material-symbols-outlined mr-4" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<a class="flex items-center text-on-surface-variant pl-5 hover:text-primary hover:bg-primary-container/20 hover:text-primary transition-all duration-200 active:opacity-80 transition-opacity py-3" href="#">
+<span class="material-symbols-outlined mr-4" style="font-variation-settings: 'FILL' 0;">domain</span>
+                        Inventory
+                    </a>
+</li>
+<li>
+<a class="flex items-center text-primary font-bold border-l-4 border-primary pl-4 bg-primary-fixed/10 hover:bg-primary-container/20 hover:text-primary transition-all duration-200 active:opacity-80 transition-opacity py-3" href="#">
+<span class="material-symbols-outlined mr-4" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+                        Rewards
+                    </a>
+</li>
+<li>
+<a class="flex items-center text-on-surface-variant pl-5 hover:text-primary hover:bg-primary-container/20 hover:text-primary transition-all duration-200 active:opacity-80 transition-opacity py-3" href="#">
+<span class="material-symbols-outlined mr-4" style="font-variation-settings: 'FILL' 0;">groups</span>
+                        Network
+                    </a>
+</li>
+<li>
+<a class="flex items-center text-on-surface-variant pl-5 hover:text-primary hover:bg-primary-container/20 hover:text-primary transition-all duration-200 active:opacity-80 transition-opacity py-3" href="#">
+<span class="material-symbols-outlined mr-4" style="font-variation-settings: 'FILL' 0;">settings</span>
+                        Settings
+                    </a>
+</li>
+</ul>
+</div>
+<div class="px-6 mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 rounded-DEFAULT hover:bg-primary-fixed transition-colors ambient-glow border border-primary/20">
+                View Milestones
+            </button>
+<ul class="mt-6 space-y-2">
+<li>
+<a class="flex items-center text-on-surface-variant pl-5 hover:text-primary hover:bg-primary-container/20 hover:text-primary transition-all duration-200 active:opacity-80 transition-opacity py-3" href="#">
+<span class="material-symbols-outlined mr-4" style="font-variation-settings: 'FILL' 0;">help_outline</span>
+                        Support
+                    </a>
+</li>
+<li>
+<a class="flex items-center text-on-surface-variant pl-5 hover:text-primary hover:bg-primary-container/20 hover:text-primary transition-all duration-200 active:opacity-80 transition-opacity py-3" href="#">
+<span class="material-symbols-outlined mr-4" style="font-variation-settings: 'FILL' 0;">logout</span>
+                        Sign Out
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col md:ml-72 min-h-screen relative">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl text-primary dark:text-primary-fixed-dim font-playfair text-headline-sm font-headline-sm font-playfair text-headline-sm font-semibold tracking-tight text-primary dark:text-primary-fixed-dim docked full-width top-0 border-b border-outline-variant/30 shadow-sm dark:shadow-none fixed top-0 right-0 left-0 z-50 flex justify-between items-center px-margin-desktop h-20 md:left-72 transition-all">
+<div class="font-playfair font-headline-md text-headline-md tracking-tight">Marble &amp; Arch</div>
+<div class="flex items-center space-x-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined">workspace_premium</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-outline-variant/30">
+<img alt="Broker Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a mature, confident male real estate broker in a sharply tailored charcoal suit. The lighting is bright and soft, highlighting his approachable demeanor. The background is a subtly blurred modern office space with neutral tones, conveying a sense of high-end corporate luxury and trustworthiness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYpFzccAXTnQSpi-okxDYwD1cQVyDYM8h4zbl82VEtKSVpTuVi4auEtHMSD6wiymFOWG0fGdJwX1Blsxgow8yCtVvLoaSyAe--hYYOrC6aucRExdp72CAuOCUCejsDxv7wLYPNVybcYhL7JBwPA7Om1dQDFlh3j-_Wj6h-An96jJf8QYL5ZSZ4ZV-SZTiyVwBL-APp8r7m6d-9kQf0SsHjDlk8HpC1zCIWfyQL-Sy96R7VsNkkftIubspAx9sIiu2gpTeXo-UxKl_Q"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto pt-28 px-margin-mobile md:px-margin-desktop pb-24">
+<div class="max-w-container-max mx-auto space-y-16">
+<!-- Page Header -->
+<div>
+<h2 class="font-playfair font-display-lg text-display-lg text-on-surface">Rewards &amp; Gamification</h2>
+<p class="font-inter font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl">Track your exclusive milestones and performance tier within the Marble &amp; Arch elite broker network.</p>
+</div>
+<!-- Top Section: Status & Progress -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Status Card -->
+<div class="col-span-1 lg:col-span-7 glass-panel rounded-xl p-8 ambient-glow relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-64 h-64 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div class="flex justify-between items-start mb-8">
+<div>
+<span class="font-inter font-label-sm text-label-sm text-primary uppercase tracking-widest">Current Status</span>
+<h3 class="font-playfair font-headline-lg text-headline-lg text-on-surface mt-2 text-gradient">Platinum Executive</h3>
+</div>
+<span class="material-symbols-outlined text-5xl text-primary" style="font-variation-settings: 'FILL' 1;">diamond</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between font-inter font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Progress to Diamond Circle</span>
+<span class="text-primary font-semibold">82%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000 ease-out" style="width: 82%;"></div>
+</div>
+<p class="font-inter font-label-sm text-label-sm text-on-surface-variant mt-2">Only $2.4M in closed volume required to unlock Diamond Circle benefits.</p>
+</div>
+</div>
+</div>
+<!-- Bonus Tracker -->
+<div class="col-span-1 lg:col-span-5 glass-panel rounded-xl p-8 ambient-glow flex flex-col justify-center items-center text-center">
+<span class="font-inter font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-4">Annual Bonus Tracker</span>
+<div class="relative w-48 h-48 mb-4 flex items-center justify-center">
+<!-- Circular Gauge SVG Simulation -->
+<svg class="absolute inset-0 w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="#eae7e7" stroke-width="4"></circle>
+<circle class="transition-all duration-1000 ease-out" cx="50" cy="50" fill="none" r="45" stroke="#775a19" stroke-dasharray="282.7" stroke-dashoffset="70.67" stroke-width="4"></circle>
+</svg>
+<div class="flex flex-col items-center justify-center z-10">
+<span class="font-playfair font-headline-md text-headline-md text-on-surface">$150k</span>
+<span class="font-inter font-label-sm text-label-sm text-on-surface-variant border-t border-outline-variant/30 pt-1 mt-1">of $200k target</span>
+</div>
+</div>
+<p class="font-inter font-label-sm text-label-sm text-on-surface-variant">Q4 Target securely on track. 75% Achieved.</p>
+</div>
+</div>
+<!-- Middle & Bottom Sections Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mt-16">
+<!-- Achievements Grid -->
+<div class="col-span-1 lg:col-span-8 space-y-6">
+<h3 class="font-playfair font-headline-sm text-headline-sm text-on-surface border-b border-outline-variant/30 pb-4">Milestone Badges</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Badge 1 -->
+<div class="glass-panel rounded-lg p-6 flex items-center space-x-6 hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-primary-fixed/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+</div>
+<div>
+<h4 class="font-inter font-label-lg text-label-lg text-on-surface">Million Dollar Club</h4>
+<p class="font-inter font-label-sm text-label-sm text-on-surface-variant mt-1">Achieved $1M in commissions YTD.</p>
+</div>
+</div>
+<!-- Badge 2 -->
+<div class="glass-panel rounded-lg p-6 flex items-center space-x-6 hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-primary-fixed/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">real_estate_agent</span>
+</div>
+<div>
+<h4 class="font-inter font-label-lg text-label-lg text-on-surface">Listing Specialist</h4>
+<p class="font-inter font-label-sm text-label-sm text-on-surface-variant mt-1">Secured 20+ exclusive mandates.</p>
+</div>
+</div>
+<!-- Badge 3 -->
+<div class="glass-panel rounded-lg p-6 flex items-center space-x-6 hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-primary-fixed/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">concierge</span>
+</div>
+<div>
+<h4 class="font-inter font-label-lg text-label-lg text-on-surface">Luxury Concierge</h4>
+<p class="font-inter font-label-sm text-label-sm text-on-surface-variant mt-1">Perfect client satisfaction score.</p>
+</div>
+</div>
+<!-- Badge 4 (Locked) -->
+<div class="glass-panel rounded-lg p-6 flex items-center space-x-6 opacity-60">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant">lock</span>
+</div>
+<div>
+<h4 class="font-inter font-label-lg text-label-lg text-on-surface-variant">Global Ambassador</h4>
+<p class="font-inter font-label-sm text-label-sm text-on-surface-variant mt-1">Close 5 international transactions.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Leaderboard Sidebar -->
+<div class="col-span-1 lg:col-span-4 glass-panel rounded-xl p-8 ambient-glow">
+<div class="flex justify-between items-center mb-6 border-b border-outline-variant/30 pb-4">
+<h3 class="font-playfair font-headline-sm text-headline-sm text-on-surface">Top Performers</h3>
+<span class="font-inter font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">YTD</span>
+</div>
+<ul class="space-y-5">
+<!-- Leader 1 -->
+<li class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+<img alt="Top Broker" class="w-full h-full object-cover" data-alt="A portrait of an elegant, smiling female executive in a well-lit luxury office setting. She is wearing a chic beige blazer, projecting confidence and success. The background features blurred architectural elements, emphasizing a premium real estate environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBa1gP1mR3S0ILzMEhRj5O1U_myZKCtncY7axw2e7LNbTV3y3_wcVZm49JL6vcAD3RtAXkVynuZ6xogXFLL65gQsB7sI_FtLerH0To9up7NUbr00qDtc2olCSyrlzEngq4F6dbPYO_Hw8q06CWxVJminCAzg6xpUNV9DpShKZ_u4KDdmptMjpAp0X8tpmwVJHMjebohRAK3-8p9jyjr7kJ3eWAc_S8F96fQFsbXBMRK2EWWMUmR-PkFJ1MT_ELvxvqG0qv9NydWnRx"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">1</div>
+</div>
+<span class="font-inter font-label-lg text-label-lg text-on-surface">Eleanor Vance</span>
+</div>
+<span class="font-inter font-label-sm text-label-sm font-semibold text-primary">$42.5M</span>
+</li>
+<!-- Leader 2 -->
+<li class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/50">
+<img alt="Broker Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a mature, confident male real estate broker in a sharply tailored charcoal suit. The lighting is bright and soft, highlighting his approachable demeanor. The background is a subtly blurred modern office space with neutral tones, conveying a sense of high-end corporate luxury and trustworthiness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrKrKNNeCDenW7ktjTy7K8BNx9DnSbU5J2dYtRF5zeYKp1qlgKhuqLXDUT0cAkuUQnAT_L5p0FMJ3ehxDoO-e3FNTP62I_RX7QIw_HaQ6n4IyZDuF46C7kcmP5j67qcHH3HNLHTYfH2qXFC8a1jSO7qNj1VgAI48V_TEz8uvkP4MsSlZ4eGPc8vQHBKo18T4si06cRHMGyVE_Mx05DrOVtLGd3pfzBwdt8XkAOf0ZZL--wskvm3uaZ2PsgKfe4DgQ7aGJ_a4rZG0kW"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">2</div>
+</div>
+<span class="font-inter font-label-lg text-label-lg text-on-surface">Julian Thorne</span>
+</div>
+<span class="font-inter font-label-sm text-label-sm font-semibold text-on-surface-variant">$38.1M</span>
+</li>
+<!-- Leader 3 -->
+<li class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/50">
+<img alt="Broker" class="w-full h-full object-cover" data-alt="A vibrant, professional portrait of a young female real estate agent with a warm smile, set against an out-of-focus bright window. She wears a sophisticated dark silk blouse. The lighting emphasizes a natural, trusting, and ambitious aesthetic typical of top-tier property professionals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUo5c1VD-4RF5i-9iAtm3Xx40QCuyfcvDPzFh2NXl10TCdwXsQhfiW1SJXzMz8JbTVwBCQiq03karHyZt7puPSCpn2B80mly5iikOQbHGz9gGiga9xfjJLeKGWHg7WlPNYXATUcvVQNYq30xoAVt9P5HQTrUS2YMofo8-2-r2zls0FF9CjR6Cpm4ku1HKbiCe3bFCXlKEGJ4HoU4XjtXw5zJAuSX2DwO7-7yXrGwP5-rXI_aInLhw41A77dlBecTtsOT7obig7O-Cx"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">3</div>
+</div>
+<span class="font-inter font-label-lg text-label-lg text-on-surface">Sophia Chen</span>
+</div>
+<span class="font-inter font-label-sm text-label-sm font-semibold text-on-surface-variant">$35.0M</span>
+</li>
+<!-- Leader 4 -->
+<li class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/50">
+<div class="w-full h-full bg-surface-container-high flex items-center justify-center font-playfair font-semibold text-on-surface-variant">MR</div>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">4</div>
+</div>
+<span class="font-inter font-label-lg text-label-lg text-on-surface">Marcus Reed</span>
+</div>
+<span class="font-inter font-label-sm text-label-sm font-semibold text-on-surface-variant">$31.2M</span>
+</li>
+<!-- Leader 5 -->
+<li class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/50">
+<div class="w-full h-full bg-surface-container-high flex items-center justify-center font-playfair font-semibold text-on-surface-variant">IW</div>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">5</div>
+</div>
+<span class="font-inter font-label-lg text-label-lg text-on-surface">Isabella Wright</span>
+</div>
+<span class="font-inter font-label-sm text-label-sm font-semibold text-on-surface-variant">$29.8M</span>
+</li>
+</ul>
+<button class="w-full mt-8 py-3 text-center border border-outline-variant/50 rounded-DEFAULT font-inter font-label-sm text-label-sm text-primary hover:bg-primary-fixed/10 transition-colors uppercase tracking-widest">
+                            View Full Rankings
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

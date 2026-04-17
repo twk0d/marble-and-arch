@@ -1,0 +1,402 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Broker Dashboard - Marble &amp; Arch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-fixed": "#f1e1c2",
+                "surface": "#131313",
+                "surface-container-lowest": "#0e0e0e",
+                "on-surface": "#e5e2e1",
+                "tertiary-fixed-dim": "#c8c6c5",
+                "inverse-on-surface": "#313030",
+                "inverse-surface": "#e5e2e1",
+                "on-secondary-container": "#c2b397",
+                "primary": "#e9c176",
+                "tertiary-container": "#a7a5a5",
+                "primary-fixed-dim": "#e9c176",
+                "on-tertiary-fixed-variant": "#474746",
+                "surface-tint": "#e9c176",
+                "on-secondary": "#382f1b",
+                "secondary-container": "#50462f",
+                "surface-container-low": "#1c1b1b",
+                "outline": "#9a8f80",
+                "background": "#131313",
+                "on-secondary-fixed-variant": "#50462f",
+                "secondary-fixed-dim": "#d4c5a7",
+                "on-background": "#e5e2e1",
+                "surface-container-high": "#2a2a2a",
+                "on-primary": "#412d00",
+                "surface-container": "#201f1f",
+                "outline-variant": "#4e4639",
+                "surface-variant": "#353534",
+                "on-error": "#690005",
+                "surface-bright": "#393939",
+                "tertiary": "#c8c6c5",
+                "inverse-primary": "#775a19",
+                "surface-container-highest": "#353534",
+                "error-container": "#93000a",
+                "primary-fixed": "#ffdea5",
+                "on-tertiary-fixed": "#1b1b1b",
+                "tertiary-fixed": "#e5e2e1",
+                "secondary": "#d4c5a7",
+                "on-surface-variant": "#d1c5b4",
+                "error": "#ffb4ab",
+                "primary-container": "#c5a059",
+                "on-tertiary-container": "#3b3b3b",
+                "on-tertiary": "#313030",
+                "surface-dim": "#131313",
+                "on-error-container": "#ffdad6",
+                "on-primary-container": "#4e3700",
+                "on-primary-fixed": "#261900",
+                "on-primary-fixed-variant": "#5d4201",
+                "on-secondary-fixed": "#221b08"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "20px",
+                "container-max": "1200px",
+                "unit": "8px",
+                "gutter": "24px",
+                "margin-desktop": "64px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "label-sm": [
+                        "DM Sans"
+                ],
+                "body-lg": [
+                        "DM Sans"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "DM Sans"
+                ]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .glass-panel {
+            background: rgba(32, 31, 31, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(154, 143, 128, 0.2);
+            box-shadow: 0 4px 32px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component JSON Blueprint) -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-outline-variant bg-surface-container-lowest z-50 flex flex-col p-4 transition-all duration-200 ease-in-out hidden md:flex">
+<div class="mb-10 px-4 pt-4">
+<h1 class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim tracking-tight">Marble &amp; Arch</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Premium Brokerage</p>
+</div>
+<button aria-label="New Listing" class="mb-8 mx-4 bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">add</span>
+            New Listing
+        </button>
+<nav class="flex-1 space-y-1">
+<!-- Active Tab -->
+<a aria-current="page" class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary rounded-lg font-bold font-label-lg text-label-lg transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-lg text-label-lg rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">location_city</span>
+                Listings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-lg text-label-lg rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">group</span>
+                Leads
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-lg text-label-lg rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">rate_review</span>
+                Reviews
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-lg text-label-lg rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
+                Reports
+            </a>
+</nav>
+<div class="mt-auto border-t border-outline-variant pt-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-lg text-label-lg rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-lg text-label-lg rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help</span>
+                Support
+            </a>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-16rem)] z-40 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant dark:border-outline flex justify-between items-center px-4 md:px-8 py-4">
+<div class="flex items-center md:hidden">
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">M&amp;A</h1>
+</div>
+<div class="hidden md:flex items-center">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Broker Dashboard</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative focus-within:ring-2 focus-within:ring-primary/20 rounded-full hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="bg-surface-container-low border border-outline-variant text-body-md text-on-surface rounded-full py-2 pl-10 pr-4 focus:outline-none w-64 placeholder-on-surface-variant/50" placeholder="Search properties, leads..." type="text">
+</div>
+<button aria-label="Notifications" class="text-on-surface-variant hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button aria-label="Account" class="text-on-surface-variant hover:text-primary transition-colors p-2 flex items-center gap-2">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-20 p-4 md:p-8 min-h-screen pb-24">
+<!-- Welcome Header -->
+<div class="mb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mt-8">
+<div>
+<p class="font-label-lg text-label-lg text-secondary uppercase tracking-widest mb-2">Good Morning</p>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Welcome back, Alexander</h2>
+</div>
+<div class="md:hidden w-full">
+<button class="w-full bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">add</span>
+                    New Listing
+                </button>
+</div>
+</div>
+<!-- Metrics Row -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+<!-- Metric 1 -->
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between h-32 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Pending Review</p>
+<span class="material-symbols-outlined text-tertiary text-opacity-50 text-xl">pending_actions</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface">12</p>
+</div>
+<!-- Metric 2 -->
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between h-32 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Active Listings</p>
+<span class="material-symbols-outlined text-primary text-opacity-50 text-xl">real_estate_agent</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface">48</p>
+</div>
+<!-- Metric 3 -->
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between h-32 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start">
+<p class="font-label-sm text-label-sm text-on-surface-variant">New Leads</p>
+<span class="material-symbols-outlined text-secondary text-opacity-50 text-xl">person_add</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface">8</p>
+</div>
+<!-- Metric 4 -->
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between h-32 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Urgent Tasks</p>
+<span class="material-symbols-outlined text-error text-opacity-50 text-xl">warning</span>
+</div>
+<p class="font-headline-md text-headline-md text-error">3</p>
+</div>
+</div>
+<!-- Main Layout: Bento Grid Style -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Property Queue (Takes up 2 columns on large screens) -->
+<div class="lg:col-span-2 space-y-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Property Queue</h3>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors uppercase tracking-widest" href="#">View All</a>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-low/50">
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase font-medium">Property</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase font-medium hidden sm:table-cell">Location</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase font-medium">Price</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase font-medium text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/50">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="py-4 px-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-dim overflow-hidden flex-shrink-0">
+<img alt="Penthouse View" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A luxurious modern penthouse interior with floor-to-ceiling windows showcasing a sprawling city skyline at dusk. The interior is decorated in light cream and sand tones with minimalist designer furniture. Soft ambient lighting highlights the clean architectural lines and a marble coffee table. The mood is sophisticated, exclusive, and serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKf0hagmnzkx1p14Qi6Pd5_YPaLiQayrrwPtVDPbZ4Bq9J1gLm784j67VFrcZuIHnN44CMqEO19p2JDfxh9yCXe5tqSp0SSlS3tck6VIX6tHP79BKK3f6sEs726gHzdWVtQYkgPlolG8RuOjLeYYFM8-ZnvIFwk_aTqyzfWcOBmw2q-LbT6qzoN8R7Yvj016FF_dx-txD_NqpxGZjx4f7xHQfrXbXH711DLJ3pfAfEoelpqFjejhXNpE3xk9lee-Jsbq548lcEcdq8">
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-medium">ID: MA-8421</p>
+<p class="font-label-sm text-label-sm text-secondary">Penthouse</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 hidden sm:table-cell font-body-md text-body-md text-on-surface-variant">Dubai Marina</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface font-medium">$4.2M</td>
+<td class="py-4 px-6 text-right">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-container/20 text-on-tertiary-container border border-tertiary/20">
+                                        Pending Review
+                                    </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="py-4 px-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-dim overflow-hidden flex-shrink-0">
+<img alt="Villa Exterior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A striking contemporary Mediterranean villa exterior during golden hour. The facade features smooth white masonry combined with natural stone accents and large glass sliding doors. A pristine infinity pool reflects the warm, setting sun. The surrounding landscaping is sparse but manicured, emphasizing the architectural precision and a quiet luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrTQIaxSZvTEGKzKfwsRgUdFlC-_w31PiFgv7uha-XeymDhYuZ0Qxgumy4HEpC89PhNXFeZ_wwAmrzatNmQ3iT4izk-9jvyeq_QItOfzMuCzDNqq8NsImY13FF0lO4n14HgfGZMyIyzFShBWraa8erayxEqX1j6qUD16MKNruzMB6fzg2sQrSsOe4x6bFER1gFsfyX-aRRzTkSIGtEkJ5cyrF0B3C5q1XzwRnaVNKo1TaqdkfQ02xSwlb7ixkLObv_FbL8H_0dSYDg">
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-medium">ID: MA-8419</p>
+<p class="font-label-sm text-label-sm text-secondary">Villa</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 hidden sm:table-cell font-body-md text-body-md text-on-surface-variant">Palm Jumeirah</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface font-medium">$8.5M</td>
+<td class="py-4 px-6 text-right">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-variant text-on-surface-variant border border-outline-variant">
+                                        Draft
+                                    </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="py-4 px-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-dim overflow-hidden flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">image</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-medium">ID: MA-8415</p>
+<p class="font-label-sm text-label-sm text-secondary">Townhouse</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 hidden sm:table-cell font-body-md text-body-md text-on-surface-variant">Downtown</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface font-medium">$1.8M</td>
+<td class="py-4 px-6 text-right">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-container/20 text-on-tertiary-container border border-tertiary/20">
+                                        Pending Review
+                                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Lead Activity Sidebar Widget -->
+<div class="lg:col-span-1 space-y-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Leads</h3>
+<span class="material-symbols-outlined text-on-surface-variant">more_horiz</span>
+</div>
+<div class="glass-panel rounded-xl p-6 space-y-6">
+<!-- Lead 1 -->
+<div class="flex gap-4 items-start border-b border-outline-variant/30 pb-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-lg font-bold shrink-0">
+                            ES
+                        </div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface font-medium">Elena Sterling</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">Inquired about MA-8421 (Penthouse)</p>
+<div class="flex gap-2 mt-3">
+<button class="flex-1 bg-surface-container-lowest border border-outline-variant text-on-surface font-label-sm text-label-sm py-1.5 rounded hover:bg-surface-container-low transition-colors">Email</button>
+<button class="flex-1 bg-primary text-on-primary font-label-sm text-label-sm py-1.5 rounded hover:bg-primary/90 transition-colors">Call</button>
+</div>
+</div>
+</div>
+<!-- Lead 2 -->
+<div class="flex gap-4 items-start border-b border-outline-variant/30 pb-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant font-label-lg font-bold shrink-0">
+                            MR
+                        </div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface font-medium">Marcus Reed</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">Requested viewing for MA-8419</p>
+<div class="flex gap-2 mt-3">
+<button class="flex-1 bg-surface-container-lowest border border-outline-variant text-on-surface font-label-sm text-label-sm py-1.5 rounded hover:bg-surface-container-low transition-colors">Email</button>
+<button class="flex-1 bg-primary text-on-primary font-label-sm text-label-sm py-1.5 rounded hover:bg-primary/90 transition-colors">Call</button>
+</div>
+</div>
+</div>
+<button class="w-full text-center font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors uppercase tracking-widest pt-2">
+                        View All Activity
+                    </button>
+</div>
+</div>
+</div>
+</main>
+
+
+</body></html>

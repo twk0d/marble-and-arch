@@ -1,0 +1,330 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Global Settings - Marble &amp; Arch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#393939",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-tertiary": "#313030",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-variant": "#353534",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#50462f",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-dim": "#131313",
+                        "secondary": "#d4c5a7",
+                        "primary-fixed": "#ffdea5",
+                        "tertiary-fixed": "#e5e2e1",
+                        "tertiary-container": "#a7a5a5",
+                        "outline": "#9a8f80",
+                        "primary": "#e9c176",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-container": "#c2b397",
+                        "on-background": "#e5e2e1",
+                        "secondary-fixed": "#f1e1c2",
+                        "inverse-primary": "#775a19",
+                        "outline-variant": "#4e4639",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-container": "#3b3b3b",
+                        "on-surface-variant": "#d1c5b4",
+                        "on-error": "#690005",
+                        "surface-container-highest": "#353534",
+                        "on-primary-container": "#4e3700",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#c5a059",
+                        "on-secondary": "#382f1b",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface": "#131313",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-fixed": "#221b08",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#313030",
+                        "background": "#131313",
+                        "on-primary": "#412d00",
+                        "tertiary": "#c8c6c5",
+                        "surface-tint": "#e9c176",
+                        "secondary-fixed-dim": "#d4c5a7",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#50462f",
+                        "on-primary-fixed": "#261900"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["DM Sans"],
+                        "label-sm": ["DM Sans"],
+                        "body-md": ["DM Sans"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(28, 28, 28, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+        }
+        .glow-shadow {
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.05);
+        }
+        .custom-input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+            color: #e5e2e1;
+            transition: all 0.3s ease;
+        }
+        .custom-input:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom-color: #c5a059;
+            box-shadow: 0 1px 10px rgba(197, 160, 89, 0.2);
+        }
+        .tab-active {
+            border-bottom: 2px solid #c5a059;
+            color: #c5a059;
+        }
+        /* Custom file input styling */
+        input[type="file"]::file-selector-button {
+            background-color: transparent;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            color: #d4c5a7;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-right: 1rem;
+            font-family: "DM Sans";
+            font-size: 14px;
+        }
+        input[type="file"]::file-selector-button:hover {
+            border-color: #c5a059;
+            background-color: rgba(197, 160, 89, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface dark:bg-surface text-on-surface font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex h-screen w-64 fixed left-0 top-0 border-r border-outline dark:border-outline bg-surface dark:bg-inverse-surface flex-col h-full p-4 z-50">
+<div class="mb-10 mt-4 px-4">
+<h1 class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim tracking-tight">Marble &amp; Arch</h1>
+<p class="font-label-sm text-label-sm text-secondary dark:text-secondary mt-1 opacity-70">Premium Brokerage</p>
+</div>
+<div class="flex-grow space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg group transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100 group-hover:text-primary transition-all" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest group-hover:text-primary transition-colors">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg group transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100 group-hover:text-primary transition-all" data-icon="location_city">location_city</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest group-hover:text-primary transition-colors">Listings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg group transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100 group-hover:text-primary transition-all" data-icon="group">group</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest group-hover:text-primary transition-colors">Leads</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg group transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100 group-hover:text-primary transition-all" data-icon="rate_review">rate_review</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest group-hover:text-primary transition-colors">Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg group transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100 group-hover:text-primary transition-all" data-icon="analytics">analytics</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest group-hover:text-primary transition-colors">Reports</span>
+</a>
+</div>
+<div class="mt-auto space-y-2 pt-4 border-t border-outline-variant/30">
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-lg font-bold transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="settings" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg group transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100 group-hover:text-primary transition-all" data-icon="help">help</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest group-hover:text-primary transition-colors">Support</span>
+</a>
+<button class="w-full mt-6 bg-primary-container hover:bg-primary text-on-primary-container px-4 py-3 rounded text-sm font-semibold tracking-wider transition-all duration-300 uppercase shadow-[0_0_15px_rgba(197,160,89,0.15)] hover:shadow-[0_0_20px_rgba(197,160,89,0.3)]">
+                New Listing
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 relative min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-16rem)] z-40 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant dark:border-outline flex justify-between items-center px-8 py-4">
+<div class="flex items-center gap-4">
+<!-- Mobile menu trigger placeholder -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">Broker Dashboard</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container-low rounded-full px-4 py-2 border border-outline-variant/30 focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<span class="material-symbols-outlined text-secondary mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none text-on-surface focus:ring-0 w-48 text-sm placeholder-surface-variant" placeholder="Search..." type="text">
+</div>
+<button class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary-container rounded-full"></span>
+</button>
+<button class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="pt-[100px] px-6 md:px-margin-desktop pb-20 max-w-container-max mx-auto">
+<div class="mb-12">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-4">Global Settings</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Manage your brokerage's core configuration, brand identity, and system-wide preferences.</p>
+</div>
+<!-- Settings Navigation -->
+<div class="flex space-x-8 border-b border-outline-variant/20 mb-12 overflow-x-auto pb-px">
+<button class="pb-4 font-label-sm text-label-sm uppercase tracking-widest tab-active px-1 whitespace-nowrap transition-colors">General</button>
+<button class="pb-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary px-1 whitespace-nowrap transition-colors">Branding</button>
+<button class="pb-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary px-1 whitespace-nowrap transition-colors">Security</button>
+<button class="pb-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary px-1 whitespace-nowrap transition-colors">Notifications</button>
+</div>
+<!-- Content Area (General Tab) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<!-- Left Column: Form Fields -->
+<div class="lg:col-span-2 space-y-10">
+<!-- Localization Section -->
+<section class="glass-panel p-8 rounded-xl glow-shadow hover:bg-surface-container-low transition-colors duration-300 group">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="public">public</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-2xl">Localization</h3>
+</div>
+<div class="space-y-8">
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Site Language</label>
+<select class="w-full custom-input pb-2 appearance-none cursor-pointer">
+<option class="bg-surface text-on-surface" value="en">English (United States)</option>
+<option class="bg-surface text-on-surface" value="fr">Français (France)</option>
+<option class="bg-surface text-on-surface" value="es">Español (España)</option>
+<option class="bg-surface text-on-surface" value="pt">Português (Brasil)</option>
+</select>
+<div class="absolute right-0 top-8 pointer-events-none text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Base Currency</label>
+<select class="w-full custom-input pb-2 appearance-none cursor-pointer">
+<option class="bg-surface text-on-surface" value="usd">USD - US Dollar</option>
+<option class="bg-surface text-on-surface" value="eur">EUR - Euro</option>
+<option class="bg-surface text-on-surface" value="brl">BRL - Brazilian Real</option>
+</select>
+<div class="absolute right-0 top-8 pointer-events-none text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Time Zone</label>
+<select class="w-full custom-input pb-2 appearance-none cursor-pointer">
+<option class="bg-surface text-on-surface" value="utc-5">(UTC-05:00) Eastern Time (US &amp; Canada)</option>
+<option class="bg-surface text-on-surface" value="utc">(UTC+00:00) Greenwich Mean Time</option>
+<option class="bg-surface text-on-surface" value="utc+1">(UTC+01:00) Central European Time</option>
+</select>
+<div class="absolute right-0 top-8 pointer-events-none text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Information Section -->
+<section class="glass-panel p-8 rounded-xl glow-shadow hover:bg-surface-container-low transition-colors duration-300 group">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="contact_mail">contact_mail</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-2xl">Brokerage Contact</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Primary Email</label>
+<input class="w-full custom-input pb-2" type="email" value="concierge@marbleandarch.com">
+</div>
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Support Phone</label>
+<input class="w-full custom-input pb-2" type="tel" value="+1 (800) 555-0199">
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Brand Preview / Actions -->
+<div class="space-y-8">
+<div class="glass-panel p-6 rounded-xl border border-outline-variant/30 sticky top-[120px]">
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-6 border-b border-outline-variant/20 pb-2">Save Changes</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-8">
+                            Unsaved modifications to your general settings. Please review before applying changes across the platform.
+                        </p>
+<div class="flex flex-col gap-4">
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary-container px-6 py-3 rounded text-sm font-semibold tracking-wider transition-all duration-300 uppercase shadow-[0_0_15px_rgba(197,160,89,0.15)] hover:shadow-[0_0_20px_rgba(197,160,89,0.3)]">
+                                Apply Changes
+                            </button>
+<button class="w-full border border-primary/50 text-secondary hover:bg-primary/5 px-6 py-3 rounded text-sm font-semibold tracking-wider transition-all duration-300 uppercase">
+                                Discard
+                            </button>
+</div>
+</div>
+<!-- Atmospheric visual element -->
+<div class="hidden lg:block h-64 rounded-xl overflow-hidden relative opacity-50 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-700">
+<img alt="Luxury interior architectural detail" class="object-cover w-full h-full" data-alt="A moody, high-end architectural photograph of a luxury real estate interior focusing on textural details. The scene features dark, sleek materials like polished charcoal stone and brushed antique gold fixtures. Lighting is dramatic and low-key, creating deep shadows and highlighting the rich, reflective surfaces. The overall aesthetic perfectly matches a premium, night-time dark mode UI theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvHYBjLABxudGOAFv9kVatzx-PyGnOlKMMLGoRBA7SJO2TooGpTdzdap9kNwQHqQDabX_i4oZDmhlTS46Flzw3-K8EniN5qOJPkw-0kGH2jgjoBHbz1b1TqjFaStjaCiK8e83kuciWPp0_Bp3mKMxTKA9T8TKhIr6pmtdqBIOuuKn6nqyWpuzkd6eeXmERM8A5LPt0uJY-9cQi6_KuDYYmxSfxHRjC8_bbhpes9TSHFO7NhPOzSX5zfhCfAvOyde4czwPQf6nYiMWI">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple tab switching logic for demonstration purposes
+        document.querySelectorAll('button').forEach(btn => {
+            if(btn.textContent === 'Branding' || btn.textContent === 'Security' || btn.textContent === 'Notifications') {
+                btn.addEventListener('click', function() {
+                    document.querySelector('.tab-active').classList.remove('tab-active', 'px-1');
+                    document.querySelector('.tab-active')?.classList.add('text-on-surface-variant');
+                    
+                    this.classList.add('tab-active');
+                    this.classList.remove('text-on-surface-variant');
+                });
+            }
+        });
+    </script>
+</body></html>

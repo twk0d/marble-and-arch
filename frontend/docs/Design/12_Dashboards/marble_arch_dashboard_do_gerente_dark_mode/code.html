@@ -1,0 +1,392 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Marble &amp; Arch - Manager Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-fixed": "#f1e1c2",
+                "surface": "#131313",
+                "surface-container-lowest": "#0e0e0e",
+                "on-surface": "#e5e2e1",
+                "tertiary-fixed-dim": "#c8c6c5",
+                "inverse-on-surface": "#313030",
+                "inverse-surface": "#e5e2e1",
+                "on-secondary-container": "#c2b397",
+                "primary": "#e9c176",
+                "tertiary-container": "#a7a5a5",
+                "primary-fixed-dim": "#e9c176",
+                "on-tertiary-fixed-variant": "#474746",
+                "surface-tint": "#e9c176",
+                "on-secondary": "#382f1b",
+                "secondary-container": "#50462f",
+                "surface-container-low": "#1c1b1b",
+                "outline": "#9a8f80",
+                "background": "#131313",
+                "on-secondary-fixed-variant": "#50462f",
+                "secondary-fixed-dim": "#d4c5a7",
+                "on-background": "#e5e2e1",
+                "surface-container-high": "#2a2a2a",
+                "on-primary": "#412d00",
+                "surface-container": "#201f1f",
+                "outline-variant": "#4e4639",
+                "surface-variant": "#353534",
+                "on-error": "#690005",
+                "surface-bright": "#393939",
+                "tertiary": "#c8c6c5",
+                "inverse-primary": "#775a19",
+                "surface-container-highest": "#353534",
+                "error-container": "#93000a",
+                "primary-fixed": "#ffdea5",
+                "on-tertiary-fixed": "#1b1b1b",
+                "tertiary-fixed": "#e5e2e1",
+                "secondary": "#d4c5a7",
+                "on-surface-variant": "#d1c5b4",
+                "error": "#ffb4ab",
+                "primary-container": "#c5a059",
+                "on-tertiary-container": "#3b3b3b",
+                "on-tertiary": "#313030",
+                "surface-dim": "#131313",
+                "on-error-container": "#ffdad6",
+                "on-primary-container": "#4e3700",
+                "on-primary-fixed": "#261900",
+                "on-primary-fixed-variant": "#5d4201",
+                "on-secondary-fixed": "#221b08"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "20px",
+                "container-max": "1200px",
+                "unit": "8px",
+                "gutter": "24px",
+                "margin-desktop": "64px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "label-sm": [
+                        "DM Sans"
+                ],
+                "body-lg": [
+                        "DM Sans"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "DM Sans"
+                ]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .glass-panel {
+            background: rgba(32, 31, 31, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(154, 143, 128, 0.2);
+        }
+        .ambient-glow {
+            box-shadow: 0 32px 64px -12px rgba(233, 193, 118, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex h-screen w-72 fixed left-0 top-0 flex-col bg-surface-container-low dark:bg-surface-container-lowest border-r border-outline-variant/20 shadow-lg shadow-primary/5 p-6 space-y-4 z-50">
+<!-- Header -->
+<div class="mb-8">
+<h1 class="font-headline-sm text-headline-sm text-primary-container mb-1">Admin Portal</h1>
+<p class="font-label-sm text-label-sm text-secondary">Luxury Management</p>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 rounded border border-primary-container/20 flex items-center justify-center gap-2 hover:shadow-[0_8px_24px_rgba(233,193,118,0.15)] transition-all duration-300 mb-6">
+<span class="material-symbols-outlined" data-icon="add" style="font-variation-settings: 'FILL' 0;">add</span>
+            New Listing
+        </button>
+<!-- Main Tabs -->
+<div class="flex-1 space-y-2">
+<a class="group cursor-pointer flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg font-medium hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="group cursor-pointer flex items-center gap-3 px-4 py-3 text-secondary hover:bg-secondary-container/30 rounded-lg hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+                Properties
+            </a>
+<a class="group cursor-pointer flex items-center gap-3 px-4 py-3 text-secondary hover:bg-secondary-container/30 rounded-lg hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+                Inquiries
+            </a>
+<a class="group cursor-pointer flex items-center gap-3 px-4 py-3 text-secondary hover:bg-secondary-container/30 rounded-lg hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+                Analytics
+            </a>
+<a class="group cursor-pointer flex items-center gap-3 px-4 py-3 text-secondary hover:bg-secondary-container/30 rounded-lg hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                Clients
+            </a>
+<a class="group cursor-pointer flex items-center gap-3 px-4 py-3 text-secondary hover:bg-secondary-container/30 rounded-lg hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+                Marketing
+            </a>
+</div>
+<!-- Footer Tabs -->
+<div class="pt-6 border-t border-outline-variant/20 space-y-2">
+<a class="group cursor-pointer flex items-center gap-3 px-4 py-3 text-secondary hover:bg-secondary-container/30 rounded-lg hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Support
+            </a>
+<a class="group cursor-pointer flex items-center gap-3 px-4 py-3 text-secondary hover:bg-secondary-container/30 rounded-lg hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Sign Out
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-72 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="w-full sticky top-0 z-40 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm flex items-center justify-between px-margin-desktop py-4">
+<div class="flex items-center">
+<span class="font-headline-md text-headline-md tracking-tight text-primary md:hidden">Marble &amp; Arch</span>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="hidden lg:flex items-center bg-surface-container rounded-full px-4 py-2 border border-outline-variant/30 w-64 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-secondary mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 p-0 text-body-md font-body-md w-full placeholder-secondary" placeholder="Search..." type="text">
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="text-secondary hover:text-primary transition-colors hover:bg-secondary-container/50 p-2 rounded-full cursor-pointer active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors hover:bg-secondary-container/50 p-2 rounded-full cursor-pointer active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full border-2 border-outline-variant/30 object-cover" data-alt="A professional headshot of a luxury real estate manager in a crisp suit, high-end corporate setting, soft warm lighting, minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVbBquU_IdfhLETfRwYjWeROdtI7XYDKQF_ZU_ULwSHJdSo_-HlJgCcZA9ifiPha6Uf8Dp6JbjnX7bKYkSL12z32rvpdhzyTLCVnnVxWNFFJ4fCB4SkX1A0qHEpNdjSGD0ma6Fv0hytltAswEO6l26315p4mINlKICPxu2Qg0rV4TxpF66V9BZUrdJPOFB8zOj3d-bRjHrEpIHCrha5WiT5wX400poKSvK51Q-XPSiL-kh4tVwBbgm_9ilFsjxeBJaExCCS0eNwU0R">
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full space-y-[80px]">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-md text-on-background mb-2">Team Overview</h2>
+<p class="font-body-lg text-body-lg text-secondary">High-level metrics and performance for the Marble &amp; Arch brokerage.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2 border border-outline-variant rounded text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container transition-colors">
+                        Export Report
+                    </button>
+</div>
+</div>
+<!-- SLA Alerts (Bento Item) -->
+<div class="bg-error-container/20 border border-error/20 rounded-xl p-6 flex items-start gap-4">
+<div class="p-3 bg-error/10 rounded-full text-error">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-1">Attention Required</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">3 high-value inquiries have exceeded the 4-hour response SLA. Review Inquiries tab immediately.</p>
+</div>
+</div>
+<!-- High-Level Metrics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Metric 1 -->
+<div class="glass-panel ambient-glow rounded-xl p-6 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Total Active Listings</p>
+<span class="material-symbols-outlined text-primary-container" data-icon="domain">domain</span>
+</div>
+<div>
+<p class="font-display-lg text-display-lg text-on-background">124</p>
+<p class="font-label-sm text-label-sm text-primary mt-1">+12% from last month</p>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="glass-panel ambient-glow rounded-xl p-6 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Total Leads (30d)</p>
+<span class="material-symbols-outlined text-primary-container" data-icon="group">group</span>
+</div>
+<div>
+<p class="font-display-lg text-display-lg text-on-background">892</p>
+<p class="font-label-sm text-label-sm text-primary mt-1">+5% from last month</p>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="glass-panel ambient-glow rounded-xl p-6 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Avg. Analysis Time</p>
+<span class="material-symbols-outlined text-primary-container" data-icon="schedule">schedule</span>
+</div>
+<div>
+<p class="font-display-lg text-display-lg text-on-background">2.4<span class="text-headline-md">h</span></p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">Within optimal SLA</p>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="glass-panel ambient-glow rounded-xl p-6 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Conversion Rate</p>
+<span class="material-symbols-outlined text-primary-container" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="font-display-lg text-display-lg text-on-background">18.5<span class="text-headline-md">%</span></p>
+<p class="font-label-sm text-label-sm text-primary mt-1">+2.1% from last month</p>
+</div>
+</div>
+</div>
+<!-- Team Performance Section -->
+<div>
+<h3 class="font-headline-md text-headline-md text-on-background border-b border-outline-variant/30 pb-4 mb-8">Broker Performance</h3>
+<div class="bg-surface rounded-xl border border-outline-variant/30 overflow-hidden">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low border-b border-outline-variant/30">
+<tr>
+<th class="py-4 px-6 font-label-sm text-label-sm text-secondary font-semibold">Broker</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-secondary font-semibold">Active Listings</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-secondary font-semibold">Active Leads</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-secondary font-semibold">Status</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-secondary font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-6 flex items-center gap-4">
+<img alt="Broker" class="w-10 h-10 rounded-full object-cover" data-alt="A confident female real estate broker smiling, professional attire, modern office background with luxury finishes, soft natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhG3l508P39XvG9yLRBa8xsF2jpXZbtpCD6nl1L2MkccBtm_frV52zbE8cIYtj-3QDfI8vlPj38705sNJOc7kyvNw-wCRH-pqsUf47MLMLdYMQZL0K3y-BE5Cfs9-kWKwIpPI2AiU5kZYyty2wzmmlUhUaMSR4k7zUQPzuWG38zuVL0JF6ScqbbiSTiQmQLmJVrdYUq6b53v2IkJ1y3jcqnUm8mAQRoysLRwlGL5AfbaWOt4y8tw0V1uyuEvICo_IgRyg2SnGFpB_g">
+<div>
+<p class="font-body-md text-body-md text-on-background font-medium">Eleanor Vance</p>
+<p class="font-label-sm text-label-sm text-secondary">Senior Partner</p>
+</div>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">14</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">42</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#0d2a17] text-[#81c995] border border-[#184d28]">
+                                        Optimal
+                                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-6 flex items-center gap-4">
+<img alt="Broker" class="w-10 h-10 rounded-full object-cover" data-alt="A focused male luxury real estate agent reviewing documents, tailored suit, sophisticated upscale interior setting, warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrgzlFhlb6wZrwxq94xcA8l0Zk_GY9E2fFmUwB3i-pHHCjgjlvX3z_8TRv1OxLiwvAN0jRp4eTektA4MqYNNw76WshXUz6VFhajk5XKKfjZKdQUhMp8vPcJ7X6Uyr5xZ2PdcSAa_hr886YhOvNodnL24ZRwMf3HaIKODuKF-JGw5sMbFNLCvQ7U03UfFnO7gMj0YNDg6uBYwmh8kOiOn4WcwKE0E7ef43CL3mPwegqXvNlUE7zVx8W9ysY4UXaxcWl__sNW61gwf1b">
+<div>
+<p class="font-body-md text-body-md text-on-background font-medium">Marcus Sterling</p>
+<p class="font-label-sm text-label-sm text-secondary">Associate Broker</p>
+</div>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">8</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">65</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#2f1b04] text-[#fdd663] border border-[#5c370a]">
+                                        High Capacity
+                                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-6 flex items-center gap-4">
+<img alt="Broker" class="w-10 h-10 rounded-full object-cover" data-alt="A portrait of an elegant real estate consultant standing by a window, blurred high-end penthouse background, bright and airy light mode styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS27Bz3unTPZadIedw2N1osB3bpv_4XhyJfVTYxjSVe2Wf5j-V05ytn9OHZPmd0any0VQ3Jq2zEtc1KpZQ_SYDnu8Q4rxZRa3YVHaDyEC2iCNP9PWn62LwDWlMhAJgdENC4FDeqV3SuGmuoOvkeq30snelNeBXBI_UE5XOIw2-FiT6a0eZcyo6Z_is7LCgJYJloe8rBU6FnfjpUDsbGA7NDpeRItCJVBT0XUq8EqCEmw3NoaTS3dWIOp3Wy_R6fosXUUjLNP7akkgh">
+<div>
+<p class="font-body-md text-body-md text-on-background font-medium">Sophia Chen</p>
+<p class="font-label-sm text-label-sm text-secondary">Luxury Specialist</p>
+</div>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">21</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface-variant">38</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#0d2a17] text-[#81c995] border border-[#184d28]">
+                                        Optimal
+                                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Team Commission Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#775a19",
+                      "outline": "#7f7667",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#313030",
+                      "surface": "#fcf9f8",
+                      "surface-container-high": "#eae7e7",
+                      "primary-fixed-dim": "#e9c176",
+                      "inverse-primary": "#e9c176",
+                      "secondary-fixed": "#ebe1d4",
+                      "secondary": "#645d53",
+                      "on-tertiary-container": "#4a3728",
+                      "surface-tint": "#775a19",
+                      "on-tertiary-fixed-variant": "#574333",
+                      "on-surface-variant": "#4e4639",
+                      "on-surface": "#1c1b1b",
+                      "outline-variant": "#d1c5b4",
+                      "on-primary-container": "#4e3700",
+                      "surface-container-highest": "#e5e2e1",
+                      "secondary-fixed-dim": "#cfc5b9",
+                      "primary-container": "#c5a059",
+                      "background": "#fcf9f8",
+                      "surface-dim": "#dcd9d9",
+                      "primary-fixed": "#ffdea5",
+                      "on-secondary-fixed-variant": "#4c463c",
+                      "on-primary-fixed": "#261900",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#f6f3f2",
+                      "tertiary-fixed-dim": "#dec1ac",
+                      "surface-variant": "#e5e2e1",
+                      "on-secondary-fixed": "#1f1b13",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#e8ded1",
+                      "on-tertiary": "#ffffff",
+                      "surface-bright": "#fcf9f8",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#705a49",
+                      "error-container": "#ffdad6",
+                      "on-background": "#1c1b1b",
+                      "tertiary-container": "#bba08c",
+                      "tertiary-fixed": "#fbddc7",
+                      "on-primary-fixed-variant": "#5d4201",
+                      "on-tertiary-fixed": "#28180b",
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#686257",
+                      "inverse-on-surface": "#f3f0ef",
+                      "surface-container": "#f0eded",
+                      "on-primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-tablet": "32px",
+                      "container-max": "1440px",
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "gutter": "32px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 300,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased md:hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Sticky Header -->
+<header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-xl h-16 px-margin-mobile flex items-center justify-between shadow-[0_4px_32px_rgba(119,90,25,0.02)]">
+<button class="w-10 h-10 flex items-center justify-start text-on-surface hover:text-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight text-center flex-1">Comissões da Equipe</h1>
+<div class="w-10 h-10 flex items-center justify-end text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</div>
+</header>
+<main class="px-margin-mobile pt-6 pb-12 flex flex-col gap-8">
+<!-- Summary Cards -->
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-surface p-4 rounded-xl shadow-[0_4px_24px_rgba(119,90,25,0.04)] border border-outline-variant/30 flex flex-col gap-1 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-primary/5 rounded-full blur-xl"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total Pending</span>
+<span class="font-headline-md text-headline-md text-primary font-bold mt-1">$4.2M</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/20 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Team Volume</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold mt-1">$142.5M</span>
+</div>
+</section>
+<!-- Segmented Control / Tabs -->
+<div class="bg-surface-container p-1 rounded-lg flex items-center shadow-inner">
+<button class="flex-1 py-2.5 bg-surface rounded-md shadow-sm font-label-lg text-label-lg text-primary font-semibold transition-all">Pending Approvals</button>
+<button class="flex-1 py-2.5 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-all">History</button>
+</div>
+<!-- Pending Approvals List -->
+<section class="flex flex-col gap-4">
+<!-- Item 1 -->
+<article class="bg-surface p-5 rounded-xl shadow-[0_8px_32px_rgba(119,90,25,0.05)] border border-outline-variant/30 flex flex-col gap-4 transition-transform active:scale-[0.98]">
+<div class="flex gap-4 items-center">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-secondary-container border border-outline-variant/50 shrink-0">
+<img alt="Broker Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a mature male real estate broker wearing a tailored charcoal suit and crisp white shirt. The background is a brightly lit, modern office setting with subtle glass reflections, conveying a sense of high-end corporate luxury and trustworthiness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzetsOHvNaX_RaIEzhhiEDzkll7DibxLsej-YXxltsd2mb_EllPhsTNhRvuXUb0SNzSuOVGCWKDmBuYIPk7eslfNntzcw5Gkp5FCzPVt_YiBq0ZGDqc8JeyVkWfgeMlY_U-A9BoZeDmKvwoBL0v4MANWH5QIDN05e3ifmNyGGhljgnJ8fitjiNTZ3fzvjRpp3D0wL9MdPeKHssYc2i6EMoAj-L7P_woJ0Xob7Zr4X3Cs30BbG_RKDz9VJKTZNj69L-6Q30fz8qjEOr"/>
+</div>
+<div class="flex flex-col justify-center">
+<h2 class="font-body-md text-body-md text-on-surface font-semibold">Arthur Pendelton</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">The Azure Penthouse • Unit 4201</p>
+</div>
+</div>
+<div class="flex items-end justify-between border-t border-outline-variant/20 pt-4 mt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Commission Amount</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$125,000</span>
+</div>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg px-6 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_12px_rgba(119,90,25,0.2)] hover:bg-surface-tint active:bg-primary/90 transition-colors">
+                        Approve
+                    </button>
+</div>
+</article>
+<!-- Item 2 -->
+<article class="bg-surface p-5 rounded-xl shadow-[0_8px_32px_rgba(119,90,25,0.05)] border border-outline-variant/30 flex flex-col gap-4 transition-transform active:scale-[0.98]">
+<div class="flex gap-4 items-center">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-secondary-container border border-outline-variant/50 shrink-0">
+<img alt="Broker Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a female real estate broker with dark hair, wearing a sophisticated neutral blazer. She is smiling subtly in a high-end, light-filled architectural space with warm sand tones and modern glass partitions in the soft background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt_ga0NY74OqdxNk14lR45r4_vEqPbGaX34H-RSVF7syFiBVXVs7zc1nrZt5hKa2TmtIYtvpzqQd6fQNlniSMUR4wVf6jYrUw8ruTkzam1fSqwX8eZ1mqjyElDMx-OCd_hx6dkpjgLfMuLFW7YELpYgD2Xr7KSvs9gCNlJyboLfY-MkYMA2vuPQmVhMK-Z5ynYMeOFLAyp8spYKf6rt8vbq2ognL202uIUu0t8JSIyXg2CsVxBRShp9Aga5G32RskwL34I81rQr7WI"/>
+</div>
+<div class="flex flex-col justify-center">
+<h2 class="font-body-md text-body-md text-on-surface font-semibold">Elena Rostova</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Villa Mariposa Estate</p>
+</div>
+</div>
+<div class="flex items-end justify-between border-t border-outline-variant/20 pt-4 mt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Commission Amount</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$84,500</span>
+</div>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg px-6 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_12px_rgba(119,90,25,0.2)] hover:bg-surface-tint active:bg-primary/90 transition-colors">
+                        Approve
+                    </button>
+</div>
+</article>
+<!-- Item 3 -->
+<article class="bg-surface p-5 rounded-xl shadow-[0_8px_32px_rgba(119,90,25,0.05)] border border-outline-variant/30 flex flex-col gap-4 transition-transform active:scale-[0.98]">
+<div class="flex gap-4 items-center">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-secondary-container border border-outline-variant/50 shrink-0 flex items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-primary">MC</span>
+</div>
+<div class="flex flex-col justify-center">
+<h2 class="font-body-md text-body-md text-on-surface font-semibold">Marcus Chen</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">15 Central Park West • 12B</p>
+</div>
+</div>
+<div class="flex items-end justify-between border-t border-outline-variant/20 pt-4 mt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Commission Amount</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$210,000</span>
+</div>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg px-6 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_12px_rgba(119,90,25,0.2)] hover:bg-surface-tint active:bg-primary/90 transition-colors">
+                        Approve
+                    </button>
+</div>
+</article>
+</section>
+</main>
+</body></html>

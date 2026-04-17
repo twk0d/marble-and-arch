@@ -1,0 +1,365 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Group Management - Marble &amp; Arch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#e9c176",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#775a19",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e2e1",
+                        "background": "#fcf9f8",
+                        "primary-container": "#c5a059",
+                        "on-surface": "#1c1b1b",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "surface": "#fcf9f8",
+                        "inverse-primary": "#e9c176",
+                        "secondary-container": "#e8ded1",
+                        "outline-variant": "#d1c5b4",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "on-secondary-container": "#686257",
+                        "tertiary-fixed": "#fbddc7",
+                        "on-secondary-fixed": "#1f1b13",
+                        "primary-fixed": "#ffdea5",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#4a3728",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "tertiary-container": "#bba08c",
+                        "tertiary": "#705a49",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-high": "#eae7e7",
+                        "surface-container-low": "#f6f3f2",
+                        "primary": "#775a19",
+                        "on-surface-variant": "#4e4639",
+                        "on-primary-fixed": "#261900",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "on-background": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ebe1d4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "on-primary-container": "#4e3700",
+                        "inverse-surface": "#313030",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fcf9f8",
+                        "secondary": "#645d53",
+                        "outline": "#7f7667",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#28180b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "margin-tablet": "32px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "label-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="h-screen w-72 fixed left-0 top-0 flex flex-col bg-surface-container-low dark:bg-surface-container-lowest border-r border-outline-variant/20 shadow-lg shadow-primary/5 p-6 space-y-4 hidden md:flex z-50">
+<!-- Header -->
+<div class="flex items-center space-x-4 mb-8">
+<img alt="Agency Logo" class="w-12 h-12 rounded-full object-cover border border-outline-variant/50" data-alt="A refined, minimalist luxury real estate agency logo featuring elegant serif typography and subtle gold accents on a clean white background. The design exudes sophistication, architectural precision, and a high-end editorial feel suitable for a premium property platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeY6LzU2zemiK-Qp2nj5ni9a2PPFfuVowg4ysRLSp48Y0nWl1dX0PhTXfBHv2WZJzCfZut5t3mG4LB8swY0Z760uFki7jIYqYf0ZotivihVirwDaZxzt0Q8hVmct5YLRYOFZh8teawwcOC9EhW-kGmzp1dIkNr3kHjI9hUQMY7BKc2XH0e1hLlKY1RaOeKtWwCKyqmhDaClAHZX5Q6r1KZGrX1mJ6rCHUYV7EBvhRvVYP0fs3mTXh1oGBc2_RJLdpcBqe1oUi9edSs">
+<div>
+<h1 class="font-headline-sm text-headline-sm text-primary-container">Admin Portal</h1>
+<p class="font-label-sm text-label-sm text-secondary">Luxury Management</p>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 rounded-lg border border-primary-container/50 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center space-x-2 mb-6 hover:translate-x-1 group">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>New Listing</span>
+</button>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col space-y-2">
+<a class="group cursor-pointer text-secondary hover:bg-secondary-container/30 rounded-lg p-3 flex items-center space-x-3 transition-colors duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="group cursor-pointer text-secondary hover:bg-secondary-container/30 rounded-lg p-3 flex items-center space-x-3 transition-colors duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-body-md text-body-md">Properties</span>
+</a>
+<a class="group cursor-pointer text-secondary hover:bg-secondary-container/30 rounded-lg p-3 flex items-center space-x-3 transition-colors duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-body-md text-body-md">Inquiries</span>
+</a>
+<a class="group cursor-pointer text-secondary hover:bg-secondary-container/30 rounded-lg p-3 flex items-center space-x-3 transition-colors duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+<a class="group cursor-pointer text-secondary hover:bg-secondary-container/30 rounded-lg p-3 flex items-center space-x-3 transition-colors duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md">Clients</span>
+</a>
+<!-- Active State using Intent Fallback for "Group Management" mapping to "Clients" or a generic admin area. Since it's about organizing brokers, we'll keep it under Clients/Management intent visually, or just highlight a custom active tab if it existed. Based on logic, if none perfectly match Group Management, we might highlight Dashboard or none. Let's assume it maps loosely to an administrative "Dashboard" or we just highlight the current context. Actually, "Clients" or a new "Groups" tab would be best. The instructions say to strictly match. Since "Groups" isn't in the JSON, I'll leave Dashboard active for the Admin section context. -->
+<a class="group cursor-pointer text-secondary hover:bg-secondary-container/30 rounded-lg p-3 flex items-center space-x-3 transition-colors duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span class="font-body-md text-body-md">Marketing</span>
+</a>
+</div>
+<!-- Footer Links -->
+<div class="mt-auto pt-4 border-t border-outline-variant/20 flex flex-col space-y-2">
+<a class="group cursor-pointer text-secondary hover:bg-secondary-container/30 rounded-lg p-3 flex items-center space-x-3 transition-colors duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+<a class="group cursor-pointer text-secondary hover:bg-secondary-container/30 rounded-lg p-3 flex items-center space-x-3 transition-colors duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body-md text-body-md">Sign Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-72 flex flex-col h-screen overflow-y-auto bg-surface relative">
+<!-- TopAppBar (Mobile & Global Actions) -->
+<header class="w-full sticky top-0 z-40 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm flex items-center justify-between px-margin-desktop py-4 md:px-gutter">
+<div class="flex items-center space-x-4">
+<button class="md:hidden text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="font-headline-md text-headline-md tracking-tight text-primary">Marble &amp; Arch</span>
+</div>
+<div class="flex items-center space-x-6">
+<button class="text-secondary hover:text-primary transition-colors hover:bg-secondary-container/50 p-2 rounded-full cursor-pointer active:scale-95 duration-300">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors hover:bg-secondary-container/50 p-2 rounded-full cursor-pointer active:scale-95 duration-300">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant cursor-pointer hover:ring-2 ring-primary/50 transition-all" data-alt="A professional headshot of a mature, sophisticated male administrator in a tailored charcoal suit. He is set against a brightly lit, minimalist office background with soft natural light coming from a large window. The aesthetic is clean, modern, and conveys authority and trust within a high-end corporate or luxury real estate environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALJoOc5XhPVMUvJ4Ax_ZTtNeuOIRoUM0cQzrmYpdsWcSo7tVaVGtVF9vD4wVHVZTMY8agDIKSBlKvwDvZCW2yLitZU4M0c8LzBdJmSD0jJ5ICgHoy5mzunmDRwQzso-sHbBIcI3JBaQr4jN56l_sphHjJiqzuKtDvXYGnxtlpUtbx1bpAEcZpro0NR0FsJ6vwAQWwS3HRkZAyi0_AYyCow92EAz3jhIX8AC2zNKUlRhr1OV2X8jv46__YDfMsTDL0rBZPAaBq-5703">
+</div>
+</header>
+<!-- Page Header & Actions -->
+<div class="px-margin-desktop py-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface">Group Management</h2>
+<p class="font-body-lg text-body-lg text-secondary mt-2 max-w-2xl">Organize and manage your luxury brokerage teams, assign regional managers, and track portfolio performance across distinct architectural groups.</p>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-lg font-label-lg text-label-lg flex items-center justify-center space-x-2 hover:shadow-[0_8px_30px_rgb(197,160,89,0.2)] transition-all duration-300 border border-primary/20 whitespace-nowrap">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span>Create New Group</span>
+</button>
+</div>
+<!-- Bento Grid Layout for Content -->
+<div class="px-margin-desktop pb-24 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Active Groups (Span 8) -->
+<div class="lg:col-span-8 flex flex-col space-y-6">
+<!-- Group Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-8 relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.03)] transition-all duration-500">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-16 -mt-16 transition-transform duration-500 group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-6 relative z-10">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">São Paulo Luxury</h3>
+<span class="inline-flex items-center space-x-1 text-label-sm font-label-sm bg-secondary-container/50 text-on-secondary-container px-3 py-1 rounded-full mt-2 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+<span>Urban Penthouses</span>
+</span>
+</div>
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 relative z-10">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Brokers</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">24</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Listings</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">142</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Volume (YTD)</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">$84M</span>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant/30 pt-6 relative z-10">
+<div class="flex items-center space-x-4">
+<img alt="Manager Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-surface" data-alt="A portrait of a confident female real estate manager in a crisp white blouse. She stands against a blurred, warmly lit interior background featuring rich architectural details and subtle gold elements. The lighting is soft and flattering, emphasizing a professional, approachable, yet highly authoritative demeanor typical of luxury brand management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj6IRf-5BTsajpIEMOJ-dji9BnZu8wuy906ZwQuDfhcYK8G9Z4VNRUw1tc7ELIpc0jYquYLbpdQ4Dmhczpfho67nDLZJcCKa8rTWqO0TT3TZmp5kOb1KT9vMh2IIVeEv7Tv6HjlwFpAdXHq8O6tj5VVWXH8ZTanAH_4zoxwbkLj_0Ro6gg4YPdaUIuxZ17xlSIqYrxMmbFAGr92fDGQKSrDOBvD16RlYxU1o5vr7P-s2ss2vD4IiS0PYWxerNFCuA8LjXMwSXfovdO">
+<div>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-0.5">Assigned Manager</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Elena Rodriguez</p>
+</div>
+</div>
+<button class="text-primary font-label-lg text-label-lg hover:underline underline-offset-4 flex items-center space-x-1">
+<span>View Roster</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Group Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-8 relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.03)] transition-all duration-500">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full -mr-16 -mt-16 transition-transform duration-500 group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-6 relative z-10">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Rio Beachfront</h3>
+<span class="inline-flex items-center space-x-1 text-label-sm font-label-sm bg-secondary-container/50 text-on-secondary-container px-3 py-1 rounded-full mt-2 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px]" data-icon="waves">waves</span>
+<span>Coastal Estates</span>
+</span>
+</div>
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 relative z-10">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Brokers</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">18</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Listings</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">96</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Volume (YTD)</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">$112M</span>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant/30 pt-6 relative z-10">
+<div class="flex items-center space-x-4">
+<img alt="Manager Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-surface" data-alt="A portrait of a sharply dressed male real estate executive with a neat beard, wearing a dark navy suit. The background is a slightly blurred, high-end beachfront property interior with bright, natural daylight filtering through large windows. The overall mood is affluent, successful, and cleanly minimalist, reflecting a luxury coastal lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASQs7EOYWNPg9tCRwguczERH2ZNk9UOuecQicYGUAm5QanPwA2L2t2GO8u-KjQWuNpIWnZTiNLHDUckUC1d2g-bPSinqrPu7gQIFO3hLQBPD9fE4LlUFgOw4N1xnLkCNIyerpf0Si-RaZvAM1F4Pb0bk-xqptKLY-Qc_uob4jQfeFlxNCNBqTiAswbv1tCCzaFyjoXYS8uDKXQkl05PThNwo_BbNGqB7V-KNxED8JmefDdldvm8a8mhJGcQylGd6zIWDq0ySzULjBZ">
+<div>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-0.5">Assigned Manager</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Marcus Silva</p>
+</div>
+</div>
+<button class="text-primary font-label-lg text-label-lg hover:underline underline-offset-4 flex items-center space-x-1">
+<span>View Roster</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Organization Tools (Span 4) -->
+<div class="lg:col-span-4 flex flex-col space-y-6">
+<!-- Unassigned Brokers Widget -->
+<div class="bg-secondary-container/20 border border-outline-variant/40 rounded-xl p-6 backdrop-blur-md">
+<div class="flex items-center justify-between mb-6">
+<h4 class="font-headline-sm text-headline-sm text-on-surface flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary" data-icon="person_off">person_off</span>
+<span>Unassigned Brokers</span>
+</h4>
+<span class="bg-error/10 text-error font-label-sm px-2 py-1 rounded-full">3 Pending</span>
+</div>
+<div class="space-y-4">
+<!-- Broker Item -->
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/20 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-secondary font-label-lg">JD</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-tight">Juliana Dias</p>
+<p class="font-label-sm text-label-sm text-secondary">Joined 2 days ago</p>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-primary">
+<span class="material-symbols-outlined" data-icon="drag_indicator">drag_indicator</span>
+</button>
+</div>
+<!-- Broker Item -->
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/20 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-secondary font-label-lg">TC</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-tight">Tiago Costa</p>
+<p class="font-label-sm text-label-sm text-secondary">Joined 5 days ago</p>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-primary">
+<span class="material-symbols-outlined" data-icon="drag_indicator">drag_indicator</span>
+</button>
+</div>
+<!-- Broker Item -->
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/20 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-secondary font-label-lg">LM</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-tight">Lucas Mendes</p>
+<p class="font-label-sm text-label-sm text-secondary">Transferred</p>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-primary">
+<span class="material-symbols-outlined" data-icon="drag_indicator">drag_indicator</span>
+</button>
+</div>
+</div>
+<button class="w-full mt-6 bg-transparent border-2 border-primary/20 text-primary font-label-lg py-2.5 rounded-lg hover:bg-primary/5 transition-colors flex items-center justify-center space-x-2">
+<span>Assign All</span>
+<span class="material-symbols-outlined" data-icon="assignment_ind">assignment_ind</span>
+</button>
+</div>
+<!-- Quick Stats -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6">
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-6">Network Overview</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-4">
+<span class="font-body-md text-secondary">Total Groups</span>
+<span class="font-headline-sm text-on-surface">6</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-4">
+<span class="font-body-md text-secondary">Total Brokers</span>
+<span class="font-headline-sm text-on-surface">148</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-secondary">Active Listings</span>
+<span class="font-headline-sm text-on-surface">412</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

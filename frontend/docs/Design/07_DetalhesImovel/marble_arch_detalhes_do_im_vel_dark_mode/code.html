@@ -1,0 +1,414 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Marble &amp; Arch - Property Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-fixed": "#f1e1c2",
+                "surface": "#131313",
+                "surface-container-lowest": "#0e0e0e",
+                "on-surface": "#e5e2e1",
+                "tertiary-fixed-dim": "#c8c6c5",
+                "inverse-on-surface": "#313030",
+                "inverse-surface": "#e5e2e1",
+                "on-secondary-container": "#c2b397",
+                "primary": "#e9c176",
+                "tertiary-container": "#a7a5a5",
+                "primary-fixed-dim": "#e9c176",
+                "on-tertiary-fixed-variant": "#474746",
+                "surface-tint": "#e9c176",
+                "on-secondary": "#382f1b",
+                "secondary-container": "#50462f",
+                "surface-container-low": "#1c1b1b",
+                "outline": "#9a8f80",
+                "background": "#131313",
+                "on-secondary-fixed-variant": "#50462f",
+                "secondary-fixed-dim": "#d4c5a7",
+                "on-background": "#e5e2e1",
+                "surface-container-high": "#2a2a2a",
+                "on-primary": "#412d00",
+                "surface-container": "#201f1f",
+                "outline-variant": "#4e4639",
+                "surface-variant": "#353534",
+                "on-error": "#690005",
+                "surface-bright": "#393939",
+                "tertiary": "#c8c6c5",
+                "inverse-primary": "#775a19",
+                "surface-container-highest": "#353534",
+                "error-container": "#93000a",
+                "primary-fixed": "#ffdea5",
+                "on-tertiary-fixed": "#1b1b1b",
+                "tertiary-fixed": "#e5e2e1",
+                "secondary": "#d4c5a7",
+                "on-surface-variant": "#d1c5b4",
+                "error": "#ffb4ab",
+                "primary-container": "#c5a059",
+                "on-tertiary-container": "#3b3b3b",
+                "on-tertiary": "#313030",
+                "surface-dim": "#131313",
+                "on-error-container": "#ffdad6",
+                "on-primary-container": "#4e3700",
+                "on-primary-fixed": "#261900",
+                "on-primary-fixed-variant": "#5d4201",
+                "on-secondary-fixed": "#221b08"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "20px",
+                "container-max": "1200px",
+                "unit": "8px",
+                "gutter": "24px",
+                "margin-desktop": "64px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "label-sm": [
+                        "DM Sans"
+                ],
+                "body-lg": [
+                        "DM Sans"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "DM Sans"
+                ]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .glass-panel {
+            background: rgba(32, 31, 31, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(154, 143, 128, 0.2);
+        }
+        .ambient-shadow {
+            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all duration-300" id="main-nav">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">
+                Marble &amp; Arch
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Buy</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Rent</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Submit Property</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Help</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex font-label-lg text-label-lg text-primary hover:text-primary-fixed-dim transition-colors duration-300">Login</button>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-[100px] pb-32">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 py-6 text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Buy</a>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface">The Glass Pavilion</span>
+</nav>
+<!-- Title & Badges -->
+<div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="glass-panel px-3 py-1 rounded-full font-label-sm text-label-sm text-primary uppercase tracking-widest border-outline-variant">For Sale</span>
+<span class="glass-panel px-3 py-1 rounded-full font-label-sm text-label-sm text-secondary uppercase tracking-widest border-outline-variant">Active</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-2">The Glass Pavilion</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="location_on">location_on</span>
+                        142 Mediterranean Ave, Coastal Cliff, Riviera
+                    </p>
+</div>
+<div class="text-left md:text-right">
+<p class="font-headline-md text-headline-md text-primary mb-1">$12,500,000</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Estimated Mortgage: $52k/mo</p>
+</div>
+</div>
+<!-- Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-unit h-[512px] md:h-[716px] mb-16 rounded-xl overflow-hidden">
+<div class="md:col-span-3 h-full relative group">
+<img alt="Main view of The Glass Pavilion" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sweeping architectural shot of a modern, ultra-luxury glass pavilion home perched on a coastal cliff. The structure features expansive floor-to-ceiling windows framed by warm Mediterranean masonry and clean white lines. The lighting is golden hour, casting long elegant shadows and highlighting the high-end materials. The scene evokes a sense of quiet luxury, permanence, and sophisticated minimalism against a serene ocean backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2VjCQHVBSB_QFNtGILxOYq9iXujZkreFpB5Z1A40WABDkxIYS3DfTYLiPjK7a4B3zopZ0Yd6C6szVUH6N5mXYkDAGQdLQ-C9vhha4lGczBVxz5tK8neX-jelOVF-tLnc-fx5qBzSbhEl-yUQnh6v5RJk-Ksrtpk6CqkQ8jE3X-VMclCG8bH_8P9ND9e1QZepYLA-6uPWBDgMbKXHJWolrRgaBUuqw9XQQwchqK9D339JaACnS1uweEU_fsoBPrmskEQmXJlrV1cN9">
+</div>
+<div class="hidden md:grid grid-rows-3 gap-unit h-full">
+<div class="h-full relative overflow-hidden group">
+<img alt="Interior view" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An interior shot of a minimalist, high-end living room in a luxury glass house. The space features bespoke furniture in neutral sand and white tones, resting on polished stone floors. Vast windows reveal a bright, coastal view. The ambient lighting is soft and diffused, emphasizing the 'quiet luxury' aesthetic and spaciousness of the interior." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDulcQ2fKMCMIpyrDK_qvgpL6Pl27UDigsuYsQ27hfps-lEC989yFu0BK-p6sWHlmqQ1-sUfaA1jhwshTOqIDw-qoRHB1TU1KxNeOmUfbFG2tRjFQeClfr51r8ubznGNCwYw3sVszJUxlk96P1eh0cJotY4SnglBslxS1DtEaefJvfm02EXhWyIRvfTKKCAA2M_oPaeXYipHbyojl3ko8MyMc_jxvhYJmyMd60ZOuPo9Cb_T9w5esJUgeUBxT1ior0L4mtaZuQ3kPm">
+</div>
+<div class="h-full relative overflow-hidden group">
+<img alt="Kitchen view" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, modern kitchen in a high-end luxury property. The design utilizes warm wood accents against pristine white marble countertops and minimalist cabinetry. Sunlight streams across the clean surfaces, reflecting an atmosphere of refined elegance and culinary sophistication. The overall mood is bright, organized, and deeply luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJUZ075yRzH9suS1-l_UqM4V7VY2v6wEL096iFCyj3qoEgKKIlAQXPusranV2uCI14b0uEO92rWomow_B4lGnht-BjVUCcWPDGfrbsAsKVyWV3hwkTh14H8iU0VuJj7cE9l3-vwSriNZULCKxB1BwhiGDNbKkPVV_pCeKUQFwPZqhGsLp5_Xb-qYZ9JvKnHNLxdORQzV2Cab9w8iPhNTN9tFyXWwYwZKoJ1SBzXTfCTnkE9Ue76c9LUw5jFRn50Qs4iHJARfE-v5Pd">
+</div>
+<div class="h-full relative overflow-hidden group cursor-pointer">
+<img alt="Pool view" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An infinity pool stretching towards a calm ocean at sunset, part of a luxury estate. The water reflects the warm, muted tones of the sky. The pool deck is crafted from light-colored natural stone, reinforcing the Mediterranean minimalist style. The image conveys ultimate exclusivity, relaxation, and seamless integration with nature." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV3EOllVMBBfdfy4AUkGQ8SKp2DNkhvbxp5iflJdNVLxrOv7uI-ZN0B2B1a353oTj7Kb4CAfwEZyR1PARm7q7rTuFUjC5WVp7XB1_adsyODBohGMG-vyOLrIMkXef63MJo2uTVvmYk7hqSGprxSCfgxrZIaj1ZJJuigFg9ifPozV36Gs8_N33ZsTTMpgSw1knuDSA55jUyDZIglv5CuIcmNKygCtU5ABAPcsydMLwmceiha_ponm53AdjdWujIAdDlw2W4_TstS0tI">
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center transition-opacity hover:bg-black/40">
+<span class="font-label-lg text-label-lg text-white tracking-widest">+12 PHOTOS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter relative">
+<!-- Main Info Column -->
+<div class="lg:col-span-8 space-y-16">
+<!-- Property Overview Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-outline-variant/30">
+<div class="flex flex-col items-center justify-center text-center p-4">
+<span class="material-symbols-outlined text-[32px] text-primary mb-2 font-light" data-icon="bed">bed</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mb-1">5</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Bedrooms</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center p-4 border-l border-outline-variant/30">
+<span class="material-symbols-outlined text-[32px] text-primary mb-2 font-light" data-icon="bathtub">bathtub</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mb-1">6.5</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Bathrooms</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center p-4 border-t md:border-t-0 md:border-l border-outline-variant/30">
+<span class="material-symbols-outlined text-[32px] text-primary mb-2 font-light" data-icon="square_foot">square_foot</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mb-1">8,400</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Sq Ft</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center p-4 border-t md:border-t-0 md:border-l border-outline-variant/30">
+<span class="material-symbols-outlined text-[32px] text-primary mb-2 font-light" data-icon="directions_car">directions_car</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mb-1">4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Parking Spaces</span>
+</div>
+</div>
+<!-- Description -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">About the Property</h2>
+<div class="prose prose-lg max-w-none font-body-lg text-body-lg text-on-surface-variant leading-relaxed space-y-6">
+<p>
+                                Nestled upon the rugged coastal cliffs of the Riviera, The Glass Pavilion stands as a testament to uncompromising modern architecture and refined luxury. This masterpiece seamlessly blends the boundaries between indoor and outdoor living, offering panoramic, unobstructed views of the azure Mediterranean Sea from nearly every vantage point.
+                            </p>
+<p>
+                                Meticulously crafted with a palette of warm, locally sourced masonry and extensive structural glass, the residence exudes a sense of serene permanence. The open-concept living spaces are bathed in natural light, featuring bespoke millwork, imported stone flooring, and smart-home integration that remains entirely invisible to the eye.
+                            </p>
+<p>
+                                The primary suite is a sanctuary unto itself, occupying a dedicated wing with a private terrace, dual spa-like en-suite bathrooms, and expansive dressing rooms. Outside, the zero-edge infinity pool appears to spill directly into the ocean, flanked by manicured gardens and multiple alfresco entertaining areas, creating the ultimate private retreat.
+                            </p>
+</div>
+</section>
+<!-- Amenities -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8">Curated Amenities</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="pool">pool</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Infinity Edge Pool</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="wine_bar">wine_bar</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Temperature-Controlled Wine Cellar</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Private Wellness Center</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="local_florist">local_florist</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Landscaped Zen Gardens</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Integrated Smart Home Technology</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">24/7 Monitored Security</span>
+</div>
+</div>
+</section>
+<!-- Location -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Location</h2>
+<div class="h-[400px] w-full rounded-xl overflow-hidden glass-panel mb-4 relative">
+<div class="absolute inset-0 bg-surface-container-low/50 flex items-center justify-center">
+<span class="font-label-lg text-label-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+                                   Interactive Map View (Coastal Cliff, Riviera)
+                               </span>
+</div>
+<!-- Map placeholder -->
+<img class="w-full h-full object-cover opacity-60" data-alt="A stylized, minimalist aerial map view of a high-end coastal neighborhood. The map features subtle topographical lines and muted colors—warm sand, soft greens, and pale ocean blues. A prominent, elegant pin marks a specific luxury property location. The visual style aligns with a premium editorial layout, clean and uncluttered." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA66ZsyxFaQvqL0RC0XRdLTyq4sftswrpOzO68LoFLWoTzr0KNn3O_YPP6h9L1ItQgQVD3T7yBZ9w-UEVaoE4ce0wBDNC8xkgZN5tS0_noEV0NCCGYTI9f3_Wg7D_Tdgfb-GMoAcpKC6N3ORzjRM5PuiNyioTN4p1skNYhn4gqtO5y9cKOkzSYbvuozIDtCKeLL5POo_tOVEAJQPI_PrrImXDVyup4qY8TK5jYKhAd-q55dRswn_e03C1ggDGyRz291bHyaWf7a9At">
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">142 Mediterranean Ave, Coastal Cliff, Riviera, 90210</p>
+</section>
+</div>
+<!-- Sticky Sidebar Column -->
+<div class="lg:col-span-4 mt-12 lg:mt-0">
+<div class="sticky top-[120px] glass-panel ambient-shadow rounded-2xl p-8 border border-outline-variant/50">
+<div class="mb-8 pb-8 border-b border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">Offered At</p>
+<p class="font-headline-md text-headline-md text-on-surface mb-1">$12,500,000</p>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="calculate">calculate</span>
+                                Est. Mortgage: $52,000/mo
+                            </p>
+</div>
+<div class="mb-8">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/50">
+<img alt="Broker Portrait" class="w-full h-full object-cover" data-alt="A professional headshot of an elegant, well-dressed real estate broker in a sharply tailored suit. The lighting is soft and flattering, with a bright, minimalist architectural background. The broker exudes confidence, trustworthiness, and sophisticated professionalism fitting for a high-end luxury real estate agency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxHSO0QrbxHv8BCJGivbe_Z8jl9yJg4FaPKoUjGz96wzdp8vuAxWR8co8tFk5yNY2VCOXj5e1NsWTXRLPH2Ag0CDnBrfMvgp595JlqZrbupaPD8Dx6zEKFI1JC81tkIVgsgYU4c9fbcdBsZ9loqxUq0z9o3Z1U3zpuXAZQ4Ybi_GqG0UVU1qkYoffI68zgk-whcWivTmceIdjqHE2tpPnEuBuI9Nyo_1hB3S9brSLH57dpyouiei5PJCFIZkU3hN6MM3t1gK-Rw3h3">
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-1">Listing Broker</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">Alexander Sterling</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 text-sm">
+                                Alexander specializes in ultra-luxury coastal estates and provides discreet, tailored advisory for high-net-worth individuals.
+                            </p>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-primary-container text-on-primary-container font-label-lg text-label-lg py-4 px-6 rounded-lg transition-all duration-300 hover:shadow-[0_8px_24px_rgba(119,90,25,0.2)] hover:-translate-y-0.5 border border-white/10">
+                                Contact Broker
+                            </button>
+<button class="w-full bg-transparent text-on-surface font-label-lg text-label-lg py-4 px-6 rounded-lg border border-outline-variant hover:bg-surface-variant transition-colors duration-300">
+                                Schedule Private Viewing
+                            </button>
+</div>
+<div class="mt-6 flex justify-center gap-4 text-on-surface-variant">
+<button class="p-2 hover:text-primary transition-colors tooltip" title="Save to Portfolio">
+<span class="material-symbols-outlined" data-icon="bookmark_border">bookmark_border</span>
+</button>
+<button class="p-2 hover:text-primary transition-colors tooltip" title="Share Property">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<button class="p-2 hover:text-primary transition-colors tooltip" title="Download Dossier">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-mobile md:px-margin-desktop bg-surface dark:bg-surface border-t border-outline-variant dark:border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+<div class="md:col-span-1 mb-8 md:mb-0">
+<div class="font-headline-md text-headline-md text-on-surface mb-4">
+                    Marble &amp; Arch
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    © 2024 Marble &amp; Arch. All rights reserved. Refined Luxury Real Estate.
+                </p>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Sitemap</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Cookie Policy</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Institutional</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for TopAppBar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-black/40', 'bg-black/80');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.replace('bg-black/80', 'bg-black/40');
+            }
+        });
+    </script>
+</body></html>

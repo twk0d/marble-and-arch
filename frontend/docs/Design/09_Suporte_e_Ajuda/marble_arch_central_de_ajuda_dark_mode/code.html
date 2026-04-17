@@ -1,0 +1,272 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Help &amp; Support Center | Marble &amp; Arch</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#474746",
+                      "tertiary": "#c8c6c5",
+                      "on-tertiary": "#313030",
+                      "surface-container-lowest": "#0e0e0e",
+                      "error-container": "#93000a",
+                      "surface-container-low": "#1c1b1b",
+                      "surface-bright": "#393939",
+                      "surface-container": "#201f1f",
+                      "on-secondary": "#382f1b",
+                      "on-background": "#e5e2e1",
+                      "tertiary-fixed": "#e5e2e1",
+                      "secondary-container": "#50462f",
+                      "outline": "#9a8f80",
+                      "inverse-on-surface": "#313030",
+                      "on-primary-container": "#4e3700",
+                      "secondary": "#d4c5a7",
+                      "tertiary-container": "#a7a5a5",
+                      "on-tertiary-container": "#3b3b3b",
+                      "outline-variant": "#4e4639",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "secondary-fixed": "#f1e1c2",
+                      "surface-tint": "#e9c176",
+                      "surface-dim": "#131313",
+                      "error": "#ffb4ab",
+                      "on-secondary-container": "#c2b397",
+                      "surface-variant": "#353534",
+                      "on-primary": "#412d00",
+                      "surface-container-highest": "#353534",
+                      "primary-container": "#c5a059",
+                      "inverse-surface": "#e5e2e1",
+                      "background": "#131313",
+                      "primary-fixed": "#ffdea5",
+                      "on-error": "#690005",
+                      "surface-container-high": "#2a2a2a",
+                      "on-secondary-fixed-variant": "#50462f",
+                      "on-primary-fixed-variant": "#5d4201",
+                      "primary-fixed-dim": "#e9c176",
+                      "primary": "#e9c176",
+                      "on-surface-variant": "#d1c5b4",
+                      "on-surface": "#e5e2e1",
+                      "on-primary-fixed": "#261900",
+                      "surface": "#131313",
+                      "on-secondary-fixed": "#221b08",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "inverse-primary": "#775a19",
+                      "secondary-fixed-dim": "#d4c5a7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "container-max": "1200px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "DM Sans"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-sm": [
+                              "DM Sans"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "display-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "DM Sans"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        /* Custom glow effect for the search bar */
+        .search-glow:focus-within {
+            box-shadow: 0 0 20px -5px theme('colors.primary-container');
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Shared Component: TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 dark:border-outline/20 shadow-sm bg-white/10">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-20">
+<!-- Brand -->
+<a class="font-headline-md text-headline-md font-semibold text-primary dark:text-primary-fixed-dim" href="#">
+                Marble &amp; Arch
+            </a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex gap-8 items-center font-headline-sm text-headline-sm tracking-tight">
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors hover:bg-surface-container-low/50 transition-all duration-300 px-3 py-2 rounded-DEFAULT" href="#">Properties</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors hover:bg-surface-container-low/50 transition-all duration-300 px-3 py-2 rounded-DEFAULT" href="#">Services</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors hover:bg-surface-container-low/50 transition-all duration-300 px-3 py-2 rounded-DEFAULT" href="#">About</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors hover:bg-surface-container-low/50 transition-all duration-300 px-3 py-2 rounded-DEFAULT" href="#">Journal</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<a class="hidden md:block font-label-sm text-label-sm tracking-wider uppercase border border-primary text-primary px-6 py-2 rounded-DEFAULT hover:bg-primary hover:text-background transition-colors duration-300" href="#">
+                    Inquire
+                </a>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low/50 transition-all duration-300 p-2 rounded-full Active: opacity-80 scale-95 transition-all">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-32 pb-24">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-16 pb-24 relative">
+<div class="absolute inset-0 -z-10 opacity-20 bg-cover bg-center rounded-xl" data-alt="A striking abstract view of luxury modern interior architecture shrouded in deep nocturnal shadows. Smooth, highly polished black marble surfaces dominate the composition, reflecting a single, precise beam of warm golden light that cuts across the space. The mood is incredibly quiet, refined, and exclusive, perfectly embodying a high-contrast nocturnal elegance aesthetic. Soft, diffuse reflections add depth to the minimal geometry." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWrfDhVr9yh1CFc5tpBZcN_8yTuojPj2gIwcXuf58nychV8ZXLMV-8tuJUdlGpID8UID-uyAgWvs0_xVXfTKAYsnhv26zUBl6f-yOMkgDMHY17gr8Yqj7kfY_l4oKzvpccixBfbdwUtPsd_rXATeS6A83LjoIQUDTGEvw_knASRXWWFadd5RTzopYFjwSdt-wzpNKaVIg4iDAvb7bYu8a4j_S5qS2DRfL4ixMaxtYKIrVVbWwmomkAtpzOQptrm6AR8WxI9iFp5j7n')"></div>
+<div class="max-w-2xl mx-auto text-center">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-8">
+                    How can we assist you today?
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                    Search our knowledge base or browse categories below to find answers to your questions.
+                </p>
+<!-- Search Input -->
+<div class="relative max-w-xl mx-auto search-glow transition-shadow duration-300 rounded-lg">
+<span class="material-symbols-outlined absolute left-6 top-1/2 -translate-y-1/2 text-primary">search</span>
+<input class="w-full bg-surface-container-low text-on-background border-0 border-b border-primary/30 focus:border-primary focus:ring-0 rounded-t-lg px-14 py-5 font-body-lg text-body-lg placeholder:text-on-surface-variant/50 transition-colors" placeholder="Search for articles, guides, and policies..." type="text">
+</div>
+</div>
+</section>
+<!-- Category Bento Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<a class="group block bg-surface-container p-8 rounded-xl border border-primary/10 hover:border-primary/40 transition-all duration-300 relative overflow-hidden" href="#">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">bed</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Reservations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Modifications, cancellations, and special requests for your stay.</p>
+</a>
+<!-- Card 2 -->
+<a class="group block bg-surface-container p-8 rounded-xl border border-primary/10 hover:border-primary/40 transition-all duration-300 relative overflow-hidden" href="#">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Account</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your profile, preferences, and security settings securely.</p>
+</a>
+<!-- Card 3 -->
+<a class="group block bg-surface-container p-8 rounded-xl border border-primary/10 hover:border-primary/40 transition-all duration-300 relative overflow-hidden" href="#">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">credit_card</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Billing &amp; Payments</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Invoices, payment methods, and understanding your charges.</p>
+</a>
+<!-- Card 4 -->
+<a class="group block bg-surface-container p-8 rounded-xl border border-primary/10 hover:border-primary/40 transition-all duration-300 relative overflow-hidden" href="#">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">policy</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Policies</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Property guidelines, pet rules, and terms of service.</p>
+</a>
+<!-- Card 5 (Spans 2 columns on lg) -->
+<a class="group block bg-surface-container p-8 rounded-xl border border-primary/10 hover:border-primary/40 transition-all duration-300 relative overflow-hidden lg:col-span-2 flex flex-col md:flex-row items-start md:items-center gap-8" href="#">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex-shrink-0 bg-surface-container-low p-6 rounded-full border border-primary/20">
+<span class="material-symbols-outlined text-5xl text-primary block" style="font-variation-settings: 'FILL' 1;">concierge</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Concierge Services</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">Discover our exclusive range of curated experiences, from private dining to bespoke local tours arranged by our dedicated team.</p>
+<span class="inline-flex items-center gap-2 mt-4 text-primary font-label-sm text-label-sm uppercase tracking-wider">
+                            Explore Services <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Shared Component: Footer -->
+<footer class="w-full mt-auto border-t border-outline-variant/50 bg-surface-container-lowest dark:bg-surface-dim">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-gutter max-w-container-max mx-auto">
+<div class="flex flex-col items-center md:items-start mb-6 md:mb-0">
+<span class="font-headline-sm text-headline-sm text-primary mb-2">Marble &amp; Arch</span>
+<span class="font-body-md text-body-md text-on-surface-variant">© 2024 Marble &amp; Arch. All rights reserved.</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-6 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200 transition-opacity duration-300" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200 transition-opacity duration-300" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200 transition-opacity duration-300" href="#">Licensing</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:translate-x-1 transition-transform duration-200 transition-opacity duration-300" href="#">Cookies</a>
+</nav>
+</div>
+</footer>
+</body></html>

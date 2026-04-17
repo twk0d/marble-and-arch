@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detailed Performance Analysis - Aurelian Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dcd9d9",
+                    "surface-bright": "#fcf9f8",
+                    "primary-container": "#c5a059",
+                    "tertiary-fixed": "#fbddc7",
+                    "surface": "#fcf9f8",
+                    "on-secondary-fixed-variant": "#4c463c",
+                    "surface-container-high": "#eae7e7",
+                    "secondary-fixed": "#ebe1d4",
+                    "on-surface": "#1c1b1b",
+                    "inverse-on-surface": "#f3f0ef",
+                    "outline-variant": "#d1c5b4",
+                    "tertiary-container": "#bba08c",
+                    "on-tertiary-container": "#4a3728",
+                    "surface-container-low": "#f6f3f2",
+                    "on-tertiary-fixed": "#28180b",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-background": "#1c1b1b",
+                    "surface-container": "#f0eded",
+                    "on-primary-fixed": "#261900",
+                    "error-container": "#ffdad6",
+                    "outline": "#7f7667",
+                    "on-secondary-fixed": "#1f1b13",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#e9c176",
+                    "secondary-fixed-dim": "#cfc5b9",
+                    "on-error-container": "#93000a",
+                    "background": "#fcf9f8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#574333",
+                    "secondary": "#645d53",
+                    "tertiary-fixed-dim": "#dec1ac",
+                    "on-primary-container": "#4e3700",
+                    "primary-fixed": "#ffdea5",
+                    "primary": "#775a19",
+                    "surface-variant": "#e5e2e1",
+                    "surface-tint": "#775a19",
+                    "tertiary": "#705a49",
+                    "inverse-surface": "#313030",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#e9c176",
+                    "on-secondary-container": "#686257",
+                    "secondary-container": "#e8ded1",
+                    "on-surface-variant": "#4e4639"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-tablet": "32px",
+                    "gutter": "32px",
+                    "container-max": "1440px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "label-lg": [
+                            "Inter"
+                    ],
+                    "headline-sm": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle glow for high-end feel */
+        .ambient-glow {
+            box-shadow: 0 10px 40px -10px rgba(119, 90, 25, 0.08);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(119, 90, 25, 0.2);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(119, 90, 25, 0.4);
+        }
+
+        /* Chart Animations */
+        @keyframes growUp {
+            from { height: 0; opacity: 0; }
+            to { opacity: 1; }
+        }
+        .chart-bar {
+            animation: growUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform-origin: bottom;
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .animate-item {
+            animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden lg:flex flex-col py-8 px-4 gap-6 bg-surface dark:bg-surface-container-low text-primary dark:text-primary-fixed-dim border-r border-outline-variant/20 h-screen w-64 fixed left-0 top-0 z-40">
+<div class="font-headline-sm text-headline-sm text-primary mb-8 px-2 flex items-center gap-3">
+<span class="material-symbols-outlined icon-fill text-primary" data-icon="architecture" data-weight="fill">architecture</span>
+            Aurelian
+        </div>
+<div class="flex items-center gap-4 px-2 mb-6">
+<img alt="Executive Broker Avatar" class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="Close-up portrait of a sophisticated executive broker in a tailored suit, looking confident and professional. The background is a slightly blurred modern penthouse office with natural light. The lighting is soft and flattering, creating a high-end, trustworthy corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlFPB16QfB7K2MtLpCWikR_9nXpNL-41zaOOWGi4vA8MMuXkomqX3siew8154InSNfG8NQ_qvtqBGHdNnu94IgzaxKeq4gmUQkxVaXTvJk3h1sOAZO03pJRGowenDPL8tJRKv4bgYMDs18GYZ6ek3vKY76FA72_EdkMH6pSLN2A2IMBCeGFha236l7J6e8-yoGV0vaMhtyAEfAb-np6H4f8xadSUt33QngMAOPpzWFYmRUokIpqw9rsECrzwYKjd70AmFDCvM-DtvD"/>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">Julian Vane</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Senior Partner</p>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 px-4 rounded-lg w-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-sm border border-primary/20 mb-4">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+            New Listing
+        </button>
+<div class="flex flex-col gap-2 flex-grow">
+<a class="bg-secondary-container text-on-secondary-container font-semibold rounded-lg font-label-lg text-label-lg flex items-center gap-3 px-4 py-3 hover:bg-surface-container-high transition-colors translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                Performance
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all font-label-lg text-label-lg flex items-center gap-3 px-4 py-3 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+                Inventory
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all font-label-lg text-label-lg flex items-center gap-3 px-4 py-3 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                Pipeline
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all font-label-lg text-label-lg flex items-center gap-3 px-4 py-3 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+                Rewards
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all font-label-lg text-label-lg flex items-center gap-3 px-4 py-3 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                Clients
+            </a>
+</div>
+<div class="flex flex-col gap-2 mt-auto pt-6 border-t border-outline-variant/20">
+<a class="text-on-surface-variant hover:bg-surface-container transition-all font-label-lg text-label-lg flex items-center gap-3 px-4 py-3 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Support
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all font-label-lg text-label-lg flex items-center gap-3 px-4 py-3 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Sign Out
+            </a>
+</div>
+</nav>
+<!-- TopAppBar (Mobile & Content Header) -->
+<div class="flex-1 lg:ml-64 flex flex-col min-h-screen">
+<header class="w-full top-0 sticky bg-surface/80 backdrop-blur-xl dark:bg-surface-container/80 text-primary dark:text-primary-fixed-dim border-b border-outline-variant/30 shadow-sm z-30 lg:hidden">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">
+                    Aurelian Analytics
+                </div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full pb-32 lg:pb-margin-desktop space-y-16">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-outline-variant/30 pb-6">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Performance Analysis</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Comprehensive overview of your real estate portfolio and sales pipeline.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<select class="appearance-none bg-surface-container text-on-surface font-label-sm text-label-sm py-2 pl-4 pr-10 rounded-full border border-outline-variant/30 focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer">
+<option>Q3 2024</option>
+<option>Q2 2024</option>
+<option>YTD 2024</option>
+<option>2023</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[16px] text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+<button class="bg-surface-container text-on-surface p-2 rounded-full border border-outline-variant/30 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Executive Summary KPIs (Bento Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 ambient-glow flex flex-col justify-between animate-item" style="animation-delay: 0.1s;">
+<div class="flex justify-between items-start mb-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Commission</p>
+<span class="material-symbols-outlined text-primary/70 bg-primary-container/10 p-2 rounded-full" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">$1.24M</h3>
+<p class="font-label-sm text-label-sm text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+                            +12.5% vs last quarter
+                        </p>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 ambient-glow flex flex-col justify-between animate-item" style="animation-delay: 0.2s;">
+<div class="flex justify-between items-start mb-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Listings</p>
+<span class="material-symbols-outlined text-primary/70 bg-primary-container/10 p-2 rounded-full" data-icon="real_estate_agent">real_estate_agent</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">18</h3>
+<p class="font-label-sm text-label-sm text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_flat">trending_flat</span>
+                            No change
+                        </p>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 ambient-glow flex flex-col justify-between animate-item" style="animation-delay: 0.3s;">
+<div class="flex justify-between items-start mb-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Conversion Rate</p>
+<span class="material-symbols-outlined text-primary/70 bg-primary-container/10 p-2 rounded-full" data-icon="track_changes">track_changes</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">4.2%</h3>
+<p class="font-label-sm text-label-sm text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+                            +0.8% vs last quarter
+                        </p>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 ambient-glow flex flex-col justify-between animate-item" style="animation-delay: 0.4s;">
+<div class="flex justify-between items-start mb-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Avg. Time to Sale</p>
+<span class="material-symbols-outlined text-primary/70 bg-primary-container/10 p-2 rounded-full" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">42 Days</h3>
+<p class="font-label-sm text-label-sm text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_down">trending_down</span>
+                            -5 days faster
+                        </p>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- BottomNavBar (Mobile) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile pb-4 pt-2 bg-surface/90 backdrop-blur-2xl dark:bg-surface-container-highest/90 text-primary dark:text-primary-fixed-dim rounded-t-full border-t border-outline-variant/30 shadow-[0_-4px_20px_rgba(119,90,25,0.05)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-[10px] md:text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-full p-2 scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="account_tree">account_tree</span>
+<span class="font-label-sm text-[10px] md:text-label-sm font-semibold">Pipeline</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="show_chart">show_chart</span>
+<span class="font-label-sm text-[10px] md:text-label-sm">Charts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-label-sm text-[10px] md:text-label-sm">Goals</span>
+</a>
+</nav>
+</body></html>

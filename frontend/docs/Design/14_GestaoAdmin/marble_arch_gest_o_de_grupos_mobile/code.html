@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marble &amp; Arch - Gestão de Grupos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "secondary": "#645d53",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "inverse-primary": "#e9c176",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#fbddc7",
+                        "tertiary": "#705a49",
+                        "on-surface": "#1c1b1b",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-container": "#e8ded1",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "outline-variant": "#d1c5b4",
+                        "on-surface-variant": "#4e4639",
+                        "on-primary-fixed": "#261900",
+                        "primary-fixed-dim": "#e9c176",
+                        "outline": "#7f7667",
+                        "on-background": "#1c1b1b",
+                        "surface-variant": "#e5e2e1",
+                        "surface-tint": "#775a19",
+                        "on-tertiary-container": "#4a3728",
+                        "background": "#fcf9f8",
+                        "on-tertiary-fixed": "#28180b",
+                        "error-container": "#ffdad6",
+                        "primary": "#775a19",
+                        "on-secondary-fixed": "#1f1b13",
+                        "primary-fixed": "#ffdea5",
+                        "primary-container": "#c5a059",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fcf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "surface": "#fcf9f8",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#313030",
+                        "tertiary-container": "#bba08c",
+                        "surface-container": "#f0eded",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#4e3700",
+                        "secondary-fixed": "#ebe1d4",
+                        "on-secondary-container": "#686257"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "margin-tablet": "32px",
+                        "container-max": "1440px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(209, 197, 180, 0.3);
+        }
+        .ambient-shadow {
+            box-shadow: 0 32px 64px -12px rgba(119, 90, 25, 0.05);
+        }
+        /* Custom Scrollbar for inner lists */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1c5b4;
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen antialiased flex flex-col md:hidden">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl text-primary font-headline-sm text-headline-sm fixed top-0 w-full z-50 border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-margin-mobile h-16">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-secondary">menu</span>
+</button>
+<span class="font-display-lg text-headline-lg-mobile tracking-widest text-primary dark:text-primary-fixed">MARBLE &amp; ARCH</span>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-secondary">account_circle</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-28 px-margin-mobile flex flex-col gap-unit">
+<div class="mb-6">
+<h1 class="font-headline-md text-headline-md text-primary mb-2">Regional Groups</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage portfolios and member allocations across territories.</p>
+</div>
+<!-- Group List Container (Bento Style Layout) -->
+<div class="flex flex-col gap-4">
+<!-- Group Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 ambient-shadow border border-outline-variant/20 flex flex-col gap-4 transition-transform active:scale-[0.98]">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Iberian Peninsula</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">location_on</span>
+                            Spain, Portugal
+                        </p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-3 py-1 rounded-full border border-outline-variant/50">
+                        12 Members
+                    </span>
+</div>
+<div class="h-px bg-outline-variant/20 w-full my-1"></div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/30">
+<img alt="Manager Portrait" class="w-full h-full object-cover" data-alt="A professional headshot of a mature male real estate executive wearing a tailored charcoal suit and crisp white shirt. He has short silver hair and a subtle, confident smile. The lighting is soft and natural, suggesting a high-end corporate office setting with slightly out-of-focus glass panels in the background. The mood is authoritative yet approachable, fitting for a quiet luxury real estate brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKYepcss_PjHcMyW_a1t3aL273p7Z_XvsN0b_GlcwneCJFJb_2T2Po52qWCp7h_oxmcHCI7YB-rQ0HifcpCQeZf1Nt253Ulf9IV6YBBpWn6ufP3FsF5LLa3RubS_M3855bRzJ_Z4hGW9Zo2WfV2KKTsNDbgD8iofurMNIK49Zjg9XzZ5RLSXnBPqy6PpERYiGoyE1sLvFfXH2Vfraciydxg8KgWHdnO0jhLotXM84SxxL38iHIc0qwWFZQmfUAEG4zVKJwWbqcir7z"/>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Managing Director</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">Carlos Mendoza</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Group Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 ambient-shadow border border-outline-variant/20 flex flex-col gap-4 transition-transform active:scale-[0.98]">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Côte d'Azur</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">location_on</span>
+                            French Riviera
+                        </p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-3 py-1 rounded-full border border-outline-variant/50">
+                        8 Members
+                    </span>
+</div>
+<div class="h-px bg-outline-variant/20 w-full my-1"></div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/30">
+<img alt="Manager Portrait" class="w-full h-full object-cover" data-alt="A sophisticated portrait of a female real estate director in her 40s. She is wearing an elegant cream-colored silk blouse and delicate gold jewelry. Her dark hair is styled neatly, and she looks directly at the camera with a calm, professional demeanor. The background is a bright, sunlit Mediterranean interior with subtle masonry textures, aligning with a premium architectural aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoEod2VJYZ6PBXivMhzepNKoO5TJjhIADMah11zFMkCxReiKwbLgKBAm2ciJNAsGkqL38wB9V6xQict8fS3Y47lBZntiwHKpK1jZ_TrT-1piwY0n1mqD_PXfy5oUprSUCj6M-cIPTIK02XXxsPXKyGBk2qrfTtyxs5LoSaLavjL8cORZbKF7q9FKPepxhzuKUyydWO6JaDHNkGni7Jn8EyLwAtBWyFgR1XTirTTKWv7uQQe43CvPXBUe2p89ZStIPJ0c1ziiKb-fEj"/>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Managing Director</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">Amélie Laurent</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Group Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 ambient-shadow border border-outline-variant/20 flex flex-col gap-4 transition-transform active:scale-[0.98]">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Alpine Retreats</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">location_on</span>
+                            Switzerland, France
+                        </p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-3 py-1 rounded-full border border-outline-variant/50">
+                        15 Members
+                    </span>
+</div>
+<div class="h-px bg-outline-variant/20 w-full my-1"></div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/30 flex items-center justify-center bg-surface-container">
+<span class="material-symbols-outlined text-secondary">person</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Managing Director</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">Lukas Weber</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-white/90 dark:bg-surface-container-lowest/90 backdrop-blur-2xl text-primary font-label-sm text-label-sm font-display-lg fixed bottom-0 w-full z-50 rounded-t-full border-t border-outline-variant/20 shadow-[0_-4px_24px_rgba(119,90,25,0.05)] flex justify-around items-center pt-3 pb-6 px-4">
+<!-- Tab 1: Discover -->
+<button class="hover:text-primary-container active:translate-y-[-2px] transition-transform flex flex-col items-center justify-center text-secondary opacity-60">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span>Discover</span>
+</button>
+<!-- Tab 2: Saved -->
+<button class="hover:text-primary-container active:translate-y-[-2px] transition-transform flex flex-col items-center justify-center text-secondary opacity-60">
+<span class="material-symbols-outlined mb-1">favorite</span>
+<span>Saved</span>
+</button>
+<!-- Tab 3: Support -->
+<button class="hover:text-primary-container active:translate-y-[-2px] transition-transform flex flex-col items-center justify-center text-secondary opacity-60">
+<span class="material-symbols-outlined mb-1">help_outline</span>
+<span>Support</span>
+</button>
+<!-- Tab 4: Profile (Active - Semantic fallback for 'management') -->
+<button class="hover:text-primary-container active:translate-y-[-2px] transition-transform flex flex-col items-center justify-center text-primary font-semibold">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span>Profile</span>
+</button>
+</nav>
+</body></html>

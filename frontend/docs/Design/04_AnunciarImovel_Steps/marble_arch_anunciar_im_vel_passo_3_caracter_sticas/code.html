@@ -1,0 +1,328 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Marble &amp; Arch - Submit Property - Characteristics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#775a19",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#ffdea5",
+                        "on-primary-fixed": "#261900",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#e9c176",
+                        "surface-container-low": "#f6f3f2",
+                        "outline": "#7f7667",
+                        "surface-container-highest": "#e5e2e1",
+                        "tertiary-fixed": "#fbddc7",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ebe1d4",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "on-tertiary-fixed": "#28180b",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "on-secondary-fixed": "#1f1b13",
+                        "surface-container": "#f0eded",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-variant": "#e5e2e1",
+                        "primary-container": "#c5a059",
+                        "outline-variant": "#d1c5b4",
+                        "tertiary": "#705a49",
+                        "primary": "#775a19",
+                        "surface-bright": "#fcf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#645d53",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "on-error": "#ffffff",
+                        "background": "#fcf9f8",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "tertiary-container": "#bba08c",
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#686257",
+                        "on-primary-container": "#4e3700",
+                        "on-background": "#1c1b1b",
+                        "on-surface": "#1c1b1b",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#e8ded1",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-tertiary-container": "#4a3728",
+                        "on-surface-variant": "#4e4639",
+                        "inverse-surface": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-tablet": "32px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(209, 197, 180, 0.5);
+        }
+        .input-line {
+            border-bottom: 2px solid #E8DED1; /* Warm Sand base */
+            transition: border-color 0.3s ease;
+        }
+        .input-line:focus-within {
+            border-bottom-color: #c5a059; /* Gold focus */
+        }
+        .input-field {
+            background: transparent;
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 8px 0;
+            color: #1c1b1b;
+        }
+        .input-field:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        
+        .amenity-checkbox:checked + label {
+            background-color: rgba(197, 160, 89, 0.1); /* Light gold tint */
+            border-color: #c5a059;
+            color: #775a19;
+        }
+        
+        /* Hide scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fcf9f8; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1c5b4; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c5a059; 
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- Top Navigation (Transactional intent implies hiding the main global nav, but keeping a minimal header for brand context) -->
+<header class="w-full py-6 px-margin-desktop md:px-margin-desktop px-margin-mobile flex justify-between items-center bg-surface border-b border-surface-container-highest z-50 sticky top-0">
+<div class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">
+            Marble &amp; Arch
+        </div>
+<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+            Save &amp; Exit
+        </button>
+</header>
+<main class="flex-grow flex flex-col items-center py-12 px-margin-mobile md:px-margin-desktop max-w-3xl mx-auto w-full">
+<!-- Stepper -->
+<div class="w-full mb-16">
+<div class="flex items-center justify-between relative">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1px] bg-outline-variant -z-10"></div>
+<!-- Step 1 (Completed) -->
+<div class="flex flex-col items-center gap-2 bg-surface px-4">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Location</span>
+</div>
+<!-- Step 2 (Completed) -->
+<div class="flex flex-col items-center gap-2 bg-surface px-4">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Details</span>
+</div>
+<!-- Step 3 (Active) -->
+<div class="flex flex-col items-center gap-2 bg-surface px-4">
+<div class="w-8 h-8 rounded-full bg-surface border-2 border-primary text-primary flex items-center justify-center font-label-lg text-label-lg">
+                        3
+                    </div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Characteristics</span>
+</div>
+<!-- Step 4 (Pending) -->
+<div class="flex flex-col items-center gap-2 bg-surface px-4">
+<div class="w-8 h-8 rounded-full bg-surface border border-outline-variant text-outline flex items-center justify-center font-label-lg text-label-lg">
+                        4
+                    </div>
+<span class="font-label-sm text-label-sm text-outline">Media</span>
+</div>
+</div>
+</div>
+<!-- Form Content -->
+<div class="w-full space-y-12">
+<div class="text-center space-y-4 mb-8">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Property Characteristics</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
+                    Define the specific attributes of your property. Accuracy here ensures we match your listing with the most qualified clientele.
+                </p>
+</div>
+<form class="space-y-12">
+<!-- Core Metrics Section (Bento-style grid) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Bedrooms -->
+<div class="input-line pb-2 flex flex-col justify-end">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1" for="bedrooms">Bedrooms</label>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-outline mr-3" style="font-variation-settings: 'FILL' 0;">bed</span>
+<input class="input-field font-body-lg text-body-lg text-on-surface" id="bedrooms" min="0" name="bedrooms" placeholder="e.g. 4" type="number">
+</div>
+</div>
+<!-- Suites -->
+<div class="input-line pb-2 flex flex-col justify-end">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1" for="suites">Suites (En-suite Bedrooms)</label>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-outline mr-3" style="font-variation-settings: 'FILL' 0;">hotel</span>
+<input class="input-field font-body-lg text-body-lg text-on-surface" id="suites" min="0" name="suites" placeholder="e.g. 2" type="number">
+</div>
+</div>
+<!-- Bathrooms -->
+<div class="input-line pb-2 flex flex-col justify-end">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1" for="bathrooms">Bathrooms</label>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-outline mr-3" style="font-variation-settings: 'FILL' 0;">bathtub</span>
+<input class="input-field font-body-lg text-body-lg text-on-surface" id="bathrooms" min="0" name="bathrooms" placeholder="e.g. 4.5" step="0.5" type="number">
+</div>
+</div>
+<!-- Parking -->
+<div class="input-line pb-2 flex flex-col justify-end">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1" for="parking">Parking Spaces</label>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-outline mr-3" style="font-variation-settings: 'FILL' 0;">directions_car</span>
+<input class="input-field font-body-lg text-body-lg text-on-surface" id="parking" min="0" name="parking" placeholder="e.g. 3" type="number">
+</div>
+</div>
+<!-- Total Area -->
+<div class="input-line pb-2 flex flex-col justify-end">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1" for="area">Total Area (Sq Ft)</label>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-outline mr-3" style="font-variation-settings: 'FILL' 0;">square_foot</span>
+<input class="input-field font-body-lg text-body-lg text-on-surface" id="area" min="0" name="area" placeholder="e.g. 5,200" type="number">
+</div>
+</div>
+<!-- Price -->
+<div class="input-line pb-2 flex flex-col justify-end">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1" for="price">Asking Price ($)</label>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-outline mr-3" style="font-variation-settings: 'FILL' 0;">payments</span>
+<input class="input-field font-body-lg text-body-lg text-on-surface" id="price" name="price" placeholder="e.g. 4,500,000" type="text">
+</div>
+</div>
+</div>
+<!-- Amenities Section (Glassmorphic Chip Selection) -->
+<div class="pt-8 border-t border-outline-variant">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6">Premium Amenities</h3>
+<div class="flex flex-wrap gap-4">
+<!-- Amenity 1 -->
+<div class="relative">
+<input class="amenity-checkbox sr-only" id="amenity-pool" type="checkbox">
+<label class="cursor-pointer inline-flex items-center gap-2 px-6 py-3 rounded-full border border-outline-variant bg-surface-container text-on-surface-variant font-label-lg text-label-lg transition-all duration-300 hover:border-primary" for="amenity-pool">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">pool</span>
+                                Infinity Pool
+                            </label>
+</div>
+<!-- Amenity 2 -->
+<div class="relative">
+<input class="amenity-checkbox sr-only" id="amenity-gym" type="checkbox">
+<label class="cursor-pointer inline-flex items-center gap-2 px-6 py-3 rounded-full border border-outline-variant bg-surface-container text-on-surface-variant font-label-lg text-label-lg transition-all duration-300 hover:border-primary" for="amenity-gym">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">fitness_center</span>
+                                Private Gym
+                            </label>
+</div>
+<!-- Amenity 3 -->
+<div class="relative">
+<input class="amenity-checkbox sr-only" id="amenity-wine" type="checkbox">
+<label class="cursor-pointer inline-flex items-center gap-2 px-6 py-3 rounded-full border border-outline-variant bg-surface-container text-on-surface-variant font-label-lg text-label-lg transition-all duration-300 hover:border-primary" for="amenity-wine">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">wine_bar</span>
+                                Wine Cellar
+                            </label>
+</div>
+<!-- Amenity 4 -->
+<div class="relative">
+<input checked="" class="amenity-checkbox sr-only" id="amenity-smart" type="checkbox">
+<label class="cursor-pointer inline-flex items-center gap-2 px-6 py-3 rounded-full border border-outline-variant bg-surface-container text-on-surface-variant font-label-lg text-label-lg transition-all duration-300 hover:border-primary" for="amenity-smart">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">home_iot_device</span>
+                                Smart Home System
+                            </label>
+</div>
+<!-- Amenity 5 -->
+<div class="relative">
+<input class="amenity-checkbox sr-only" id="amenity-view" type="checkbox">
+<label class="cursor-pointer inline-flex items-center gap-2 px-6 py-3 rounded-full border border-outline-variant bg-surface-container text-on-surface-variant font-label-lg text-label-lg transition-all duration-300 hover:border-primary" for="amenity-view">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">balcony</span>
+                                Panoramic Views
+                            </label>
+</div>
+<!-- Amenity 6 -->
+<div class="relative">
+<input class="amenity-checkbox sr-only" id="amenity-security" type="checkbox">
+<label class="cursor-pointer inline-flex items-center gap-2 px-6 py-3 rounded-full border border-outline-variant bg-surface-container text-on-surface-variant font-label-lg text-label-lg transition-all duration-300 hover:border-primary" for="amenity-security">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">security</span>
+                                24/7 Security
+                            </label>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex justify-between items-center pt-12 mt-12 border-t border-outline-variant">
+<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface flex items-center gap-2 transition-colors py-3 px-6" type="button">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+                        Back
+                    </button>
+<button class="bg-primary-container text-on-primary-container font-label-lg text-label-lg py-4 px-10 rounded-DEFAULT shadow-[0_4px_24px_rgba(119,90,25,0.15)] hover:shadow-[0_8px_32px_rgba(119,90,25,0.2)] transition-shadow duration-300 flex items-center gap-2 border border-white/20" type="button">
+                        Next Step
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</main>
+</body></html>

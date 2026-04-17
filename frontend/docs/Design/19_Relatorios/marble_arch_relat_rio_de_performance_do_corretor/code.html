@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Individual Broker Performance - Aureum Estates</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fcf9f8",
+                        "outline": "#7f7667",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#e9c176",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "on-surface": "#1c1b1b",
+                        "on-primary-container": "#4e3700",
+                        "on-background": "#1c1b1b",
+                        "primary-fixed": "#ffdea5",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#e9c176",
+                        "surface-bright": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "background": "#fcf9f8",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "tertiary": "#705a49",
+                        "tertiary-container": "#bba08c",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-fixed": "#28180b",
+                        "secondary-container": "#e8ded1",
+                        "on-primary-fixed": "#261900",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "surface-container": "#f0eded",
+                        "primary-container": "#c5a059",
+                        "surface-variant": "#e5e2e1",
+                        "outline-variant": "#d1c5b4",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-surface-variant": "#4e4639",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-tertiary-container": "#4a3728",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#fbddc7",
+                        "primary": "#775a19",
+                        "inverse-surface": "#313030",
+                        "on-secondary-container": "#686257",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ebe1d4",
+                        "secondary": "#645d53",
+                        "surface-dim": "#dcd9d9",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#775a19",
+                        "surface-container-high": "#eae7e7",
+                        "on-secondary-fixed": "#1f1b13",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-tablet": "32px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Utilities for Glassmorphism & Ambient Shadows */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(209, 197, 180, 0.3); /* outline-variant */
+        }
+        .ambient-glow {
+            box-shadow: 0 20px 40px -10px rgba(119, 90, 25, 0.05); /* primary */
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 32px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Web) -->
+<nav aria-label="Sidebar Navigation" class="hidden md:flex flex-col h-screen w-80 fixed left-0 top-0 border-r border-outline-variant/20 bg-surface-container-lowest/80 backdrop-blur-md shadow-xl shadow-primary/5 py-8 z-50">
+<div class="px-6 mb-12">
+<h1 class="font-display-lg text-display-lg text-primary">Aureum</h1>
+<p class="font-label-lg text-label-lg text-on-surface-variant mt-2 tracking-widest">Private Office</p>
+</div>
+<ul class="flex flex-col flex-grow gap-2">
+<li>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-secondary-container/10 hover:text-primary transition-all duration-300 font-label-lg text-label-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="domain">domain</span>
+                    Portfolio
+                </a>
+</li>
+<li>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-secondary-container/10 hover:text-primary transition-all duration-300 font-label-lg text-label-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="account_balance_wallet">account_balance_wallet</span>
+                    Acquisitions
+                </a>
+</li>
+<li>
+<a aria-current="page" class="text-primary bg-secondary-container/30 border-r-4 border-primary font-bold px-6 py-4 flex items-center gap-4 font-label-lg text-label-lg group" href="#">
+<span class="material-symbols-outlined fill-icon group-hover:scale-110 transition-transform" data-icon="query_stats" data-weight="fill">query_stats</span>
+                    Analytics
+                </a>
+</li>
+<li>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-secondary-container/10 hover:text-primary transition-all duration-300 font-label-lg text-label-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="auto_awesome">auto_awesome</span>
+                    Concierge
+                </a>
+</li>
+<li>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-secondary-container/10 hover:text-primary transition-all duration-300 font-label-lg text-label-lg group mt-auto" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+<div class="px-6 mt-8">
+<button class="w-full bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 px-4 rounded-DEFAULT border border-white/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                Schedule Consultation
+            </button>
+</div>
+</nav>
+<!-- TopNavBar (Mobile) -->
+<header class="md:hidden w-full top-0 sticky backdrop-blur-xl bg-white/60 dark:bg-surface-container/60 border-b border-outline-variant/30 shadow-sm z-50">
+<div class="flex justify-between items-center h-20 px-margin-mobile">
+<h1 class="font-headline-sm text-headline-sm tracking-widest text-primary dark:text-primary-fixed-dim">AUREUM ESTATES</h1>
+<div class="flex gap-4 text-primary dark:text-primary-fixed-dim">
+<button class="scale-95 hover:text-primary transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="scale-95 hover:text-primary transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="md:ml-80 min-h-screen pt-8 pb-24 md:pt-16 md:pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header Section -->
+<header class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-outline-variant/30 pb-12">
+<div class="flex items-center gap-6">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-primary/20 p-1 flex-shrink-0">
+<img alt="Broker Profile Photo" class="w-full h-full object-cover rounded-full" data-alt="A professional headshot of a distinguished male real estate broker in a sharply tailored charcoal suit. He exudes confidence and sophistication. The lighting is bright and modern, evoking a high-end luxury real estate environment. The background is subtly blurred, suggesting an opulent office setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7HAKDPzk6LUpL1fnR56G5zoRnYXQ0DM9nn89Dt7UZ_PbXkM5-hjVvggFjfq2oO6zaBGeEEs9B6Y77jB-_dXlY_mliiNpmavOs5zPHzzn9t6KOqnAA-vaTCzdKJNXTWbvWZ1_y_VdMDYDuN_gQ8gRWd9HpbwJPeqgM7caeg_1EcV0Mmt9xMel-DoR-A6Uxdu04ZU3GxZdgWfqeNGVG1kGoM-GUfLJFEUfaqr0t9QltE_VmtOLmrBjygNDpij6qqItBkcd15gYLRyhk"/>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary tracking-widest uppercase mb-2">Performance Report Q3</p>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Alexander Sterling</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1 flex items-center gap-2">
+                        Senior Portfolio Director
+                        <span class="w-1 h-1 bg-outline rounded-full"></span>
+<span class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[16px]">location_on</span> West Los Angeles</span>
+</p>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 border border-outline-variant text-on-surface font-label-lg text-label-lg rounded-DEFAULT hover:bg-surface-container transition-colors">Export PDF</button>
+<button class="px-6 py-3 bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-DEFAULT hover:shadow-lg transition-shadow border border-white/20">Review Targets</button>
+</div>
+</header>
+<!-- KPI Bento Grid -->
+<section class="bento-grid mb-16 md:mb-24">
+<!-- Total Volume -->
+<div class="col-span-12 md:col-span-6 lg:col-span-3 glass-panel rounded-xl p-8 ambient-glow flex flex-col justify-between">
+<div class="flex justify-between items-start mb-8">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase">Total Sales Volume</h3>
+<span class="material-symbols-outlined text-primary bg-secondary-container/50 p-2 rounded-lg">account_balance</span>
+</div>
+<div>
+<p class="font-display-lg text-display-lg text-on-surface leading-none">$42.5<span class="font-headline-sm text-headline-sm text-outline">M</span></p>
+<p class="font-label-sm text-label-sm text-primary mt-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +18% vs Last Quarter
+                    </p>
+</div>
+</div>
+<!-- Active Leads -->
+<div class="col-span-12 md:col-span-6 lg:col-span-3 glass-panel rounded-xl p-8 ambient-glow flex flex-col justify-between">
+<div class="flex justify-between items-start mb-8">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase">Active Leads</h3>
+<span class="material-symbols-outlined text-primary bg-secondary-container/50 p-2 rounded-lg">group</span>
+</div>
+<div>
+<p class="font-display-lg text-display-lg text-on-surface leading-none">34</p>
+<p class="font-label-sm text-label-sm text-outline mt-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span> 12 highly qualified
+                    </p>
+</div>
+</div>
+<!-- Avg DOM -->
+<div class="col-span-12 md:col-span-6 lg:col-span-3 glass-panel rounded-xl p-8 ambient-glow flex flex-col justify-between">
+<div class="flex justify-between items-start mb-8">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase">Avg Days on Market</h3>
+<span class="material-symbols-outlined text-primary bg-secondary-container/50 p-2 rounded-lg">schedule</span>
+</div>
+<div>
+<p class="font-display-lg text-display-lg text-on-surface leading-none">18</p>
+<p class="font-label-sm text-label-sm text-primary mt-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_down</span> -4 days vs Agency Avg
+                    </p>
+</div>
+</div>
+<!-- Conversion Rate -->
+<div class="col-span-12 md:col-span-6 lg:col-span-3 glass-panel rounded-xl p-8 ambient-glow flex flex-col justify-between">
+<div class="flex justify-between items-start mb-8">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase">Conversion Rate</h3>
+<span class="material-symbols-outlined text-primary bg-secondary-container/50 p-2 rounded-lg">track_changes</span>
+</div>
+<div>
+<p class="font-display-lg text-display-lg text-on-surface leading-none">4.8<span class="font-headline-sm text-headline-sm text-outline">%</span></p>
+<p class="font-label-sm text-label-sm text-primary mt-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> Top 5% in Region
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer aria-label="Footer" class="bg-surface-container-low border-t border-outline-variant/50 w-full mt-20 md:ml-80 md:w-[calc(100%-20rem)]">
+<div class="flex flex-col items-center gap-8 py-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-sm text-headline-sm text-primary tracking-widest">AUREUM</h2>
+<nav aria-label="Footer Navigation">
+<ul class="flex flex-wrap justify-center gap-6 md:gap-12">
+<li><a class="font-label-sm text-label-sm text-outline hover:text-on-surface transition-colors uppercase tracking-widest" href="#">Privacy Policy</a></li>
+<li><a class="font-label-sm text-label-sm text-outline hover:text-on-surface transition-colors uppercase tracking-widest" href="#">Terms of Service</a></li>
+<li><a class="font-label-sm text-label-sm text-outline hover:text-on-surface transition-colors uppercase tracking-widest" href="#">Investor Relations</a></li>
+<li><a class="font-label-sm text-label-sm text-outline hover:text-on-surface transition-colors uppercase tracking-widest" href="#">Global Offices</a></li>
+</ul>
+</nav>
+<p class="font-body-md text-body-md text-outline-variant opacity-80 mt-4">© 2024 AUREUM GLOBAL REAL ESTATE. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>

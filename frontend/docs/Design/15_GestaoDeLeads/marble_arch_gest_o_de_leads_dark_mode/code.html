@@ -1,0 +1,394 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Broker Leads List</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-fixed": "#f1e1c2",
+                "surface": "#131313",
+                "surface-container-lowest": "#0e0e0e",
+                "on-surface": "#e5e2e1",
+                "tertiary-fixed-dim": "#c8c6c5",
+                "inverse-on-surface": "#313030",
+                "inverse-surface": "#e5e2e1",
+                "on-secondary-container": "#c2b397",
+                "primary": "#e9c176",
+                "tertiary-container": "#a7a5a5",
+                "primary-fixed-dim": "#e9c176",
+                "on-tertiary-fixed-variant": "#474746",
+                "surface-tint": "#e9c176",
+                "on-secondary": "#382f1b",
+                "secondary-container": "#50462f",
+                "surface-container-low": "#1c1b1b",
+                "outline": "#9a8f80",
+                "background": "#131313",
+                "on-secondary-fixed-variant": "#50462f",
+                "secondary-fixed-dim": "#d4c5a7",
+                "on-background": "#e5e2e1",
+                "surface-container-high": "#2a2a2a",
+                "on-primary": "#412d00",
+                "surface-container": "#201f1f",
+                "outline-variant": "#4e4639",
+                "surface-variant": "#353534",
+                "on-error": "#690005",
+                "surface-bright": "#393939",
+                "tertiary": "#c8c6c5",
+                "inverse-primary": "#775a19",
+                "surface-container-highest": "#353534",
+                "error-container": "#93000a",
+                "primary-fixed": "#ffdea5",
+                "on-tertiary-fixed": "#1b1b1b",
+                "tertiary-fixed": "#e5e2e1",
+                "secondary": "#d4c5a7",
+                "on-surface-variant": "#d1c5b4",
+                "error": "#ffb4ab",
+                "primary-container": "#c5a059",
+                "on-tertiary-container": "#3b3b3b",
+                "on-tertiary": "#313030",
+                "surface-dim": "#131313",
+                "on-error-container": "#ffdad6",
+                "on-primary-container": "#4e3700",
+                "on-primary-fixed": "#261900",
+                "on-primary-fixed-variant": "#5d4201",
+                "on-secondary-fixed": "#221b08"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "20px",
+                "container-max": "1200px",
+                "unit": "8px",
+                "gutter": "24px",
+                "margin-desktop": "64px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "label-sm": [
+                        "DM Sans"
+                ],
+                "body-lg": [
+                        "DM Sans"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "DM Sans"
+                ],
+                "headline-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "label-lg": [
+                        "DM Sans"
+                ],
+                "headline-sm": [
+                        "Playfair Display"
+                ],
+                "headline-lg": [
+                        "Playfair Display"
+                ]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-lg": [
+                        "14px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+</head>
+<body class="bg-background text-on-background antialiased flex">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline bg-surface dark:bg-inverse-surface flex flex-col p-4 z-50">
+<div class="mb-8 px-4">
+<h1 class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim tracking-tight">Marble &amp; Arch</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Premium Brokerage</p>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-3 mb-6 bg-primary-container text-on-primary-container rounded-lg font-label-lg text-label-lg transition-all duration-200 ease-in-out active:scale-95 hover:bg-primary hover:text-on-primary">
+<span class="material-symbols-outlined text-lg">add</span>
+            New Listing
+        </button>
+<ul class="flex flex-col gap-2 flex-grow">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-lg font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-lg font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined">location_city</span>
+                    Listings
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-lg font-bold font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+                    Leads
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-lg font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined">rate_review</span>
+                    Reviews
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-lg font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                    Reports
+                </a>
+</li>
+</ul>
+<div class="mt-auto pt-4 border-t border-outline-variant">
+<ul class="flex flex-col gap-2">
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low transition-colors rounded-lg font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-base">settings</span>
+                        Settings
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low transition-colors rounded-lg font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-base">help</span>
+                        Support
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="ml-64 flex-1 flex flex-col min-h-screen relative">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 border-b border-outline-variant dark:border-outline bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md flex justify-between items-center px-8 py-4 h-20">
+<div class="flex items-center">
+<h2 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">Broker Dashboard</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative focus-within:ring-2 focus-within:ring-primary/20 rounded-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-on-surface font-body-md text-body-md focus:ring-0 w-64 placeholder:text-on-surface-variant/50" placeholder="Search globally..." type="text">
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<main class="pt-28 px-gutter pb-margin-desktop flex-1 max-w-container-max mx-auto w-full">
+<div class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Lead Management</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Track, engage, and convert potential buyers for premium listings.</p>
+</div>
+<button class="px-6 py-2 bg-primary text-on-primary rounded font-label-lg text-label-lg shadow-sm hover:shadow-md transition-shadow flex items-center gap-2">
+<span class="material-symbols-outlined">person_add</span>
+                    Manual Lead
+                </button>
+</div>
+<!-- Filters & Search Bar (Glassmorphic Panel) -->
+<div class="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant rounded-xl p-4 mb-8 flex flex-wrap gap-4 items-center shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+<div class="flex-1 min-w-[200px] relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-lowest border-b-2 border-outline-variant focus:border-primary border-t-0 border-l-0 border-r-0 pl-10 py-2 font-body-md text-body-md focus:ring-0 bg-transparent transition-colors rounded-t-sm" placeholder="Search leads by name, email..." type="text">
+</div>
+<div class="flex gap-4">
+<select class="bg-surface-container-lowest border-b-2 border-outline-variant focus:border-primary border-t-0 border-l-0 border-r-0 py-2 pl-3 pr-8 font-label-sm text-label-sm text-on-surface-variant focus:ring-0 bg-transparent rounded-t-sm cursor-pointer [&amp;&gt;option]:bg-surface">
+<option value="">Status: All</option>
+<option value="new">New</option>
+<option value="contacted">Contacted</option>
+<option value="showing">Showing Scheduled</option>
+<option value="converted">Converted</option>
+</select>
+<select class="bg-surface-container-lowest border-b-2 border-outline-variant focus:border-primary border-t-0 border-l-0 border-r-0 py-2 pl-3 pr-8 font-label-sm text-label-sm text-on-surface-variant focus:ring-0 bg-transparent rounded-t-sm cursor-pointer [&amp;&gt;option]:bg-surface">
+<option value="">Property: All</option>
+<option value="p1">The Penthouse at 432</option>
+<option value="p2">Villa Belvedere</option>
+<option value="p3">Oceanfront Estate</option>
+</select>
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded hover:bg-surface-container-high transition-colors font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+                        Date Range
+                    </button>
+</div>
+</div>
+<!-- Leads List (Bento-style rows) -->
+<div class="flex flex-col gap-4">
+<!-- Lead Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-center justify-between shadow-[0_4px_24px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_32px_rgba(233,193,118,0.05)] transition-all group">
+<div class="flex items-center gap-6 flex-1">
+<!-- Avatar/Initial -->
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm text-headline-sm">
+                            A
+                        </div>
+<!-- Lead Info -->
+<div class="w-1/4">
+<h3 class="font-label-lg text-label-lg text-on-surface">Alexander Pierce</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[14px] text-outline">mail</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">a.pierce@example.com</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-outline">call</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">+1 (555) 019-2834</span>
+</div>
+</div>
+<!-- Property Interest -->
+<div class="w-1/3 flex items-center gap-3 px-4 py-2 bg-surface-container-low rounded-lg">
+<img alt="Thumbnail" class="w-10 h-10 rounded object-cover" data-alt="A small thumbnail image of a modern luxury mansion interior with expansive floor to ceiling windows overlooking a bright sunny landscape. The lighting is natural and high key, creating a clean, white, minimal aesthetic with warm wood accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiEvfBKZ8os_Qx7Ojmeyu4CZrkQnn8InmO22SLZOG05-cDwxmRJpC3jQCiRon99y0Zw_ie_5b4KiGU_E2ajvT0hanmC_d_DoRNNIL-2cQODh2JFl1k4Yr1UQTsjSypd7QD9XZdqt4553Lgrd-SLFK3t1F-65W7TQyUaLjXdyOxq_3wCLKjWF9ygIapZtajgQYS5n8NPzvWSacw90VyTTaC0EDlpltZ43dIFjAMI0G8LnjdYH2Qd9CRc0lx3mtBqUHChbAvA7NHVVlk">
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider text-[10px]">Interested In</p>
+<p class="font-body-md text-body-md text-on-surface truncate max-w-[150px]">Villa Belvedere</p>
+</div>
+</div>
+<!-- Status & Date -->
+<div class="w-1/6 flex flex-col gap-2">
+<span class="inline-flex items-center justify-center px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-[11px] w-max border border-error-container/20">
+                                New Lead
+                            </span>
+<span class="font-body-md text-body-md text-outline text-xs">Today, 10:42 AM</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-primary hover:bg-primary-container/20 rounded-full transition-colors tooltip" title="Mark Contacted">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</button>
+<button class="p-2 text-secondary hover:bg-surface-container-high rounded-full transition-colors tooltip" title="Add Note">
+<span class="material-symbols-outlined text-[20px]">note_add</span>
+</button>
+<button class="p-2 text-outline hover:text-error hover:bg-error-container/30 rounded-full transition-colors tooltip" title="Archive">
+<span class="material-symbols-outlined text-[20px]">archive</span>
+</button>
+</div>
+</div>
+<!-- Lead Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-center justify-between shadow-[0_4px_24px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_32px_rgba(233,193,118,0.05)] transition-all group">
+<div class="flex items-center gap-6 flex-1">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-headline-sm text-headline-sm">
+                            S
+                        </div>
+<div class="w-1/4">
+<h3 class="font-label-lg text-label-lg text-on-surface">Samantha Reed</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[14px] text-outline">mail</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">s.reed.invest@gmail.com</span>
+</div>
+</div>
+<div class="w-1/3 flex items-center gap-3 px-4 py-2 bg-surface-container-low rounded-lg">
+<img alt="Thumbnail" class="w-10 h-10 rounded object-cover" data-alt="A tiny thumbnail preview of a high end penthouse apartment living room featuring sleek grey concrete walls and minimalistic designer furniture in neutral tones. The scene is bathed in soft, diffused light, evoking a sophisticated urban quiet luxury vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgFmnB3kYrIy6aNWHe9pt_frCbLiwl82KuOTxjDeGT3rxtFxPaFBcAa1-pal6xla4e8a_m5SHXQ3jv-LNl7gfODxbldWU0wK_JBV8-aoRM0v4yW3J7wnzlIpAeYvWz6lhJb8t2By6LJqAWohpWtmcR10xfW7-BGuxlRFjrt4o-sWLEATi16OWurH1WOsmaRrm62aP47xzIOGH_Asajnosm8JKIzwWYG5FulU-MxD81IZeQgVKk-NoxwGsfD5C0kudkQWMKcBvoYKqF">
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider text-[10px]">Interested In</p>
+<p class="font-body-md text-body-md text-on-surface truncate max-w-[150px]">The Penthouse at 432</p>
+</div>
+</div>
+<div class="w-1/6 flex flex-col gap-2">
+<span class="inline-flex items-center justify-center px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[11px] w-max border border-secondary-container/30">
+                                Contacted
+                            </span>
+<span class="font-body-md text-body-md text-outline text-xs">Yesterday</span>
+</div>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-primary hover:bg-primary-container/20 rounded-full transition-colors tooltip" title="Schedule Showing">
+<span class="material-symbols-outlined text-[20px]">event</span>
+</button>
+<button class="p-2 text-secondary hover:bg-surface-container-high rounded-full transition-colors tooltip" title="Add Note">
+<span class="material-symbols-outlined text-[20px]">note_add</span>
+</button>
+<button class="p-2 text-outline hover:text-error hover:bg-error-container/30 rounded-full transition-colors tooltip" title="Archive">
+<span class="material-symbols-outlined text-[20px]">archive</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

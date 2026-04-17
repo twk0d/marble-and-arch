@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Favoritos - Marble &amp; Arch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#d4c5a7",
+                        "inverse-primary": "#775a19",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "surface": "#131313",
+                        "on-secondary-fixed": "#221b08",
+                        "on-primary-fixed": "#261900",
+                        "on-surface": "#e5e2e1",
+                        "primary": "#e9c176",
+                        "on-surface-variant": "#d1c5b4",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-fixed-variant": "#50462f",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffdea5",
+                        "background": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-container": "#c5a059",
+                        "surface-container-highest": "#353534",
+                        "surface-variant": "#353534",
+                        "on-primary": "#412d00",
+                        "on-secondary-container": "#c2b397",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131313",
+                        "surface-tint": "#e9c176",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#f1e1c2",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#4e4639",
+                        "on-tertiary-container": "#3b3b3b",
+                        "tertiary-container": "#a7a5a5",
+                        "secondary": "#d4c5a7",
+                        "on-primary-container": "#4e3700",
+                        "secondary-container": "#50462f",
+                        "outline": "#9a8f80",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary": "#382f1b",
+                        "on-background": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-bright": "#393939",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary": "#c8c6c5",
+                        "on-tertiary": "#313030",
+                        "on-tertiary-fixed-variant": "#474746"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "container-max": "1200px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["DM Sans"],
+                        "display-lg": ["Playfair Display"],
+                        "label-sm": ["DM Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["DM Sans"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { lineHeight: "1.6", letterSpacing: "0.01em", fontWeight: "400" }],
+                        "display-lg": ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-sm": ["12px", { lineHeight: "1.0", letterSpacing: "0.1em", fontWeight: "500" }],
+                        "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "display-lg-mobile": ["40px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+        .glow-shadow {
+            box-shadow: 0 4px 20px rgba(233, 193, 118, 0.1);
+        }
+        .card-hover:hover {
+            border-color: rgba(233, 193, 118, 0.4);
+            transform: translateY(-2px);
+        }
+        .glass-panel {
+            background: rgba(30, 27, 22, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 backdrop-blur-md text-primary font-body-lg text-body-lg docked full-width top-0 sticky z-50 border-b border-outline-variant/10 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="font-display-lg text-headline-md text-primary tracking-tight">Marble &amp; Arch</div>
+<div class="hidden md:flex items-center space-x-gutter">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" data-icon="catalog" href="#">Catalog</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" data-icon="services" href="#">Services</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" data-icon="help_center" href="#">Help Center</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" data-icon="favorite" href="#">Saved Properties</a>
+</div>
+<div class="flex items-center space-x-unit">
+<button aria-label="notifications" class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-300 focus:outline-none">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button aria-label="account_circle" class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-300 focus:outline-none">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="ml-4 bg-primary text-on-primary px-6 py-2 font-label-sm text-label-sm tracking-[0.02em] hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface">
+                    List Property
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow px-margin-mobile md:px-margin-desktop py-[120px] max-w-container-max mx-auto w-full">
+<header class="mb-16">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-4">Saved Properties</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Your curated selection of exquisite estates. Review your saved properties or add private notes to assist in your decision-making process.</p>
+</header>
+<!-- Bento Grid for Saved Properties -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Property Card 1 -->
+<article class="bg-[#1C1C1C] border border-[#e9c176]/10 rounded-DEFAULT overflow-hidden card-hover transition-all duration-300 flex flex-col group relative">
+<div class="relative h-64 overflow-hidden">
+<img alt="Luxury Villa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious modern villa at dusk, featuring expansive glass walls illuminating a sleek, minimalist interior against the dark night sky. The scene is set in an exclusive hillside neighborhood, emitting a sophisticated, nocturnal elegance. Golden lighting accents highlight architectural details, contrasting beautifully with the deep charcoal shadows. The mood is intimate, refined, and distinctly high-end." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVyeyG2XokTtJrzTBbatxzEy2BztyQk053RuM9Rj5rE9uU_SL-61oF-4qOZtYRhoUxR73auTe_Ck65fObHuqU8TDY4JL8Wh1CIXk42GWNx81awtqhF9hgy1Dpx2Aqk1oL_1rXXCOVMWjURq13MjU_Nia1xlAAYUavlKWCgiyJ6tI8a0AGnWPWK-lYWIegsi__4KsM-OaIhmfuov5YS0qYWoOqnWvSgHTKC57ZQdx5COW_p8_ulW0r13XJ83fx4dNPjTBa7G-INY4F2"/>
+<div class="absolute top-4 right-4 flex space-x-2">
+<button aria-label="Remove from saved" class="bg-surface/80 backdrop-blur-md p-2 rounded-full text-primary hover:bg-primary hover:text-on-primary transition-colors focus:outline-none" title="Remove">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-md text-headline-md text-on-background">The Belvedere Estate</h2>
+<span class="font-body-md text-body-md text-primary">$12,500,000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex items-center">
+<span class="material-symbols-outlined text-[18px] mr-2">location_on</span> Beverly Hills, CA
+                    </p>
+<div class="flex space-x-4 mb-6 pb-6 border-b border-[#C5A059]/10">
+<div class="flex items-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] mr-1">bed</span> 6 Beds
+                        </div>
+<div class="flex items-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] mr-1">bathtub</span> 8 Baths
+                        </div>
+<div class="flex items-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] mr-1">square_foot</span> 10,200 sqft
+                        </div>
+</div>
+<!-- Note Section -->
+<div class="mt-auto">
+<label class="sr-only" for="note-1">Private Note</label>
+<div class="relative">
+<textarea class="w-full bg-transparent border-0 border-b border-[#e9c176]/30 text-on-background font-body-md text-body-md focus:ring-0 focus:border-primary placeholder-on-surface-variant/50 resize-none py-2 transition-colors duration-300" id="note-1" placeholder="Add a private note..." rows="2"></textarea>
+<span class="material-symbols-outlined absolute right-0 bottom-3 text-on-surface-variant/50 pointer-events-none text-[18px]">edit_note</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Property Card 2 -->
+<article class="bg-[#1C1C1C] border border-[#e9c176]/10 rounded-DEFAULT overflow-hidden card-hover transition-all duration-300 flex flex-col group relative">
+<div class="relative h-64 overflow-hidden">
+<img alt="Penthouse Suite" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated ultra-luxury penthouse overlooking a glowing cityscape at night. The interior features dark, polished stone floors and expansive floor-to-ceiling windows that frame the urban skyline. Subtle, warm golden ambient light reflects off the sleek surfaces, enhancing the nocturnal elegance and minimalist design. The atmosphere is exclusive, serene, and incredibly premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB7F7TMTC0Mi0ur7oFnRi5HhO83xW_utoZQ0hQ_l-kUDd1U38MlohTforIWG4g2zCOzrJsXkNxinNJ6MGp-HXWUT-1QWKJcrwDbSXn0VNhFY1DacXxMCy8Iu0F3_dEsiNwKPv-gbQhHN8MRk_p6Sx_PJthSc4HwnyfN_ctlVwLLPUUqnhnLYpazUHCLrkluEKhonZYx0p8FIRzjY8Oc2WOuNI0pjz7cOVVk-TiIIeKV6ehG5-Cdj2Eo2AR-TKg_b_lgL-l9_eLNGfx"/>
+<div class="absolute top-4 right-4 flex space-x-2">
+<button aria-label="Remove from saved" class="bg-surface/80 backdrop-blur-md p-2 rounded-full text-primary hover:bg-primary hover:text-on-primary transition-colors focus:outline-none" title="Remove">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-md text-headline-md text-on-background">Skyline Penthouse</h2>
+<span class="font-body-md text-body-md text-primary">$8,950,000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex items-center">
+<span class="material-symbols-outlined text-[18px] mr-2">location_on</span> Manhattan, NY
+                    </p>
+<div class="flex space-x-4 mb-6 pb-6 border-b border-[#C5A059]/10">
+<div class="flex items-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] mr-1">bed</span> 4 Beds
+                        </div>
+<div class="flex items-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] mr-1">bathtub</span> 4.5 Baths
+                        </div>
+<div class="flex items-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] mr-1">square_foot</span> 4,500 sqft
+                        </div>
+</div>
+<!-- Note Section -->
+<div class="mt-auto">
+<label class="sr-only" for="note-2">Private Note</label>
+<div class="relative">
+<textarea class="w-full bg-transparent border-0 border-b border-[#e9c176]/30 text-on-background font-body-md text-body-md focus:ring-0 focus:border-primary placeholder-on-surface-variant/50 resize-none py-2 transition-colors duration-300" id="note-2" rows="2">Schedule viewing for next Friday.</textarea>
+<span class="material-symbols-outlined absolute right-0 bottom-3 text-on-surface-variant/50 pointer-events-none text-[18px]">edit_note</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Property Card 3 -->
+<article class="bg-[#1C1C1C] border border-[#e9c176]/10 rounded-DEFAULT overflow-hidden card-hover transition-all duration-300 flex flex-col group relative">
+<div class="relative h-64 overflow-hidden">
+<img alt="Modern Lakeside Retreat" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An exclusive modern lakeside retreat captured during the blue hour. The architectural structure features sharp, clean lines and dark timber cladding, set against a calm, mirror-like lake. Warm, golden interior lights spill onto the surrounding dark landscape, creating a stark, beautiful contrast. The overall aesthetic is tranquil, deeply sophisticated, and embraces a refined dark minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPq0lUHVq6aoQINIS2bHeYALpm_pMwLia73LOo8kK1TBE96Un-Z32mctuG9gI90miynv_EtKzrlDR67ToDQESFGq8GYSBYuKWAxSy_zUP9yJSWwFcy7KDI2HVSyI55KrKOqyfuzWRDJbxe-etglHR544DCcgLw00Nawk-lS044sM3ltZsibu1l2tUBcgyQ3Nsl6spYjHbAgPh2_xuUWOssZVDN86Dm_JoG28_Mn8lEh12Ae_OyWuFsMvg3ZIlQbLoRKPtXkk78RR0a"/>
+<div class="absolute top-4 right-4 flex space-x-2">
+<button aria-label="Remove from saved" class="bg-surface/80 backdrop-blur-md p-2 rounded-full text-primary hover:bg-primary hover:text-on-primary transition-colors focus:outline-none" title="Remove">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-md text-headline-md text-on-background">Lakeside Pavilion</h2>
+<span class="font-body-md text-body-md text-primary">$15,200,000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex items-center">
+<span class="material-symbols-outlined text-[18px] mr-2">location_on</span> Lake Tahoe, NV
+                    </p>
+<div class="flex space-x-4 mb-6 pb-6 border-b border-[#C5A059]/10">
+<div class="flex items-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] mr-1">bed</span> 7 Beds
+                        </div>
+<div class="flex items-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] mr-1">bathtub</span> 9 Baths
+                        </div>
+<div class="flex items-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] mr-1">square_foot</span> 12,800 sqft
+                        </div>
+</div>
+<!-- Note Section -->
+<div class="mt-auto">
+<label class="sr-only" for="note-3">Private Note</label>
+<div class="relative">
+<textarea class="w-full bg-transparent border-0 border-b border-[#e9c176]/30 text-on-background font-body-md text-body-md focus:ring-0 focus:border-primary placeholder-on-surface-variant/50 resize-none py-2 transition-colors duration-300" id="note-3" placeholder="Add a private note..." rows="2"></textarea>
+<span class="material-symbols-outlined absolute right-0 bottom-3 text-on-surface-variant/50 pointer-events-none text-[18px]">edit_note</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest text-secondary font-label-sm text-label-sm border-t border-outline-variant/10 w-full py-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto">
+<div class="font-display-lg text-primary mb-6 md:mb-0 text-headline-md tracking-tight">Marble &amp; Arch</div>
+<div class="flex flex-wrap justify-center space-x-6 md:space-x-8 mb-6 md:mb-0">
+<a class="text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-opacity duration-200" href="#">Privacy Policy</a>
+<a class="text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-opacity duration-200" href="#">Terms of Service</a>
+<a class="text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-opacity duration-200" href="#">Cookie Settings</a>
+<a class="text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-opacity duration-200" href="#">Contact</a>
+</div>
+<div class="text-on-tertiary-fixed-variant">
+                © 2024 Marble &amp; Arch Luxury Real Estate
+            </div>
+</div>
+</footer>
+<script>
+        // Simple script to handle note textarea focus effects
+        document.querySelectorAll('textarea').forEach(textarea => {
+            textarea.addEventListener('focus', function() {
+                this.nextElementSibling.classList.add('text-primary');
+                this.nextElementSibling.classList.remove('text-on-surface-variant/50');
+            });
+            textarea.addEventListener('blur', function() {
+                this.nextElementSibling.classList.remove('text-primary');
+                this.nextElementSibling.classList.add('text-on-surface-variant/50');
+            });
+        });
+    </script>
+</body></html>
