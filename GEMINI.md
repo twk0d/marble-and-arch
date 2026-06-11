@@ -55,4 +55,19 @@ Você é um arquiteto sênior em ecossistemas Java, Spring, DDD e arquiteturas r
 - **Linguagem Ubíqua:** Nomes de classes e métodos devem seguir os termos de negócio (Property, Lead, Visit, etc).
 
 ---
-> Consulte o diretório `/specification` na raiz para ler os diagramas, arquitetura completa, endpoints de API e fluxo de telas (UX Flows).
+
+## 📚 MAPA DE DOCUMENTAÇÃO (LEITURA OBRIGATÓRIA)
+
+Qualquer agente IA trabalhando neste repositório DEVE consultar a documentação abaixo de acordo com seu escopo:
+
+### Especificações Globais do Produto (Raiz: `/specification/`)
+- `01_PRODUCT_VISION.md`: Visão geral do negócio.
+- `02_PRD.md`: Requisitos Funcionais e regras de negócio.
+- `03_UX_FLOWS.md`: Sitemap e fluxos de tela do usuário.
+- `04_ARCHITECTURE.md`: Diagrama do banco de dados (Entidades).
+- `05_API_INTEGRATION.md`: **Contrato exato** de todos os endpoints REST (Requests/Responses).
+- `06_DESIGN_SYSTEM.md`: Regras de tipografia e componentes (Frontend).
+
+### Decisões Arquiteturais (ADRs)
+- **Frontend:** Leia obrigatoriamente os arquivos em `/frontend/docs/ADRs/` (Regras sobre Nuxt 3, Pinia, Nitro BFF, Nuxt UI Pro).
+- **Backend:** Leia obrigatoriamente os arquivos em `/backend/docs/ADRs/` (Regras sobre Clean Architecture, CQRS, Event-Driven, Spring Modulith).
