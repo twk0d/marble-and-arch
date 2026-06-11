@@ -1,75 +1,31 @@
-# Nuxt Minimal Starter
+# Marble & Arch — Frontend (Nuxt 3)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Aplicação web premium desenvolvida para o ecossistema imobiliário da Marble & Arch.
 
-## Setup
+## Stack Tecnológico
 
-Make sure to install dependencies:
+*   **Framework:** Nuxt 3 (Vue 3)
+*   **UI Components:** Nuxt UI Pro v4.8.2
+*   **Estilização:** Tailwind CSS v4
+*   **Gerenciamento de Estado:** Pinia
+*   **Internacionalização:** @nuxtjs/i18n
+
+## Padrões Arquiteturais
+
+Conforme documentado em `docs/ADRs`, o frontend segue regras estritas:
+1. **Nuxt UI Pro Exclusivo:** Todo o design é construído obrigatoriamente utilizando os componentes nativos (`<UCard>`, `<UButton>`, etc) para evitar colcha de retalhos.
+2. **Nitro BFF:** O frontend não acessa a porta do Java diretamente. Ele bate na própria API (`/api/...`) e a engine do Nitro intercepta e repassa para o backend, garantindo segurança de cookies.
+
+## Instalação e Execução (Local)
+
+Certifique-se de estar utilizando o Node.js v20+.
 
 ```bash
-# npm
+# Instalar dependências
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Rodar em ambiente de desenvolvimento (com hot-reload)
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+A aplicação estará disponível em `http://localhost:3000`.
