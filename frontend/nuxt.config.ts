@@ -35,9 +35,9 @@ export default defineNuxtConfig({
 
     nitro: {
         routeRules: {
-            '/api/**': {
+            '/api/v1/**': {
                 proxy: {
-                    to: (process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:8081/api') + '/**',
+                    to: (process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:8081/api/v1') + '/**',
                 },
                 headers: {
                     'Connection': 'keep-alive'
@@ -50,7 +50,7 @@ export default defineNuxtConfig({
 
     fonts: {
         families: [
-            {name: 'Sora', provider: 'google', weights: ['400', '500', '600', '700', '800']},
+            {name: 'Playfair Display', provider: 'google', weights: ['400', '500', '600', '700', '800']},
             {name: 'Inter', provider: 'google', weights: ['400', '500', '600', '700']}
         ]
     },
