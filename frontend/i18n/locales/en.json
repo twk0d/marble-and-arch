@@ -283,6 +283,8 @@
     }
   },
   "propertyType": {
+    "APARTMENT": "Apartment",
+    "TOWNHOUSE": "Townhouse",
     "CONDOMINIUM_HOUSE": "Condominium House",
     "CONDOMINIUM_PLOT": "Condominium Plot",
     "COUNTRY_HOUSE": "Country House",

@@ -22,8 +22,8 @@ function handleClick(e: MouseEvent) {
 <template>
   <UPageCard
     :to="disableNavigation ? undefined : `/properties/${property.id}`"
-    class="mb-2 items-start overflow-hidden group border-border cursor-pointer hover-card-lift"
-    :ui="{ body: 'p-4' }"
+    class="mb-2 items-start overflow-hidden group border-transparent bg-transparent hover:bg-card cursor-pointer hover-card-lift transition-all duration-300"
+    :ui="{ body: 'p-4 sm:p-5', header: 'p-0 sm:p-0' }"
     @click="handleClick"
   >
     <template #header>

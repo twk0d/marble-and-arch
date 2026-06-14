@@ -15,7 +15,7 @@ const columns = computed(() => [
     children: [
       { label: 'Termos de Uso', to: '/terms' },
       { label: 'Privacidade', to: '/privacy' },
-      { label: 'Contato', to: '/contact' }
+      { label: 'Contato', to: '#' }
     ]
   },
   {
@@ -30,17 +30,30 @@ const columns = computed(() => [
 </script>
 
 <template>
-  <UFooter>
+  <UFooter class="bg-background border-t border-border mt-auto py-12">
     <template #top>
-      <UFooterColumns :links="columns" />
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-8 w-full max-w-[1440px] mx-auto">
+        <!-- Brand / Intro -->
+        <div class="col-span-1 flex flex-col gap-6">
+          <div class="flex items-center gap-3">
+             <UIcon name="tabler:building" class="size-8 text-primary"/>
+             <span class="text-h4 text-foreground tracking-tight">Marble & Arch</span>
+          </div>
+          <p class="text-body-sm text-text-dimmed leading-relaxed pr-4">
+            Curated discovery of high-end real estate and modern architectural masterpieces.
+          </p>
+        </div>
+        
+        <!-- Nuxt UI Pro Columns for the rest -->
+        <div class="col-span-3">
+          <UFooterColumns :links="columns" class="text-label-lg" />
+        </div>
+      </div>
     </template>
 
     <template #left>
-      <div class="flex items-center gap-2">
-        <span class="text-primary font-bold text-lg">Marble & Arch</span>
-        <span class="text-body-muted text-sm border-l border-border pl-2">
-          &copy; {{ new Date().getFullYear() }} - Todos os direitos reservados
-        </span>
+      <div class="flex items-center gap-2 text-body-xs text-text-dimmed">
+        &copy; {{ new Date().getFullYear() }} Marble & Arch. Todos os direitos reservados.
       </div>
     </template>
 
@@ -49,8 +62,12 @@ const columns = computed(() => [
         icon="i-heroicons-arrow-up-circle"
         color="neutral"
         variant="ghost"
+        class="hover:text-primary transition-colors hover:bg-transparent"
         @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
       />
     </template>
   </UFooter>
 </template>
+
+<style scoped>
+</style>

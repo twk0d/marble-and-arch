@@ -50,7 +50,7 @@ const showAdvanced = ref(false)
 </script>
 
 <template>
-  <UCard class="bg-muted border-border" :ui="{ body: 'p-6' }">
+  <UCard class="bg-glass-sand shadow-ambient border border-white/20 dark:border-white/10" :ui="{ body: 'p-6 sm:p-8', background: 'bg-transparent', ring: 'ring-0', shadow: 'shadow-none' }">
     <div class="space-y-6">
       <!-- Main Filters -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

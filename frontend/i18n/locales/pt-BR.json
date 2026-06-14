@@ -280,6 +280,8 @@
     }
   },
   "propertyType": {
+    "APARTMENT": "Apartamento",
+    "TOWNHOUSE": "Sobrado",
     "CONDOMINIUM_HOUSE": "Casa em Condomínio",
     "CONDOMINIUM_PLOT": "Lote em Condomínio",
     "COUNTRY_HOUSE": "Casa de Campo",
