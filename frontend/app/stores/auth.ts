@@ -39,7 +39,7 @@ export const useAuthStore = defineStore('auth', () => {
 
     async function login(credentials: { email: string; password: string }) {
         try {
-            const data = await $fetch<string>('/api/v1/administration/login', {
+            const data = await $fetch<string>('/api/v1/auth/login', {
                 method: 'POST',
                 body: credentials,
                 headers: {

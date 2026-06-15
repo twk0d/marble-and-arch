@@ -31,16 +31,20 @@ useSeoMeta({
 </script>
 
 <template>
-  <div>
-    <UContainer class="py-8">
-      <UPageHeader
-        :title="t('search.title')"
-        :description="t('styleguide.hero.description')"
-        class="mb-8"
-      />
+  <div class="space-y-12 pb-24">
+    <!-- Header luxuoso -->
+    <div class="border-b border-border bg-background pt-12 pb-8">
+      <div class="w-full">
+        <h1 class="text-h1 text-foreground mb-4">{{ t('search.title') }}</h1>
+        <p class="text-body-lg text-text-dimmed max-w-3xl">Descubra as propriedades mais exclusivas através dos nossos filtros avançados. Encontre exatamente o que você procura.</p>
+      </div>
+    </div>
 
+    <div class="w-full">
+      <!-- Filtros com Glassmorphism -->
       <SearchFilters class="mb-12" @search="handleSearch" />
 
+      <!-- Catálogo de Resultados -->
       <PropertyCatalog
         :properties="searchStore.results"
         :is-loading="searchStore.isLoading"
@@ -52,6 +56,6 @@ useSeoMeta({
         @page-change="handlePageChange"
         @reset-filters="handleReset"
       />
-    </UContainer>
+    </div>
   </div>
 </template>

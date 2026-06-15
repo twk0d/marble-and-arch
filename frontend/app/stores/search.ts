@@ -45,18 +45,20 @@ export const useSearchStore = defineStore('search', () => {
                 return
             }
 
-            const data = await $fetch<Page<PropertySummaryDTO>>('/api/v1/property-management/search', {
+            const response = await $fetch<any>('/api/v1/properties', {
                 method: 'GET',
                 query: { page, size, ...activeFilters }
             })
             
+            const data = response?.data || { content: [], totalElements: 0, totalPages: 0, number: 0 }
+
             // Store in cache
             cache.set(cacheKey, data)
 
-            results.value = data.content
-            totalElements.value = data.totalElements
-            totalPages.value = data.totalPages
-            currentPage.value = data.number
+            results.value = data.content || []
+            totalElements.value = data.totalElements || 0
+            totalPages.value = data.totalPages || 0
+            currentPage.value = data.number || 0
         } catch (error) {
             console.error('Search failed:', error)
             throw error

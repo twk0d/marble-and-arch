@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: false
+})
 const { t } = useI18n()
 const toast = useToast()
 
@@ -42,7 +45,7 @@ async function onSubmit(event: any) {
       role: 'BROKER'
     }
 
-    await $fetch('/api/v1/administration/register', {
+    await $fetch('/api/v1/auth/register', {
       method: 'POST',
       body: payload
     })
@@ -58,25 +61,61 @@ async function onSubmit(event: any) {
 </script>
 
 <template>
-  <div class="flex items-center justify-center p-4 py-20">
-    <UCard class="w-full max-w-md border-neutral-200 dark:border-neutral-800">
-      <UAuthForm
-        :fields="fields"
-        :validate="validate"
-        :title="t('auth.signup.title')"
-        :description="t('auth.signup.subtitle')"
-        :submit-button="{ label: t('auth.signup.submit'), block: true }"
-        :on-submit="onSubmit"
-      >
-        <template #footer>
-          <div class="text-center text-sm text-neutral-500 font-inter">
-            {{ t('auth.signup.alreadyHaveAccount') }}
-            <ULink to="/login" class="text-primary font-semibold hover:underline">
-              {{ t('auth.signup.login') }}
-            </ULink>
-          </div>
-        </template>
-      </UAuthForm>
-    </UCard>
+  <div class="min-h-screen flex w-full bg-background font-inter text-foreground">
+    <!-- Left Side: Image (Hidden on Mobile) -->
+    <div class="hidden lg:flex lg:w-1/2 relative">
+      <NuxtImg 
+        src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80" 
+        alt="Luxury Property Signup" 
+        class="absolute inset-0 w-full h-full object-cover"
+        preload
+      />
+      <div class="absolute inset-0 bg-black/40 pointer-events-none" />
+      
+      <!-- Back to Home overlay link -->
+      <div class="absolute top-8 left-8 z-10">
+        <NuxtLink to="/" class="flex items-center gap-3 text-white hover:opacity-80 transition-opacity">
+          <UIcon name="tabler:building" class="size-10"/>
+          <span class="text-h4 tracking-tight">Marble & Arch</span>
+        </NuxtLink>
+      </div>
+
+      <div class="absolute bottom-16 left-16 right-16 z-10 text-white">
+        <h2 class="text-h2 mb-4">Eleve seus resultados.</h2>
+        <p class="text-body-lg text-white/80 max-w-lg">Faça parte do grupo de elite de corretores e parceiros Marble & Arch. Seu próximo grande negócio começa aqui.</p>
+      </div>
+    </div>
+
+    <!-- Right Side: Form -->
+    <div class="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-16 md:px-24 xl:px-32 relative bg-card py-16">
+      <!-- Mobile Back Button -->
+      <NuxtLink to="/" class="lg:hidden absolute top-8 left-8 flex items-center gap-2 text-foreground hover:opacity-80 transition-opacity">
+        <UIcon name="i-heroicons-arrow-left" class="size-5"/>
+        <span class="text-label-sm">Voltar à Home</span>
+      </NuxtLink>
+
+      <div class="w-full max-w-md mx-auto">
+        <div class="mb-10 text-center lg:text-left">
+          <h1 class="text-h2 text-foreground mb-3">{{ t('auth.signup.title') }}</h1>
+          <p class="text-body-muted">{{ t('auth.signup.subtitle') }}</p>
+        </div>
+
+        <UAuthForm
+          :fields="fields"
+          :validate="validate"
+          :submit-button="{ label: t('auth.signup.submit'), block: true, size: 'xl' }"
+          :on-submit="onSubmit"
+        >
+          <template #footer>
+            <div class="text-center text-sm text-text-dimmed mt-8 border-t border-border pt-6">
+              {{ t('auth.signup.alreadyHaveAccount') }}
+              <ULink to="/login" class="text-primary font-semibold hover:underline transition-all">
+                {{ t('auth.signup.login') }}
+              </ULink>
+            </div>
+          </template>
+        </UAuthForm>
+      </div>
+    </div>
   </div>
 </template>
